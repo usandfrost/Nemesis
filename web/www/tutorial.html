@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/png" href="img/icon.png">
+<title>Nemesis tutorial</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body class="site tool learning">
+<header id="bar" class="menubar"></header>
+<div class="copper"></div>
+<div class="strip">
+  <span class="dot"></span> <span id="audioState">audio off</span>
+  <label class="vol">master <input id="master" type="range" min="0" max="127" value="100"></label>
+  <canvas id="meter" width="90" height="14"></canvas>
+  <span id="engNow" hidden></span>
+  <button id="start" class="btn go">Start audio</button>
+</div>
+<div class="wide-note">The lessons use the firmware itself, on a drawing of the panel. They need a wide screen: turn your phone sideways, or use a computer.</div>
+<main>
+  <section id="tab-panel" class="pane on">
+    <aside id="lesson" aria-live="polite"></aside>
+    <div id="panelWrap"></div>
+  </section>
+</main>
+<div id="toast"></div>
+<script src="site.js"></script>
+<script src="panel.js"></script>
+<script src="sysex.js"></script>
+<script src="app.js"></script>
+<script src="learn.js"></script>
+</body>
+</html>

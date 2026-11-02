@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/png" href="img/icon.png">
+<title>Nemesis preset bench</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="brand"><span class="dot"></span> <b>NEMESIS</b> <i>preset bench</i> <a href="index.html" class="muted small">the website</a></div>
+  <nav>
+    <button class="tab on" data-tab="presets">Presets</button>
+    <button class="tab" data-tab="panel">Panel</button>
+  </nav>
+  <div class="status">
+    <span id="audioState">audio off</span>
+    <label class="vol">master <input id="master" type="range" min="0" max="127" value="100"></label>
+    <span id="engNow" class="muted" title="the engine that made the last sound">engine –</span>
+    <canvas id="meter" width="90" height="14"></canvas>
+    <button id="start" class="primary">Start audio</button>
+  </div>
+</header>
+
+<main>
+  <section id="tab-presets" class="pane on">
+    <div class="list-col">
+      <div class="toolbar">
+        <input id="search" type="search" placeholder="search name or feature  (e.g. acid, unison, wavetable)" autocomplete="off">
+        <div id="cats" class="chips"></div>
+        <div class="chips">
+          <label class="chip check" title="A / B / C in the list: how close the lean voice sounds to the full engine on the host (level, envelope, spectrum). Your ears decide."><input type="checkbox" id="onlyA"> lean grade A only</label>
+          <label class="chip check"><input type="checkbox" id="autoplay" checked> play on select</label>
+          <select id="vfilter" title="filter by your verdict"><option value="">all verdicts</option><option value="rejected">rejected</option><option value="approved">approved</option><option value="none">no verdict yet</option></select>
+          <span id="count" class="muted"></span>
+        </div>
+      </div>
+      <div id="list" class="list" tabindex="0"></div>
+    </div>
+    <div class="side-col">
+      <div class="card" id="detail">
+        <div class="d-name" id="dName">Select a preset</div>
+        <div class="d-sub" id="dSub"></div>
+        <div class="tags" id="dTags"></div>
+        <div class="grades" id="dGrades"></div>
+        <div class="d-load" id="dLoad"></div>
+      </div>
+
+      <div class="card">
+        <h3>Engine</h3>
+        <div class="seg" id="engineSeg">
+          <button data-e="full" class="on">Full engine <kbd>1</kbd></button>
+          <button data-e="lean">Lean voice <kbd>2</kbd></button>
+          <button data-e="ab">A / B <kbd>3</kbd></button>
+        </div>
+        <p class="muted small" id="engineHelp">The full engine: the reference the lean voice is compared with.</p>
+      </div>
+
+      <div class="card">
+        <h3>Play</h3>
+        <div class="seg" id="modeSeg">
+          <button data-m="note">Note</button>
+          <button data-m="chord" class="on">Chord</button>
+          <button data-m="arp">Arp</button>
+          <button data-m="line">Line</button>
+          <button data-m="device">Device preview</button>
+        </div>
+        <div class="row">
+          <label>register <input id="reg" type="range" min="-24" max="24" value="0"><span id="regV">auto</span></label>
+          <label>velocity <input id="vel" type="range" min="20" max="127" value="100"></label>
+        </div>
+        <div class="row"><button id="play" class="primary">Play  <kbd>Space</kbd></button> <button id="stop">Stop <kbd>Esc</kbd></button></div>
+        <div id="kbd" class="kbd"></div>
+        <p class="muted small">Keys: <kbd>↑</kbd><kbd>↓</kbd> choose preset, <kbd>Space</kbd> play, <kbd>1</kbd> full, <kbd>2</kbd> lean, <kbd>3</kbd> A/B, <kbd>Tab</kbd> cycle engine, <kbd>V</kbd> approve, <kbd>R</kbd> reject, <kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>… the piano.</p>
+      </div>
+      <div class="card" id="verdict">
+        <h3>Your verdict <span id="vState" class="muted"></span></h3>
+        <div class="seg">
+          <button id="vOk">Approve <kbd>V</kbd></button>
+          <button id="vNo">Reject <kbd>R</kbd></button>
+        </div>
+        <div id="vReasons" class="chips"></div>
+        <textarea id="vText" rows="3" placeholder="What is wrong? (heard on the engine selected below; Claude reads this)"></textarea>
+        <div class="muted small">Saved to web/feedback/verdicts.json as you type.</div>
+      </div>
+
+      <div class="card">
+        <h3>Effects (reverb, delay)</h3>
+        <div class="seg" id="fxSeg">
+          <button data-f="full">Full rate <kbd>X</kbd></button>
+          <button data-f="half" class="on">Half rate <kbd>X</kbd></button>
+        </div>
+        <p class="muted small">Half rate is how the firmware runs them now (about 15 points less CPU on the board, a little darker above 4 kHz); full rate is the old sound.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="tab-panel" class="pane">
+    <div id="panelWrap"></div>
+  </section>
+</main>
+<div id="toast"></div>
+<script src="panel.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

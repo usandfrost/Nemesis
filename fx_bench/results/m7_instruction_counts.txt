@@ -1,0 +1,10 @@
+# Static instruction counts on the Cortex-M7 (arm-none-eabi-g++ -O2, firmware flags) of one sample of each straight-line kernel.
+# The upstream classes (DelayCore, ReverbCore, PlateReverbCore) are left out: their static total includes control-rate and rarely taken paths (622 / 1332 / 1020), which is not the work of one sample.
+k_proto_amp_mono()          116 instructions
+k_proto_chorus_stereo()     201 instructions
+k_proto_comp_stereo()       118 instructions
+k_proto_delay_stereo()      115 instructions
+k_stock_chorus_mono()       119 instructions
+k_stock_comp_mono()          65 instructions
+k_stock_delay_mono()         48 instructions
+k_stock_freeverb()          114 instructions

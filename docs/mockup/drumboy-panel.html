@@ -1,0 +1,1668 @@
+<title>Drumboy Panel Mockup</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* Layout: a hardware faceplate (1520 x 860 design px, scaled to fit) with a 960 x 540 screen in the middle.
+   Colour: one accent per page, on black, the way a groovebox screen separates its pages at a glance. */
+:root {
+  color-scheme: dark;
+  --bg: #0b0d10;
+  --plate: #1b2024;
+  --plate-edge: #2b3238;
+  --key: #2a3136;
+  --key-hi: #3a4249;
+  --key-legend: #cfd6da;
+  --gold: #c9a24b;
+  --screen: #000000;
+  --ink: #e8eef2;
+  --dim: #6c7882;
+  --line: #20282e;
+  --acc: #19d3e6;        /* set per page */
+  --pa: #ff8a3d;         /* part A */
+  --pb: #19d3e6;         /* part B */
+  --pc: #ff4fa3;         /* part C */
+  --lock: #d7ff3c;       /* p-lock: parameter locked to one step. A colour no part or mode uses (was the STEP amber) */
+  --good: #6df08c;
+  --warn: #ff5d5d;
+  --display: "Chakra Petch", "Barlow Condensed", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+* { box-sizing: border-box; }
+html, body { background: var(--bg); color: var(--ink); }
+body { margin: 0; font-family: var(--display); font-size: 14px; }
+.wrap { padding-block: 14px 28px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); max-width: 1560px; margin: 0 auto; }
+.bar { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; margin-bottom: 12px; }
+.bar h1 { font-size: 15px; letter-spacing: .14em; text-transform: uppercase; margin: 0; font-weight: 600; color: var(--ink); }
+.bar .sim { color: var(--dim); font-size: 13px; display: flex; gap: 8px; align-items: center; }
+.bar .sim select { background: #1a2126; color: #cfd6da; border: 1px solid #2c353b; border-radius: 6px; padding: 4px 6px; font: inherit; }
+.bar .hint { color: var(--dim); font-size: 13px; line-height: 1.45; flex: 1 1 360px; min-width: 0; }
+.btn { font: 600 12px var(--display); letter-spacing: .1em; text-transform: uppercase; color: var(--ink); background: var(--plate); border: 1px solid var(--plate-edge); padding: 8px 12px; border-radius: 6px; cursor: pointer; }
+.btn:hover { border-color: var(--acc); }
+.btn[aria-pressed="true"] { background: var(--acc); color: #001014; border-color: var(--acc); }
+.btn:focus-visible, .key:focus-visible, .enc:focus-visible { outline: 2px solid var(--acc); outline-offset: 2px; }
+
+#fit { width: 100%; overflow: hidden; }
+#panel { position: relative; width: 1520px; height: 860px; transform-origin: 0 0; background: linear-gradient(180deg, #20262a, #171c20); border: 2px solid var(--plate-edge); border-radius: 26px; box-shadow: 0 30px 60px #0008; }
+.abs { position: absolute; }
+
+/* keys */
+.key { position: absolute; width: 90px; height: 72px; border-radius: 10px; border: 0; background: var(--key); color: var(--key-legend); font: 600 22px var(--display); display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: inset 0 -5px 0 #0004, 0 3px 0 #0007; padding: 0; user-select: none; touch-action: manipulation; }
+.key:hover { background: var(--key-hi); }
+.key.down, .key:active { transform: translateY(2px); box-shadow: inset 0 -2px 0 #0004, 0 1px 0 #0007; }
+.key small { position: absolute; bottom: 5px; left: 0; right: 0; font: 600 9px var(--display); letter-spacing: .12em; color: var(--dim); text-transform: uppercase; opacity: 0; transition: opacity .15s; pointer-events: none; }
+.legend .key small { opacity: 1; }
+.key.on { color: #001014; background: var(--acc); }
+.key.off { opacity: .35; cursor: not-allowed; }
+.key.na { opacity: .32; }
+.key.layer { width: 108px; height: 90px; background: #2b2a26; color: #d8d3c4; font-size: 18px; }
+.key.layer .led { position: absolute; top: 9px; left: 50%; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; background: #3a3c3e; transition: background .08s, box-shadow .08s; }
+.key.layer.has .led { background: color-mix(in srgb, var(--lc, #888) 40%, #222); }
+.key.layer.sel .led { background: var(--lc, #fff); box-shadow: 0 0 10px var(--lc, #fff); }
+.key.layer.hit .led { background: #fff; box-shadow: 0 0 14px #fff; }
+.key.layer.cur { outline: 2px solid #fff; outline-offset: -3px; }
+.key.layer.lkd { outline: 2px dashed var(--lock); outline-offset: -3px; }
+.key.layer.lkd .led { box-shadow: 0 0 12px var(--lock); }
+.key.layer .num { margin-top: 18px; }
+
+/* encoders */
+.enc { position: absolute; width: 84px; height: 84px; border-radius: 50%; border: 4px solid var(--gold); background: radial-gradient(circle at 35% 30%, #3d4448, #1c2125 70%); cursor: ns-resize; touch-action: none; display: block; }
+.enc .cap { position: absolute; inset: 11px; border-radius: 50%; background: radial-gradient(circle at 40% 30%, #4a5256, #22282c); box-shadow: inset 0 -3px 0 #0006; }
+.enc .notch { position: absolute; left: 50%; top: 4px; width: 5px; height: 17px; margin-left: -2.5px; border-radius: 3px; background: var(--acc); transform-origin: 50% 34px; }
+.enc .tag { position: absolute; left: 0; right: 0; bottom: -20px; text-align: center; font: 600 10px var(--display); letter-spacing: .14em; color: var(--dim); }
+
+/* screen */
+#screenbox { position: absolute; left: 360px; top: 130px; width: 800px; height: 450px; border: 3px solid #0a0c0e; border-radius: 6px; overflow: hidden; background: var(--screen); box-shadow: 0 0 0 2px var(--plate-edge); }
+#screen { position: absolute; left: 0; top: 0; width: 960px; height: 540px; transform: scale(.8333); transform-origin: 0 0; background: var(--screen); font-family: var(--mono); color: var(--ink); }
+.s-top, .s-bot { position: absolute; left: 0; right: 0; height: 86px; display: grid; grid-template-columns: 80px repeat(4, 200px) 80px; }
+.s-top { top: 0; border-bottom: 1px solid var(--line); }
+.s-bot { bottom: 0; border-top: 1px solid var(--line); }
+.corner { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 4px; font: 600 16px var(--display); letter-spacing: .02em; white-space: nowrap; color: var(--dim); text-transform: uppercase; }
+.corner b { color: var(--acc); font-size: 16px; }
+.corner { position: relative; }
+.corner b.tp { color: var(--dim); font-size: 16px; letter-spacing: 0; }
+.corner b.tp.run { color: #6df08c; }
+.corner .degb { position: absolute; top: 6px; right: 6px; font: 700 16px var(--display); font-style: normal; background: var(--warn); color: #1a0000; border-radius: 3px; padding: 1px 4px; }
+.cell { border-left: 1px solid var(--line); padding: 14px 16px 0; display: flex; flex-direction: column; gap: 4px; position: relative; min-width: 0; }
+.cell .lbl { font: 600 16px var(--display); letter-spacing: .06em; gap: 6px; color: var(--acc); text-transform: uppercase; display: flex; justify-content: space-between; }
+.cell .lbl i { font-style: normal; color: var(--dim); }
+.cell .val { font: 500 25px var(--mono); line-height: 36px; font-variant-numeric: tabular-nums; letter-spacing: -.02em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }   /* ONE size for every knob value, top and bottom: 25 px fits the longest (11 characters, "Snare Crack") */
+.cell .val.warn { color: var(--warn); }
+.cell .val .dest { font: inherit; color: var(--acc); margin-left: 4px; }   /* the destination note of a step offset */
+.cell .meter { position: absolute; left: 16px; right: 16px; bottom: 10px; height: 4px; background: #14191d; border-radius: 2px; }
+.cell .meter u { position: absolute; left: 0; top: 0; bottom: 0; background: var(--acc); border-radius: 2px; }
+.cell.dis .val, .cell.dis .lbl { opacity: .28; }
+.cell.lk .val { color: var(--lock); }
+.cell.lk .lbl i { color: var(--lock); font-weight: 700; }
+.cell .lbl i.cb { color: #ffb02e; font-weight: 700; }
+/* READ-ONLY cells (information, not a setting): grey label, an INFO tag, hatched background, and the knob above/below looks idle */
+.cell.ro { background: repeating-linear-gradient(135deg, transparent 0 9px, #ffffff07 9px 18px); }
+.cell.ro .lbl span { color: var(--dim); }
+.cell.ro .lbl i.ro { color: var(--dim); border: 1px solid #3a444b; border-radius: 3px; padding: 0 5px; font-style: normal; }
+.cell.ro .val { color: #9aa7b0; }
+.enc.ro { opacity: .38; }
+.enc.ro .notch { visibility: hidden; }
+.info .lad { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 28px; font-size: 16px; color: var(--dim); }
+.info .lad .on { color: var(--warn); }
+.locking .s-top { border-bottom: 2px solid var(--lock); }
+.locking .corner b { color: var(--lock); }
+.s-main { position: absolute; left: 0; right: 0; top: 87px; bottom: 87px; overflow: hidden; }
+.toast { position: absolute; left: 50%; bottom: 100px; transform: translateX(-50%); background: var(--acc); color: #001014; font: 700 16px var(--display); letter-spacing: .1em; padding: 8px 16px; border-radius: 4px; opacity: 0; transition: opacity .15s; pointer-events: none; text-transform: uppercase; z-index: 5; }
+.toast.show { opacity: 1; }
+
+/* PLAY: lane list */
+.lane { height: 36.6px; display: grid; grid-template-columns: 40px 44px 22px 126px 1fr; align-items: center; border-bottom: 1px solid var(--line); font-size: 16px; }
+.lane.sel { background: color-mix(in srgb, var(--lc) 16%, #070a0c); box-shadow: inset 5px 0 0 var(--lc), inset 0 1px 0 color-mix(in srgb, var(--lc) 70%, transparent), inset 0 -1px 0 color-mix(in srgb, var(--lc) 70%, transparent); }
+.lane:not(.sel) .steps { opacity: .62; }
+.lane:not(.sel) .nt, .lane:not(.sel) .no { opacity: .7; }
+.lane .no { color: var(--dim); text-align: right; padding-right: 8px; font-variant-numeric: tabular-nums; }
+.lane.sel .no { color: #fff; font-weight: 700; }
+.lane.sel .no::before { content: "\25B6"; color: var(--lc); font-size: 9px; margin-right: 4px; vertical-align: 1px; }
+.lane.sel .st:not(.on) { background: color-mix(in srgb, var(--lc) 20%, #11171b); }
+.lane.sel .st.b4:not(.on) { background: color-mix(in srgb, var(--lc) 28%, #151c21); }
+.lane .pt { font: 700 16px var(--display); letter-spacing: 0; padding: 1px 6px; border-radius: 3px; color: #001014; text-align: center; margin-right: 8px; }
+.lane .mu { color: var(--warn); font-weight: 600; text-align: center; }
+.steps { display: flex; height: 100%; align-items: center; gap: 3px; padding-right: 14px; }
+.st { flex: 1 1 0; height: 20px; border-radius: 2px; background: #11171b; position: relative; }
+.st.b4 { background: #151c21; }
+.st.on { background: var(--lc); }
+.st.lk::before { content: ""; position: absolute; left: 25%; right: 25%; top: 3px; height: 3px; border-radius: 2px; background: var(--lock); }
+.st.add { background: transparent; box-shadow: inset 0 0 0 2px var(--lc); }   /* a step you tapped on, over the Euclid rhythm */
+.st.xoff { background: linear-gradient(135deg, transparent 44%, color-mix(in srgb, var(--lc) 55%, transparent) 44% 56%, transparent 56%), #0b0f12; }   /* a Euclid hit you tapped off */
+.st.ph::after { content: ""; position: absolute; inset: -4px 0; border: 1px solid #fff; border-radius: 3px; }
+.lane.mute .st.on { background: #3a444b; }
+.lane .eu { position: absolute; right: 8px; font-size: 16px; color: var(--dim); }
+
+/* STEP view */
+.stepview { padding: 14px 24px; display: flex; flex-direction: column; gap: 8px; height: 100%; }
+.stepview .hd { display: flex; gap: 14px; align-items: baseline; font: 600 16px var(--display); letter-spacing: .04em; white-space: nowrap; color: var(--dim); text-transform: uppercase; }
+.stepview .hd b { color: var(--acc); font-size: 20px; }
+.tabs { display: inline-flex; gap: 4px; }
+.tabs i { font-style: normal; padding: 3px 10px; border: 1px solid #2c353b; border-radius: 4px; color: var(--dim); letter-spacing: .1em; }
+.tabs i.on { background: var(--acc); border-color: var(--acc); color: #001014; }
+.mixtabs { position: absolute; right: 16px; top: 10px; font: 600 16px var(--display); text-transform: uppercase; z-index: 2; }
+.mixtabs + .mixer .strip3 { padding-top: 48px; }   /* room for the view tabs above the part names */
+.sgrid { display: grid; grid-template-columns: 80px repeat(8, 1fr); gap: 6px 6px; align-items: center; }
+.sgrid .rl { font: 600 16px var(--display); letter-spacing: .02em; color: var(--dim); text-transform: uppercase; }
+.sgrid .sc { height: 48px; border-radius: 4px; background: #11171b; display: flex; flex-direction: column; gap: 7px; align-items: center; justify-content: center; line-height: 1; font-size: 22px; font-variant-numeric: tabular-nums; color: #cfd6da; position: relative; }
+.sgrid .sc.off { color: #3d474e; }
+.sgrid .sc.on0 { background: var(--lc); color: #001014; font-weight: 600; height: 56px; }
+.sgrid .sc.ov0 { box-shadow: inset 0 0 0 3px #fff7; }
+.sgrid .sc.cur { outline: 3px solid #fff; outline-offset: 1px; }
+.sgrid .sc.lkd { outline: 3px dashed var(--lock); outline-offset: 2px; }
+.sgrid .lkb { font: 700 16px var(--display); letter-spacing: 0; color: var(--lock); }
+.sgrid .sc.on0 .lkb { color: #1a2000; background: var(--lock); border-radius: 2px; padding: 0 3px; }
+.sgrid .sc.ph { box-shadow: inset 0 -5px 0 #fff; }   /* the playhead: an underline, so it never looks like the cursor */
+.sgrid .sc .vbar { display: block; flex: none; width: calc(100% - 20px); height: 4px; margin: 0; background: #0006; border-radius: 2px; overflow: hidden; }
+.sgrid .sc .vbar u { display: block; height: 100%; background: currentColor; opacity: .75; }
+.strip { display: flex; gap: 2px; height: 14px; margin-top: 4px; }
+.strip i { flex: 1; background: #12181c; border-radius: 1px; }
+.strip i.on { background: var(--lc); opacity: .8; }
+.strip i.pg { box-shadow: 0 -3px 0 var(--acc); }
+.strip i.ph { background: #fff; }
+
+/* SOUND / MIXER / BROWSE / PROJECT */
+.viz { display: block; width: 960px; height: 366px; }
+.vlabel { position: absolute; left: 24px; top: 8px; font: 600 16px var(--display); letter-spacing: .06em; color: var(--dim); text-transform: uppercase; }
+.vlabel b { color: var(--acc); }
+.mixer { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; height: 100%; }
+.strip3 { border-left: 1px solid var(--line); padding: 20px 28px; display: flex; flex-direction: column; gap: 12px; }
+.strip3:first-child { border-left: 0; }
+.strip3 h3 { margin: 0; font: 700 22px var(--display); letter-spacing: .1em; }
+.strip3 .nm { color: var(--dim); font-size: 16px; }
+.strip3 .fader { flex: 1; width: 22px; background: #11171b; border-radius: 3px; position: relative; align-self: flex-start; min-height: 120px; }
+.strip3 .fader u { position: absolute; left: 0; right: 0; bottom: 0; background: var(--pcol); border-radius: 3px; }
+.vox { display: flex; gap: 6px; }
+.vox i { width: 26px; height: 16px; border-radius: 3px; background: #14191d; }
+.vox i.on { background: var(--pcol); }
+.vox i.act { box-shadow: 0 0 10px var(--pcol); background: #fff; }
+.list { padding: 8px 0; }
+.li { display: grid; grid-template-columns: 90px 1fr 120px; padding: 7px 28px; font-size: 20px; border-bottom: 1px solid #0d1215; align-items: center; }
+.li.sel { background: var(--acc); color: #001014; font-weight: 600; }
+.li .c { font: 600 16px var(--display); letter-spacing: .04em; text-transform: uppercase; opacity: .7; }
+.li .loaded { text-align: right; font: 600 16px var(--display); letter-spacing: .02em; }
+.info { padding: 14px 32px; display: grid; gap: 8px; font-size: 17px; }
+.info .row { display: grid; grid-template-columns: 180px 1fr; gap: 12px; align-items: baseline; }
+.info .row span:first-child { color: var(--dim); font: 600 16px var(--display); letter-spacing: .04em; text-transform: uppercase; }
+.note { color: var(--dim); font-size: 16px; line-height: 1.45; max-width: 860px; }
+
+/* sampler, chords, arp, back */
+.lane .nt { font-size: 16px; color: #9aa7b0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-right: 6px; }
+.lane.sel .nt { color: #fff; }
+.st.os::before { content: ""; position: absolute; left: 50%; top: 50%; width: 6px; height: 6px; margin: -3px 0 0 -3px; border-radius: 50%; background: #fff; }
+.sgrid .sc .nn { font-size: 16px; font-weight: 600; letter-spacing: 0; opacity: .75; }
+.sgrid .sc.own { box-shadow: inset 0 0 0 2px var(--lc); color: #fff; }
+.sgrid .sc.on0.own { color: #001014; box-shadow: inset 0 0 0 2px #fffa; }
+.keys12 { display: grid; grid-template-columns: repeat(12, 1fr); gap: 4px; max-width: 620px; }
+.keys12 i { font-style: normal; text-align: center; padding: 4px 0; border-radius: 3px; font: 600 16px var(--display); color: #4a555c; background: #0d1215; }
+.keys12 i.blk { background: #070a0c; }
+.keys12 i.in { color: #e8eef1; background: #1f2a30; }
+.keys12 i.root { background: #ffb02e; color: #001014; }
+.lane.flash { animation: laneflash .9s ease-out; }
+@keyframes laneflash { 0% { background: color-mix(in srgb, var(--lc) 70%, #000); } 100% { background: color-mix(in srgb, var(--lc) 16%, #070a0c); } }
+.lane .mu.ar { color: var(--acc); }
+.st.ch { box-shadow: inset 0 -4px 0 #ffffffcc; }
+.st.ch.add { box-shadow: inset 0 0 0 2px var(--lc), inset 0 -4px 0 #ffffffcc; }
+.sgrid .sc.sm { font-size: 16px; }
+.sgrid .sc.na { background: #0b0f12; color: #3d474e; }   /* does not apply to this step (no chord) */
+.sgrid .chb { font: 700 16px var(--display); letter-spacing: 0; opacity: .85; }
+.sgrid .bdg { display: flex; gap: 8px; line-height: 1; }   /* badges under the step number, in the flow (16 px would cover the number in a corner) */
+.stepview .hd .warnv { color: var(--warn); font-weight: 700; }
+.li small { opacity: .6; font-size: 16px; margin-left: 10px; }
+.songhd { display: flex; gap: 18px; align-items: baseline; padding: 12px 28px 4px; font: 600 16px var(--display); color: var(--dim); text-transform: uppercase; letter-spacing: .04em; }
+.songhd b { color: var(--acc); font-size: 20px; }
+.songhd .now { margin-left: auto; color: #6df08c; }
+.li.srow.play { box-shadow: inset 4px 0 0 #6df08c; }
+.list.card { padding-top: 0; }
+.list.card .li { padding: 3px 28px; font-size: 17px; }
+/* help */
+.help { margin-top: 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px 28px; }
+.help section { min-width: 0; }
+.help h2 { font: 700 12px var(--display); letter-spacing: .16em; text-transform: uppercase; color: var(--acc); margin: 0 0 6px; }
+.help p, .help li { color: #9aa7b0; font-size: 13.5px; line-height: 1.55; margin: 0; }
+.help ul { padding-left: 16px; margin: 0; }
+kbd { font: 500 12px var(--mono); background: #1a2126; border: 1px solid #2c353b; border-bottom-width: 2px; border-radius: 4px; padding: 0 5px; color: #cfd6da; }
+</style>
+
+<div class="wrap">
+  <div class="bar">
+    <h1>Drumboy Panel Mockup</h1>
+    <button class="btn" id="btnSound" aria-pressed="false">Sound off</button>
+    <button class="btn" id="btnLegend" aria-pressed="false">Show key functions</button>
+    <span class="sim" title="Mockup only: pretend the board is slower, or that every voice is playing, to watch the degrade ladder work">CPU simulation:
+      <select id="simSpeed" aria-label="Simulated board speed"></select>
+      <button class="btn" id="btnStress" aria-pressed="false">Worst case</button></span>
+    <span class="hint">Draft interaction design. Turn a knob by dragging it up or down or with the mouse wheel; click the keys. Key functions are provisional until the printed legends are confirmed.</span>
+  </div>
+  <div id="fit"><div id="panel"></div></div>
+
+  <div class="help">
+    <section><h2>Turn</h2><p>Drag a knob up or down, or scroll over it. Click a knob and use <kbd>↑</kbd><kbd>↓</kbd>. Hold <kbd>Shift</kbd> (or the grid key, bottom right) for coarse steps.</p></section>
+    <section><h2>Play and step</h2><ul><li><b>PLAY</b> view: bottom keys 1-10 pick a lane. <b>SHIFT + T3 PLAYED BY</b> moves the picked lane to another part: A or B (CATHODE synths) or C (the sampler, where the lane plays its own sample and its notes become pitch). Without SHIFT, T3 does nothing, so a stray turn cannot move a lane.</li><li><b>Drum lanes</b>: press <b>S</b> again for view 2, <b>SAMPLE PER STEP</b>. Pick a step with &#9664; &#9654; (or hold its key) and turn <b>B1 STEP SAMPLE</b>: that trig plays its own sample, so one lane can carry kick, rim and clap. It is a sample lock: ○ on a locked step clears it.</li><li><b>Patterns</b>: P1-P16. The PATTERN knob (or <b>SHIFT + key 1-10</b>) picks one; while playing it waits for the end of the current pattern. <b>SHIFT + C / SHIFT + P</b> copy and paste a whole pattern, also into another project.</li><li><b>S</b> (bottom right) opens <b>SONG</b>: rows of pattern + repeats. + and &minus; pick a row, <b>●</b> adds one, <b>○</b> removes it, T3/T4 set its pattern and repeats, <b>PLAY</b> or <b>OK</b> plays the song from that row. C / P copy and paste a whole song.</li><li>On every list (presets and samples in BROWSE, song rows, card slots) <b>+ &minus;</b> move the selection; in BROWSE <b>&#9664; &#9654;</b> change the category and <b>OK</b> loads.</li><li><b>I</b> opens <b>PROJECT</b>: T1 key, T2 scale; <b>B1</b> or <b>+ &minus;</b> pick a slot on the SD card, <b>OK</b> loads it, <b>SHIFT + OK</b> saves the whole project (patterns, songs, sounds) there. With a scale set, every synth note snaps to it (chords and arpeggios too); drum lanes are not touched.</li><li><b>STEP</b> key: bottom keys 1-8 toggle steps, 9 and 10 turn the page. <b>Hold a step key and turn a knob</b> to edit that step without toggling it; hold and release without turning to open its lock.</li><li>Turning <b>LENGTH</b> or <b>HITS</b> (the Euclid rhythm) rewrites the lane; taps on steps are an overlay on top of it.</li></ul></section>
+    <section><h2>P-locks</h2><p>In STEP view, <b>hold a step key</b> (about a third of a second, or keep a number key down), open any sound page and turn a knob: that value belongs to that step only and shows amber. Tap the same step to leave, <b>○</b> clears its locks, tapping another step moves the lock.</p></section>
+    <section><h2>Sound and sampler</h2><p>The 3x3 block on the right opens the sound pages: eight labelled parameters each. <b>D</b> switches part, <b>F</b> opens the browser (presets for a synth part, samples for a sampler part), <b>M</b> the mixer with the cost meter. Part C is a sampler: each of its lanes plays its own sample, with start, end, pitch, reverse, loop and a filter.</p></section>
+    <section><h2>Chords and arpeggio</h2><p>In STEP view press <b>S</b> again for view 2. The lower knobs set the <b>chord</b>, inversion, voicing and strum of the selected step; the upper knobs set the lane's <b>arpeggio</b> (mode, rate per step, octaves, gate). A step with a chord is marked white underneath; an arpeggio plays the chord's notes across the step.</p></section>
+    <section><h2>Getting back</h2><p><b>L</b> goes back one step, a second <b>L</b> to the main lane screen; <b>SHIFT + L</b> (or <kbd>H</kbd>) goes there at once. <kbd>Esc</kbd> also goes back one step. The screen is not a touch screen: its corners are labels. Pressing the key of the page you are on, or <b>OK</b> after choosing a sample or preset, also goes back.</p></section>
+    <section><h2>Keyboard</h2><p><kbd>Space</kbd> play and stop &middot; <kbd>1</kbd>-<kbd>0</kbd> bottom keys &middot; arrows move &middot; <kbd>Enter</kbd> OK &middot; <kbd>Backspace</kbd> clear &middot; <kbd>S</kbd> step &middot; <kbd>L</kbd> lanes &middot; <kbd>F</kbd> browser</p></section>
+  </div>
+</div>
+
+<script>
+"use strict";
+/* ============================== model ============================== */
+const NOTE = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
+const noteName = m => NOTE[((m % 12) + 12) % 12] + (Math.floor(m / 12) - 1);
+/* Project key and scale. With a scale set, every note a CATHODE (synth) part plays snaps to it: the nearest scale note, the lower one on a
+   tie. Chords and arpeggios snap note by note, so they become diatonic. Sampler (drum) lanes are not affected. */
+const SCALES = [["OFF", null], ["MAJOR", [0, 2, 4, 5, 7, 9, 11]], ["MINOR", [0, 2, 3, 5, 7, 8, 10]], ["DORIAN", [0, 2, 3, 5, 7, 9, 10]],
+  ["PHRYGIAN", [0, 1, 3, 5, 7, 8, 10]], ["LYDIAN", [0, 2, 4, 6, 7, 9, 11]], ["MIXOLYD", [0, 2, 4, 5, 7, 9, 10]], ["LOCRIAN", [0, 1, 3, 5, 6, 8, 10]],
+  ["HARM MIN", [0, 2, 3, 5, 7, 8, 11]], ["MEL MIN", [0, 2, 3, 5, 7, 9, 11]], ["MAJ PENT", [0, 2, 4, 7, 9]], ["MIN PENT", [0, 3, 5, 7, 10]],
+  ["BLUES", [0, 3, 5, 6, 7, 10]]];
+function scaleNote(m, key, scale) {
+  const sc = SCALES[scale] && SCALES[scale][1];
+  if (!sc) return m;
+  const pc = (((m - key) % 12) + 12) % 12;
+  let best = 99;
+  for (const x of sc) for (const d of [x - pc, x - pc - 12, x - pc + 12]) if (Math.abs(d) < Math.abs(best) || (Math.abs(d) === Math.abs(best) && d < best)) best = d;
+  return m + best;
+}
+const clamp = (v, a, b) => v < a ? a : v > b ? b : v;
+const PART_COL = ["var(--pa)", "var(--pb)", "var(--pc)"];
+const PART_HEX = ["#ff8a3d", "#19d3e6", "#ff4fa3"];
+const PART_NAME = ["A", "B", "C"];
+const VOICE_BUDGET = 5;
+const VOICE_COST = { CATHODE: 1, SAMPLER: 0.25 };   /* a sampler voice costs a fraction of a CATHODE voice; the budget is in these units */
+
+/* ---------- CPU cost model: a line-for-line port of firmware/src/cost (CostModel.h, Degrade.h, Governor.h) ----------
+   The table is GENERATED from the benchmark by tools/gen_cost_table.py; tests/cost/dump_cost.cpp dumps reference cases from the C++ model
+   and the page's test suite requires this port to reproduce them. Costs are in voice units: a plain voice = 1.0. */
+/*COSTTABLE*/
+const COST = {"filterList": ["LowPass", "BandPass", "HighPass", "Notch", "Formant", "Comb", "Ladder24", "Ladder12", "ScreamLp", "ScreamHp", "Acid", "SovietLp", "SovietBp", "SovietHp", "ClassicLp24", "ClassicLp12", "ClassicBp", "ClassicHp", "ReedLp", "ReedBp", "ReedHp", "StateLp", "StateBp", "StateHp", "StateNotch", "StateAp", "StateMorph", "ReedMorph"], "filter": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.107, 0.0, 0.0, 0.0, 0.153, 0.153, 0.16, 0.16, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "heavyThreshold": 0.2, "drive": 0.133, "ring": 0.273, "fm": 0.013, "sync": 0.087, "widthFixed": 0.273, "companding": 0.347, "fold": 0.207, "unison": {"2": 0.167, "4": 0.233, "8": 0.433}, "f2": {"series": 0.12, "parallel": 0.087, "stereo": 0.087}, "slotCost": 0.18, "osc": {"PD": 0.0, "Wavetable": -0.08, "Bitmask": 0.013, "Pulse": -0.053, "Macro": -0.027, "MacroHeavy": 0.54}, "lightTwin": {"ScreamLp": "Ladder24", "Acid": "Ladder24", "ClassicLp24": "Ladder24", "SovietLp": "Ladder12", "ClassicLp12": "Ladder12", "ScreamHp": "HighPass", "SovietHp": "HighPass", "ClassicHp": "HighPass", "SovietBp": "BandPass", "ClassicBp": "BandPass", "ReedLp": "StateLp", "ReedBp": "StateBp", "ReedHp": "StateHp", "ReedMorph": "StateMorph"}, "tableOversample": 2, "unisonSlot1Factor": 0.8};
+/*END COSTTABLE*/
+const FILTER_NAMES = COST.filterList;
+const fIdx = n => FILTER_NAMES.indexOf(n);
+const T_OS = COST.tableOversample || 4;                                  /* the factor the filter and drive extras were measured at */
+const OVERSAMPLED = new Set(FILTER_NAMES.filter(n => /^(Scream|Acid|Soviet|Classic|Reed)/.test(n)).map(fIdx));
+const extraAtX4 = f => COST.filter[f] * (OVERSAMPLED.has(f) ? 4 / T_OS : 1);
+const isHeavyF = f => extraAtX4(f) >= COST.heavyThreshold;               /* heavy = an extra of 0.2 voices or more at x4 */
+const LIGHT_FALLBACK = COST.lightTwin;
+const lightTwin = f => (FILTER_NAMES[f] in LIGHT_FALLBACK ? fIdx(LIGHT_FALLBACK[FILTER_NAMES[f]]) : f);
+const lightFallback = f => { if (!isHeavyF(f)) return f; const t = lightTwin(f); return isHeavyF(t) || t === f ? fIdx("LowPass") : t; };
+const filterExtra = (f, os) => (OVERSAMPLED.has(f) ? (COST.filter[f] * os) / T_OS : COST.filter[f]);
+const unisonExtra = n => (n <= 1 ? 0 : n === 2 ? COST.unison["2"] : n <= 4 ? COST.unison["4"] : COST.unison["8"]);
+const UNISON_SLOT1_FACTOR = COST.unisonSlot1Factor || 2, SAMPLER_VOICE_COST = 0.25;
+const OSC_KIND = ["PD", "Wavetable", "Bitmask", "Pulse", "Macro"];
+const oscKindDelta = (k, heavy) => (k === 4 ? COST.osc.Macro + (heavy ? COST.osc.MacroHeavy : 0) : k ? COST.osc[OSC_KIND[k]] : 0);
+const FW_COST = { os: 2, dos: 2, skip: true };                           /* what the firmware runs: cores and drives at x2, silent slots skipped */
+function voiceCost(d, s) {
+  s = s || FW_COST;
+  const dos = s.dos || 4;
+  let c = 1;
+  const coupled = d.fm > 0 || d.ring > 0 || d.sync > 0;
+  const stack0Collapsed = coupled;
+  const stackLive = (!stack0Collapsed && d.u0 > 1) || d.u1 > 1;
+  let computed = 0;
+  [[d.a0, d.u0, d.k0 || 0, d.mh0], [d.a1, d.u1, d.k1 || 0, d.mh1]].forEach(([aud, uni, kind, mh], i) => {
+    c += (i === 0 && stack0Collapsed ? 0 : unisonExtra(uni) * (i === 1 ? UNISON_SLOT1_FACTOR : 1));
+    if (!(!aud && s.skip && !coupled && uni <= 1)) { computed++; c += oscKindDelta(kind, mh); }   /* a skipped slot costs nothing, whatever its kind */
+  });
+  c += (computed - 1) * COST.slotCost;
+  c += filterExtra(d.f1, s.os);
+  if (d.f2On) c += (d.route === 0 ? COST.f2.series : d.route === 1 ? COST.f2.parallel : COST.f2.stereo) + filterExtra(d.f2, s.os);
+  if (d.width > 0 && stackLive) c += COST.widthFixed + filterExtra(d.f1, s.os) + (d.f2On ? filterExtra(d.f2, s.os) : 0);
+  if (d.drive > 0 && !isHeavyF(d.f1)) c += (COST.drive * dos) / T_OS;
+  if (d.ring > 0) c += COST.ring;
+  if (d.fm > 0) c += COST.fm;
+  if (d.sync > 0) c += COST.sync;
+  if (d.comp > 0) c += COST.companding;
+  if (d.fold > 0) c += COST.fold;
+  return Math.max(c, 0.3);
+}
+/* the one-heavy-filter rule */
+const heavyCount = d => (isHeavyF(d.f1) ? 1 : 0) + (d.f2On && isHeavyF(d.f2) ? 1 : 0);
+const heavyRuleOk = d => heavyCount(d) <= 1;
+function setFilterRule(d, which, f) {                    /* the new choice wins; the other falls back. Returns true if the other was displaced */
+  d[which] = f;
+  if (heavyRuleOk(d)) return false;
+  const other = which === "f1" ? "f2" : "f1";
+  d[other] = lightFallback(d[other]);
+  return true;
+}
+function setFilter2OnRule(d, on) { d.f2On = on ? 1 : 0; if (heavyRuleOk(d)) return false; d.f2 = lightFallback(d.f2); return true; }
+function allowedLock(base, which, locked) {              /* a p-lock that would make a second heavy filter becomes its light fallback */
+  const t = Object.assign({}, base); t[which] = locked;
+  return heavyRuleOk(t) ? locked : lightFallback(locked);
+}
+/* the degrade ladder: what to give up, in order, when the CPU is about to run out */
+const ACTIONS = ["release oldest voice", "unison width off", "unison off", "filter drive off", "cross-mod off", "fold off", "companding off", "heavy filter to light", "filter 2 off"];
+function applyAction(p, a) {                              /* p = {d, voices, priority, sampler}; true if it changed something */
+  const v = p.d;
+  switch (a) {
+    case 0: if (p.voices > 1) { p.voices--; return true; } return false;
+    case 1: if (p.sampler || v.width <= 0) return false; v.width = 0; return true;
+    case 2: if (p.sampler || (v.u0 <= 1 && v.u1 <= 1)) return false; v.u0 = v.u1 = 1; return true;
+    case 3: if (p.sampler || v.drive <= 0) return false; v.drive = 0; return true;
+    case 4: if (p.sampler || (v.fm <= 0 && v.ring <= 0 && v.sync <= 0)) return false; v.fm = v.ring = v.sync = 0; return true;
+    case 5: if (p.sampler || v.fold <= 0) return false; v.fold = 0; return true;
+    case 6: if (p.sampler || v.comp <= 0) return false; v.comp = 0; return true;
+    case 7: {
+      if (p.sampler) return false;
+      let ch = false;
+      if (isHeavyF(v.f1)) { v.f1 = lightFallback(v.f1); ch = true; }
+      if (v.f2On && isHeavyF(v.f2)) { v.f2 = lightFallback(v.f2); ch = true; }
+      if (ch && v.drive > 0) v.drive = 0;                   /* the drive would cost more on a light model than the heavy extra it replaces */
+      return ch;
+    }
+    case 8: if (p.sampler || !v.f2On) return false; v.f2On = 0; return true;
+  }
+  return false;
+}
+const clonePart = p => ({ d: Object.assign({}, p.d), voices: p.voices, priority: p.priority, sampler: p.sampler });
+const voiceUnit = (p, s) => (p.sampler ? SAMPLER_VOICE_COST : voiceCost(p.d, s));
+const partCostOf = (p, s) => p.voices * voiceUnit(p, s);
+const totalCostOf = (ps, s) => ps.reduce((a, p) => a + partCostOf(p, s), 0);
+function buildLadder(parts, s) {
+  const work = parts.map(clonePart), n = work.length, steps = [];
+  const order = work.map((_, i) => i);
+  for (let i = 1; i < n; i++)                             /* lowest priority first; equal priority: the later part first */
+    for (let j = i; j > 0; j--) {
+      const a = work[order[j - 1]], b = work[order[j]];
+      if (b.priority < a.priority || (b.priority === a.priority && order[j] > order[j - 1])) { const t = order[j]; order[j] = order[j - 1]; order[j - 1] = t; } else break;
+    }
+  for (const q of order) if (work[q].voices > 1) { const sv = voiceUnit(work[q], s); applyAction(work[q], 0); steps.push({ part: q, action: 0, saved: sv }); break; }
+  for (const q of order) {
+    for (;;) {
+      let best = -1, bestSaved = 0.001;
+      for (let a = 1; a < ACTIONS.length; a++) {
+        const t = clonePart(work[q]);
+        if (!applyAction(t, a)) continue;
+        const sv = partCostOf(work[q], s) - partCostOf(t, s);
+        if (sv > bestSaved) { bestSaved = sv; best = a; }
+      }
+      if (best < 0) break;
+      applyAction(work[q], best); steps.push({ part: q, action: best, saved: bestSaved });
+    }
+  }
+  for (const q of order) while (work[q].voices > 1) { const sv = voiceUnit(work[q], s); applyAction(work[q], 0); steps.push({ part: q, action: 0, saved: sv }); }
+  return steps;
+}
+function degradedPart(base, idx, ladder, level) {
+  const p = clonePart(base);
+  for (let i = 0; i < level && i < ladder.length; i++) if (ladder[i].part === idx) applyAction(p, ladder[i].action);
+  return p;
+}
+class Governor {                                          /* port of cost/Governor.h: climb fast, descend slowly, never flap */
+  constructor(c) { this.c = Object.assign({ panic: 0.97, enter: 0.85, exit: 0.6, enterBlocks: 64, exitBlocks: 1400, settleBlocks: 48, panicHoldBlocks: 8, smoothing: 1 / 16 }, c || {}); this.reset(); }
+  reset() { this.level = 0; this.ema = 0; this.high = 0; this.low = 0; this.settle = 0; this.panicHold = 0; }
+  climb(max) { this.high = this.low = 0; if (this.level < max) { this.level++; this.settle = this.c.settleBlocks; this.panicHold = this.c.panicHoldBlocks; } }
+  holdFor(blocks) { if (blocks > this.settle) this.settle = blocks; }   /* a released voice still sounds (and costs) until its release has faded */
+  update(load, max) {
+    const c = this.c;
+    this.ema += (load - this.ema) * c.smoothing;
+    if (max < 0) max = 0;
+    if (this.level > max) this.level = max;
+    if (this.panicHold > 0) this.panicHold--;
+    else if (load >= c.panic) { this.climb(max); return this.level; }   /* an overrun acts even while settling */
+    if (this.settle > 0) { this.settle--; return this.level; }
+    if (this.ema >= c.enter) { if (++this.high >= c.enterBlocks) this.climb(max); } else this.high = 0;
+    if (this.level > 0 && this.ema <= c.exit) { if (++this.low >= c.exitBlocks) { this.level--; this.low = 0; this.settle = c.settleBlocks; this.panicHold = 0; } } else this.low = 0;
+    return this.level;
+  }
+}
+
+/* Euclid: hit i of n when (i * k) mod n < k, rotated right by r. E(3,8) = x..x..x. */
+function euclid(n, k, r) {
+  const out = new Array(n).fill(false);
+  if (k <= 0) return out;
+  for (let i = 0; i < n; i++) out[i] = (((((i - r) % n) + n) % n) * k) % n < k;
+  return out;
+}
+
+/* One param: {n: name, v: value, min, max, list?: [names], fmt?: fn}. */
+const P = (n, v, min, max, extra) => Object.assign({ n, v, min, max }, extra || {});
+const WAVES = ["SIN", "TRI", "SAW", "SQR"];
+const MODELS = ["LP", "BP", "HP", "NOTCH", "LADDER", "ACID", "SOVIET", "CLASSIC"];
+function soundPages() {
+  return {
+    OSC1: { title: "OSC 1", acc: "#ff3da6", p: [P("WAVE", 0, 0, 3, { list: WAVES }), P("PD SHAPE", 40, 0, 127), P("PD AMT", 0, 0, 127), P("OCT", 0, -2, 2),
+      P("SEMI", 0, -12, 12), P("FINE", 0, -50, 50), P("LEVEL", 100, 0, 127), P("UNI DET", 0, 0, 127)] },
+    OSC2: { title: "OSC 2", acc: "#ff3da6", p: [P("WAVE", 2, 0, 3, { list: WAVES }), P("PD SHAPE", 40, 0, 127), P("PD AMT", 0, 0, 127), P("OCT", 0, -2, 2),
+      P("SEMI", 7, -12, 12), P("FINE", 6, -50, 50), P("LEVEL", 0, 0, 127), P("SYNC", 0, 0, 127)] },
+    SUB: { title: "SUB / UNISON", acc: "#c96bff", p: [P("SUB LVL", 0, 0, 127), P("SUB OCT", -1, -2, -1), P("NOISE", 0, 0, 127), P("RING", 0, 0, 127),
+      P("UNISON", 1, 1, 4), P("UNI DET", 20, 0, 127), P("UNI BLND", 64, 0, 127), P("WIDTH", 64, 0, 127)] },
+    FLT1: { title: "FILTER 1", acc: "#5ff08a", p: [P("MODEL", 0, 0, 7, { list: MODELS }), P("CUTOFF", 80, 0, 127), P("RESO", 30, 0, 127), P("DRIVE", 0, 0, 127),
+      P("KEYTRK", 40, 0, 127), P("ENV AMT", 40, 0, 127), P("HPF", 0, 0, 127), P("MIX F1/F2", 0, 0, 127)] },
+    FLT2: { title: "FILTER 2", acc: "#5ff08a", p: [P("MODEL", 1, 0, 7, { list: MODELS }), P("CUTOFF", 100, 0, 127), P("RESO", 10, 0, 127), P("DRIVE", 0, 0, 127),
+      P("ROUTE", 0, 0, 1, { list: ["SERIES", "PARALLEL"] }), P("ACTIVE", 0, 0, 1, { list: ["OFF", "ON"] }), P("KEYTRK", 0, 0, 127), P("ENV AMT", 0, 0, 127)] },
+    GRIT: { title: "GRIT", acc: "#ff5d5d", p: [P("BITS", 16, 1, 16), P("COMPAND", 0, 0, 127), P("RATE", 127, 0, 127), P("DRIFT", 0, 0, 127),
+      P("LOOP ERR", 0, 0, 127), P("WOW", 0, 0, 127), P("CLIP", 0, 0, 127), P("MIX", 127, 0, 127)] },
+    AMP: { title: "AMP ENV", acc: "#ffd23d", p: [P("ATTACK", 4, 0, 127), P("DECAY", 50, 0, 127), P("SUSTAIN", 70, 0, 127), P("RELEASE", 40, 0, 127),
+      P("VEL SENS", 80, 0, 127), P("LEVEL", 100, 0, 127), P("PAN", 64, 0, 127), P("VEL>ATK", 0, 0, 127, { fmt: v => Math.round(v / 1.27) + "%" })] },
+    MOD: { title: "MOD", acc: "#9d7bff", p: [P("LFO RATE", 40, 0, 127), P("LFO DEPTH", 0, 0, 127), P("LFO DEST", 0, 0, 3, { list: ["CUTOFF", "PITCH", "AMP", "PD AMT"] }), P("LFO SHAPE", 0, 0, 3, { list: ["SIN", "TRI", "SAW", "SQR"] }),
+      P("ENV>PD", 0, 0, 127), P("ENV>CUT", 0, 0, 127), P("MOD WHL", 64, 0, 127), P("AFTERT", 0, 0, 127)] },
+    GLOB: { title: "GLOBAL", acc: "#19d3e6", p: [P("MASTER", 100, 0, 127), P("BEND RNG", 2, 0, 24), P("MIDI CH", 0, 0, 16, { fmt: v => v === 0 ? "OMNI" : "CH" + v }), P("TUNE", 0, -50, 50),
+      P("CLOCK", 0, 0, 2, { list: ["INT", "MIDI", "SYNC"] }), P("PREVIEW", 80, 0, 127), P("-", 0, 0, 0), P("-", 0, 0, 0)] },
+  };
+}
+
+/* ---------- chords and arpeggio ---------- */
+const CHORDS = [["OFF", [0]], ["MAJ", [0, 4, 7]], ["MIN", [0, 3, 7]], ["SUS2", [0, 2, 7]], ["SUS4", [0, 5, 7]], ["DIM", [0, 3, 6]], ["AUG", [0, 4, 8]],
+  ["MAJ7", [0, 4, 7, 11]], ["MIN7", [0, 3, 7, 10]], ["DOM7", [0, 4, 7, 10]], ["MIN9", [0, 3, 7, 10, 14]], ["5TH", [0, 7]], ["OCT", [0, 12]]];
+const ARP_MODES = ["OFF", "UP", "DOWN", "UP/DN", "RAND"];
+const ARP_RATES = [1, 2, 3, 4, 6, 8];   /* notes per step */
+function chordNotes(root, chord, inv, spread) {
+  let n = CHORDS[chord][1].slice();
+  for (let i = 0; i < inv && n.length > 1; i++) { const lo = n.shift(); n.push(lo + 12); }   /* inversion: lift the lowest note an octave */
+  if (spread) n = n.map((x, i) => (i % 2 ? x + 12 : x));                                      /* open voicing: every other note up an octave */
+  return n.sort((a, b) => a - b).map(x => root + x);
+}
+function arpSeq(notes, mode, oct, count, rnd) {
+  const pool = [];
+  for (let o = 0; o < oct; o++) notes.forEach(n => pool.push(n + 12 * o));
+  let order = pool;
+  if (mode === 2) order = pool.slice().reverse();
+  else if (mode === 3) { order = pool.concat(pool.slice(1, -1).reverse()); if (!order.length) order = pool; }
+  const out = [];
+  for (let i = 0; i < count; i++) out.push(mode === 4 ? pool[Math.floor(rnd() * pool.length)] : order[i % order.length]);
+  return out;
+}
+
+/* ---------- sampler: small drum samples synthesised here (the real firmware reads WAV files from the SD card) ---------- */
+const SR = 44100;
+const SAMPLES = [];
+const SAMPLE_CATS = ["ALL", "KICK", "SNARE", "HAT", "PERC", "BASS", "FX"];
+(function buildSamples() {
+  let seed = 20251026;
+  const rnd = () => ((seed = (seed * 1664525 + 1013904223) >>> 0) / 4294967296) * 2 - 1;
+  const TAU = Math.PI * 2;
+  const add = (n, c, len, fn) => {
+    const d = new Float32Array(Math.floor(len * SR)), st = {};
+    for (let i = 0; i < d.length; i++) d[i] = fn(i / SR, st);
+    let m = 0; for (let i = 0; i < d.length; i++) m = Math.max(m, Math.abs(d[i]));
+    for (let i = 0; i < d.length; i++) d[i] = d[i] / ((m || 1) * 1.05);
+    SAMPLES.push({ n, c, d });
+  };
+  const hp = (st, x, a) => { st.l = (st.l || 0) * a + x * (1 - a); return x - st.l; };
+  add("Kick 808", "KICK", 0.7, (t, s) => { s.p = (s.p || 0) + (45 + 120 * Math.exp(-t * 28)) / SR; return Math.sin(TAU * s.p) * Math.exp(-t * 4.5) + rnd() * Math.exp(-t * 500) * 0.25; });
+  add("Kick Punch", "KICK", 0.35, (t, s) => { s.p = (s.p || 0) + (60 + 200 * Math.exp(-t * 45)) / SR; return Math.tanh(1.6 * Math.sin(TAU * s.p)) * Math.exp(-t * 11); });
+  add("Snare Crack", "SNARE", 0.4, (t, s) => { s.p = (s.p || 0) + (185 + 60 * Math.exp(-t * 40)) / SR; return Math.sin(TAU * s.p) * Math.exp(-t * 22) * 0.7 + hp(s, rnd(), 0.6) * Math.exp(-t * 16); });
+  add("Clap Wide", "SNARE", 0.4, (t, s) => { let e = 0; for (let k = 0; k < 3; k++) { const u = t - k * 0.011; if (u > 0) e += Math.exp(-u * 160); } return hp(s, rnd(), 0.55) * (e * 0.6 + Math.exp(-Math.max(0, t - 0.033) * 22) * (t > 0.033 ? 1 : 0)); });
+  add("Rim Shot", "PERC", 0.12, (t) => Math.sin(TAU * 1750 * t) * Math.exp(-t * 180) * 0.6 + rnd() * Math.exp(-t * 300) * 0.5);
+  add("Hat Closed", "HAT", 0.1, (t, s) => hp(s, rnd(), 0.9) * Math.exp(-t * 70));
+  add("Hat Open", "HAT", 0.4, (t, s) => hp(s, rnd(), 0.9) * Math.exp(-t * 10));
+  add("Crash", "HAT", 1.4, (t, s) => hp(s, rnd(), 0.85) * Math.exp(-t * 3));
+  add("Conga", "PERC", 0.3, (t, s) => { s.p = (s.p || 0) + (330 + 80 * Math.exp(-t * 40)) / SR; return Math.sin(TAU * s.p) * Math.exp(-t * 14); });
+  add("Tom Low", "PERC", 0.5, (t, s) => { s.p = (s.p || 0) + (118 + 70 * Math.exp(-t * 30)) / SR; return Math.sin(TAU * s.p) * Math.exp(-t * 7); });
+  add("Bass Stab", "BASS", 0.7, (t, s) => { const ph = (55 * t) % 1; const x = 2 * ph - 1; s.y = (s.y || 0) + (x - (s.y || 0)) * (0.02 + 0.3 * Math.exp(-t * 9)); return s.y * Math.exp(-t * 3.5); });
+  add("FX Sweep", "FX", 1.1, (t, s) => { s.y = (s.y || 0) + (rnd() - (s.y || 0)) * (0.01 + 0.4 * t); return s.y * Math.pow(Math.sin(Math.PI * Math.min(1, t / 1.1)), 2); });
+})();
+function samplerPages() {
+  const sp = soundPages();
+  return {
+    SMP: { title: "SAMPLE", acc: "#ff7e5f", p: [P("SAMPLE", 0, 0, SAMPLES.length - 1, { list: SAMPLES.map(x => x.n) }), P("START", 0, 0, 127), P("END", 127, 0, 127), P("PLAY", 0, 0, 2, { list: ["ONESHOT", "GATED", "LOOP"] }),
+      P("PITCH", 0, -24, 24), P("FINE", 0, -50, 50), P("REVERSE", 0, 0, 1, { list: ["OFF", "ON"] }), P("LEVEL", 110, 0, 127)] },
+    FLT1: { title: "FILTER", acc: "#5ff08a", p: [P("MODEL", 0, 0, 2, { list: ["LP", "BP", "HP"] }), P("CUTOFF", 127, 0, 127), P("RESO", 10, 0, 127), P("DRIVE", 0, 0, 127),
+      P("ENV AMT", 0, 0, 127), P("HPF", 0, 0, 127), P("-", 0, 0, 0), P("-", 0, 0, 0)] },
+    AMP: { title: "AMP ENV", acc: "#ffd23d", p: [P("ATTACK", 0, 0, 127), P("DECAY", 60, 0, 127), P("SUSTAIN", 127, 0, 127), P("RELEASE", 30, 0, 127),
+      P("VEL SENS", 80, 0, 127), P("LEVEL", 110, 0, 127), P("PAN", 64, 0, 127), P("CHOKE", 0, 0, 4, { list: ["OFF", "G1", "G2", "G3", "G4"] })] },
+    MOD: sp.MOD, GRIT: sp.GRIT,
+  };
+}
+
+const PRESETS = [
+  { n: "Algo Knock", c: "BASS", set: { OSC1: [0, 2], FLT1: [1, 52, 2, 20], AMP: [0, 3, 1, 28, 6] } },
+  { n: "Iron Squelch", c: "BASS", set: { OSC1: [0, 2], FLT1: [1, 40, 3, 70], AMP: [0, 3, 1, 36, 8] } },
+  { n: "Sub Pressure", c: "BASS", set: { OSC1: [0, 0], FLT1: [1, 36, 1, 0], AMP: [0, 4, 3, 50, 10] } },
+  { n: "Glass Wide", c: "LEAD", set: { OSC1: [0, 3], FLT1: [1, 100, 2, 10], AMP: [0, 5, 2, 60, 12] } },
+  { n: "Saw Stack", c: "LEAD", set: { OSC1: [0, 2], FLT1: [1, 88, 3, 14], AMP: [1, 6, 2, 70, 16] } },
+  { n: "Pluck Fifth", c: "PLUCK", set: { OSC1: [0, 3], FLT1: [1, 70, 4, 60], AMP: [0, 3, 0, 20, 7] } },
+  { n: "Tape Warble", c: "PAD", set: { OSC1: [0, 1], FLT1: [1, 70, 1, 4], AMP: [40, 70, 6, 90, 60] } },
+  { n: "Soft Sheen", c: "PAD", set: { OSC1: [0, 1], FLT1: [1, 64, 1, 4], AMP: [50, 60, 6, 100, 70] } },
+  { n: "Dimension Bloom", c: "PAD", set: { OSC1: [0, 2], FLT1: [1, 58, 2, 8], AMP: [60, 80, 7, 110, 80] } },
+  { n: "Bare Slab", c: "STAB", set: { OSC1: [0, 2], FLT1: [1, 84, 2, 30], AMP: [0, 4, 2, 24, 10] } },
+];
+const CATS = ["ALL", "BASS", "LEAD", "PAD", "PLUCK", "STAB"];
+
+function mkLane(part, root, n, k, r, gate) {
+  return { part, root, n, k, r, eu: true, level: 100, mute: false, gate: gate || 20, smp: { pages: samplerPages() }, arp: { mode: 0, rate: 1, oct: 1, gate: 60 },
+    st: Array.from({ length: 32 }, () => ({ ov: false, note: 0, vel: 100, gate: gate || 20, prob: 100, locks: {}, chord: 0, inv: 0, spread: 0, strum: 0 })) };
+}
+/* An empty pattern: the same lanes, parts and roots as P1, no Euclid rhythm and no steps. */
+function emptyPattern() { const p = mkPattern(0); p.forEach(ln => { ln.eu = false; ln.k = 0; }); return p; }
+function mkPattern(seed) {
+  const s = [
+    [mkLane(0, 36, 16, 4, 0, 18), mkLane(0, 43, 16, 3, 2, 14), mkLane(0, 39, 16, 5, 1, 12),
+     mkLane(1, 72, 16, 7, 0, 10), mkLane(1, 75, 12, 5, 0, 10), mkLane(1, 79, 16, 3, 5, 14), mkLane(1, 82, 11, 4, 0, 10),
+     mkLane(2, 60, 16, 2, 0, 90), mkLane(2, 67, 16, 1, 8, 110), mkLane(2, 63, 8, 1, 0, 60)],
+    [mkLane(0, 36, 16, 5, 0, 16), mkLane(0, 34, 16, 2, 0, 20), mkLane(0, 41, 14, 3, 1, 12),
+     mkLane(1, 70, 16, 9, 0, 8), mkLane(1, 74, 16, 5, 3, 8), mkLane(1, 77, 12, 4, 0, 10), mkLane(1, 81, 16, 2, 0, 12),
+     mkLane(2, 58, 16, 1, 0, 120), mkLane(2, 65, 16, 2, 4, 80), mkLane(2, 62, 16, 0, 0, 60)],
+    [mkLane(0, 38, 16, 3, 0, 16), mkLane(0, 45, 8, 3, 0, 12), mkLane(0, 41, 16, 7, 0, 10),
+     mkLane(1, 69, 16, 6, 2, 10), mkLane(1, 72, 16, 4, 0, 12), mkLane(1, 76, 9, 3, 0, 10), mkLane(1, 79, 16, 5, 1, 8),
+     mkLane(2, 57, 16, 1, 0, 100), mkLane(2, 64, 16, 1, 8, 100), mkLane(2, 60, 16, 0, 0, 60)],
+    [mkLane(0, 36, 16, 8, 0, 8), mkLane(0, 36, 16, 3, 4, 8), mkLane(0, 48, 16, 5, 0, 8),
+     mkLane(1, 84, 16, 11, 0, 4), mkLane(1, 79, 16, 6, 2, 4), mkLane(1, 91, 16, 4, 0, 4), mkLane(1, 72, 16, 8, 3, 6),
+     mkLane(2, 60, 16, 0, 0, 60), mkLane(2, 60, 16, 0, 0, 60), mkLane(2, 60, 16, 0, 0, 60)],
+  ];
+  return s[seed];
+}
+
+const S = {
+  mode: "PLAY", page: "OSC1", playing: false, bpm: 118, swing: 12, pat: 0,
+  lock: null, held: null, heldTimer: null, lockEdited: false, stepSub: 0, back: { mode: "PLAY", page: "OSC1" },
+  sel: 0, part: 0, stepPage: 0, cursor: 0, gstep: -1, lastClear: 0, clip: null,
+  parts: [0, 1, 2].map(i => ({ name: PART_NAME[i], type: "CATHODE", voices: 4, pages: soundPages(), preset: "", level: 100, active: 0, priority: [2, 1, 3][i] })),
+  patterns: Array.from({ length: 16 }, (_, i) => (i < 4 ? mkPattern(i) : emptyPattern())),   /* P1-P4 with content, P5-P16 empty */
+  nextPat: null, pstep: 0,   /* a pattern picked while playing waits here for the end of the current one; pstep = step within the pattern */
+  songs: Array.from({ length: 8 }, (_, i) => ({ rows: i === 0 ? [{ pat: 0, rep: 2 }, { pat: 1, rep: 2 }, { pat: 2, rep: 2 }, { pat: 3, rep: 1 }] : [], loop: true })),
+  song: { idx: 0, row: 0, playing: false, playRow: 0, repLeft: 0, jumpTo: null },
+  slot: 0, loadedSlot: null,
+  browse: { cat: 0, idx: 0, loaded: ["", "", ""] },
+  master: 100, shift: false, audio: false, legend: false, mixSub: 0, key: 0, scale: 0,
+  deg: { gov: new Governor(), ladder: [], sig: "", auto: true, scale: 100, stress: false, load: 0 },
+};
+const lanes = () => S.patterns[S.pat];
+const lane = () => lanes()[S.sel];
+const lockTarget = () => S.lock ? lanes()[S.lock.lane].st[S.lock.idx] : null;
+const lockCount = st => Object.keys(st.locks).length;
+const base = ln => ln.eu ? euclid(ln.n, S.fill ? Math.min(ln.n, ln.k * 2) : ln.k, ln.r) : new Array(ln.n).fill(false);   /* FILL held: hits doubled */
+const trig = (ln, i) => (base(ln)[i % ln.n] || false) !== !!ln.st[i].ov;
+
+function applyPreset(pg, pr) {
+  const put = (page, vals) => vals.forEach((v, i) => { if (v !== undefined && v !== null) pg[page].p[i].v = v; });
+  if (pr.set.OSC1) put("OSC1", [pr.set.OSC1[0], null, null, null, null, null, null].map((x, i) => i === 0 ? pr.set.OSC1[1] : null));
+  if (pr.set.FLT1) { const f = pr.set.FLT1; pg.FLT1.p[0].v = f[0]; pg.FLT1.p[1].v = f[1]; pg.FLT1.p[2].v = f[2]; pg.FLT1.p[5].v = f[3]; }
+  if (pr.set.AMP) { const a = pr.set.AMP; pg.AMP.p[0].v = a[0]; pg.AMP.p[1].v = a[1]; pg.AMP.p[2].v = a[2] * 12; pg.AMP.p[3].v = a[3]; pg.AMP.p[4].v = 70 + a[4]; }
+}
+function loadPreset(partIdx, pr) {
+  applyPreset(S.parts[partIdx].pages, pr);
+  S.parts[partIdx].preset = pr.n;
+  S.browse.loaded[partIdx] = pr.n;
+}
+loadPreset(0, PRESETS[0]); loadPreset(1, PRESETS[3]); loadPreset(2, PRESETS[7]);
+S.parts[0].voices = 2; S.parts[1].voices = 2;   /* voices are a part setting (MIXER), not a sound parameter */
+S.parts[1].pages.FLT1.p[1].v = 96; S.parts[2].pages.OSC1.p[0].v = 1;
+/* Part C is the sampler: lanes 8-10 are Kick, Snare and a closed Hat, each lane its own sample (drum mode) */
+S.parts[2].type = "SAMPLER"; S.parts[2].voices = 4; S.parts[2].preset = "";
+S.patterns.forEach((pat, pi) => {
+  [[0, [4, 5, 3, 8][pi] || 0, 0], [2, [2, 2, 2, 3][pi] || 0, 4], [5, [7, 9, 6, 11][pi] || 0, 0]].forEach(([smp, k, r], j) => {
+    const ln = pat[7 + j];
+    ln.n = 16; ln.k = k; ln.r = r; ln.gate = 127; ln.st.forEach(st => { st.gate = 127; });
+    ln.smp.pages.SMP.p[0].v = smp;
+    if (smp === 5) ln.smp.pages.AMP.p[7].v = 1;   /* hat in choke group G1 */
+  });
+});
+
+const isSampler = pi => S.parts[pi].type === "SAMPLER";
+const partVoices = i => S.parts[i].voices;
+const setPartVoices = (i, v) => { S.parts[i].voices = v; };
+/* ---- the cost model wired to the patch: the descriptor is read from the part's pages (and, per note, from its p-locks) ---- */
+const MODEL_COST = ["LowPass", "BandPass", "HighPass", "Notch", "Ladder24", "Acid", "SovietLp", "ClassicLp24"];   /* the MODEL knob, in order */
+const fModel = v => fIdx(MODEL_COST[v]);
+const menuOf = f => { const i = MODEL_COST.indexOf(FILTER_NAMES[f]); return i >= 0 ? i : 4; };                  /* a light fallback (Ladder12 too) shows as LADDER */
+const NO_DESC = { a0: 1, a1: 0, u0: 1, u1: 1, f1: 0, f2: 0, f2On: 0, route: 0, drive: 0, fm: 0, ring: 0, sync: 0, width: 0, comp: 0, fold: 0 };
+function descOf(pi, locks) {
+  const pg = S.parts[pi].pages, g = (k, i) => (locks && locks[k + ":" + i] !== undefined ? locks[k + ":" + i] : pg[k].p[i].v), u = g("SUB", 4);
+  return { a0: 1, a1: g("OSC2", 6) > 0 ? 1 : 0, u0: u, u1: 1, f1: fModel(g("FLT1", 0)), f2: fModel(g("FLT2", 0)), f2On: g("FLT2", 5) > 0 ? 1 : 0, route: g("FLT2", 4),
+    drive: g("FLT1", 3) > 0 ? 1 : 0, fm: 0, ring: g("SUB", 3) > 0 ? 1 : 0, sync: g("OSC2", 7) > 0 ? 1 : 0, width: u > 1 && g("SUB", 7) > 0 ? 1 : 0, comp: g("GRIT", 1) > 0 ? 1 : 0, fold: 0 };
+}
+const partDesc = i => ({ d: isSampler(i) ? Object.assign({}, NO_DESC) : descOf(i), voices: partVoices(i), priority: S.parts[i].priority, sampler: isSampler(i) });
+const partCost = i => partCostOf(partDesc(i));
+const voiceTotal = () => totalCostOf([0, 1, 2].map(partDesc));   /* in CATHODE-voice units, as set (before any degrade) */
+/* the degrade ladder is rebuilt whenever the cost-relevant settings change; a rebuild resets the governor, as on the firmware */
+function degSync() {
+  const list = [0, 1, 2].map(partDesc), sig = JSON.stringify(list), dg = S.deg;
+  if (sig !== dg.sig) { dg.sig = sig; dg.ladder = buildLadder(list, FW_COST); dg.gov.reset(); }
+  return list;
+}
+const degLevel = () => (S.deg.auto ? S.deg.gov.level : 0);
+function effPart(i) { const list = degSync(); return degradedPart(list[i], i, S.deg.ladder, degLevel()); }
+const effTotal = () => { const list = degSync(); return totalCostOf(list.map((b, i) => degradedPart(b, i, S.deg.ladder, degLevel()))); };
+function degStep(blocks, used) {                       /* feed the governor: load = voices sounding x their cost x 0.14 (budget share per voice unit) x CPU scale */
+  const list = degSync(), dg = S.deg;
+  if (!dg.auto) { dg.gov.reset(); dg.load = 0; return dg.gov.level; }
+  const eff = list.map((b, i) => degradedPart(b, i, dg.ladder, dg.gov.level));
+  const act = eff.reduce((a, p, i) => a + Math.min(dg.stress ? p.voices : (used ? used(i) : 0), p.voices) * voiceUnit(p, FW_COST), 0);
+  dg.load = act * 0.14 * dg.scale / 100;
+  for (let b = 0; b < blocks; b++) dg.gov.update(dg.load, dg.ladder.length);
+  return dg.gov.level;
+}
+const usedVoices = i => (ctx && buses[i] ? buses[i].voices.filter(v => v.end > ctx.currentTime).length : 0);
+function degDescribe(step) { return PART_NAME[step.part] + ": " + ACTIONS[step.action] + " (-" + step.saved.toFixed(2) + ")"; }
+/* knob badge: what this setting adds to the voice, shown while it is on */
+function costBadge(pi, page, i) {
+  if (isSampler(pi)) return "";
+  const d = descOf(pi), c0 = voiceCost(d), t = Object.assign({}, d);
+  const off = { "SUB:3": () => { t.ring = 0; }, "SUB:4": () => { t.u0 = 1; }, "SUB:7": () => { t.width = 0; }, "OSC2:7": () => { t.sync = 0; }, "OSC2:6": () => { t.a1 = 0; },
+    "FLT1:3": () => { t.drive = 0; }, "FLT2:5": () => { t.f2On = 0; }, "GRIT:1": () => { t.comp = 0; },
+    "FLT1:0": () => { t.f1 = lightFallback(t.f1); t.drive = d.drive; }, "FLT2:0": () => { t.f2 = lightFallback(t.f2); } }[page + ":" + i];
+  if (!off) return "";
+  off();
+  const dl = c0 - voiceCost(t);
+  if (page === "FLT2" && i === 0 && !d.f2On) return "";
+  return dl > 0.004 ? "+" + dl.toFixed(2).replace(/^0/, "") : "";
+}
+const menuHeavy = v => isHeavyF(fModel(v));   /* from the measured table, not from the menu position */
+/* the one-heavy-filter rule on the knobs: the filter you just chose wins, the other one falls back to its light twin */
+function enforceHeavy(pi, page, i) {
+  const pg = S.parts[pi].pages, d = descOf(pi);
+  if (heavyRuleOk(d)) return false;
+  if (page === "FLT1") { pg.FLT2.p[0].v = menuOf(lightFallback(d.f2)); toast("ONE HEAVY FILTER PER LANE: FILTER 2 > " + MODELS[pg.FLT2.p[0].v]); }
+  else if (page === "FLT2" && i === 0) { pg.FLT1.p[0].v = menuOf(lightFallback(d.f1)); toast("ONE HEAVY FILTER PER LANE: FILTER 1 > " + MODELS[pg.FLT1.p[0].v]); }
+  else { pg.FLT2.p[0].v = menuOf(lightFallback(d.f2)); toast("ONE HEAVY FILTER PER LANE: FILTER 2 > " + MODELS[pg.FLT2.p[0].v]); }
+  return true;
+}
+/* the same rule for a p-lock: the locked value that would make a second heavy filter becomes its light fallback (cost/CostModel.h allowedLock) */
+function lockedValue(pi, key, val, locks) {
+  if (key !== "FLT1:0" && key !== "FLT2:0" && key !== "FLT2:5") return val;
+  const t = Object.assign({}, locks); t[key] = val;
+  if (heavyRuleOk(descOf(pi, t))) return val;
+  if (key === "FLT2:5") { toast("ONE HEAVY FILTER PER LANE: LOCK STAYS OFF"); return 0; }
+  const fb = menuOf(lightFallback(fModel(val))); toast("ONE HEAVY FILTER PER LANE: LOCK > " + MODELS[fb]); return fb;
+}
+const curLane = () => { const l = lane(); return l.part === S.part ? l : (lanes().find(x => x.part === S.part) || l); };
+/* the sound pages being edited: a CATHODE part has them per part, a sampler part per lane (each lane is its own sample) */
+const curPages = () => (isSampler(S.part) ? Object.assign({}, curLane().smp.pages, { GLOB: S.parts[S.part].pages.GLOB }) : S.parts[S.part].pages);
+const SOUND_KEYS = { osc1: ["OSC1", "SMP"], osc2: ["OSC2", null], sub: ["SUB", null], flt1: ["FLT1", "FLT1"], flt2: ["FLT2", null], grit: ["GRIT", "GRIT"], amp: ["AMP", "AMP"], mod: ["MOD", "MOD"], glob: ["GLOB", "GLOB"] };
+function ensurePage() {
+  if (S.mode !== "SOUND" || curPages()[S.page]) return;
+  S.page = (isSampler(S.part) ? { OSC1: "SMP", OSC2: "SMP", SUB: "SMP", FLT2: "FLT1" } : { SMP: "OSC1" })[S.page] || "AMP";
+}
+const pv = (partIdx, page, i) => S.parts[partIdx].pages[page].p[i].v;
+/* Values in the units a player thinks in (the knob and its bar still move over the same 0-127 steps). By parameter name, so the synth and
+   the sampler pages share them; a parameter's own `fmt` or `list` wins. */
+const pct = v => Math.round(v / 1.27) + "%";
+const fmtHz = h => (h >= 1000 ? (h / 1000).toFixed(h >= 10000 ? 0 : 1) + "k" : Math.round(h)) + " Hz";
+const fmtMs = m => (m >= 1000 ? (m / 1000).toFixed(m >= 10000 ? 0 : 2) + " s" : Math.round(m) + " ms");
+const signed = (v, u) => (v > 0 ? "+" : "") + v + u;
+const UNITS = {
+  "CUTOFF": v => fmtHz(cutHz(v)), "HPF": v => (v === 0 ? "OFF" : fmtHz(cutHz(v) / 8)), "RESO": pct,
+  "ATTACK": v => fmtMs(ms(v)), "DECAY": v => fmtMs(ms(v)), "RELEASE": v => fmtMs(ms(v)), "SUSTAIN": pct,
+  "PAN": v => (v === 64 ? "C" : v < 64 ? "L" + Math.round((64 - v) / 0.64) : "R" + Math.round((v - 64) / 0.63)),
+  "OCT": v => signed(v, " oct"), "SUB OCT": v => signed(v, " oct"), "SEMI": v => signed(v, " st"), "PITCH": v => signed(v, " st"),
+  "FINE": v => signed(v, " ct"), "TUNE": v => signed(v, " ct"), "BEND RNG": v => "±" + v + " st", "BITS": v => v + " bit",
+  "RATE": v => (1 + (v / 127) * 43.1).toFixed(1) + " kHz", "LFO RATE": v => (0.2 + (v / 127) * 12).toFixed(1) + " Hz", "UNISON": v => "x" + v,
+  "START": pct, "END": pct,
+};
+["PD SHAPE", "PD AMT", "LEVEL", "UNI DET", "SYNC", "SUB LVL", "NOISE", "RING", "UNI BLND", "WIDTH", "DRIVE", "KEYTRK", "ENV AMT", "MIX F1/F2",
+ "COMPAND", "DRIFT", "LOOP ERR", "WOW", "CLIP", "MIX", "VEL SENS", "LFO DEPTH", "ENV>PD", "ENV>CUT", "MOD WHL", "AFTERT", "MASTER", "PREVIEW"].forEach(n => { UNITS[n] = pct; });
+const fmtP = p => p.list ? p.list[p.v] : p.fmt ? p.fmt(p.v) : UNITS[p.n] ? UNITS[p.n](p.v) : (p.min < 0 ? (p.v > 0 ? "+" : "") + p.v : String(p.v));
+
+/* ============================== audio ============================== */
+let ctx = null, master = null, buses = [];
+function ensureAudio() {
+  if (ctx) return;
+  try {
+    ctx = new (window.AudioContext || window.webkitAudioContext)();
+    master = ctx.createGain();
+    const comp = ctx.createDynamicsCompressor();
+    master.connect(comp); comp.connect(ctx.destination);
+    buses = [0, 1, 2].map(() => { const g = ctx.createGain(); g.connect(master); return { g, voices: [] }; });
+  } catch (e) { ctx = null; }
+}
+const cutHz = v => 30 * Math.pow(16000 / 30, v / 127);
+const ms = v => 2 + Math.pow(v / 127, 2.2) * 2500;
+function playNote(pi, midi, vel, gateSec, when, locks, pagesOverride) {
+  midi = scaleNote(midi, S.key, S.scale);   /* the project scale (synth parts only; playSample is the drum path) */
+  if (!ctx || !S.audio) return;
+  const pg = pagesOverride || S.parts[pi].pages, bus = buses[pi];   /* pagesOverride: a preset auditioned in BROWSE, not loaded */
+  const t0 = ctx.currentTime + Math.max(0, when);
+  const eff = effPart(pi), maxV = eff.voices;                  /* the degrade ladder may have released voices or bypassed options */
+  bus.voices = bus.voices.filter(v => v.end > t0);
+  while (bus.voices.length >= maxV) { const o = bus.voices.shift(); try { o.env.gain.cancelScheduledValues(t0); o.env.gain.setTargetAtTime(0, t0, 0.01); o.stop(t0 + 0.08); } catch (e) {} }
+  // p-locks: a locked value replaces the part's value for THIS note only
+  const pgv = {};
+  Object.keys(pg).forEach(k => { pgv[k] = pg[k].p.map((p, i) => ({ v: locks && locks[k + ":" + i] !== undefined ? locks[k + ":" + i] : p.v })); });
+  const o1 = pgv.OSC1, o2 = pgv.OSC2, f1 = pgv.FLT1, am = pgv.AMP, sub = pgv.SUB, md = pgv.MOD;
+  if (eff.d.u0 <= 1 && pg.SUB.p[4].v > 1) o1[7].v = 0;   /* unison bypassed: no detuned copy */
+  const tune = (pg.GLOB.p[3].v) / 100;
+  const hz = (m, oct, semi, fine) => 440 * Math.pow(2, (m - 69 + oct * 12 + semi + (fine + tune * 100) / 100) / 12);
+  const env = ctx.createGain(), filt = ctx.createBiquadFilter();
+  const ftype = [ "lowpass", "bandpass", "highpass", "notch", "lowpass", "lowpass", "lowpass", "lowpass" ][f1[0].v];
+  filt.type = ftype; filt.Q.value = 0.5 + (f1[2].v / 127) * 16;
+  const key = 1 + ((midi - 60) / 12) * (f1[4].v / 127);
+  const cut = clamp(cutHz(f1[1].v) * Math.max(0.2, key), 40, 18000);
+  const peak = clamp(cut * (1 + (f1[5].v / 127) * 6), 40, 18000);
+  filt.frequency.setValueAtTime(peak, t0);
+  filt.frequency.exponentialRampToValueAtTime(cut, t0 + ms(am[1].v) / 1000 * 0.8 + 0.02);
+  const oscs = [];
+  const mk = (type, f, lvl, det) => { const o = ctx.createOscillator(), g = ctx.createGain(); o.type = type; o.frequency.value = f; o.detune.value = det || 0; g.gain.value = lvl; o.connect(g); g.connect(filt); oscs.push(o); return o; };
+  const wt = ["sine", "triangle", "sawtooth", "square"];
+  mk(wt[o1[0].v], hz(midi, o1[3].v, o1[4].v, o1[5].v), o1[6].v / 127 * 0.5, 0);
+  if (o1[7].v > 0) mk(wt[o1[0].v], hz(midi, o1[3].v, o1[4].v, o1[5].v), o1[6].v / 127 * 0.35, o1[7].v / 127 * 30);
+  if (o2[6].v > 0) mk(wt[o2[0].v], hz(midi, o2[3].v, o2[4].v, o2[5].v), o2[6].v / 127 * 0.5, 0);
+  if (sub[0].v > 0) mk("sine", hz(midi, sub[1].v, 0, 0), sub[0].v / 127 * 0.6, 0);
+  if (md[1].v > 0 && (md[2].v === 1 || md[2].v === 0)) {
+    const l = ctx.createOscillator(), lg = ctx.createGain(); l.frequency.value = 0.2 + (md[0].v / 127) * 12; l.type = ["sine", "triangle", "sawtooth", "square"][md[3].v];
+    if (md[2].v === 0) lg.gain.value = (md[1].v / 127) * cut * 0.8, l.connect(lg), lg.connect(filt.frequency);
+    else lg.gain.value = (md[1].v / 127) * 80, l.connect(lg), oscs.forEach(o => lg.connect(o.detune));
+    l.start(t0); oscs.push(l);
+  }
+  const A = (ms(am[0].v) / 1000) * (1 - (am[7].v / 127) * (vel / 127) * 0.9), D = ms(am[1].v) / 1000, Sus = am[2].v / 127, R = ms(am[3].v) / 1000;   /* VEL>ATK: a harder hit attacks faster */
+  const lvl = (vel / 127) * (1 - am[4].v / 127 * 0.6 + (vel / 127) * am[4].v / 127 * 0.6) * (am[5].v / 127) * (S.parts[pi].level / 127);
+  const hold = Math.max(gateSec, A + 0.01);
+  env.gain.setValueAtTime(0.0001, t0);
+  env.gain.linearRampToValueAtTime(lvl, t0 + A);
+  env.gain.setTargetAtTime(lvl * Sus, t0 + A, D / 3 + 0.001);
+  env.gain.cancelScheduledValues(t0 + hold);
+  env.gain.setTargetAtTime(0, t0 + hold, R / 3 + 0.005);
+  filt.connect(env); env.connect(bus.g);
+  const end = t0 + hold + R * 1.5 + 0.1;
+  oscs.forEach(o => { try { if (o.context && o !== null) { if (!o._started) { o.start(t0); } o.stop(end); } } catch (e) {} });
+  const v = { env, end, stop: t => { try { oscs.forEach(o => o.stop(t)); } catch (e) {} } };
+  bus.voices.push(v);
+  S.parts[pi].active = bus.voices.length;
+  setTimeout(() => { bus.voices = bus.voices.filter(x => x !== v); }, (end - ctx.currentTime) * 1000 + 50);
+  bus.g.gain.value = 1; master.gain.value = (S.master / 127) * 0.7;
+}
+
+/* ----- sampler voice ----- */
+const bufCache = new Map();
+function bufFor(idx, rev) {
+  const key = idx + (rev ? "r" : "");
+  if (bufCache.has(key)) return bufCache.get(key);
+  const d = SAMPLES[idx].d, b = ctx.createBuffer(1, d.length, SR), ch = b.getChannelData(0);
+  if (rev) for (let i = 0; i < d.length; i++) ch[i] = d[d.length - 1 - i]; else ch.set(d);
+  bufCache.set(key, b);
+  return b;
+}
+function playSample(ln, semis, vel, gateSec, when, locks) {
+  if (!ctx || !S.audio) return;
+  const pi = ln.part, pgs = ln.smp.pages, bus = buses[pi];
+  const pgv = {};
+  Object.keys(pgs).forEach(k => { pgv[k] = pgs[k].p.map((p, i) => ({ v: locks && locks[k + ":" + i] !== undefined ? locks[k + ":" + i] : p.v })); });   /* p-locks */
+  const sm = pgv.SMP, fl = pgv.FLT1, am = pgv.AMP;
+  const t0 = ctx.currentTime + Math.max(0, when);
+  const idx = sm[0].v, dur = SAMPLES[idx].d.length / SR, rev = sm[6].v === 1, mode = sm[3].v;
+  const sA = (sm[1].v / 127) * dur, sE = Math.max(sA + 0.004, Math.min(dur, (sm[2].v / 127) * dur)), region = sE - sA;
+  const rate = Math.pow(2, (sm[4].v + sm[5].v / 100 + semis) / 12);
+  const grp = am[7].v;
+  bus.voices = bus.voices.filter(v => v.end > t0);
+  bus.voices.forEach(v => { if (grp > 0 && v.grp === grp) { v.fade(t0); v.end = t0; } });            /* choke group: a new hit cuts the old one */
+  bus.voices = bus.voices.filter(v => v.end > t0);
+  while (bus.voices.length >= S.parts[pi].voices) bus.voices.shift().fade(t0);                        /* out of voices: steal the oldest */
+  const src = ctx.createBufferSource();
+  src.buffer = bufFor(idx, rev); src.playbackRate.value = rate;
+  const startOff = rev ? dur - sE : sA;                                                               /* a reversed buffer is read from the mirrored position */
+  const filt = ctx.createBiquadFilter(); filt.type = ["lowpass", "bandpass", "highpass"][fl[0].v]; filt.Q.value = 0.5 + (fl[2].v / 127) * 14;
+  const cut = clamp(cutHz(fl[1].v), 40, 18000), peak = clamp(cut * (1 + (fl[4].v / 127) * 6), 40, 18000);
+  filt.frequency.setValueAtTime(peak, t0); filt.frequency.exponentialRampToValueAtTime(cut, t0 + 0.12);
+  const env = ctx.createGain(), pan = ctx.createStereoPanner ? ctx.createStereoPanner() : null;
+  if (pan) pan.pan.value = clamp((am[6].v - 64) / 64, -1, 1);
+  const A = ms(am[0].v) / 1000, D = ms(am[1].v) / 1000, Su = am[2].v / 127, R = ms(am[3].v) / 1000;
+  const lvl = (vel / 127) * (1 - (am[4].v / 127) * 0.6 + (vel / 127) * (am[4].v / 127) * 0.6) * (sm[7].v / 127) * (am[5].v / 127) * (S.parts[pi].level / 127) * 0.9;
+  const hold = mode === 0 ? region / rate : Math.max(gateSec, A + 0.01);                              /* one-shot plays the whole region, gated/loop follow the step */
+  env.gain.setValueAtTime(0.0001, t0);
+  env.gain.linearRampToValueAtTime(lvl, t0 + Math.max(A, 0.002));
+  env.gain.setTargetAtTime(lvl * Su, t0 + A, D / 3 + 0.001);
+  env.gain.cancelScheduledValues(t0 + hold);
+  env.gain.setTargetAtTime(0, t0 + hold - (mode === 0 ? 0.012 : 0), (mode === 0 ? 0.005 : R / 3 + 0.005));
+  if (mode === 2) { src.loop = true; src.loopStart = startOff; src.loopEnd = startOff + region; src.start(t0, startOff); }
+  else src.start(t0, startOff, region);
+  const end = t0 + hold + (mode === 0 ? 0.03 : R * 1.5 + 0.05);
+  src.stop(end);
+  src.connect(filt); filt.connect(env); if (pan) { env.connect(pan); pan.connect(bus.g); } else env.connect(bus.g);
+  const v = { env, end, grp, fade: t => { try { env.gain.cancelScheduledValues(t); env.gain.setTargetAtTime(0, t, 0.006); src.stop(t + 0.05); } catch (e) {} } };
+  bus.voices.push(v);
+  S.parts[pi].active = bus.voices.length;
+  setTimeout(() => { bus.voices = bus.voices.filter(x => x !== v); }, (end - ctx.currentTime) * 1000 + 50);
+  master.gain.value = (S.master / 127) * 0.7;
+}
+function auditionSample(idx) {
+  if (!ctx || !S.audio) return;
+  const src = ctx.createBufferSource(), g = ctx.createGain();
+  src.buffer = bufFor(idx, false); g.gain.value = 0.6 * (S.master / 127);
+  src.connect(g); g.connect(master); src.start();
+}
+
+/* ============================== sequencer ============================== */
+/* One step becomes one or more notes: a single note, a chord (all at once, or strummed), or an arpeggio spread over the step. */
+function stepEvents(ln, st, sd) {
+  const base = (isSampler(ln.part) ? 0 : ln.root) + st.note;      /* a sampler lane reads the note as a pitch offset in semitones */
+  const notes = chordNotes(base, st.chord, st.inv, st.spread);
+  if (ln.arp.mode > 0) {
+    const count = ARP_RATES[ln.arp.rate], sub = sd / count;
+    return arpSeq(notes, ln.arp.mode, ln.arp.oct, count, Math.random).map((p, k) => ({ dt: k * sub, pitch: p, gate: (sub * ln.arp.gate) / 100 }));
+  }
+  return notes.map((p, k) => ({ dt: (k * st.strum) / 1000, pitch: p, gate: (st.gate / 32) * sd }));
+}
+function voiceHit(ln, st, e, when) {
+  const v = st.vel * (ln.level / 127);
+  if (isSampler(ln.part)) playSample(ln, e.pitch, v, e.gate, when, st.locks);
+  else playNote(ln.part, e.pitch, v, e.gate, when, st.locks);
+}
+let nextT = 0, timer = null;
+const stepDur = () => 60 / S.bpm / 4;
+const hitFlash = new Map();
+const patLen = pat => Math.max(...pat.map(l => l.n));   /* a pattern lasts as long as its longest lane */
+const curSong = () => S.songs[S.song.idx];
+function start() {
+  if (S.playing) return;
+  S.pstep = 0;
+  if (S.mode === "SONG") {                     /* PLAY on the SONG screen plays the song from the selected row */
+    const rows = curSong().rows;
+    if (!rows.length) { toast("THIS SONG IS EMPTY · ● ADDS A ROW"); return; }
+    const r = clamp(S.song.row, 0, rows.length - 1);
+    Object.assign(S.song, { playing: true, playRow: r, repLeft: rows[r].rep, jumpTo: null });
+    S.pat = rows[r].pat; S.nextPat = null; S.lock = null;
+  } else S.song.playing = false;
+  S.playing = true; S.gstep = -1; nextT = performance.now() + 60;
+  timer = setInterval(sched, 20);
+  render();
+}
+function stop() {
+  S.playing = false; clearInterval(timer); timer = null; S.gstep = -1; S.pstep = 0; S.nextPat = null; S.song.playing = false; render();
+}
+function sched() {
+  const now = performance.now();
+  while (nextT < now + 90) {
+    S.gstep++;
+    const g = S.gstep, ps = S.pstep, due = nextT - now;
+    const swung = (g % 2 === 1) ? stepDur() * 1000 * (S.swing / 100) : 0;
+    setTimeout(() => stepEvent(g, ps), Math.max(0, due + swung));
+    lanes().forEach((ln, li) => {
+      if (ln.mute) return;
+      const i = ps % ln.n;
+      if (!trig(ln, i)) return;
+      const st = ln.st[i];
+      if (st.prob < 100 && Math.random() * 100 > st.prob) return;
+      const when = (due + swung) / 1000;
+      hitFlash.set(li, performance.now() + due + swung);
+      stepEvents(ln, st, stepDur()).forEach(e => voiceHit(ln, st, e, when + e.dt));
+    });
+    nextT += stepDur() * 1000;
+    if (++S.pstep >= patLen(lanes()) && patternEnd() === "end") {   /* a song that stops: let the last step sound, then stop */
+      clearInterval(timer); timer = null;
+      setTimeout(() => { S.playing = false; S.song.playing = false; S.pstep = 0; render(); toast("END OF SONG"); }, Math.max(0, nextT - performance.now()));
+      return;
+    }
+  }
+}
+/* The end of a pattern: the song moves on (after its repeats), or a queued pattern takes over. */
+function patternEnd() {
+  S.pstep = 0;
+  const sg = S.song;
+  if (sg.playing) {
+    const so = curSong(), rows = so.rows;
+    let r;
+    if (sg.jumpTo !== null) { r = sg.jumpTo; sg.jumpTo = null; }
+    else if (--sg.repLeft > 0) return;
+    else r = sg.playRow + 1;
+    if (r >= rows.length) { if (!so.loop) return "end"; r = 0; }
+    sg.playRow = r; sg.repLeft = rows[r].rep; S.pat = rows[r].pat; S.lock = null;
+    return;
+  }
+  if (S.nextPat !== null) { S.pat = S.nextPat; S.nextPat = null; S.lock = null; }
+}
+/* Pick a pattern: at once when stopped, at the end of the current pattern while playing; never while a song decides. */
+function selectPattern(p) {
+  p = clamp(p, 0, S.patterns.length - 1);
+  if (S.song.playing) { toast("THE SONG CHOOSES THE PATTERN · STOP IT FIRST"); return; }
+  S.lock = null;
+  if (S.playing) {
+    S.nextPat = p === S.pat ? null : p;
+    toast(S.nextPat === null ? "STAYING ON P" + (S.pat + 1) : "P" + (p + 1) + " NEXT · AT THE END OF P" + (S.pat + 1));
+  } else { S.pat = p; S.nextPat = null; S.pstep = 0; }
+  fixPage(); render();
+}
+let renderQueued = false;
+function stepEvent(g, ps) { if (!S.playing || g > S.gstep) return; S.shownStep = ps; render(); }
+
+/* ============================== encoders & bindings ============================== */
+/* On a CATHODE lane this knob is the lane's root note; on a sampler lane it picks the lane's sample. */
+function sampleOrNote(label, ln) {
+  if (!isSampler(ln.part)) return { label, get: () => noteName(ln.root), set: d => { ln.root = clamp(ln.root + d, 12, 108); } };
+  const p = ln.smp.pages.SMP.p[0];
+  return { label: "SAMPLE", get: () => SAMPLES[p.v].n, set: d => { p.v = clamp(p.v + Math.sign(d), 0, SAMPLES.length - 1); auditionSample(p.v); } };
+}
+function bindings() {
+  const ln = lane(), st = ln.st[S.cursor];
+  const B = (label, get, set, o) => Object.assign({ label, get, set }, o || {});
+  const num = (v, a, b) => clamp(v, a, b);
+  if (S.mode === "PLAY") return [
+    B("TEMPO", () => String(S.bpm), d => { S.bpm = num(S.bpm + d, 40, 240); }),
+    B("SWING", () => S.swing + "%", d => { S.swing = num(S.swing + d, 0, 50); }),
+    B("PLAYED BY", () => PART_NAME[ln.part] + (isSampler(ln.part) ? " SAMPLE" : " SYNTH"), d => {
+      if (!S.shift) { toast("HOLD SHIFT AND TURN T3 TO MOVE LANE " + (S.sel + 1) + " TO ANOTHER PART"); return; }   /* a setup move: never by a stray turn */
+      const was = ln.part;
+      ln.part = num(ln.part + Math.sign(d), 0, 2);
+      if (ln.part === was) return;
+      S.part = ln.part;
+      flashLane = { idx: S.sel, until: Date.now() + 900 };
+      toast("LANE " + (S.sel + 1) + " NOW PLAYS ON PART " + PART_NAME[ln.part] + (isSampler(ln.part) ? " (SAMPLER: ITS OWN SAMPLE, NOTES = PITCH)" : " (CATHODE SYNTH)"));
+    }, { col: PART_HEX[ln.part], cost: "SHIFT" }),
+    B("PATTERN", () => "P" + (S.pat + 1) + (S.nextPat !== null ? " ▸P" + (S.nextPat + 1) : ""), d => { selectPattern((S.nextPat !== null ? S.nextPat : S.pat) + Math.sign(d)); }),
+    sampleOrNote("ROOT", ln),
+    B("LEVEL", () => String(ln.level), d => { ln.level = num(ln.level + d, 0, 127); }, { bar: ln.level / 127 }),
+    B("LENGTH", () => String(ln.n), d => { ln.n = num(ln.n + Math.sign(d), 1, 32); ln.k = Math.min(ln.k, ln.n); ln.r = ln.r % ln.n; fixPage(); }, { bar: ln.n / 32 }),
+    B("HITS", () => String(ln.k), d => { ln.k = num(ln.k + Math.sign(d), 0, ln.n); }, { bar: ln.k / ln.n }),
+  ];
+  if (S.mode === "SONG") {
+    const dis = () => B("", () => "", () => {}, { dis: true });
+    const so = curSong(), rows = so.rows, r = rows[S.song.row];
+    return [
+      B("SONG", () => "SONG " + (S.song.idx + 1), d => { if (S.song.playing) { toast("STOP THE SONG TO PICK ANOTHER"); return; } S.song.idx = num(S.song.idx + Math.sign(d), 0, S.songs.length - 1); S.song.row = 0; }),
+      B("ROW", () => (rows.length ? S.song.row + 1 + "/" + rows.length : "–"), d => { S.song.row = num(S.song.row + Math.sign(d), 0, Math.max(0, rows.length - 1)); }, { dis: !rows.length }),
+      B("PATTERN", () => (r ? "P" + (r.pat + 1) : "–"), d => { if (r) r.pat = num(r.pat + Math.sign(d), 0, S.patterns.length - 1); }, { dis: !r }),
+      B("REPEATS", () => (r ? "x" + r.rep : "–"), d => { if (r) r.rep = num(r.rep + Math.sign(d), 1, 16); }, { dis: !r }),
+      B("AT THE END", () => (so.loop ? "LOOP" : "STOP"), d => { so.loop = d < 0; }),
+      B("LENGTH", () => songBars(so) + " bars", () => {}, { ro: true }),
+      B("TIME", () => fmtClock(songBars(so) * 16 * stepDur()), () => {}, { ro: true }),
+      dis(),
+    ];
+  }
+  if (S.mode === "PROJECT") {
+    const dis = () => B("", () => "", () => {}, { dis: true });
+    return [
+      B("KEY", () => NOTE[S.key], d => { S.key = (S.key + Math.sign(d) + 12) % 12; }),
+      B("SCALE", () => SCALES[S.scale][0], d => { S.scale = num(S.scale + Math.sign(d), 0, SCALES.length - 1); }),
+      B("TEMPO", () => String(S.bpm), d => { S.bpm = num(S.bpm + d, 40, 240); }),
+      B("SWING", () => S.swing + "%", d => { S.swing = num(S.swing + d, 0, 50); }),
+      B("CARD SLOT", () => String(S.slot + 1) + (card.slots[S.slot] ? "" : " EMPTY"), d => { S.slot = num(S.slot + Math.sign(d), 0, N_SLOTS - 1); }),
+      dis(), dis(), dis(),
+    ];
+  }
+  /* a drum (sampler) lane's second step view: the sample per step. It is a SAMPLE LOCK: a p-lock on the sample number (SMP:0), so it
+     plays through the same lock path, shows as a lock, and the CLEAR key on a locked step removes it with the rest. */
+  if (S.mode === "STEP" && S.stepSub === 1 && isSampler(ln.part)) {
+    const dis = () => B("", () => "", () => {}, { dis: true });
+    const own = () => st.locks["SMP:0"];
+    return [
+      sampleOrNote("LANE SMP", ln), dis(), dis(), dis(),
+      B("STEP SAMPLE", () => (own() === undefined ? "LANE" : SAMPLES[own()].n), d => {
+        const v = clamp((own() === undefined ? -1 : own()) + Math.sign(d), -1, SAMPLES.length - 1);
+        if (v < 0) delete st.locks["SMP:0"]; else { st.locks["SMP:0"] = v; auditionSample(v); }
+        S.lockEdited = true;
+      }, { col: PART_HEX[ln.part] }),
+      B("PITCH", () => (st.note > 0 ? "+" : "") + st.note, d => { st.note = num(st.note + Math.sign(d), -24, 24); }),
+      B("VELOCITY", () => String(st.vel), d => { st.vel = num(st.vel + d, 1, 127); }, { bar: st.vel / 127 }),
+      B("PROB", () => st.prob + "%", d => { st.prob = num(st.prob + d, 0, 100); }, { bar: st.prob / 100 }),
+    ];
+  }
+  if (S.mode === "STEP" && S.stepSub === 1) return [
+    B("ARP", () => ARP_MODES[ln.arp.mode], d => { ln.arp.mode = num(ln.arp.mode + Math.sign(d), 0, ARP_MODES.length - 1); }),
+    B("ARP RATE", () => "x" + ARP_RATES[ln.arp.rate], d => { ln.arp.rate = num(ln.arp.rate + Math.sign(d), 0, ARP_RATES.length - 1); }, { dis: ln.arp.mode === 0 }),
+    B("ARP OCT", () => String(ln.arp.oct), d => { ln.arp.oct = num(ln.arp.oct + Math.sign(d), 1, 4); }, { dis: ln.arp.mode === 0 }),
+    B("ARP GATE", () => ln.arp.gate + "%", d => { ln.arp.gate = num(ln.arp.gate + d, 5, 100); }, { bar: ln.arp.gate / 100, dis: ln.arp.mode === 0 }),
+    B("CHORD", () => CHORDS[st.chord][0], d => { st.chord = num(st.chord + Math.sign(d), 0, CHORDS.length - 1); }),
+    B("INVERSION", () => String(st.inv), d => { st.inv = num(st.inv + Math.sign(d), 0, 3); }, { dis: st.chord === 0 }),
+    B("VOICING", () => (st.spread ? "OPEN" : "CLOSE"), d => { st.spread = d > 0 ? 1 : 0; }, { dis: st.chord === 0 }),
+    B("STRUM", () => st.strum + " ms", d => { st.strum = num(st.strum + Math.sign(d) * 4, 0, 120); }, { bar: st.strum / 120, dis: st.chord === 0 || ln.arp.mode > 0 }),
+  ];
+  if (S.mode === "STEP") return [
+    sampleOrNote("ROOT", ln),
+    B("LENGTH", () => String(ln.n), d => { ln.n = num(ln.n + Math.sign(d), 1, 32); ln.k = Math.min(ln.k, ln.n); ln.r = ln.r % ln.n; fixPage(); }, { bar: ln.n / 32 }),
+    B("HITS", () => String(ln.k), d => { ln.k = num(ln.k + Math.sign(d), 0, ln.n); }, { bar: ln.k / ln.n }),
+    B("ROTATE", () => String(ln.r), d => { ln.r = ((ln.r + Math.sign(d)) % ln.n + ln.n) % ln.n; }),
+    /* NOTE shows where the step lands, not only the offset: the root plus the offset, snapped to the project scale when one is set */
+    B(isSampler(ln.part) ? "PITCH" : "NOTE", () => (st.note > 0 ? "+" : "") + st.note + (isSampler(ln.part) ? " st" : ` <small class="dest">${noteName(scaleNote(ln.root + st.note, S.key, S.scale))}</small>`),
+      d => { st.note = num(st.note + Math.sign(d), -24, 24); }),
+    B("VELOCITY", () => String(st.vel), d => { st.vel = num(st.vel + d, 1, 127); }, { bar: st.vel / 127 }),
+    B("GATE", () => (st.gate / 32).toFixed(2), d => { st.gate = num(st.gate + d, 1, 127); }, { bar: st.gate / 127 }),
+    B("PROB", () => st.prob + "%", d => { st.prob = num(st.prob + d, 0, 100); }, { bar: st.prob / 100 }),
+  ];
+  if (S.mode === "SOUND") {
+    const pg = curPages()[S.page], lk = lockTarget();
+    return pg.p.map((p, i) => {
+      const key = S.page + ":" + i, locked = !!lk && lk.locks[key] !== undefined, val = locked ? lk.locks[key] : p.v;
+      const lockable = !(S.page === "GLOB" || p.n === "-");
+      return B(p.n, () => fmtP(Object.assign({}, p, { v: val })), d => {
+        if (p.max === p.min) return;
+        const step = p.list || p.max - p.min <= 24 ? Math.sign(d) : d;
+        if (lk) { if (!lockable) { toast("NOT LOCKABLE"); return; } const nv = clamp(val + step, p.min, p.max); lk.locks[key] = isSampler(S.part) ? nv : lockedValue(S.part, key, nv, lk.locks); S.lockEdited = true; }
+        else { p.v = clamp(p.v + step, p.min, p.max); if (!isSampler(S.part) && (S.page === "FLT1" || S.page === "FLT2") && (i === 0 || (S.page === "FLT2" && i === 5))) enforceHeavy(S.part, S.page, i); }
+      }, { bar: p.max > p.min ? (val - p.min) / (p.max - p.min) : 0, dis: p.n === "-", lock: locked,
+        cost: isSampler(S.part) ? "" : ((S.page === "FLT1" || S.page === "FLT2") && i === 0 && !locked && menuHeavy(val) && (S.page === "FLT1" || descOf(S.part).f2On) ? "HEAVY " : "") + (lk ? "" : costBadge(S.part, S.page, i)), warn: !lk && S.page === "AMP" && i === 7 && !isSampler(S.part) && voiceTotal() > VOICE_BUDGET });
+    });
+  }
+  if (S.mode === "MIXER" && S.mixSub === 1) {
+    const dg = S.deg, PR = ["LOW", "MID", "HIGH", "KEEP"];
+    return [
+      ...[0, 1, 2].map(pi => B("PRIO " + PART_NAME[pi], () => PR[S.parts[pi].priority], d => { S.parts[pi].priority = num(S.parts[pi].priority + Math.sign(d), 0, 3); }, { col: PART_HEX[pi], bar: S.parts[pi].priority / 3 })),
+      B("AUTO DEGRADE", () => (dg.auto ? "ON" : "OFF"), d => { dg.auto = d > 0; if (!dg.auto) dg.gov.reset(); }),
+      B("CPU LOAD", () => Math.round(dg.load * 100) + "%", () => {}, { ro: true, bar: Math.min(1, dg.load), warn: dg.load >= 0.85 }),
+      B("DEGRADE", () => degLevel() + "/" + dg.ladder.length, () => {}, { ro: true, warn: degLevel() > 0 }),
+      B("", () => "", () => {}, { dis: true }), B("", () => "", () => {}, { dis: true }),   /* the CPU simulation lives above the panel, not on the instrument */
+    ];
+  }
+  if (S.mode === "MIXER") return [0, 1, 2, null, 0, 1, 2, null].map((pi, i) => {
+    if (i === 3) return B("MASTER", () => String(S.master), d => { S.master = num(S.master + d, 0, 127); }, { bar: S.master / 127 });
+    if (i === 7) return B("COST", () => voiceTotal().toFixed(1) + "/" + VOICE_BUDGET, () => {}, { ro: true, warn: voiceTotal() > VOICE_BUDGET, bar: Math.min(1, voiceTotal() / VOICE_BUDGET), cost: degLevel() > 0 ? "EFF " + effTotal().toFixed(1) : "" });
+    if (i < 3) return B("LEVEL " + PART_NAME[pi], () => String(S.parts[pi].level), d => { S.parts[pi].level = num(S.parts[pi].level + d, 0, 127); }, { bar: S.parts[pi].level / 127, col: PART_HEX[pi] });
+    return B("VOICES " + PART_NAME[pi], () => String(partVoices(pi)), d => { setPartVoices(pi, clamp(partVoices(pi) + Math.sign(d), 1, isSampler(pi) ? 8 : 5)); }, { warn: voiceTotal() > VOICE_BUDGET, col: PART_HEX[pi] });
+  });
+  if (S.mode === "BROWSE") {
+    const sm = isSampler(S.part), cats = sm ? SAMPLE_CATS : CATS;
+    const dis = () => B("", () => "", () => {}, { dis: true });
+    return [
+      B("BANK", () => (sm ? "SAMPLES" : "FACTORY"), () => {}, { ro: true }),
+      B("CATEGORY", () => cats[S.browse.cat], d => { S.browse.cat = num(S.browse.cat + Math.sign(d), 0, cats.length - 1); S.browse.idx = 0; }),
+      B("PART", () => PART_NAME[S.part], d => { S.part = num(S.part + Math.sign(d), 0, 2); const f = lanes().findIndex(l => l.part === S.part); if (f >= 0) S.sel = f; S.browse.cat = 0; S.browse.idx = 0; }, { col: PART_HEX[S.part] }),
+      B("INSTRUMENT", () => S.parts[S.part].type, d => {
+        const pi = S.part, to = d > 0 ? "SAMPLER" : "CATHODE", from = S.parts[pi].type;
+        if (to === from) return;
+        if (!S.shift) { toast("HOLD SHIFT AND TURN T4 TO MAKE PART " + PART_NAME[pi] + " A " + to); return; }   /* changes what its lanes play */
+        const loaded = S.browse.loaded[pi];
+        remember("PART " + PART_NAME[pi] + " MADE A " + to, () => { S.parts[pi].type = from; S.browse.loaded[pi] = loaded; ensurePage(); });
+        S.parts[pi].type = to; if (to === "SAMPLER") S.browse.loaded[pi] = "";
+        S.browse.cat = 0; S.browse.idx = 0; ensurePage();
+        toast("PART " + PART_NAME[pi] + " IS NOW A " + to + " · SHIFT + ○ UNDOES");
+      }, { cost: "SHIFT" }),
+      B("SCROLL", () => (S.browse.idx + 1) + "/" + browseList().length, d => { S.browse.idx = num(S.browse.idx + Math.sign(d), 0, Math.max(0, browseList().length - 1)); previewBrowse(); }),
+      B("SCROLL x3", () => "", d => { S.browse.idx = num(S.browse.idx + 3 * Math.sign(d), 0, Math.max(0, browseList().length - 1)); previewBrowse(); }),
+      dis(), dis(),
+    ];
+  }
+  return Array.from({ length: 8 }, () => ({ label: "", get: () => "", set: () => {}, dis: true }));
+}
+const browseList = () => (isSampler(S.part)
+  ? SAMPLES.map((x, i) => Object.assign({ i }, x)).filter(x => SAMPLE_CATS[S.browse.cat] === "ALL" || x.c === SAMPLE_CATS[S.browse.cat])
+  : PRESETS.filter(p => CATS[S.browse.cat] === "ALL" || p.c === CATS[S.browse.cat]));
+let previewT = null;
+/* ▲ ▼ on a list screen. Returns false when the screen has no list (the keys then pick a lane). */
+function listMove(dir) {
+  if (S.mode === "SONG") { S.song.row = clamp(S.song.row + dir, 0, Math.max(0, curSong().rows.length - 1)); render(); return true; }
+  if (S.mode === "BROWSE") { const n = browseList().length; S.browse.idx = clamp(S.browse.idx + dir, 0, Math.max(0, n - 1)); render(); previewBrowse(); return true; }
+  if (S.mode === "PROJECT") { S.slot = clamp(S.slot + dir, 0, N_SLOTS - 1); render(); return true; }
+  return false;
+}
+/* ◀ ▶ in BROWSE: the previous / next category (the list starts at its top). */
+function browseCat(dir) {
+  const cats = isSampler(S.part) ? SAMPLE_CATS : CATS;
+  S.browse.cat = clamp(S.browse.cat + dir, 0, cats.length - 1); S.browse.idx = 0; render(); toast("CATEGORY: " + cats[S.browse.cat]);
+}
+function previewBrowse() {
+  const p = browseList()[S.browse.idx];
+  if (!p) return;
+  if (isSampler(S.part)) { auditionSample(p.i); return; }
+  // a synth preset: three notes in the project key on a temporary copy of the pages; the part itself is not changed until OK
+  clearTimeout(previewT);
+  previewT = setTimeout(() => {
+    if (!ctx || !S.audio) return;
+    const pg = soundPages(); applyPreset(pg, p);
+    const root = 48 + S.key;
+    [root, root + (SCALES[S.scale][1] && SCALES[S.scale][1].includes(3) && !SCALES[S.scale][1].includes(4) ? 3 : 4), root + 7].forEach((m, k) => playNote(S.part, m, 100, 0.16, k * 0.18, null, pg));
+  }, 140);
+}
+function fixPage() { const pages = Math.max(1, Math.ceil(lane().n / 8)); S.stepPage = Math.min(S.stepPage, pages - 1); S.cursor = Math.min(S.cursor, lane().n - 1); }
+
+/* ============================== screen ============================== */
+const ACC = { PLAY: "#19d3e6", STEP: "#ffb02e", MIXER: "#6df08c", BROWSE: "#4f8cff", PROJECT: "#c9d3d9", SONG: "#9fd4ff" };
+function accent() { return S.mode === "SOUND" ? (curPages()[S.page] || {}).acc || "#19d3e6" : ACC[S.mode]; }
+function cellsHtml(bs, from) {
+  return bs.slice(from, from + 4).map((b, i) => `<div class="cell${b.dis ? " dis" : ""}${b.lock ? " lk" : ""}${b.ro ? " ro" : ""}"${b.col ? ` style="--acc:${b.col}"` : ""}><div class="lbl"><span>${b.label}</span><i${b.ro ? ` class="ro"` : b.cost && !b.lock ? ` class="cb"` : ""}>${b.ro ? "INFO" : b.lock ? "LOCK" : b.cost ? b.cost : (from ? "B" : "T") + (i + 1)}</i></div><div class="val${b.warn ? " warn" : ""}">${b.get()}</div>${b.bar !== undefined ? `<div class="meter"><u style="width:${Math.round(clamp(b.bar, 0, 1) * 100)}%"></u></div>` : ""}</div>`).join("");
+}
+function modeTag() {
+  if (S.lock) return "LOCK";
+  if (S.mode === "SOUND") return (curPages()[S.page] || { title: "SOUND" }).title;
+  return S.mode;
+}
+const songBars = so => so.rows.reduce((a, r) => a + (r.rep * patLen(S.patterns[r.pat])) / 16, 0);
+const fmtClock = sec => Math.floor(sec / 60) + ":" + String(Math.round(sec % 60)).padStart(2, "0");
+/* A screen with two views shows both names; the lit one is on screen, a second press of the mode key switches. */
+const tabs = (names, on) => `<span class="tabs">${names.map((n, i) => `<i class="${i === on ? "on" : ""}">${n}</i>`).join("")}</span>`;
+function mainHtml() {
+  const col = PART_HEX[lane().part];
+  if (S.mode === "PLAY") {
+    return lanes().map((ln, li) => {
+      const bs = base(ln), ph = S.playing && S.shownStep !== undefined ? S.shownStep % ln.n : -1;
+      const eu = bs;
+      const cells = Array.from({ length: ln.n }, (_, i) => `<div class="st${trig(ln, i) ? (ln.st[i].ov ? " add" : " on") : ""}${ln.st[i].ov && eu[i] ? " xoff" : ""}${i % 4 === 0 ? " b4" : ""}${i === ph ? " ph" : ""}${lockCount(ln.st[i]) ? " lk" : ""}${ln.st[i].chord ? " ch" : ""}${isSampler(ln.part) && ln.st[i].locks["SMP:0"] !== undefined ? " os" : ""}"></div>`).join("");
+      return `<div class="lane${li === S.sel ? " sel" : ""}${ln.mute ? " mute" : ""}${flashLane.idx === li && Date.now() < flashLane.until ? " flash" : ""}" style="--lc:${PART_HEX[ln.part]}"><span class="no">${li + 1}</span><span class="pt" style="background:${PART_HEX[ln.part]}">${PART_NAME[ln.part]}</span><span class="mu${ln.mute ? "" : " ar"}">${ln.mute ? "M" : (ln.arp.mode ? "A" : "")}</span><span class="nt">${isSampler(ln.part) ? SAMPLES[ln.smp.pages.SMP.p[0].v].n : noteName(ln.root)}</span><div class="steps">${cells}</div></div>`;
+    }).join("");
+  }
+  if (S.mode === "STEP") {
+    const ln = lane(), pages = Math.ceil(ln.n / 8), s0 = S.stepPage * 8, ph = S.playing && S.shownStep !== undefined ? S.shownStep % ln.n : -1;
+    const smp = isSampler(ln.part), cur = ln.st[S.cursor];
+    const row = (name, fn) => `<div class="rl">${name}</div>` + Array.from({ length: 8 }, (_, c) => fn(s0 + c, c)).join("");
+    const exists = i => i < ln.n;
+    const lkd = i => !!S.lock && S.lock.lane === S.sel && S.lock.idx === i;
+    const cls = i => `${exists(i) ? "" : " off"}${lkd(i) ? " lkd" : ""}${exists(i) && trig(ln, i) ? " on0" : ""}${exists(i) && ln.st[i].ov ? " ov0" : ""}${i === S.cursor ? " cur" : ""}${i === ph ? " ph" : ""}`;
+    const bar = (v, mx) => `<span class="vbar"><u style="width:${(v / mx) * 100}%"></u></span>`;
+    const smpName = i => { const v = ln.st[i].locks["SMP:0"]; return v === undefined ? null : SAMPLES[v].n; };
+    const stepRow = row("STEP", i => { if (!exists(i)) return `<div class="sc${cls(i)}">·</div>`;
+      const b = [lockCount(ln.st[i]) ? `<span class="lkb">LK${lockCount(ln.st[i])}</span>` : "", ln.st[i].chord ? `<span class="chb">${CHORDS[ln.st[i].chord][0]}</span>` : "",
+        smp && smpName(i) ? `<span class="chb">${smpName(i).split(" ")[0].toUpperCase()}</span>` : ""].join("");
+      return `<div class="sc${cls(i)}">${i + 1}${b ? `<span class="bdg">${b}</span>` : ""}</div>`; });
+    const scaled = !smp;   /* the note row shows the note each step lands on (root + offset, snapped to the project scale) */
+    const noteRow = row(smp ? "PITCH" : "NOTE", i => `<div class="sc${cls(i)}">${exists(i) ? (ln.st[i].note > 0 ? "+" : "") + ln.st[i].note + (scaled ? `<small class="nn">${noteName(scaleNote(ln.root + ln.st[i].note, S.key, S.scale))}</small>` : "") : ""}</div>`);
+    const body = (S.stepSub === 1 && smp ? [
+      stepRow,
+      row("SAMPLE", i => `<div class="sc sm${cls(i)}${exists(i) && smpName(i) ? " own" : ""}">${exists(i) ? (smpName(i) || "lane") : ""}</div>`),
+      noteRow,
+      row("VEL", i => `<div class="sc${cls(i)}">${exists(i) ? ln.st[i].vel + bar(ln.st[i].vel, 127) : ""}</div>`),
+      row("PROB", i => `<div class="sc${cls(i)}">${exists(i) ? ln.st[i].prob : ""}</div>`),
+    ] : S.stepSub === 1 ? [
+      stepRow, noteRow,
+      row("CHORD", i => `<div class="sc sm${cls(i)}">${exists(i) ? (ln.st[i].chord ? CHORDS[ln.st[i].chord][0] : "-") : ""}</div>`),
+      row("INV", i => (exists(i) && !ln.st[i].chord ? `<div class="sc na${i === S.cursor ? " cur" : ""}">–</div>` : `<div class="sc${cls(i)}">${exists(i) ? ln.st[i].inv : ""}</div>`)),
+      row("VOICING", i => (exists(i) && !ln.st[i].chord ? `<div class="sc na${i === S.cursor ? " cur" : ""}">–</div>` : `<div class="sc sm${cls(i)}">${exists(i) ? (ln.st[i].spread ? "OPEN" : "CLOSE") + (ln.st[i].strum && !ln.arp.mode ? " " + ln.st[i].strum + "ms" : "") : ""}</div>`)),
+    ] : [
+      stepRow, noteRow,
+      row("VEL", i => `<div class="sc${cls(i)}">${exists(i) ? ln.st[i].vel + bar(ln.st[i].vel, 127) : ""}</div>`),
+      row("GATE", i => `<div class="sc${cls(i)}">${exists(i) ? (ln.st[i].gate / 32).toFixed(2) + bar(ln.st[i].gate, 127) : ""}</div>`),
+      row("PROB", i => `<div class="sc${cls(i)}">${exists(i) ? ln.st[i].prob : ""}</div>`),
+    ]).join("");
+    const strip = Array.from({ length: ln.n }, (_, i) => `<i class="${trig(ln, i) ? "on" : ""}${i >= s0 && i < s0 + 8 ? " pg" : ""}${i === ph ? " ph" : ""}"></i>`).join("");
+    const need = !ln.arp.mode ? CHORDS[cur.chord][1].length : 1, have = partVoices(ln.part);
+    const warn = need > have ? `<span class="warnv">CHORD ${need} NOTES &gt; ${have} VOICES</span>` : "";
+    const arpTxt = ln.arp.mode ? `ARP ${ARP_MODES[ln.arp.mode]} x${ARP_RATES[ln.arp.rate]} oct${ln.arp.oct}` : "ARP OFF";
+    return `<div class="stepview" style="--lc:${col}"><div class="hd"><b>LANE ${S.sel + 1}</b><span>PART ${PART_NAME[ln.part]}</span><span>${smp ? (S.stepSub === 1 ? "EDITING STEP " + (S.cursor + 1) : "") : arpTxt}</span>${smp ? "" : warn}${!smp && S.scale > 0 ? `<span>KEY ${NOTE[S.key]} ${SCALES[S.scale][0]}</span>` : ""}<span style="margin-left:auto">PAGE ${S.stepPage + 1}/${pages}</span>${tabs(smp ? ["NOTES", "SAMPLE PER STEP"] : ["NOTES", "CHORD + ARP"], S.stepSub)}</div><div class="sgrid">${body}</div><div class="strip">${strip}</div></div>`;
+  }
+  if (S.mode === "SOUND") return `<div class="vlabel">PART <b>${PART_NAME[S.part]}</b> &middot; ${isSampler(S.part) ? "SAMPLER &middot; LANE " + (lanes().indexOf(curLane()) + 1) : S.parts[S.part].preset}</div><canvas class="viz" id="viz" width="960" height="366" style="margin-top:0"></canvas>`;
+  if (S.mode === "SONG") {
+    const so = curSong(), sg = S.song, rows = so.rows, vis = 7, start0 = clamp(sg.row - 3, 0, Math.max(0, rows.length - vis));
+    const hd = `<div class="songhd"><b>SONG ${sg.idx + 1}</b><span>${rows.length} row${rows.length === 1 ? "" : "s"} &middot; ${songBars(so)} bars &middot; ${fmtClock(songBars(so) * 16 * stepDur())} &middot; END ${so.loop ? "LOOP" : "STOP"}</span>${sg.playing ? `<span class="now">&#9654; ROW ${sg.playRow + 1} &middot; ${rows[sg.playRow].rep - sg.repLeft + 1}/${rows[sg.playRow].rep}</span>` : ""}</div>`;
+    if (!rows.length) return hd + `<div class="info"><div class="note">An empty song. Press <b>●</b> to add a row: the pattern on screen, played once.</div></div>`;
+    return hd + `<div class="list">${rows.slice(start0, start0 + vis).map((r, j) => { const i = start0 + j, on = sg.playing && i === sg.playRow;
+      return `<div class="li srow${i === sg.row ? " sel" : ""}${on ? " play" : ""}"><span class="c">${on ? "&#9654; " : ""}${i + 1}</span><span>P${r.pat + 1} <small>x${r.rep}</small></span><span class="loaded">${(r.rep * patLen(S.patterns[r.pat])) / 16} bars</span></div>`; }).join("")}</div>`;
+  }
+  if (S.mode === "MIXER" && S.mixSub === 1) {   /* view 2: what the CPU budget is spent on, and what goes first */
+    const total = voiceTotal(); degSync();
+    const lvl = degLevel(), lad = S.deg.ladder.slice(0, 6).map((st, i) => `<span class="${i < lvl ? "on" : ""}">${i < lvl ? "&#9654; " : ""}${i + 1}. ${degDescribe(st)}</span>`).join("");
+    const hv = [0, 1, 2].filter(i => !isSampler(i)).map(i => PART_NAME[i] + " " + heavyCount(descOf(i))).join("   ");
+    return `<div class="mixtabs">${tabs(["LEVELS + VOICES", "PRIORITY + DEGRADE"], S.mixSub)}</div><div class="info" style="padding-top:52px"><div class="row"><span>Voice cost</span><span>${total.toFixed(2).replace(/\.?0+$/, "")} of ${VOICE_BUDGET}${total > VOICE_BUDGET ? " &middot; OVER BUDGET" : ""}${lvl > 0 ? " &middot; running at " + effTotal().toFixed(2) + " (degrade " + lvl + ")" : ""}</span></div><div class="row"><span>Heavy filters</span><span>${hv} <span style="color:var(--dim)">(rule: at most 1 per lane)</span></span></div><div class="row"><span>If the CPU runs out</span><div class="lad">${lad || "<span>nothing to give up</span>"}</div></div><div class="row"><span>Parts</span><span>${S.parts.map((p, i) => PART_NAME[i] + " " + p.type.toLowerCase() + " x" + partVoices(i) + " prio " + ["low", "mid", "high", "keep"][p.priority]).join("   ")}</span></div><div class="note">Near the CPU limit the instrument gives these up in order and takes them back later; the patch is never edited.</div></div>`;
+  }
+  if (S.mode === "MIXER") {
+    return `<div class="mixtabs">${tabs(["LEVELS + VOICES", "PRIORITY + DEGRADE"], S.mixSub)}</div><div class="mixer">${[0, 1, 2].map(i => `<div class="strip3" style="--pcol:${PART_HEX[i]}"><h3 style="color:${PART_HEX[i]}">PART ${PART_NAME[i]} <small style="font-size:16px;letter-spacing:.04em;color:var(--dim)">${S.parts[i].type}</small></h3><div class="nm">${isSampler(i) ? "drum samples, one per lane" : S.parts[i].preset}</div><div class="fader"><u style="height:${S.parts[i].level / 127 * 100}%"></u></div><div class="vox">${Array.from({ length: 8 }, (_, v) => v < partVoices(i) ? `<i class="on${v < S.parts[i].active ? " act" : ""}"></i>` : (v < 5 ? `<i></i>` : "")).join("")}</div><div class="nm">${partVoices(i)} voice${partVoices(i) > 1 ? "s" : ""} x ${(partCost(i) / partVoices(i)).toFixed(2)} = ${partCost(i).toFixed(2)}${degLevel() > 0 && effPart(i).voices * 1 >= 0 && Math.abs(partCostOf(effPart(i)) - partCost(i)) > 0.004 ? ` &rarr; <b style="color:var(--warn)">${effPart(i).voices} x ${voiceUnit(effPart(i), FW_COST).toFixed(2)} = ${partCostOf(effPart(i)).toFixed(2)}</b>` : ""} &middot; prio ${["low", "mid", "high", "keep"][S.parts[i].priority]} &middot; lanes ${lanes().map((l, k) => l.part === i ? k + 1 : null).filter(Boolean).join(" ")}</div></div>`).join("")}</div>`;
+  }
+  if (S.mode === "BROWSE") {
+    const list = browseList(), sm = isSampler(S.part), vis = 8, start = clamp(S.browse.idx - 4, 0, Math.max(0, list.length - vis));
+    const tag = (p) => sm ? lanes().map((l, k) => (isSampler(l.part) && l.smp.pages.SMP.p[0].v === p.i ? "L" + (k + 1) : "")).filter(Boolean).join(" ")
+                          : S.browse.loaded.map((n, k) => (n === p.n && !isSampler(k) ? "PART " + PART_NAME[k] : "")).filter(Boolean).join(" ");
+    return `<div class="list">${list.slice(start, start + vis).map((p, j) => `<div class="li${start + j === S.browse.idx ? " sel" : ""}"><span class="c">${p.c}</span><span>${p.n}${sm ? "<small>" + (p.d.length / SR).toFixed(2) + " s</small>" : ""}</span><span class="loaded">${tag(p)}</span></div>`).join("")}</div>`;
+  }
+  const scl = SCALES[S.scale][1];
+  const keys = NOTE.map((n, i) => { const rel = (i - S.key + 12) % 12, inS = scl ? scl.includes(rel) : true; return `<i class="${inS ? "in" : ""}${scl && rel === 0 ? " root" : ""}${n.length > 1 ? " blk" : ""}">${n}</i>`; }).join("");
+  const slots = card.slots.map((o, i) => `<div class="li slot${i === S.slot ? " sel" : ""}"><span class="c">${i + 1}</span><span>${o ? o.name + `<small>${usedPatterns(o)} pattern${usedPatterns(o) === 1 ? "" : "s"} &middot; ${o.songs.filter(x => x.rows.length).length} song${o.songs.filter(x => x.rows.length).length === 1 ? "" : "s"} &middot; ${o.bpm} BPM</small>` : "<small>empty</small>"}</span><span class="loaded">${S.loadedSlot === i ? "LOADED" : ""}</span></div>`).join("");
+  return `<div class="info"><div class="row"><span>Key and scale</span><span>${scl ? NOTE[S.key] + " " + SCALES[S.scale][0].toLowerCase() + " &middot; synth notes snap to it; drum lanes do not" : "off &middot; notes play as written (T1 key, T2 scale)"}</span></div><div class="row"><span></span><div class="keys12">${keys}</div></div><div class="row"><span>SD card</span><span>B1 picks a slot &middot; <b>OK</b> loads &middot; <b>SHIFT + OK</b> saves (patterns, songs, sounds, key, tempo)</span></div></div><div class="list card">${slots}</div>`;
+}
+/* ---------- the project file: everything that makes a project, saved to and loaded from the (simulated) SD card ---------- */
+const N_SLOTS = 8, CARD_KEY = "drumboy-mockup-card";
+function serializeProject(name) {
+  return {
+    name, version: 1, bpm: S.bpm, swing: S.swing, key: S.key, scale: S.scale, master: S.master,
+    parts: S.parts.map(p => ({ type: p.type, voices: p.voices, level: p.level, priority: p.priority, preset: p.preset, pages: snapVals(p.pages) })),
+    patterns: S.patterns.map(pat => pat.map(ln => Object.assign(JSON.parse(JSON.stringify(Object.assign({}, ln, { smp: null }))), { smp: snapVals(ln.smp.pages) }))),
+    songs: JSON.parse(JSON.stringify(S.songs)),
+  };
+}
+const laneFrom = d => { const L = mkLane(d.part, d.root, d.n, d.k, d.r, d.gate); Object.assign(L, JSON.parse(JSON.stringify(Object.assign({}, d, { smp: undefined })))); delete L.smp; L.smp = { pages: samplerPages() }; putVals(L.smp.pages, d.smp); return L; };
+function loadProject(o) {
+  Object.assign(S, { bpm: o.bpm, swing: o.swing, key: o.key, scale: o.scale, master: o.master, nextPat: null, lock: null });
+  o.parts.forEach((p, i) => { Object.assign(S.parts[i], { type: p.type, voices: p.voices, level: p.level, priority: p.priority, preset: p.preset }); putVals(S.parts[i].pages, p.pages); });
+  S.patterns = o.patterns.map(pat => pat.map(laneFrom));
+  S.songs = JSON.parse(JSON.stringify(o.songs));
+  S.pat = clamp(S.pat, 0, S.patterns.length - 1); S.song.idx = clamp(S.song.idx, 0, S.songs.length - 1); S.song.row = 0;
+  ensurePage(); fixPage();
+}
+const card = (() => {   /* the SD card, simulated in this browser (per viewer; the real one is the card in the Drumboy) */
+  try { const c = JSON.parse(localStorage.getItem(CARD_KEY)); if (c && Array.isArray(c.slots) && c.slots.length === N_SLOTS) return c; } catch (e) {}
+  return { slots: Array(N_SLOTS).fill(null) };
+})();
+function writeCard() { try { localStorage.setItem(CARD_KEY, JSON.stringify(card)); } catch (e) {} }
+function saveSlot() {
+  const i = S.slot, prev = card.slots[i];
+  const name = prev ? prev.name : "PROJECT " + (i + 1);
+  card.slots[i] = serializeProject(name); writeCard(); S.loadedSlot = i;
+  remember("SAVE TO SLOT " + (i + 1), () => { card.slots[i] = prev; writeCard(); });
+  toast((prev ? "OVERWROTE" : "SAVED TO") + " SLOT " + (i + 1) + " · " + name + (prev ? " · SHIFT + ○ UNDOES" : ""));
+}
+function loadSlot() {
+  const i = S.slot, o = card.slots[i];
+  if (!o) { toast("SLOT " + (i + 1) + " IS EMPTY · SHIFT + OK SAVES HERE"); return; }
+  if (S.playing) stop();
+  const before = serializeProject("current"), was = S.loadedSlot;
+  remember("LOAD OF SLOT " + (i + 1), () => { loadProject(before); S.loadedSlot = was; });
+  loadProject(o); S.loadedSlot = i;
+  toast(o.name + " LOADED · SHIFT + ○ UNDOES");
+}
+/* A lane copied for real: its steps as data, its sample pages rebuilt (a JSON copy would lose the pages' display functions). */
+function cloneLane(ln) {
+  const c = JSON.parse(JSON.stringify(Object.assign({}, ln, { smp: null })));
+  c.smp = { pages: samplerPages() }; putVals(c.smp.pages, snapVals(ln.smp.pages)); return c;
+}
+const usedPatterns = o => o.patterns.filter(pat => pat.some(l => (l.eu && l.k > 0) || l.st.some(st => st.ov))).length;
+let toastT = null, toastMsg = "", toastUntil = 0;
+/* One level of undo for the actions that throw work away (SHIFT + ○): emptying or pasting over a lane, loading a preset or a sample,
+   switching a part between synth and sampler. Each keeps a closure that puts back exactly what it changed. */
+let undoSlot = null;
+const snapVals = pages => Object.fromEntries(Object.keys(pages).map(k => [k, pages[k].p.map(x => x.v)]));
+const putVals = (pages, vals) => Object.keys(vals).forEach(k => vals[k].forEach((v, i) => { pages[k].p[i].v = v; }));
+function remember(label, restore) { undoSlot = { label, restore }; }
+function undo() {
+  if (!undoSlot) { toast("NOTHING TO UNDO"); return; }
+  const u = undoSlot; undoSlot = null; u.restore(); render(); toast("UNDONE: " + u.label);
+}
+let flashLane = { idx: -1, until: 0 };   /* the lane row that just changed part flashes in its new colour */
+function toast(msg) {
+  toastMsg = msg; toastUntil = Date.now() + 1100;
+  const el = document.getElementById("toast"); if (!el) return;
+  el.textContent = msg; el.classList.add("show"); clearTimeout(toastT); toastT = setTimeout(() => el.classList.remove("show"), 1100);
+}
+function reshowToast() {                  /* render() rebuilds the screen, so a toast raised while turning a knob is put back */
+  const el = document.getElementById("toast"), left = toastUntil - Date.now();
+  if (!el || left <= 0) return;
+  el.textContent = toastMsg; el.classList.add("show"); clearTimeout(toastT); toastT = setTimeout(() => el.classList.remove("show"), left);
+}
+function render() {
+  ensurePage();
+  const bs = bindings(), acc = accent();
+  const scr = document.getElementById("screen");
+  scr.style.setProperty("--acc", acc);
+  scr.classList.toggle("locking", !!S.lock);
+  document.getElementById("panel").style.setProperty("--acc", acc);
+  /* Corners carry status, not copies of knobs: top left the mode (and how to go back), top right the transport and tempo (with a red
+     DEGRADE badge when the CPU is giving things up), bottom left the pattern (always), bottom right the part. The screen is not a touch
+     screen: the corners are labels; L is the back key. */
+  const mt = modeTag().length > 7 ? modeTag().slice(0, 7) : modeTag();
+  const back = S.lock ? "L" + (S.lock.lane + 1) + " S" + (S.lock.idx + 1) : (S.mode !== "PLAY" ? "L BACK" : "HOME");
+  const transport = `<b class="tp${S.playing ? " run" : ""}">${S.playing ? (S.song.playing ? "&#9654; SONG" : "&#9654; PLAY") : "&#9632; STOP"}</b><span>${S.bpm} BPM</span>${degLevel() > 0 ? `<i class="degb" id="degc" title="CPU degrade level">D${degLevel()}</i>` : ""}`;
+  scr.innerHTML = `<div class="s-top"><div class="corner"><b>${mt}</b><span>${back}</span></div>${cellsHtml(bs, 0)}<div class="corner tr">${transport}</div></div><div class="s-main">${mainHtml()}</div><div class="s-bot"><div class="corner"><b>P${S.pat + 1}</b><span>${S.nextPat !== null ? "&#9656;P" + (S.nextPat + 1) : "PAT"}</span></div>${cellsHtml(bs, 4)}<div class="corner"><b style="color:${PART_HEX[S.part]}">${PART_NAME[S.part]}</b><span>PART</span></div></div><div class="toast" id="toast"></div>`;
+  if (S.mode === "SOUND") drawViz();
+  document.querySelectorAll(".enc").forEach((e, i) => {
+    const b = bs[i], frac = b && b.bar !== undefined ? b.bar : (encAngle[i] || 0);
+    encAngle[i] = frac;
+    e.querySelector(".notch").style.transform = `rotate(${-135 + frac * 270}deg)`;
+    e.classList.toggle("ro", !!(b && (b.ro || b.dis)));   /* a knob with nothing to turn looks idle */
+  });
+  updateKeys();
+  reshowToast();
+}
+const encAngle = [];
+
+/* ----- sound-page visualisations ----- */
+function drawSample(c, W, H, pg, acc) {
+  const smp = SAMPLES[pg[0].v], d = smp.d, n = d.length, x0 = 30, w = W - 60, mid = H / 2 + 8, amp = 125;
+  const s0 = pg[1].v / 127, s1 = Math.max(pg[2].v / 127, s0 + 0.004), loop = pg[3].v === 2, rev = pg[6].v === 1;
+  if (loop) { c.fillStyle = acc + "22"; c.fillRect(x0 + s0 * w, 20, (s1 - s0) * w, H - 40); }
+  for (let x = 0; x < w; x++) {
+    const a = Math.floor((x / w) * n), b = Math.max(a + 1, Math.floor(((x + 1) / w) * n)), stride = Math.max(1, Math.floor((b - a) / 12));
+    let lo = 0, hi = 0;
+    for (let i = a; i < b; i += stride) { const v = d[i]; if (v < lo) lo = v; if (v > hi) hi = v; }
+    c.fillStyle = x / w >= s0 && x / w <= s1 ? acc : "#2b343a";            /* dim outside the playing region */
+    c.fillRect(x0 + x, mid - hi * amp, 1, Math.max(1, (hi - lo) * amp));
+  }
+  c.font = "600 16px 'Chakra Petch', sans-serif";
+  [["START", s0], ["END", s1]].forEach(([t, f]) => { const x = x0 + f * w; c.fillStyle = "#ff7e5f"; c.fillRect(x - 1, 22, 2, H - 44); c.fillStyle = "#cfd6da"; c.fillText(t, f > 0.9 ? x - 44 : x + 6, 62); });
+  c.fillStyle = "#6c7882"; c.fillText(`${smp.n}   ${(n / SR).toFixed(2)} s   ${["ONE-SHOT", "GATED", "LOOP"][pg[3].v]}${rev ? "   REVERSE (plays END to START)" : ""}`, 24, H - 12);
+}
+function drawViz() {
+  const cv = document.getElementById("viz"); if (!cv) return;
+  const c = cv.getContext("2d"), W = 960, H = 366, acc = accent(), pg = curPages()[S.page].p;
+  c.clearRect(0, 0, W, H); c.lineWidth = 3; c.strokeStyle = acc; c.fillStyle = acc + "22";
+  c.font = "600 16px 'Chakra Petch', sans-serif";
+  const cap = t => { c.textAlign = "right"; c.fillText(t, W - 24, 28); c.textAlign = "left"; };   /* top right: the top left is the PART label */
+  const grid = () => { c.strokeStyle = "#171e23"; c.lineWidth = 1; for (let i = 1; i < 6; i++) { c.beginPath(); c.moveTo(0, H * i / 6); c.lineTo(W, H * i / 6); c.stroke(); } c.strokeStyle = acc; c.lineWidth = 3; };
+  grid();
+  const mid = H / 2 + 10, amp = 120;
+  const wave = (w, ph, amt, shp) => {
+    const d = clamp(0.5 + (amt / 127) * (shp / 127 - 0.5), 0.0001, 0.9999);
+    const wp = w === 0 ? (ph < d ? 0.5 * ph / d : 0.5 + 0.5 * (ph - d) / (1 - d)) : ph;
+    if (w === 0) return Math.sin(2 * Math.PI * wp);
+    if (w === 1) return 1 - 4 * Math.abs(ph - 0.5);
+    if (w === 2) return 2 * ph - 1;
+    return ph < 0.5 ? 1 : -1;
+  };
+  const pathFn = fn => { c.beginPath(); for (let x = 0; x <= W; x++) { const y = fn(x / W); x ? c.lineTo(x, y) : c.moveTo(x, y); } c.stroke(); };
+  if (S.page === "SMP") drawSample(c, W, H, pg, acc);
+  else if (S.page === "OSC1" || S.page === "OSC2") {
+    const wv = pg[0].v, amt = pg[2].v, shp = pg[1].v;
+    pathFn(t => mid - amp * wave(wv, (t * 3) % 1, amt, shp));
+    c.fillStyle = "#6c7882"; c.fillText(WAVES[wv] + (wv === 0 ? "  PHASE-DISTORTED  " + Math.round(amt / 127 * 100) + "%" : ""), 24, H - 12);
+  } else if (S.page === "FLT1" || S.page === "FLT2") {
+    const f = pg[1].v, q = 0.5 + pg[2].v / 127 * 16, ty = pg[0].v;
+    const fc = cutHz(f);
+    const mag = hz => {
+      const w0 = 2 * Math.PI * fc / 48000, w = 2 * Math.PI * hz / 48000, alpha = Math.sin(w0) / (2 * q), cw = Math.cos(w0);
+      let b0, b1, b2, a0 = 1 + alpha, a1 = -2 * cw, a2 = 1 - alpha;
+      const kind = ty === 1 ? "bp" : ty === 2 ? "hp" : ty === 3 ? "nt" : "lp";
+      if (kind === "lp") { b0 = (1 - cw) / 2; b1 = 1 - cw; b2 = b0; }
+      else if (kind === "hp") { b0 = (1 + cw) / 2; b1 = -(1 + cw); b2 = b0; }
+      else if (kind === "bp") { b0 = alpha; b1 = 0; b2 = -alpha; }
+      else { b0 = 1; b1 = -2 * cw; b2 = 1; }
+      const cw1 = Math.cos(w), sw1 = Math.sin(w), cw2 = Math.cos(2 * w), sw2 = Math.sin(2 * w);
+      const nr = b0 + b1 * cw1 + b2 * cw2, ni = -(b1 * sw1 + b2 * sw2), dr = a0 + a1 * cw1 + a2 * cw2, di = -(a1 * sw1 + a2 * sw2);
+      return Math.sqrt((nr * nr + ni * ni) / (dr * dr + di * di));
+    };
+    c.beginPath(); c.moveTo(0, H);
+    for (let x = 0; x <= W; x++) { const hz = 20 * Math.pow(1000, x / W), db = 20 * Math.log10(Math.max(mag(hz), 1e-4)); const y = clamp(H - 70 - (db + 40) * 4, 24, H - 20); c.lineTo(x, y); }
+    c.lineTo(W, H); c.closePath(); c.fillStyle = acc + "26"; c.fill();
+    c.beginPath(); for (let x = 0; x <= W; x++) { const hz = 20 * Math.pow(1000, x / W), db = 20 * Math.log10(Math.max(mag(hz), 1e-4)); const y = clamp(H - 70 - (db + 40) * 4, 24, H - 20); x ? c.lineTo(x, y) : c.moveTo(x, y); } c.stroke();
+    c.fillStyle = "#6c7882"; [100, 1000, 10000].forEach(h => { const x = Math.log(h / 20) / Math.log(1000) * W; c.fillText(h >= 1000 ? h / 1000 + "k" : h, x + 4, H - 6); });
+    cap(MODELS[ty] + "  " + Math.round(fc) + " Hz");
+  } else if (S.page === "AMP") {
+    const A = ms(pg[0].v), D = ms(pg[1].v), Su = pg[2].v / 127, R = ms(pg[3].v), tot = A + D + 400 + R, sc = (W - 60) / tot;
+    let x = 30; c.beginPath(); c.moveTo(x, H - 40); x += A * sc; c.lineTo(x, 50); x += D * sc; c.lineTo(x, 50 + (1 - Su) * (H - 90)); x += 400 * sc; c.lineTo(x, 50 + (1 - Su) * (H - 90)); x += R * sc; c.lineTo(x, H - 40); c.stroke();
+    c.fillStyle = "#6c7882"; cap(`A ${Math.round(A)} ms   D ${Math.round(D)} ms   S ${Math.round(Su * 100)}%   R ${Math.round(R)} ms`);
+  } else if (S.page === "GRIT") {
+    const bits = pg[0].v, lv = Math.pow(2, bits - 1);
+    pathFn(t => { const s = Math.sin(2 * Math.PI * t * 2); return mid - amp * (Math.round(s * lv) / lv); });
+    c.fillStyle = "#6c7882"; cap(bits + " BIT  " + (pg[1].v > 0 ? "COMPANDED" : "LINEAR"));
+  } else if (S.page === "MOD") {
+    const sh = pg[3].v, d = pg[1].v / 127;
+    pathFn(t => mid - amp * d * wave(sh, (t * (1 + pg[0].v / 40)) % 1, 0, 0) - (0));
+    c.fillStyle = "#6c7882"; cap("LFO " + ["SIN", "TRI", "SAW", "SQR"][sh] + " > " + pg[2].list[pg[2].v] + "   depth " + Math.round(d * 100) + "%");
+  } else if (S.page === "SUB") {
+    const vals = [pg[0].v, pg[2].v, pg[3].v, pg[6].v, pg[7].v];
+    ["SUB", "NOISE", "RING", "BLEND", "WIDTH"].forEach((n, i) => { const x = 90 + i * 170, h = vals[i] / 127 * 230; c.fillStyle = acc + "55"; c.fillRect(x, H - 50 - h, 80, h); c.fillStyle = "#6c7882"; c.fillText(n, x + 20, H - 28); });
+    c.fillStyle = "#6c7882"; cap("UNISON " + pg[4].v + " VOICE" + (pg[4].v > 1 ? "S" : ""));
+  } else {
+    c.fillStyle = "#6c7882"; c.font = "600 18px 'Chakra Petch', sans-serif";
+    ["Master level, pitch-bend range, MIDI channel, fine tune,", "clock source and preview volume live here.", "", "Tempo, swing and pattern are on the PLAY view."].forEach((t, i) => c.fillText(t, 40, 80 + i * 34));
+  }
+}
+
+/* ============================== panel build ============================== */
+const KEYS = [
+  // id, label, x, y, tip, kind
+  ["stop", "▢", 30, 40, "STOP / reset", "L"], ["play", "▷", 130, 40, "PLAY", "L"], ["rec", "○", 230, 40, "REC (later)", "L", "off"],
+  ["up", "+", 130, 215, "UP: previous lane, or up a list", "L"], ["add", "●", 30, 215, "ADD / re-roll Euclid", "L"], ["down", "−", 130, 395, "DOWN: next lane, or down a list", "L"],
+  ["left", "◀", 30, 305, "LEFT", "L"], ["ok", "OK", 130, 305, "OK: toggle step / load", "L"], ["right", "▶", 230, 305, "RIGHT", "L"],
+  ["copy", "C", 30, 395, "COPY lane", "L"], ["clear", "○", 230, 215, "CLEAR overlay (twice: Euclid off)", "L"], ["paste", "P", 230, 395, "PASTE lane", "L"],
+  ["mute", "M", 30, 600, "MUTE lane", "L"], ["fill", "F", 130, 600, "FILL: hold for a fill (every lane plays twice the hits)", "L"], ["step", "S", 230, 600, "STEP edit", "L"],
+  ["file", "F", 1200, 40, "FILE: preset browser", "R"], ["partk", "D", 1300, 40, "PART: next part", "R"], ["mixer", "M", 1400, 40, "MIXER and voice budget", "R"],
+  ["osc1", "∿", 1200, 215, "OSC 1", "R"], ["osc2", "Ψ", 1300, 215, "OSC 2", "R"], ["sub", "◌", 1400, 215, "SUB / UNISON", "R"],
+  ["flt1", "⌒", 1200, 305, "FILTER 1", "R"], ["flt2", "⌓", 1300, 305, "FILTER 2", "R"], ["grit", "▦", 1400, 305, "GRIT", "R"],
+  ["amp", "◔", 1200, 395, "AMP ENV", "R"], ["mod", "◎", 1300, 395, "MOD / LFO", "R"], ["glob", "◉", 1400, 395, "GLOBAL", "R"],
+  ["lane", "L", 1200, 600, "BACK one level (again: home; SHIFT + L: home)", "R"], ["info", "I", 1300, 600, "PROJECT: key, scale, tempo, voices", "R"], ["song", "S", 1400, 600, "SONG: chain patterns into a song", "R"],
+];
+const FUNC = { stop: "STOP", play: "PLAY", rec: "REC", up: "LANE−", add: "EUCL+", down: "LANE+", left: "LEFT", ok: "OK", right: "RIGHT", copy: "COPY", clear: "CLEAR", paste: "PASTE", mute: "MUTE", fill: "FILL", step: "STEP", file: "BROWSE", partk: "PART", mixer: "MIXER", osc1: "OSC 1", osc2: "OSC 2", sub: "SUB", flt1: "FLT 1", flt2: "FLT 2", grit: "GRIT", amp: "AMP", mod: "MOD", glob: "GLOBAL", lane: "HOME", info: "PROJECT", song: "SONG", shift: "SHIFT" };
+function build() {
+  const panel = document.getElementById("panel");
+  let h = "";
+  KEYS.forEach(k => { h += `<button class="key${k[6] ? " off" : ""}" id="k_${k[0]}" data-k="${k[0]}" style="left:${k[2]}px;top:${k[3]}px" title="${k[4]}" aria-label="${k[4]}"><span>${k[1]}</span><small>${FUNC[k[0]]}</small></button>`; });
+  h += `<button class="key" id="k_shift" data-k="shift" style="left:1400px;top:735px;height:90px" title="SHIFT: hold for coarse encoder steps" aria-label="Shift"><span>⋮⋮</span><small>SHIFT</small></button>`;
+  h += `<button class="key off" style="left:30px;top:735px;height:90px" title="Power" aria-label="Power"><span>⏻</span></button>`;
+  for (let i = 0; i < 10; i++) h += `<button class="key layer" id="l_${i}" data-l="${i}" style="left:${166 + i * 120}px;top:735px" title="Layer key ${i + 1}" aria-label="Layer key ${i + 1}"><span class="led"></span><span class="num">${i + 1}</span></button>`;
+  const ex = [510, 676.7, 843.3, 1010];
+  for (let i = 0; i < 8; i++) h += `<div class="enc" tabindex="0" role="slider" aria-label="Encoder ${i < 4 ? "T" + (i + 1) : "B" + (i - 3)}" id="e_${i}" data-e="${i}" style="left:${ex[i % 4] - 42}px;top:${i < 4 ? 28 : 598}px"><div class="cap"></div><div class="notch"></div><div class="tag">${i < 4 ? "T" + (i + 1) : "B" + (i - 3)}</div></div>`;
+  h += `<div id="screenbox"><div id="screen"></div></div>`;
+  panel.innerHTML = h;
+}
+
+/* ----- encoders: drag, wheel, keys ----- */
+const accum = new Array(8).fill(0);
+function turn(i, raw) {
+  const b = bindings()[i]; if (!b || b.dis) return;
+  if (b.ro) { toast(b.label + ": INFORMATION ONLY, NOT A SETTING"); return; }
+  const coarse = S.shift ? 6 : 1;
+  accum[i] += raw;
+  const n = Math.trunc(accum[i]);
+  if (!n) return;
+  accum[i] -= n;
+  if (S.held && S.mode === "STEP") { S.held.edited = true; clearTimeout(S.heldTimer); }   // hold + turn: edits the held step, never toggles it
+  b.set(n * coarse);
+  const wasMode = S.mode;
+  if (wasMode === "SOUND" && S.page === "GRIT") {}
+  render();
+}
+function wireEncoders() {
+  document.querySelectorAll(".enc").forEach(el => {
+    const i = +el.dataset.e;
+    let lastY = null, id = null;
+    el.addEventListener("pointerdown", ev => { lastY = ev.clientY; id = ev.pointerId; el.setPointerCapture(id); el.focus(); ev.preventDefault(); });
+    el.addEventListener("pointermove", ev => { if (lastY === null) return; const dy = lastY - ev.clientY; lastY = ev.clientY; turn(i, dy / 5); });
+    const up = () => { lastY = null; };
+    el.addEventListener("pointerup", up); el.addEventListener("pointercancel", up);
+    el.addEventListener("wheel", ev => { ev.preventDefault(); turn(i, ev.deltaY < 0 ? 1 : -1); }, { passive: false });
+    el.addEventListener("keydown", ev => {
+      if (ev.key === "ArrowUp" || ev.key === "ArrowRight") { turn(i, 1); ev.preventDefault(); }
+      if (ev.key === "ArrowDown" || ev.key === "ArrowLeft") { turn(i, -1); ev.preventDefault(); }
+    });
+  });
+}
+
+/* ----- keys ----- */
+/* Navigation. S.back remembers where BACK goes: the screen you came from. Moving between sound pages keeps the original target,
+   so one BACK from any sound page returns to where you started (STEP view, PLAY view, ...). HOME always goes to PLAY. */
+function setMode(m, page) {
+  if (m !== "SOUND" && m !== "STEP") S.lock = null;
+  const same = m === S.mode && (!page || page === S.page);
+  if (!same && !(S.mode === "SOUND" && m === "SOUND")) S.back = { mode: S.mode, page: S.page };
+  if (m === "PLAY") S.back = { mode: "PLAY", page: S.page };
+  S.mode = m; if (page) S.page = page;
+  render();
+}
+function goBack() {
+  if (S.mode === "PLAY") { toast("ALREADY ON THE MAIN SCREEN"); return; }
+  const b = S.back && S.back.mode !== S.mode ? S.back : { mode: "PLAY", page: S.page };
+  if (b.mode !== "SOUND" && b.mode !== "STEP") S.lock = null;
+  S.mode = b.mode; if (b.page) S.page = b.page;
+  S.back = { mode: "PLAY", page: S.page };
+  render();
+}
+function selectLane(i) { if (S.lock && S.lock.lane !== i) S.lock = null; S.sel = i; S.part = lane().part; fixPage(); render(); }
+function pressLayer(i) {
+  if (S.shift && S.mode === "PLAY") { selectPattern(i); return; }   /* SHIFT + key 1-10: pattern 1-10 (the PATTERN knob reaches 11-16) */
+  if (S.mode === "STEP") {
+    if (i === 8) { S.stepPage = Math.max(0, S.stepPage - 1); S.cursor = S.stepPage * 8; render(); return; }
+    if (i === 9) { S.stepPage = Math.min(Math.ceil(lane().n / 8) - 1, S.stepPage + 1); S.cursor = S.stepPage * 8; render(); return; }
+    const idx = S.stepPage * 8 + i;
+    if (idx >= lane().n) return;
+    S.cursor = idx; lane().st[idx].ov = !lane().st[idx].ov; render();
+  } else selectLane(i);
+}
+function layerDown(i) {
+  const lockedSound = S.lock && S.mode === "SOUND" && i < 8;
+  if (!lockedSound && (S.mode !== "STEP" || i >= 8)) { pressLayer(i); return; }
+  const idx = S.stepPage * 8 + i;
+  if (idx >= lane().n) return;
+  // The held step is selected at once, so knobs turned while it is held edit THAT step (the Elektron convention); a tap still toggles it.
+  S.held = { i, idx, latch: false, edited: false, long: false };
+  if (!S.lock) { S.cursor = idx; render(); }
+  clearTimeout(S.heldTimer);
+  S.heldTimer = setTimeout(() => {
+    if (!S.held || S.held.i !== i || S.held.edited) return;
+    S.held.long = true;
+    toast("STEP " + (idx + 1) + ": TURN A KNOB TO EDIT IT, OR RELEASE TO OPEN ITS LOCK");
+  }, 350);
+}
+function layerUp(i) {
+  clearTimeout(S.heldTimer);
+  const h = S.held; S.held = null;
+  if (!h || h.i !== i || h.latch) return;                         // a long press has already latched the lock
+  if (h.edited) { render(); return; }                              // held and edited: the step keeps its state, no lock is left open
+  if (h.long) {                                                    // held without turning anything: open the step's lock (p-locks)
+    S.lock = { lane: S.sel, idx: h.idx }; S.cursor = h.idx; S.lockEdited = false;
+    toast("LOCK STEP " + (h.idx + 1) + ": PICK A SOUND PAGE, TURN A KNOB");
+    render(); return;
+  }
+  if (S.lock) {                                                    // a lock is open: a tap moves it, tapping the same step closes it
+    if (S.lock.idx === h.idx && S.lock.lane === S.sel) { S.lock = null; toast("LOCK OFF"); }
+    else { S.lock = { lane: S.sel, idx: h.idx }; S.cursor = h.idx; toast("LOCK STEP " + (h.idx + 1)); }
+    render(); return;
+  }
+  S.cursor = h.idx; lane().st[h.idx].ov = !lane().st[h.idx].ov; render();
+}
+function pressKey(id) {
+  const ln = lane();
+  switch (id) {
+    case "play": ensureAudio(); S.playing ? stop() : start(); break;
+    case "stop": stop(); S.shownStep = undefined; render(); break;
+    case "step": if (S.mode === "STEP") { S.stepSub = 1 - S.stepSub; render(); toast(S.stepSub ? (isSampler(lane().part) ? "STEP 2/2: SAMPLE PER STEP" : "STEP 2/2: CHORD AND ARP") : "STEP 1/2: NOTE DATA"); } else setMode("STEP"); break;
+    case "lane": if (S.shift || S.mode === "PLAY") setMode("PLAY"); else goBack(); break;   /* back one level; again: home; SHIFT + L: home */
+    case "file": if (S.mode === "BROWSE") goBack(); else { S.browse.idx = 0; S.browse.cat = 0; setMode("BROWSE"); } break;
+    case "mixer": if (S.mode === "MIXER") { S.mixSub = 1 - S.mixSub; render(); toast(S.mixSub ? "MIXER 2/2: PRIORITY AND DEGRADE" : "MIXER 1/2: LEVELS AND VOICES"); } else setMode("MIXER"); break;
+    case "info": if (S.mode === "PROJECT") goBack(); else setMode("PROJECT"); break;
+    case "song": if (S.mode === "SONG") goBack(); else setMode("SONG"); break;
+    case "partk": S.part = (S.part + 1) % 3; { const f = lanes().findIndex(l => l.part === S.part); if (f >= 0) S.sel = f; } fixPage(); render(); toast("PART " + PART_NAME[S.part]); break;
+    case "osc1": case "osc2": case "sub": case "flt1": case "flt2": case "grit": case "amp": case "mod": case "glob": {
+      const target = SOUND_KEYS[id][isSampler(S.part) ? 1 : 0];
+      if (!target) { toast(FUNC[id] + ": NOT ON A SAMPLER PART"); break; }
+      if (S.mode === "SOUND" && S.page === target) { goBack(); break; }      /* pressing the page you are on goes back */
+      setMode("SOUND", target); break;
+    }
+    /* On a screen with a list (SONG rows, BROWSE presets/samples, PROJECT card slots) ▲ ▼ move through the list; elsewhere they pick a lane. */
+    case "up": if (listMove(-1)) break; selectLane((S.sel + 9) % 10); break;
+    case "down": if (listMove(1)) break; selectLane((S.sel + 1) % 10); break;
+    case "left": if (S.mode === "BROWSE") { browseCat(-1); break; } if (S.mode === "STEP") { S.cursor = (S.cursor + ln.n - 1) % ln.n; S.stepPage = Math.floor(S.cursor / 8); render(); } else if (S.mode === "PLAY") selectLane((S.sel + 9) % 10); break;
+    case "right": if (S.mode === "BROWSE") { browseCat(1); break; } if (S.mode === "STEP") { S.cursor = (S.cursor + 1) % ln.n; S.stepPage = Math.floor(S.cursor / 8); render(); } else if (S.mode === "PLAY") selectLane((S.sel + 1) % 10); break;
+    case "ok":
+      if (S.mode === "PROJECT") { if (S.shift) saveSlot(); else loadSlot(); render(); break; }
+      if (S.mode === "SONG") {                       /* OK: play from this row (at the end of the current pattern if a song is playing) */
+        if (!curSong().rows.length) break;
+        if (S.song.playing) { S.song.jumpTo = S.song.row; toast("ROW " + (S.song.row + 1) + " NEXT"); } else { pressKey("play"); }
+        render(); break;
+      }
+      if (S.mode === "STEP") { ln.st[S.cursor].ov = !ln.st[S.cursor].ov; render(); }
+      else if (S.mode === "BROWSE") {
+        const p = browseList()[S.browse.idx];
+        if (p) {
+          if (isSampler(S.part)) {
+            const l = curLane(), old = l.smp.pages.SMP.p[0].v;
+            remember("SAMPLE ON LANE " + (lanes().indexOf(l) + 1), () => { l.smp.pages.SMP.p[0].v = old; });
+            l.smp.pages.SMP.p[0].v = p.i; toast(p.n + " > LANE " + (lanes().indexOf(l) + 1));
+          } else {
+            const pi = S.part, vals = snapVals(S.parts[pi].pages), name = S.parts[pi].preset, loaded = S.browse.loaded[pi];
+            remember("PRESET ON PART " + PART_NAME[pi], () => { putVals(S.parts[pi].pages, vals); S.parts[pi].preset = name; S.browse.loaded[pi] = loaded; });
+            loadPreset(pi, p); toast(p.n + " > PART " + PART_NAME[pi] + " · SHIFT + ○ UNDOES");
+          }
+          goBack();                                                           /* loading returns you to where you came from */
+        }
+      }
+      break;
+    case "add": if (S.mode === "SONG") {           /* ● adds a row after the selected one: the same pattern, or the one on screen */
+      const rows = curSong().rows;
+      if (rows.length >= 64) { toast("A SONG HOLDS 64 ROWS"); break; }
+      const at = rows.length ? S.song.row + 1 : 0, from = rows[S.song.row];
+      rows.splice(at, 0, { pat: from ? from.pat : S.pat, rep: from ? from.rep : 1 }); S.song.row = at;
+      render(); toast("ROW " + (at + 1) + " ADDED"); break;
+    } else {
+      ln.eu = true; ln.k = 1 + Math.floor(Math.random() * Math.max(1, Math.min(ln.n - 1, 9))); ln.r = Math.floor(Math.random() * ln.n); render(); toast("EUCLID " + ln.k + " / " + ln.n + "  r" + ln.r); break;
+    }
+    case "mute": ln.mute = !ln.mute; render(); toast("LANE " + (S.sel + 1) + (ln.mute ? " MUTED" : " ON")); break;
+    case "copy":
+      if (S.mode === "SONG") { S.clipSong = JSON.parse(JSON.stringify(curSong())); toast("SONG " + (S.song.idx + 1) + " COPIED"); break; }
+      if (S.shift) { S.clipPat = S.patterns[S.pat].map(cloneLane); toast("PATTERN P" + (S.pat + 1) + " COPIED"); break; }   /* SHIFT + C: the whole pattern */
+      S.clip = cloneLane(ln); toast("LANE " + (S.sel + 1) + " COPIED"); break;
+    case "paste":
+      if (S.mode === "SONG") {
+        if (!S.clipSong) { toast("NO SONG COPIED"); break; }
+        const i = S.song.idx, before = JSON.parse(JSON.stringify(S.songs[i]));
+        remember("PASTE ON SONG " + (i + 1), () => { S.songs[i] = before; });
+        S.songs[i] = JSON.parse(JSON.stringify(S.clipSong)); S.song.row = 0; render(); toast("PASTED TO SONG " + (i + 1) + " · SHIFT + ○ UNDOES"); break;
+      }
+      if (S.shift) {                                            /* SHIFT + P: the whole pattern (also into another project) */
+        if (!S.clipPat) { toast("NO PATTERN COPIED · SHIFT + C COPIES ONE"); break; }
+        const i = S.pat, before = S.patterns[i];
+        remember("PASTE ON P" + (i + 1), () => { S.patterns[i] = before; });
+        S.patterns[i] = S.clipPat.map(cloneLane); render(); toast("PASTED TO P" + (i + 1) + " · SHIFT + ○ UNDOES"); break;
+      }
+      if (S.clip) {
+      const keep = ln.part, before = JSON.parse(JSON.stringify(ln)), L = ln, li = S.sel;
+      remember("PASTE ON LANE " + (li + 1), () => { Object.keys(L).forEach(k => delete L[k]); Object.assign(L, before); });
+      Object.assign(ln, cloneLane(S.clip), { part: keep }); render(); toast("PASTED TO LANE " + (S.sel + 1) + " · SHIFT + ○ UNDOES");
+    } else toast("NOTHING COPIED"); break;
+    case "clear": {
+      if (S.shift) { undo(); break; }                                   /* SHIFT + ○ = undo */
+      if (S.mode === "SONG") {                                          /* ○ removes the selected row (undoable) */
+        const so = curSong(), rows = so.rows, at = S.song.row;
+        if (!rows.length) break;
+        const gone = rows[at]; rows.splice(at, 1); S.song.row = Math.max(0, Math.min(at, rows.length - 1));
+        remember("ROW " + (at + 1) + " REMOVED", () => { so.rows.splice(at, 0, gone); });
+        if (S.song.playing && S.song.playRow >= rows.length) S.song.playRow = Math.max(0, rows.length - 1);
+        render(); toast("ROW " + (at + 1) + " REMOVED · SHIFT + ○ UNDOES"); break;
+      }
+      if (S.lock) { const t = lockTarget(); const n = lockCount(t); t.locks = {}; render(); toast(n ? "STEP " + (S.lock.idx + 1) + ": " + n + " LOCK" + (n > 1 ? "S" : "") + " CLEARED" : "NO LOCKS ON THIS STEP"); break; }
+      const now = performance.now();
+      const was = { eu: ln.eu, ov: ln.st.map(s => s.ov) }, L = ln;
+      const restore = () => { L.eu = was.eu; L.st.forEach((s, i) => { s.ov = was.ov[i]; }); };
+      if (now - S.lastClear < 650) {
+        // the second press of a double press: one undo must bring back what was there before the FIRST press
+        const first = undoSlot && undoSlot.clearOf === L ? undoSlot.restore : restore;
+        remember("LANE " + (S.sel + 1) + " EMPTIED", first); undoSlot.clearOf = L;
+        ln.eu = false; ln.st.forEach(s => s.ov = false); toast("LANE " + (S.sel + 1) + " EMPTY · SHIFT + ○ UNDOES"); }
+      else { remember("EDITS CLEARED", restore); undoSlot.clearOf = L; ln.st.forEach(s => s.ov = false); toast("EDITS CLEARED"); }
+      S.lastClear = now; render(); break;
+    }
+  }
+}
+function wireKeys() {
+  document.querySelectorAll(".key[data-k]").forEach(el => {
+    const id = el.dataset.k;
+    if (id === "fill") {   /* momentary: a fill while held, like a performance key */
+      el.addEventListener("pointerdown", () => { S.fill = true; el.classList.add("on"); render(); toast("FILL"); });
+      const r = () => { if (!S.fill) return; S.fill = false; el.classList.remove("on"); render(); };
+      el.addEventListener("pointerup", r); el.addEventListener("pointerleave", r); return;
+    }
+    if (id === "shift") { el.addEventListener("pointerdown", () => { S.shift = true; el.classList.add("on"); }); const r = () => { S.shift = false; el.classList.remove("on"); }; el.addEventListener("pointerup", r); el.addEventListener("pointerleave", r); return; }
+    el.addEventListener("click", () => { if (!el.classList.contains("off")) pressKey(id); });
+  });
+  document.querySelectorAll(".key[data-l]").forEach(el => {
+    const i = +el.dataset.l;
+    el.addEventListener("pointerdown", ev => { ev.preventDefault(); el.classList.add("down"); layerDown(i); });
+    const up = () => { el.classList.remove("down"); layerUp(i); };
+    el.addEventListener("pointerup", up); el.addEventListener("pointercancel", up); el.addEventListener("pointerleave", () => { if (S.held && S.held.i === i) up(); });
+    el.addEventListener("keydown", ev => { if ((ev.key === "Enter" || ev.key === " ") && !ev.repeat) { ev.preventDefault(); layerDown(i); } });
+    el.addEventListener("keyup", ev => { if (ev.key === "Enter" || ev.key === " ") layerUp(i); });
+  });
+}
+function updateKeys() {
+  const ln = lane();
+  document.querySelectorAll(".key.layer").forEach(el => {
+    const i = +el.dataset.l;
+    el.classList.remove("has", "sel", "cur", "hit", "lkd");
+    if (S.lock && S.lock.lane === S.sel && i < 8 && S.stepPage * 8 + i === S.lock.idx && (S.mode === "STEP" || S.mode === "SOUND")) el.classList.add("lkd");
+    el.style.removeProperty("--lc");
+    if (S.mode === "STEP") {
+      if (i < 8) { const idx = S.stepPage * 8 + i; el.style.setProperty("--lc", PART_HEX[ln.part]); if (idx < ln.n) { if (trig(ln, idx)) el.classList.add("sel"); else el.classList.add("has"); if (idx === S.cursor) el.classList.add("cur"); } }
+      else { el.style.setProperty("--lc", "#ffb02e"); el.classList.add("has"); }
+    } else {
+      const l = lanes()[i]; el.style.setProperty("--lc", PART_HEX[l.part]);
+      if (l.n && l.k > 0 || l.st.some(s => s.ov)) el.classList.add("has");
+      if (i === S.sel) el.classList.add("sel");
+      if (hitFlash.has(i) && hitFlash.get(i) <= performance.now() && hitFlash.get(i) > performance.now() - 110) el.classList.add("hit");
+    }
+  });
+  const on = { step: S.mode === "STEP", lane: S.mode === "PLAY", file: S.mode === "BROWSE", mixer: S.mode === "MIXER", info: S.mode === "PROJECT", song: S.mode === "SONG", play: S.playing,
+    osc1: S.mode === "SOUND" && (S.page === "OSC1" || S.page === "SMP"), osc2: S.mode === "SOUND" && S.page === "OSC2", sub: S.mode === "SOUND" && S.page === "SUB", flt1: S.mode === "SOUND" && S.page === "FLT1", flt2: S.mode === "SOUND" && S.page === "FLT2",
+    grit: S.mode === "SOUND" && S.page === "GRIT", amp: S.mode === "SOUND" && S.page === "AMP", mod: S.mode === "SOUND" && S.page === "MOD", glob: S.mode === "SOUND" && S.page === "GLOB", mute: ln.mute };
+  Object.keys(on).forEach(k => { const el = document.getElementById("k_" + k); if (el) el.classList.toggle("on", !!on[k]); });
+  ["osc2", "sub", "flt2"].forEach(k => { const el = document.getElementById("k_" + k); if (el) el.classList.toggle("na", !SOUND_KEYS[k][isSampler(S.part) ? 1 : 0]); });   /* no such page on a sampler part */
+}
+setInterval(() => { if (S.playing) updateKeys(); }, 40);
+/* the governor runs on the audio blocks: 50 ms = ~68 blocks of 32 samples */
+setInterval(() => {
+  const was = degLevel(); degStep(68, usedVoices); const now = degLevel();
+  if (now !== was) { const st = S.deg.ladder[Math.max(was, now) - 1]; toast((now > was ? "DEGRADE " + now + ": " : "RESTORED: ") + (st ? degDescribe(st) : "")); render(); }
+  else if (S.mode === "MIXER" && S.mixSub === 1 && Math.round(S.deg.load * 100) !== S.deg.shown) { S.deg.shown = Math.round(S.deg.load * 100); render(); }
+}, 50);
+
+document.addEventListener("keydown", ev => {
+  if (ev.target && /input|textarea|select/i.test(ev.target.tagName)) return;
+  const k = ev.key;
+  if (k === "Shift") { S.shift = true; return; }
+  if (ev.target && ev.target.classList && ev.target.classList.contains("enc") && /Arrow/.test(k)) return;
+  if (k === "Escape") { goBack(); return; }
+  const map = { h: "lane", " ": "play", ArrowUp: "up", ArrowDown: "down", ArrowLeft: "left", ArrowRight: "right", Enter: "ok", Backspace: "clear", s: "step", l: "lane", f: "file", d: "partk", m: "mixer", i: "info", c: "copy", p: "paste", x: "mute" };
+  if (/^[0-9]$/.test(k)) { ev.preventDefault(); if (!ev.repeat) layerDown(k === "0" ? 9 : +k - 1); return; }
+  if (map[k.length === 1 ? k.toLowerCase() : k]) { if (k === " ") ev.preventDefault(); pressKey(map[k.length === 1 ? k.toLowerCase() : k]); }
+});
+document.addEventListener("keyup", ev => { if (ev.key === "Shift") S.shift = false; if (/^[0-9]$/.test(ev.key)) layerUp(ev.key === "0" ? 9 : +ev.key - 1); });
+
+/* ============================== boot ============================== */
+function fit() {
+  const box = document.getElementById("fit"), p = document.getElementById("panel");
+  const sc = Math.min(1, box.clientWidth / 1520);
+  p.style.transform = `scale(${sc})`; box.style.height = (860 * sc) + "px";
+}
+build(); wireEncoders(); wireKeys(); render(); fit();
+
+window.addEventListener("resize", fit);
+document.getElementById("btnSound").addEventListener("click", e => {
+  ensureAudio(); S.audio = !S.audio;
+  if (ctx && ctx.state === "suspended") ctx.resume();
+  e.currentTarget.setAttribute("aria-pressed", String(S.audio)); e.currentTarget.textContent = S.audio ? "Sound on" : "Sound off";
+  if (!ctx) { S.audio = false; e.currentTarget.textContent = "Sound unavailable"; }
+});
+(() => {   /* mockup-only CPU simulation (was MIXER view 2 BOARD SPEED / WORST CASE) */
+  const sel = document.getElementById("simSpeed");
+  [["100", "board at full speed"], ["150", "board 1.5x slower"], ["200", "board 2x slower"]].forEach(([v, t]) => { const o = document.createElement("option"); o.value = v; o.textContent = t; sel.appendChild(o); });
+  sel.addEventListener("change", () => { S.deg.scale = +sel.value; render(); });
+  document.getElementById("btnStress").addEventListener("click", e => { S.deg.stress = !S.deg.stress; e.currentTarget.setAttribute("aria-pressed", String(S.deg.stress)); render(); });
+})();
+document.getElementById("btnLegend").addEventListener("click", e => {
+  S.legend = !S.legend; document.getElementById("panel").classList.toggle("legend", S.legend);
+  e.currentTarget.setAttribute("aria-pressed", String(S.legend));
+});
+</script>

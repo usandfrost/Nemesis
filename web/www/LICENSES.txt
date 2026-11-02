@@ -1,0 +1,36 @@
+Disclaimer
+
+Nemesis is free software, given as it is, with no warranty of any kind. You use it at your own risk. Keep a copy of your SD card: a power cut during a save, or a failing card, can lose data, and installing other firmware on your device is your own choice. The makers accept no liability for lost data or for damage to cards or devices.
+
+Nemesis's licence
+
+Nemesis is copyright 2026 Ulf Sandfrost. You can redistribute it and change it under the GNU General Public License, version 3 or any later version, published by the Free Software Foundation. The full text is in COPYING.txt. Without warranty: see the licence. The source code is at https://github.com/usandfrost/Nemesis
+
+The parts below keep their own licences.
+
+What is in this website and whose it is
+
+Plaits and stmlib, by Emilie Gillet, are part of the sound engine in drumboy.wasm and drumboy_hr.wasm, under the MIT licence:
+
+Copyright 2016 Emilie Gillet.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+
+Jersey 10 is the font, under the SIL Open Font License 1.1: fonts/OFL-Jersey10.txt

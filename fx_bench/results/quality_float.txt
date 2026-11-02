@@ -1,0 +1,70 @@
+Q1  parameter moved in one step: biggest sample-to-sample jump in the 20 ms after / in the 20 ms before (steady tone through the effect)
+  Delay: TIME 300 -> 450 ms (fb 40)                    before 0.0513  after 0.0509  ratio   0.99
+  Delay: TIME 300 -> 450 ms, MOD 30 (varispeed)        before 0.0398  after 0.1441  ratio   3.62   <-- STEP
+  Delay: FEEDBACK 10 -> 80 %                           before 0.0323  after 0.0339  ratio   1.05
+  Delay: MIX 0 -> 100 %                                before 0.0347  after 0.5267  ratio  15.20   <-- STEP
+  Delay: TONE 100 -> 10 %                              before 0.0283  after 0.0310  ratio   1.10
+  Delay: type Digital -> Ping-pong                     before 0.0283  after 0.0310  ratio   1.10
+  Reverb Hall: DECAY 1 s -> 6 s                        before 0.0260  after 0.0265  ratio   1.02
+  Reverb Hall: SIZE 20 -> 90 %                         before 0.0298  after 0.5979  ratio  20.05   <-- STEP
+  Reverb Plate: DECAY 1 s -> 3 s                       before 0.0344  after 0.0449  ratio   1.31
+  Reverb Plate: PRE-DELAY 0 -> 40 ms                   before 0.0369  after 0.0777  ratio   2.10
+  Reverb Plate: DAMP 0 -> 100 %                        before 0.0321  after 0.0425  ratio   1.32
+  Reverb Plate: MIX 0 -> 100 %                         before 0.0347  after 0.1220  ratio   3.52   <-- STEP
+  Amp Crunch: GAIN 6 -> 30 dB                          before 0.0465  after 0.1192  ratio   2.56
+  Amp Crunch: BASS 20 -> 80 %                          before 0.1085  after 0.1098  ratio   1.01
+  Amp Crunch: PRESENCE 0 -> 100 %                      before 0.1140  after 0.1715  ratio   1.50
+  Amp: CAB 1x12 -> 4x12                                before 0.1093  after 0.1157  ratio   1.06
+  Amp: CAB 1x12 -> Direct                              before 0.1093  after 0.1400  ratio   1.28
+  Amp: MODEL Clean -> Lead                             before 0.0239  after 0.1751  ratio   7.31   <-- STEP
+  Amp: MIX 0 -> 100 %                                  before 0.0347  after 0.1097  ratio   3.16   <-- STEP
+  Chorus: RATE 0.5 -> 5 Hz                             before 0.0182  after 0.0180  ratio   0.99
+  Chorus: DEPTH 20 -> 100 %                            before 0.0205  after 0.0250  ratio   1.22
+  Chorus: VOICES 2 -> 4                                before 0.0180  after 0.0241  ratio   1.34
+  Chorus: MIX 0 -> 50 %                                before 0.0347  after 0.1464  ratio   4.22   <-- STEP
+  Comp: MAKEUP 0 -> 12 dB                              before 0.0212  after 0.1555  ratio   7.35   <-- STEP
+  Comp: THRESHOLD -10 -> -40 dB                        before 0.0020  after 0.0025  ratio   1.26
+  Comp: RATIO 2 -> 20                                  before 0.0008  after 0.0007  ratio   0.87
+  Comp: MIX 0 -> 100 %                                 before 0.0347  after 0.2011  ratio   5.80   <-- STEP
+  Drive Overdrive: DRIVE 6 -> 30 dB                    before 0.0436  after 0.0929  ratio   2.13
+
+Q2  MIX = 0: max |out - in(delayed by the reported latency)| after 0.1 s
+  Delay Digital                                        max err 0.00e+00  latency 0 samples
+  Delay Ping-pong                                      max err 0.00e+00  latency 0 samples
+  Delay Reverse                                        max err 3.50e-01  latency 8820 samples
+  Reverb Plate                                         max err 0.00e+00  latency 0 samples
+  Reverb Hall                                          max err 0.00e+00  latency 0 samples
+  Amp Clean                                            max err 0.00e+00  latency 16 samples
+  Amp Hi-gain                                          max err 0.00e+00  latency 16 samples
+  Amp Acoustic                                         max err 0.00e+00  latency 0 samples
+  Chorus                                               max err 0.00e+00  latency 0 samples
+  Comp Bus                                             max err 0.00e+00  latency 0 samples
+  Drive Overdrive                                      max err 0.00e+00  latency 16 samples
+
+Q3  impulse tail (0.045 s burst): time the 10 ms RMS stays above -60 dBFS / -90 dBFS
+  Reverb Room, DECAY 2.4 s                             -60 dB at   0.69 s   -90 dB at   1.25 s
+  Reverb Hall, DECAY 2.4 s                             -60 dB at   2.03 s   -90 dB at   3.13 s
+  Reverb Hall, DECAY 6 s (max)                         -60 dB at   4.42 s   -90 dB at   6.96 s
+  Reverb Plate, DECAY 2.4 s                            -60 dB at   2.30 s   -90 dB at   3.65 s
+  Reverb Plate, DECAY 3 s (max)                        -60 dB at   2.73 s   -90 dB at   4.39 s
+  Delay Digital, 375 ms, FB 40 %                       -60 dB at   2.30 s   -90 dB at   3.43 s
+  Delay Digital, 375 ms, FB 80 %                       -60 dB at   6.05 s   -90 dB at   9.42 s
+  Delay Digital, 375 ms, FB 95 % (max)                 -60 dB at  13.55 s   -90 dB at  21.06 s
+  Chorus, 3 voices (no feedback)                       -60 dB at   0.10 s   -90 dB at   0.13 s
+  Chorus, FEEDBACK 60 %                                -60 dB at   0.13 s   -90 dB at   0.21 s
+  Amp Crunch + cab (sag/cab ring)                      -60 dB at   0.09 s   -90 dB at   0.13 s
+  stock Freeverb size 25 decay 50 (wet 0.5)            -60 dB at   0.69 s   -90 dB at   1.24 s
+  stock Freeverb size 100 decay 100 (wet 0.5)          -60 dB at   7.54 s   -90 dB at  13.02 s
+
+Q4  extreme settings, +6 dBFS sine / noise, 10 s
+  Delay Digital, FB 100 %, tone 100                    finite  peak 2.58
+  Delay Ping-pong, FB 100 %                            finite  peak 1.54
+  Delay Tape, FB 100 %, sat                            finite  peak 0.53
+  Reverb Hall, DECAY max, SIZE max                     finite  peak 3.23
+  Reverb Plate, DECAY max                              finite  peak 6.24
+  Reverb Cathedral, DECAY max                          finite  peak 2.29
+  Amp Hi-gain, GAIN max (36 dB)                        finite  peak 5.25
+  Amp Bass, GAIN max                                   finite  peak 0.77
+  Chorus FEEDBACK 95 %, 8 voices                       finite  peak 1.26
+  Comp VCA, ratio max, makeup +24                      finite  peak 1.00
+  Drive Fuzz, DRIVE 36 dB                              finite  peak 0.12

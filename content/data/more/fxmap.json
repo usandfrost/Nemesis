@@ -1,0 +1,3676 @@
+{
+ "format": "drumboy-fxmap-1",
+ "presets": [
+  {
+   "name": "Lumbering Giant",
+   "sends": [
+    0,
+    0,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": null,
+   "chorus": null,
+   "notes": []
+  },
+  {
+   "name": "Spinning Top",
+   "sends": [
+    0,
+    0,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": null,
+   "chorus": null,
+   "notes": []
+  },
+  {
+   "name": "Warbling Gravel",
+   "sends": [
+    0,
+    0,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": null,
+   "chorus": null,
+   "notes": []
+  },
+  {
+   "name": "Deep Cellar",
+   "sends": [
+    0,
+    0,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": null,
+   "chorus": null,
+   "notes": []
+  },
+  {
+   "name": "Clicking Pebble",
+   "sends": [
+    0,
+    0,
+    0
+   ],
+   "amp": {
+    "model": 3,
+    "drive": 8,
+    "cab": 0,
+    "bass": 64,
+    "mid": 64,
+    "treble": 16,
+    "presence": 51,
+    "level": 94
+   },
+   "delay": null,
+   "reverb": null,
+   "chorus": null,
+   "notes": [
+    "drive Distortion 2 dB, mix 100% -> MODEL LEAD, DRIVE 6% (x1.00 for the parallel mix), CAB OFF",
+    "drive post low-pass 1.7 kHz -> TREBLE -9 dB"
+   ]
+  },
+  {
+   "name": "Tape Warp",
+   "sends": [
+    0,
+    0,
+    12
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": null,
+   "chorus": {
+    "rate": 15,
+    "depth": 32,
+    "delay": 76,
+    "feedback": 26,
+    "width": 45,
+    "tone": 62,
+    "hpf": 75
+   },
+   "notes": [
+    "eq not mapped (stored rows b1freq=47, b1gain=-6, lofreq=21, logain=8, lotype=1)"
+   ]
+  },
+  {
+   "name": "Sampler Drift",
+   "sends": [
+    10,
+    32,
+    15
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 0,
+    "time": 118,
+    "feedback": 55,
+    "tone": 97,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 13
+   },
+   "reverb": {
+    "size": 44,
+    "decay": 67,
+    "damp": 89,
+    "predelay": 23,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 0
+   },
+   "chorus": {
+    "rate": 0,
+    "depth": 38,
+    "delay": 76,
+    "feedback": 26,
+    "width": 35,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "delay 1/4. has no Drumboy note mode: FREE at 750 ms (= 1/4. at 120 BPM; does not follow tempo)",
+    "reverb Plate -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)",
+    "delay -> reverb in series in the original (echoes also get the reverb); the sends are parallel"
+   ]
+  },
+  {
+   "name": "Hollow Square Bass",
+   "sends": [
+    0,
+    41,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": {
+    "size": 0,
+    "decay": 6,
+    "damp": 92,
+    "predelay": 5,
+    "width": 76,
+    "mod": 14,
+    "lowcut": 67
+   },
+   "chorus": null,
+   "notes": [
+    "reverb Room -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)",
+    "reverb Room: early-reflection pattern not modelled (the Drumboy network has none)"
+   ]
+  },
+  {
+   "name": "Rust Ring",
+   "sends": [
+    0,
+    0,
+    15
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": null,
+   "chorus": {
+    "rate": 15,
+    "depth": 32,
+    "delay": 76,
+    "feedback": 26,
+    "width": 45,
+    "tone": 62,
+    "hpf": 75
+   },
+   "notes": [
+    "eq not mapped (stored rows b1freq=47, b1gain=-7, lofreq=21, logain=9, lotype=1)"
+   ]
+  },
+  {
+   "name": "Smoky Reed",
+   "sends": [
+    32,
+    0,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 0,
+    "time": 77,
+    "feedback": 33,
+    "tone": 95,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 13
+   },
+   "reverb": null,
+   "chorus": null,
+   "notes": [
+    "delay Analog: no BBD companding/drift/saturation, TONE set from the BBD bandwidth law N/(4*time) at 120 BPM"
+   ]
+  },
+  {
+   "name": "Cloaked Tenor",
+   "sends": [
+    32,
+    0,
+    74
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 0,
+    "time": 110,
+    "feedback": 0,
+    "tone": 54,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 13
+   },
+   "reverb": null,
+   "chorus": {
+    "rate": 0,
+    "depth": 38,
+    "delay": 76,
+    "feedback": 26,
+    "width": 35,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "chorus Ensemble (mode I, 3 voices) -> one modulated line; the voice swirl is not modelled",
+    "delay Analog: no BBD companding/drift/saturation, TONE set from the BBD bandwidth law N/(4*time) at 120 BPM"
+   ]
+  },
+  {
+   "name": "Sawtooth Singer",
+   "sends": [
+    3,
+    0,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 0,
+    "time": 98,
+    "feedback": 54,
+    "tone": 69,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 13
+   },
+   "reverb": null,
+   "chorus": null,
+   "notes": [
+    "delay Analog: no BBD companding/drift/saturation, TONE set from the BBD bandwidth law N/(4*time) at 120 BPM"
+   ]
+  },
+  {
+   "name": "Comb Pipe",
+   "sends": [
+    10,
+    22,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 0,
+    "time": 118,
+    "feedback": 55,
+    "tone": 97,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 13
+   },
+   "reverb": {
+    "size": 78,
+    "decay": 61,
+    "damp": 89,
+    "predelay": 23,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 15
+   },
+   "chorus": null,
+   "notes": [
+    "delay 1/4. has no Drumboy note mode: FREE at 750 ms (= 1/4. at 120 BPM; does not follow tempo)",
+    "delay -> reverb in series in the original (echoes also get the reverb); the sends are parallel"
+   ]
+  },
+  {
+   "name": "Gum Rubber",
+   "sends": [
+    0,
+    0,
+    15
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": null,
+   "chorus": {
+    "rate": 15,
+    "depth": 32,
+    "delay": 76,
+    "feedback": 26,
+    "width": 45,
+    "tone": 62,
+    "hpf": 75
+   },
+   "notes": [
+    "eq not mapped (stored rows b1freq=47, b1gain=-7, lofreq=21, logain=9, lotype=1)"
+   ]
+  },
+  {
+   "name": "Aerial Shimmer",
+   "sends": [
+    105,
+    0,
+    74
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 0,
+    "time": 70,
+    "feedback": 33,
+    "tone": 103,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 13
+   },
+   "reverb": null,
+   "chorus": {
+    "rate": 0,
+    "depth": 48,
+    "delay": 76,
+    "feedback": 26,
+    "width": 35,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "chorus Ensemble (mode II, 3 voices) -> one modulated line; the voice swirl is not modelled",
+    "delay Analog: no BBD companding/drift/saturation, TONE set from the BBD bandwidth law N/(4*time) at 120 BPM"
+   ]
+  },
+  {
+   "name": "Papery Edge",
+   "sends": [
+    76,
+    0,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 0,
+    "time": 2,
+    "feedback": 0,
+    "tone": 97,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 13
+   },
+   "reverb": null,
+   "chorus": null,
+   "notes": []
+  },
+  {
+   "name": "Pocket Roller",
+   "sends": [
+    0,
+    0,
+    74
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": null,
+   "chorus": {
+    "rate": 0,
+    "depth": 48,
+    "delay": 76,
+    "feedback": 26,
+    "width": 35,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "chorus Ensemble (mode II, 3 voices) -> one modulated line; the voice swirl is not modelled"
+   ]
+  },
+  {
+   "name": "Hooked Edge",
+   "sends": [
+    26,
+    0,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 0,
+    "time": 66,
+    "feedback": 54,
+    "tone": 97,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 13
+   },
+   "reverb": null,
+   "chorus": null,
+   "notes": []
+  },
+  {
+   "name": "Gray Scan Glass",
+   "sends": [
+    11,
+    23,
+    9
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 0,
+    "time": 118,
+    "feedback": 75,
+    "tone": 97,
+    "spread": 127,
+    "mod": 10,
+    "hpf": 13
+   },
+   "reverb": {
+    "size": 78,
+    "decay": 61,
+    "damp": 89,
+    "predelay": 23,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 15
+   },
+   "chorus": {
+    "rate": 0,
+    "depth": 38,
+    "delay": 76,
+    "feedback": 26,
+    "width": 35,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "delay 1/4. has no Drumboy note mode: FREE at 750 ms (= 1/4. at 120 BPM; does not follow tempo)",
+    "delay Ping-pong: no crossed feedback, SPREAD 100% stands in",
+    "delay -> reverb in series in the original (echoes also get the reverb); the sends are parallel"
+   ]
+  },
+  {
+   "name": "Razor Spire",
+   "sends": [
+    0,
+    0,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": null,
+   "chorus": null,
+   "notes": []
+  },
+  {
+   "name": "Orbiting Whine",
+   "sends": [
+    51,
+    0,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 0,
+    "time": 98,
+    "feedback": 60,
+    "tone": 69,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 13
+   },
+   "reverb": null,
+   "chorus": null,
+   "notes": [
+    "delay Analog: no BBD companding/drift/saturation, TONE set from the BBD bandwidth law N/(4*time) at 120 BPM"
+   ]
+  },
+  {
+   "name": "Chiseled Pluck",
+   "sends": [
+    18,
+    0,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 0,
+    "time": 127,
+    "feedback": 59,
+    "tone": 97,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 13
+   },
+   "reverb": null,
+   "chorus": null,
+   "notes": [
+    "delay time 1015 ms clamped to the 1000 ms TIME limit"
+   ]
+  },
+  {
+   "name": "Locked Orbit",
+   "sends": [
+    21,
+    0,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 0,
+    "time": 108,
+    "feedback": 60,
+    "tone": 97,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 13
+   },
+   "reverb": null,
+   "chorus": null,
+   "notes": []
+  },
+  {
+   "name": "Blazing Edge",
+   "sends": [
+    32,
+    0,
+    74
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 0,
+    "time": 55,
+    "feedback": 20,
+    "tone": 121,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 13
+   },
+   "reverb": null,
+   "chorus": {
+    "rate": 0,
+    "depth": 48,
+    "delay": 76,
+    "feedback": 26,
+    "width": 35,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "chorus Ensemble (mode II, 3 voices) -> one modulated line; the voice swirl is not modelled",
+    "delay Analog: no BBD companding/drift/saturation, TONE set from the BBD bandwidth law N/(4*time) at 120 BPM"
+   ]
+  },
+  {
+   "name": "Hyperwide Saw",
+   "sends": [
+    11,
+    21,
+    21
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 2,
+    "time": 95,
+    "feedback": 63,
+    "tone": 97,
+    "spread": 127,
+    "mod": 10,
+    "hpf": 13
+   },
+   "reverb": {
+    "size": 78,
+    "decay": 61,
+    "damp": 89,
+    "predelay": 23,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 15
+   },
+   "chorus": {
+    "rate": 0,
+    "depth": 38,
+    "delay": 76,
+    "feedback": 26,
+    "width": 35,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "delay Ping-pong: no crossed feedback, SPREAD 100% stands in",
+    "delay -> reverb in series in the original (echoes also get the reverb); the sends are parallel"
+   ]
+  },
+  {
+   "name": "Thin Ribbon",
+   "sends": [
+    19,
+    0,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 0,
+    "time": 127,
+    "feedback": 18,
+    "tone": 97,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 13
+   },
+   "reverb": null,
+   "chorus": null,
+   "notes": [
+    "delay time 1015 ms clamped to the 1000 ms TIME limit"
+   ]
+  },
+  {
+   "name": "Raindrop Pluck",
+   "sends": [
+    44,
+    0,
+    74
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 0,
+    "time": 85,
+    "feedback": 13,
+    "tone": 85,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 13
+   },
+   "reverb": null,
+   "chorus": {
+    "rate": 0,
+    "depth": 48,
+    "delay": 76,
+    "feedback": 26,
+    "width": 35,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "chorus Ensemble (mode II, 3 voices) -> one modulated line; the voice swirl is not modelled",
+    "delay Analog: no BBD companding/drift/saturation, TONE set from the BBD bandwidth law N/(4*time) at 120 BPM"
+   ]
+  },
+  {
+   "name": "Mask Chew",
+   "sends": [
+    0,
+    0,
+    15
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": null,
+   "chorus": {
+    "rate": 15,
+    "depth": 32,
+    "delay": 76,
+    "feedback": 26,
+    "width": 45,
+    "tone": 62,
+    "hpf": 75
+   },
+   "notes": [
+    "eq not mapped (stored rows b1freq=47, b1gain=-5, lofreq=21, logain=8, lotype=1)"
+   ]
+  },
+  {
+   "name": "Antenna Hum",
+   "sends": [
+    60,
+    0,
+    74
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 0,
+    "time": 85,
+    "feedback": 33,
+    "tone": 85,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 13
+   },
+   "reverb": null,
+   "chorus": {
+    "rate": 0,
+    "depth": 43,
+    "delay": 76,
+    "feedback": 26,
+    "width": 35,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "chorus Ensemble (mode I+II, 3 voices) -> one modulated line; the voice swirl is not modelled",
+    "delay Analog: no BBD companding/drift/saturation, TONE set from the BBD bandwidth law N/(4*time) at 120 BPM"
+   ]
+  },
+  {
+   "name": "Cushioned Jab",
+   "sends": [
+    89,
+    0,
+    74
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 0,
+    "time": 41,
+    "feedback": 0,
+    "tone": 127,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 13
+   },
+   "reverb": null,
+   "chorus": {
+    "rate": 0,
+    "depth": 48,
+    "delay": 76,
+    "feedback": 26,
+    "width": 35,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "chorus Ensemble (mode II, 3 voices) -> one modulated line; the voice swirl is not modelled",
+    "delay Analog: no BBD companding/drift/saturation, TONE set from the BBD bandwidth law N/(4*time) at 120 BPM"
+   ]
+  },
+  {
+   "name": "Bare Sub",
+   "sends": [
+    0,
+    0,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": null,
+   "chorus": null,
+   "notes": [
+    "comp not mapped (master COMP is global): Opto, thresh -24 dB, ratio stored 70"
+   ]
+  },
+  {
+   "name": "Gnashing Teeth",
+   "sends": [
+    105,
+    0,
+    74
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 0,
+    "time": 13,
+    "feedback": 0,
+    "tone": 127,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 13
+   },
+   "reverb": null,
+   "chorus": {
+    "rate": 0,
+    "depth": 48,
+    "delay": 76,
+    "feedback": 26,
+    "width": 35,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "chorus Ensemble (mode II, 3 voices) -> one modulated line; the voice swirl is not modelled",
+    "delay Analog: no BBD companding/drift/saturation, TONE set from the BBD bandwidth law N/(4*time) at 120 BPM"
+   ]
+  },
+  {
+   "name": "Boiler Churn",
+   "sends": [
+    0,
+    0,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": null,
+   "chorus": null,
+   "notes": []
+  },
+  {
+   "name": "Bullfrog Croak",
+   "sends": [
+    0,
+    0,
+    74
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": null,
+   "chorus": {
+    "rate": 0,
+    "depth": 48,
+    "delay": 76,
+    "feedback": 26,
+    "width": 35,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "chorus Ensemble (mode II, 3 voices) -> one modulated line; the voice swirl is not modelled"
+   ]
+  },
+  {
+   "name": "Hollow Log",
+   "sends": [
+    0,
+    9,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": {
+    "size": 0,
+    "decay": 0,
+    "damp": 79,
+    "predelay": 6,
+    "width": 76,
+    "mod": 14,
+    "lowcut": 0
+   },
+   "chorus": null,
+   "notes": [
+    "eq not mapped (stored rows b1freq=47, b1gain=-4, lofreq=21, logain=7, lotype=1)",
+    "reverb Room -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)",
+    "reverb Room: early-reflection pattern not modelled (the Drumboy network has none)"
+   ]
+  },
+  {
+   "name": "Reed Morph",
+   "sends": [
+    0,
+    0,
+    15
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": null,
+   "chorus": {
+    "rate": 15,
+    "depth": 32,
+    "delay": 76,
+    "feedback": 26,
+    "width": 45,
+    "tone": 62,
+    "hpf": 75
+   },
+   "notes": [
+    "eq not mapped (stored rows b1freq=47, b1gain=-5, lofreq=21, logain=7, lotype=1)"
+   ]
+  },
+  {
+   "name": "Stereo Horizon",
+   "sends": [
+    0,
+    33,
+    23
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": {
+    "size": 78,
+    "decay": 101,
+    "damp": 89,
+    "predelay": 23,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 15
+   },
+   "chorus": {
+    "rate": 0,
+    "depth": 38,
+    "delay": 76,
+    "feedback": 26,
+    "width": 64,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "eq not mapped (stored rows hifreq=104, hislope=1, hitype=0)"
+   ]
+  },
+  {
+   "name": "Throat Growl",
+   "sends": [
+    0,
+    0,
+    14
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": null,
+   "chorus": {
+    "rate": 15,
+    "depth": 32,
+    "delay": 76,
+    "feedback": 26,
+    "width": 45,
+    "tone": 62,
+    "hpf": 75
+   },
+   "notes": [
+    "eq not mapped (stored rows b1freq=47, b1gain=-5, lofreq=21, logain=7, lotype=1)"
+   ]
+  },
+  {
+   "name": "Fern Canopy",
+   "sends": [
+    38,
+    0,
+    74
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 0,
+    "time": 98,
+    "feedback": 0,
+    "tone": 69,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 13
+   },
+   "reverb": null,
+   "chorus": {
+    "rate": 0,
+    "depth": 38,
+    "delay": 76,
+    "feedback": 26,
+    "width": 35,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "chorus Ensemble (mode I, 3 voices) -> one modulated line; the voice swirl is not modelled",
+    "delay Analog: no BBD companding/drift/saturation, TONE set from the BBD bandwidth law N/(4*time) at 120 BPM"
+   ]
+  },
+  {
+   "name": "Whispering Gallery",
+   "sends": [
+    69,
+    0,
+    74
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 0,
+    "time": 98,
+    "feedback": 47,
+    "tone": 69,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 13
+   },
+   "reverb": null,
+   "chorus": {
+    "rate": 0,
+    "depth": 48,
+    "delay": 76,
+    "feedback": 26,
+    "width": 35,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "chorus Ensemble (mode II, 3 voices) -> one modulated line; the voice swirl is not modelled",
+    "delay Analog: no BBD companding/drift/saturation, TONE set from the BBD bandwidth law N/(4*time) at 120 BPM"
+   ]
+  },
+  {
+   "name": "Broken Memory",
+   "sends": [
+    0,
+    21,
+    23
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": {
+    "size": 0,
+    "decay": 34,
+    "damp": 89,
+    "predelay": 13,
+    "width": 76,
+    "mod": 14,
+    "lowcut": 0
+   },
+   "chorus": {
+    "rate": 0,
+    "depth": 38,
+    "delay": 76,
+    "feedback": 26,
+    "width": 64,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "reverb Room -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)",
+    "reverb decay 1.9 s -> 1.2 s (the Room band 0.2-1.2 s)",
+    "reverb Room: early-reflection pattern not modelled (the Drumboy network has none)"
+   ]
+  },
+  {
+   "name": "Acid Gargle",
+   "sends": [
+    51,
+    0,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 0,
+    "time": 91,
+    "feedback": 54,
+    "tone": 77,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 13
+   },
+   "reverb": null,
+   "chorus": null,
+   "notes": [
+    "delay Analog: no BBD companding/drift/saturation, TONE set from the BBD bandwidth law N/(4*time) at 120 BPM"
+   ]
+  },
+  {
+   "name": "Four Second Riser",
+   "sends": [
+    0,
+    42,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": {
+    "size": 78,
+    "decay": 88,
+    "damp": 89,
+    "predelay": 23,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 15
+   },
+   "chorus": null,
+   "notes": [
+    "comp not mapped (master COMP is global): VCA, thresh -24 dB, ratio stored 70",
+    "phaser not mapped (rate 0.15 Hz, depth 55%, mix 24%)"
+   ]
+  },
+  {
+   "name": "Eight-Bit Brute",
+   "sends": [
+    0,
+    0,
+    9
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": null,
+   "chorus": {
+    "rate": 15,
+    "depth": 32,
+    "delay": 76,
+    "feedback": 26,
+    "width": 45,
+    "tone": 62,
+    "hpf": 75
+   },
+   "notes": [
+    "eq not mapped (stored rows b1freq=47, b1gain=-5, lofreq=21, logain=7, lotype=1)"
+   ]
+  },
+  {
+   "name": "Woody Pluck",
+   "sends": [
+    32,
+    45,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 5,
+    "time": 59,
+    "feedback": 40,
+    "tone": 82,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 81
+   },
+   "reverb": {
+    "size": 0,
+    "decay": 34,
+    "damp": 87,
+    "predelay": 8,
+    "width": 76,
+    "mod": 14,
+    "lowcut": 0
+   },
+   "chorus": null,
+   "notes": [
+    "reverb Room -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)",
+    "reverb decay 1.3 s -> 1.2 s (the Room band 0.2-1.2 s)",
+    "reverb Room: early-reflection pattern not modelled (the Drumboy network has none)",
+    "delay -> reverb in series in the original (echoes also get the reverb); the sends are parallel"
+   ]
+  },
+  {
+   "name": "Round Preset Bass",
+   "sends": [
+    0,
+    0,
+    0
+   ],
+   "amp": {
+    "model": 4,
+    "drive": 31,
+    "cab": 3,
+    "bass": 62,
+    "mid": 52,
+    "treble": 60,
+    "presence": 46,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": null,
+   "chorus": null,
+   "notes": [
+    "amp Bass (cab 8x10, mic 0) -> MODEL BASS, CAB 4X12",
+    "amp mix 39% has no knob: DRIVE scaled x0.70; the Drumboy amp is mono out",
+    "comp not mapped (master COMP is global): Opto, thresh -26 dB, ratio stored 60"
+   ]
+  },
+  {
+   "name": "Skimming Wisp",
+   "sends": [
+    0,
+    0,
+    74
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": null,
+   "chorus": {
+    "rate": 0,
+    "depth": 43,
+    "delay": 76,
+    "feedback": 26,
+    "width": 35,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "chorus Ensemble (mode I+II, 3 voices) -> one modulated line; the voice swirl is not modelled"
+   ]
+  },
+  {
+   "name": "Gray Code Halo",
+   "sends": [
+    0,
+    26,
+    23
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": {
+    "size": 78,
+    "decay": 101,
+    "damp": 89,
+    "predelay": 23,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 15
+   },
+   "chorus": {
+    "rate": 0,
+    "depth": 38,
+    "delay": 76,
+    "feedback": 26,
+    "width": 64,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": []
+  },
+  {
+   "name": "Distress Flare",
+   "sends": [
+    26,
+    0,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 0,
+    "time": 127,
+    "feedback": 82,
+    "tone": 97,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 13
+   },
+   "reverb": null,
+   "chorus": null,
+   "notes": [
+    "delay time 1015 ms clamped to the 1000 ms TIME limit"
+   ]
+  },
+  {
+   "name": "Hornet Loop",
+   "sends": [
+    51,
+    0,
+    74
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 0,
+    "time": 98,
+    "feedback": 47,
+    "tone": 69,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 13
+   },
+   "reverb": null,
+   "chorus": {
+    "rate": 0,
+    "depth": 48,
+    "delay": 76,
+    "feedback": 26,
+    "width": 35,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "chorus Ensemble (mode II, 3 voices) -> one modulated line; the voice swirl is not modelled",
+    "delay Analog: no BBD companding/drift/saturation, TONE set from the BBD bandwidth law N/(4*time) at 120 BPM"
+   ]
+  },
+  {
+   "name": "Algo Knock",
+   "sends": [
+    0,
+    0,
+    12
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": null,
+   "chorus": {
+    "rate": 15,
+    "depth": 32,
+    "delay": 76,
+    "feedback": 26,
+    "width": 45,
+    "tone": 62,
+    "hpf": 75
+   },
+   "notes": [
+    "eq not mapped (stored rows b1freq=47, b1gain=-5, lofreq=21, logain=7, lotype=1)"
+   ]
+  },
+  {
+   "name": "Gnaw",
+   "sends": [
+    0,
+    0,
+    14
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": null,
+   "chorus": {
+    "rate": 15,
+    "depth": 32,
+    "delay": 76,
+    "feedback": 26,
+    "width": 45,
+    "tone": 62,
+    "hpf": 75
+   },
+   "notes": [
+    "eq not mapped (stored rows b1freq=47, b1gain=-5, lofreq=21, logain=7, lotype=1)"
+   ]
+  },
+  {
+   "name": "Reso Pluck",
+   "sends": [
+    0,
+    78,
+    39
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": {
+    "size": 44,
+    "decay": 57,
+    "damp": 89,
+    "predelay": 14,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 0
+   },
+   "chorus": {
+    "rate": 5,
+    "depth": 48,
+    "delay": 0,
+    "feedback": 58,
+    "width": 35,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "reverb Plate -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)"
+   ]
+  },
+  {
+   "name": "Gentle FM Keys",
+   "sends": [
+    58,
+    93,
+    18
+   ],
+   "amp": {
+    "model": 2,
+    "drive": 21,
+    "cab": 0,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 109
+   },
+   "delay": {
+    "mode": 0,
+    "time": 118,
+    "feedback": 40,
+    "tone": 82,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 81
+   },
+   "reverb": {
+    "size": 44,
+    "decay": 90,
+    "damp": 79,
+    "predelay": 19,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 0
+   },
+   "chorus": {
+    "rate": 17,
+    "depth": 36,
+    "delay": 76,
+    "feedback": 26,
+    "width": 35,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "drive Saturate 9 dB, mix 39% -> MODEL CRUNCH, DRIVE 16% (x0.70 for the parallel mix), CAB OFF",
+    "chorus Ensemble (mode I+II, 3 voices) -> one modulated line; the voice swirl is not modelled",
+    "delay 1/4. has no Drumboy note mode: FREE at 750 ms (= 1/4. at 120 BPM; does not follow tempo)",
+    "reverb Plate -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)",
+    "reverb decay 8.0 s -> 3.0 s (the Plate band 0.5-3.0 s)",
+    "delay -> reverb in series in the original (echoes also get the reverb); the sends are parallel"
+   ]
+  },
+  {
+   "name": "Zap Pluck",
+   "sends": [
+    22,
+    44,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 5,
+    "time": 59,
+    "feedback": 47,
+    "tone": 97,
+    "spread": 127,
+    "mod": 10,
+    "hpf": 13
+   },
+   "reverb": {
+    "size": 44,
+    "decay": 42,
+    "damp": 87,
+    "predelay": 23,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 0
+   },
+   "chorus": null,
+   "notes": [
+    "delay Ping-pong: no crossed feedback, SPREAD 100% stands in",
+    "reverb Plate -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)",
+    "comp not mapped (master COMP is global): FET, thresh -22 dB, ratio stored 100",
+    "delay -> reverb in series in the original (echoes also get the reverb); the sends are parallel"
+   ]
+  },
+  {
+   "name": "Machine Loop",
+   "sends": [
+    26,
+    78,
+    0
+   ],
+   "amp": {
+    "model": 2,
+    "drive": 35,
+    "cab": 2,
+    "bass": 62,
+    "mid": 52,
+    "treble": 60,
+    "presence": 46,
+    "level": 102
+   },
+   "delay": {
+    "mode": 2,
+    "time": 95,
+    "feedback": 47,
+    "tone": 82,
+    "spread": 127,
+    "mod": 10,
+    "hpf": 81
+   },
+   "reverb": {
+    "size": 44,
+    "decay": 62,
+    "damp": 89,
+    "predelay": 23,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 0
+   },
+   "chorus": null,
+   "notes": [
+    "amp Crunch (cab 2x12, mic 0) -> MODEL CRUNCH, CAB 2X12",
+    "amp mix 28% has no knob: DRIVE scaled x0.64; the Drumboy amp is mono out",
+    "comp not mapped (master COMP is global): VCA, thresh -26 dB, ratio stored 80",
+    "delay Ping-pong: no crossed feedback, SPREAD 100% stands in",
+    "reverb Plate -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)",
+    "delay -> reverb in series in the original (echoes also get the reverb); the sends are parallel"
+   ]
+  },
+  {
+   "name": "Twin Oak Poly",
+   "sends": [
+    0,
+    93,
+    0
+   ],
+   "amp": {
+    "model": 2,
+    "drive": 31,
+    "cab": 0,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": {
+    "size": 44,
+    "decay": 81,
+    "damp": 89,
+    "predelay": 23,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 0
+   },
+   "chorus": null,
+   "notes": [
+    "drive Saturate 13 dB, mix 39% -> MODEL CRUNCH, DRIVE 25% (x0.70 for the parallel mix), CAB OFF",
+    "reverb Plate -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)",
+    "comp not mapped (master COMP is global): Bus, thresh -30 dB, ratio stored 40"
+   ]
+  },
+  {
+   "name": "Revival Chords",
+   "sends": [
+    0,
+    50,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": {
+    "size": 83,
+    "decay": 95,
+    "damp": 79,
+    "predelay": 28,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 15
+   },
+   "chorus": null,
+   "notes": [
+    "schain (sidechain pump) not mapped"
+   ]
+  },
+  {
+   "name": "Wire Lullaby",
+   "sends": [
+    51,
+    0,
+    74
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 0,
+    "time": 98,
+    "feedback": 40,
+    "tone": 69,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 13
+   },
+   "reverb": null,
+   "chorus": {
+    "rate": 0,
+    "depth": 48,
+    "delay": 76,
+    "feedback": 26,
+    "width": 35,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "chorus Ensemble (mode II, 3 voices) -> one modulated line; the voice swirl is not modelled",
+    "delay Analog: no BBD companding/drift/saturation, TONE set from the BBD bandwidth law N/(4*time) at 120 BPM"
+   ]
+  },
+  {
+   "name": "Reel Horns",
+   "sends": [
+    0,
+    127,
+    24
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": {
+    "size": 44,
+    "decay": 75,
+    "damp": 87,
+    "predelay": 23,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 0
+   },
+   "chorus": {
+    "rate": 17,
+    "depth": 45,
+    "delay": 76,
+    "feedback": 26,
+    "width": 35,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "vintage not mapped (Mellotron, mix 60%)",
+    "chorus Ensemble (mode I+II, 3 voices) -> one modulated line; the voice swirl is not modelled",
+    "reverb Plate -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)",
+    "comp not mapped (master COMP is global): Bus, thresh -30 dB, ratio stored 40",
+    "reverb send saturated at 100% (mix 50% x level gain 1.33 wants more)"
+   ]
+  },
+  {
+   "name": "Folded Drop",
+   "sends": [
+    35,
+    74,
+    0
+   ],
+   "amp": {
+    "model": 2,
+    "drive": 54,
+    "cab": 0,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 124
+   },
+   "delay": {
+    "mode": 2,
+    "time": 95,
+    "feedback": 47,
+    "tone": 82,
+    "spread": 127,
+    "mod": 10,
+    "hpf": 81
+   },
+   "reverb": {
+    "size": 78,
+    "decay": 88,
+    "damp": 67,
+    "predelay": 19,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 15
+   },
+   "chorus": null,
+   "notes": [
+    "drive Saturate 17 dB, mix 79% -> MODEL CRUNCH, DRIVE 42% (x0.89 for the parallel mix), CAB OFF",
+    "delay Ping-pong: no crossed feedback, SPREAD 100% stands in",
+    "delay -> reverb in series in the original (echoes also get the reverb); the sends are parallel"
+   ]
+  },
+  {
+   "name": "Triplet Arp",
+   "sends": [
+    29,
+    62,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 6,
+    "time": 69,
+    "feedback": 44,
+    "tone": 82,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 81
+   },
+   "reverb": {
+    "size": 44,
+    "decay": 64,
+    "damp": 86,
+    "predelay": 8,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 0
+   },
+   "chorus": null,
+   "notes": [
+    "delay Analog: no BBD companding/drift/saturation, TONE set from the BBD bandwidth law N/(4*time) at 120 BPM",
+    "reverb Plate -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)",
+    "delay -> reverb in series in the original (echoes also get the reverb); the sends are parallel"
+   ]
+  },
+  {
+   "name": "Pump Arp",
+   "sends": [
+    35,
+    64,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 2,
+    "time": 95,
+    "feedback": 40,
+    "tone": 82,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 81
+   },
+   "reverb": {
+    "size": 44,
+    "decay": 49,
+    "damp": 92,
+    "predelay": 13,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 0
+   },
+   "chorus": null,
+   "notes": [
+    "reverb Plate -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)",
+    "schain (sidechain pump) not mapped",
+    "delay -> reverb in series in the original (echoes also get the reverb); the sends are parallel"
+   ]
+  },
+  {
+   "name": "Split Poly",
+   "sends": [
+    50,
+    93,
+    0
+   ],
+   "amp": {
+    "model": 2,
+    "drive": 21,
+    "cab": 0,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 109
+   },
+   "delay": {
+    "mode": 2,
+    "time": 95,
+    "feedback": 40,
+    "tone": 82,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 81
+   },
+   "reverb": {
+    "size": 44,
+    "decay": 90,
+    "damp": 79,
+    "predelay": 19,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 0
+   },
+   "chorus": null,
+   "notes": [
+    "drive Saturate 9 dB, mix 39% -> MODEL CRUNCH, DRIVE 16% (x0.70 for the parallel mix), CAB OFF",
+    "reverb Plate -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)",
+    "reverb decay 3.9 s -> 3.0 s (the Plate band 0.5-3.0 s)",
+    "delay -> reverb in series in the original (echoes also get the reverb); the sends are parallel"
+   ]
+  },
+  {
+   "name": "Cathedral Swell",
+   "sends": [
+    0,
+    72,
+    31
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": {
+    "size": 127,
+    "decay": 108,
+    "damp": 66,
+    "predelay": 38,
+    "width": 89,
+    "mod": 7,
+    "lowcut": 15
+   },
+   "chorus": {
+    "rate": 23,
+    "depth": 50,
+    "delay": 76,
+    "feedback": 26,
+    "width": 35,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "chorus Ensemble (mode I+II, 3 voices) -> one modulated line; the voice swirl is not modelled",
+    "comp not mapped (master COMP is global): Bus, thresh -30 dB, ratio stored 40",
+    "reverb Cathedral -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)"
+   ]
+  },
+  {
+   "name": "Soft Horns",
+   "sends": [
+    0,
+    51,
+    24
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": {
+    "size": 78,
+    "decay": 98,
+    "damp": 79,
+    "predelay": 25,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 15
+   },
+   "chorus": {
+    "rate": 21,
+    "depth": 50,
+    "delay": 76,
+    "feedback": 26,
+    "width": 35,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "chorus Ensemble (mode I+II, 3 voices) -> one modulated line; the voice swirl is not modelled",
+    "comp not mapped (master COMP is global): Bus, thresh -30 dB, ratio stored 40"
+   ]
+  },
+  {
+   "name": "Hollow Bounce",
+   "sends": [
+    24,
+    52,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 1,
+    "time": 104,
+    "feedback": 47,
+    "tone": 82,
+    "spread": 127,
+    "mod": 10,
+    "hpf": 81
+   },
+   "reverb": {
+    "size": 44,
+    "decay": 55,
+    "damp": 87,
+    "predelay": 15,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 0
+   },
+   "chorus": null,
+   "notes": [
+    "delay Ping-pong: no crossed feedback, SPREAD 100% stands in",
+    "reverb Plate -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)",
+    "schain (sidechain pump) not mapped",
+    "delay -> reverb in series in the original (echoes also get the reverb); the sends are parallel"
+   ]
+  },
+  {
+   "name": "Muted Smoke",
+   "sends": [
+    20,
+    78,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 1,
+    "time": 104,
+    "feedback": 40,
+    "tone": 82,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 13
+   },
+   "reverb": {
+    "size": 44,
+    "decay": 77,
+    "damp": 92,
+    "predelay": 15,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 0
+   },
+   "chorus": null,
+   "notes": [
+    "comp not mapped (master COMP is global): Opto, thresh -26 dB, ratio stored 60",
+    "delay Tape: no heads/saturation/wow, TONE = the age low-pass",
+    "reverb Plate -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)",
+    "delay -> reverb in series in the original (echoes also get the reverb); the sends are parallel"
+   ]
+  },
+  {
+   "name": "Toy Keyboard",
+   "sends": [
+    0,
+    22,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": {
+    "size": 0,
+    "decay": 2,
+    "damp": 96,
+    "predelay": 8,
+    "width": 76,
+    "mod": 14,
+    "lowcut": 0
+   },
+   "chorus": null,
+   "notes": [
+    "era not mapped",
+    "reverb Room -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)",
+    "reverb Room: early-reflection pattern not modelled (the Drumboy network has none)"
+   ]
+  },
+  {
+   "name": "Metal Clock",
+   "sends": [
+    24,
+    57,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 2,
+    "time": 95,
+    "feedback": 47,
+    "tone": 82,
+    "spread": 127,
+    "mod": 10,
+    "hpf": 81
+   },
+   "reverb": {
+    "size": 44,
+    "decay": 55,
+    "damp": 87,
+    "predelay": 10,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 0
+   },
+   "chorus": null,
+   "notes": [
+    "comp not mapped (master COMP is global): VCA, thresh -28 dB, ratio stored 80",
+    "delay Ping-pong: no crossed feedback, SPREAD 100% stands in",
+    "reverb Plate -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)",
+    "delay -> reverb in series in the original (echoes also get the reverb); the sends are parallel"
+   ]
+  },
+  {
+   "name": "Hypno Pulse",
+   "sends": [
+    35,
+    45,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 2,
+    "time": 95,
+    "feedback": 47,
+    "tone": 82,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 81
+   },
+   "reverb": {
+    "size": 0,
+    "decay": 22,
+    "damp": 89,
+    "predelay": 13,
+    "width": 76,
+    "mod": 14,
+    "lowcut": 0
+   },
+   "chorus": null,
+   "notes": [
+    "reverb Room -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)",
+    "reverb Room: early-reflection pattern not modelled (the Drumboy network has none)",
+    "delay -> reverb in series in the original (echoes also get the reverb); the sends are parallel"
+   ]
+  },
+  {
+   "name": "Sympathetic Keys",
+   "sends": [
+    0,
+    51,
+    22
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": {
+    "size": 78,
+    "decay": 90,
+    "damp": 77,
+    "predelay": 51,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 15
+   },
+   "chorus": {
+    "rate": 14,
+    "depth": 45,
+    "delay": 76,
+    "feedback": 26,
+    "width": 35,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "chorus Ensemble (mode I+II, 3 voices) -> one modulated line; the voice swirl is not modelled"
+   ]
+  },
+  {
+   "name": "Chorus Chords",
+   "sends": [
+    0,
+    84,
+    56
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": {
+    "size": 44,
+    "decay": 55,
+    "damp": 87,
+    "predelay": 13,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 0
+   },
+   "chorus": {
+    "rate": 20,
+    "depth": 48,
+    "delay": 76,
+    "feedback": 26,
+    "width": 64,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "reverb Plate -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)"
+   ]
+  },
+  {
+   "name": "Gray Keys",
+   "sends": [
+    28,
+    72,
+    0
+   ],
+   "amp": {
+    "model": 2,
+    "drive": 22,
+    "cab": 0,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 105
+   },
+   "delay": {
+    "mode": 2,
+    "time": 95,
+    "feedback": 33,
+    "tone": 82,
+    "spread": 127,
+    "mod": 10,
+    "hpf": 81
+   },
+   "reverb": {
+    "size": 44,
+    "decay": 57,
+    "damp": 87,
+    "predelay": 15,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 0
+   },
+   "chorus": null,
+   "notes": [
+    "drive Saturate 10 dB, mix 31% -> MODEL CRUNCH, DRIVE 18% (x0.66 for the parallel mix), CAB OFF",
+    "delay Ping-pong: no crossed feedback, SPREAD 100% stands in",
+    "reverb Plate -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)",
+    "delay -> reverb in series in the original (echoes also get the reverb); the sends are parallel"
+   ]
+  },
+  {
+   "name": "Dotted Chords",
+   "sends": [
+    111,
+    32,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 2,
+    "time": 95,
+    "feedback": 76,
+    "tone": 61,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 58
+   },
+   "reverb": {
+    "size": 32,
+    "decay": 50,
+    "damp": 89,
+    "predelay": 0,
+    "width": 89,
+    "mod": 14,
+    "lowcut": 0
+   },
+   "chorus": null,
+   "notes": [
+    "delay Analog: no BBD companding/drift/saturation, TONE set from the BBD bandwidth law N/(4*time) at 120 BPM",
+    "reverb Spring -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)",
+    "reverb Spring: springs/drip/boing not modelled",
+    "delay -> reverb in series in the original (echoes also get the reverb); the sends are parallel"
+   ]
+  },
+  {
+   "name": "Cold Stack Chords",
+   "sends": [
+    0,
+    92,
+    28
+   ],
+   "amp": {
+    "model": 2,
+    "drive": 21,
+    "cab": 0,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 127
+   },
+   "delay": null,
+   "reverb": {
+    "size": 78,
+    "decay": 95,
+    "damp": 67,
+    "predelay": 19,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 15
+   },
+   "chorus": {
+    "rate": 20,
+    "depth": 36,
+    "delay": 76,
+    "feedback": 26,
+    "width": 35,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "drive Saturate 9 dB, mix 39% -> MODEL CRUNCH, DRIVE 16% (x0.70 for the parallel mix), CAB OFF",
+    "phaser not mapped (rate 0.15 Hz, depth 55%, mix 31%)"
+   ]
+  },
+  {
+   "name": "Rusted EP",
+   "sends": [
+    18,
+    53,
+    23
+   ],
+   "amp": {
+    "model": 3,
+    "drive": 32,
+    "cab": 0,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 99
+   },
+   "delay": {
+    "mode": 2,
+    "time": 95,
+    "feedback": 33,
+    "tone": 82,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 13
+   },
+   "reverb": {
+    "size": 32,
+    "decay": 56,
+    "damp": 89,
+    "predelay": 0,
+    "width": 89,
+    "mod": 14,
+    "lowcut": 0
+   },
+   "chorus": {
+    "rate": 20,
+    "depth": 36,
+    "delay": 76,
+    "feedback": 26,
+    "width": 35,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "drive Distortion 14 dB, mix 28% -> MODEL LEAD, DRIVE 25% (x0.64 for the parallel mix), CAB OFF",
+    "delay Tape: no heads/saturation/wow, TONE = the age low-pass",
+    "reverb Spring -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)",
+    "reverb Spring: springs/drip/boing not modelled",
+    "eq not mapped (stored rows lofreq=127, logain=9, lotype=1)",
+    "delay -> reverb in series in the original (echoes also get the reverb); the sends are parallel"
+   ]
+  },
+  {
+   "name": "Velvet Horns",
+   "sends": [
+    18,
+    50,
+    22
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 2,
+    "time": 95,
+    "feedback": 33,
+    "tone": 91,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 13
+   },
+   "reverb": {
+    "size": 78,
+    "decay": 88,
+    "damp": 79,
+    "predelay": 25,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 15
+   },
+   "chorus": {
+    "rate": 23,
+    "depth": 50,
+    "delay": 76,
+    "feedback": 26,
+    "width": 35,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "chorus Ensemble (mode I+II, 3 voices) -> one modulated line; the voice swirl is not modelled",
+    "comp not mapped (master COMP is global): Bus, thresh -30 dB, ratio stored 40",
+    "delay Tape: no heads/saturation/wow, TONE = the age low-pass",
+    "eq not mapped (stored rows lofreq=127, logain=12, lotype=1)",
+    "delay -> reverb in series in the original (echoes also get the reverb); the sends are parallel"
+   ]
+  },
+  {
+   "name": "Phase Keys",
+   "sends": [
+    39,
+    72,
+    29
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 2,
+    "time": 95,
+    "feedback": 40,
+    "tone": 82,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 81
+   },
+   "reverb": {
+    "size": 44,
+    "decay": 64,
+    "damp": 96,
+    "predelay": 18,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 0
+   },
+   "chorus": {
+    "rate": 19,
+    "depth": 38,
+    "delay": 76,
+    "feedback": 26,
+    "width": 35,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "reverb Plate -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)",
+    "delay -> reverb in series in the original (echoes also get the reverb); the sends are parallel"
+   ]
+  },
+  {
+   "name": "Radio Haze",
+   "sends": [
+    0,
+    21,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": {
+    "size": 0,
+    "decay": 15,
+    "damp": 89,
+    "predelay": 13,
+    "width": 76,
+    "mod": 14,
+    "lowcut": 0
+   },
+   "chorus": null,
+   "notes": [
+    "era not mapped",
+    "reverb Room -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)",
+    "reverb Room: early-reflection pattern not modelled (the Drumboy network has none)",
+    "eq not mapped (stored rows lofreq=30, lotype=0)"
+   ]
+  },
+  {
+   "name": "Cold Draft",
+   "sends": [
+    0,
+    76,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": {
+    "size": 78,
+    "decay": 105,
+    "damp": 71,
+    "predelay": 30,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 15
+   },
+   "chorus": null,
+   "notes": [
+    "phaser not mapped (rate 0.06 Hz, depth 49%, mix 20%)",
+    "reverb decay 10.7 s -> 6.0 s (the Hall band 1.0-6.0 s)",
+    "eq not mapped (stored rows lofreq=32, lotype=0)"
+   ]
+  },
+  {
+   "name": "Dusty Music Box",
+   "sends": [
+    0,
+    93,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": {
+    "size": 44,
+    "decay": 81,
+    "damp": 96,
+    "predelay": 13,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 0
+   },
+   "chorus": null,
+   "notes": [
+    "vintage not mapped (Akai S1000, mix 79%)",
+    "reverb Plate -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)"
+   ]
+  },
+  {
+   "name": "Square March",
+   "sends": [
+    26,
+    67,
+    15
+   ],
+   "amp": {
+    "model": 2,
+    "drive": 36,
+    "cab": 0,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 5,
+    "time": 59,
+    "feedback": 33,
+    "tone": 82,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 81
+   },
+   "reverb": {
+    "size": 44,
+    "decay": 59,
+    "damp": 87,
+    "predelay": 13,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 0
+   },
+   "chorus": {
+    "rate": 15,
+    "depth": 32,
+    "delay": 76,
+    "feedback": 26,
+    "width": 35,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "drive Saturate 14 dB, mix 43% -> MODEL CRUNCH, DRIVE 28% (x0.72 for the parallel mix), CAB OFF",
+    "comp not mapped (master COMP is global): FET, thresh -26 dB, ratio stored 90",
+    "reverb Plate -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)",
+    "delay -> reverb in series in the original (echoes also get the reverb); the sends are parallel"
+   ]
+  },
+  {
+   "name": "Metal Resonance",
+   "sends": [
+    0,
+    45,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": {
+    "size": 127,
+    "decay": 114,
+    "damp": 66,
+    "predelay": 23,
+    "width": 89,
+    "mod": 7,
+    "lowcut": 15
+   },
+   "chorus": null,
+   "notes": [
+    "phaser not mapped (rate 0.09 Hz, depth 55%, mix 24%)",
+    "reverb Cathedral -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)",
+    "eq not mapped (stored rows lofreq=32, lotype=0)"
+   ]
+  },
+  {
+   "name": "Ribbon Poly",
+   "sends": [
+    22,
+    93,
+    33
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 2,
+    "time": 95,
+    "feedback": 40,
+    "tone": 82,
+    "spread": 127,
+    "mod": 10,
+    "hpf": 81
+   },
+   "reverb": {
+    "size": 44,
+    "decay": 88,
+    "damp": 87,
+    "predelay": 19,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 0
+   },
+   "chorus": {
+    "rate": 21,
+    "depth": 50,
+    "delay": 76,
+    "feedback": 26,
+    "width": 35,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "comp not mapped (master COMP is global): Bus, thresh -21 dB, ratio stored 50",
+    "chorus Ensemble (mode I+II, 3 voices) -> one modulated line; the voice swirl is not modelled",
+    "delay Ping-pong: no crossed feedback, SPREAD 100% stands in",
+    "reverb Plate -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)",
+    "eq not mapped (stored rows lofreq=30, lotype=0)",
+    "delay -> reverb in series in the original (echoes also get the reverb); the sends are parallel"
+   ]
+  },
+  {
+   "name": "Night Wind",
+   "sends": [
+    0,
+    45,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": {
+    "size": 127,
+    "decay": 121,
+    "damp": 51,
+    "predelay": 23,
+    "width": 89,
+    "mod": 7,
+    "lowcut": 15
+   },
+   "chorus": null,
+   "notes": [
+    "comp not mapped (master COMP is global): Bus, thresh -22 dB, ratio stored 70",
+    "phaser not mapped (rate 0.09 Hz, depth 63%, mix 28%)",
+    "reverb Cathedral -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)"
+   ]
+  },
+  {
+   "name": "Broken Carillon",
+   "sends": [
+    29,
+    59,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 0,
+    "time": 118,
+    "feedback": 57,
+    "tone": 45,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 13
+   },
+   "reverb": {
+    "size": 78,
+    "decay": 105,
+    "damp": 87,
+    "predelay": 23,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 15
+   },
+   "chorus": null,
+   "notes": [
+    "delay 1/4. has no Drumboy note mode: FREE at 750 ms (= 1/4. at 120 BPM; does not follow tempo)",
+    "delay Analog: no BBD companding/drift/saturation, TONE set from the BBD bandwidth law N/(4*time) at 120 BPM",
+    "reverb decay 6.5 s -> 6.0 s (the Hall band 1.0-6.0 s)",
+    "eq not mapped (stored rows lofreq=127, logain=16, lotype=1)",
+    "delay -> reverb in series in the original (echoes also get the reverb); the sends are parallel"
+   ]
+  },
+  {
+   "name": "Plate Rain",
+   "sends": [
+    0,
+    127,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": {
+    "size": 44,
+    "decay": 90,
+    "damp": 87,
+    "predelay": 13,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 0
+   },
+   "chorus": null,
+   "notes": [
+    "reverb Plate -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)",
+    "reverb decay 6.5 s -> 3.0 s (the Plate band 0.5-3.0 s)",
+    "comp not mapped (master COMP is global): Bus, thresh -30 dB, ratio stored 40",
+    "reverb send saturated at 100% (mix 60% x level gain 1.33 wants more)"
+   ]
+  },
+  {
+   "name": "Steel Pan",
+   "sends": [
+    39,
+    78,
+    19
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 2,
+    "time": 95,
+    "feedback": 40,
+    "tone": 89,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 81
+   },
+   "reverb": {
+    "size": 44,
+    "decay": 70,
+    "damp": 92,
+    "predelay": 15,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 0
+   },
+   "chorus": {
+    "rate": 22,
+    "depth": 28,
+    "delay": 76,
+    "feedback": 26,
+    "width": 35,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "reverb Plate -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)",
+    "delay -> reverb in series in the original (echoes also get the reverb); the sends are parallel"
+   ]
+  },
+  {
+   "name": "Gray Bell",
+   "sends": [
+    18,
+    67,
+    15
+   ],
+   "amp": {
+    "model": 2,
+    "drive": 17,
+    "cab": 0,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 2,
+    "time": 95,
+    "feedback": 57,
+    "tone": 93,
+    "spread": 127,
+    "mod": 10,
+    "hpf": 88
+   },
+   "reverb": {
+    "size": 44,
+    "decay": 83,
+    "damp": 97,
+    "predelay": 18,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 0
+   },
+   "chorus": {
+    "rate": 15,
+    "depth": 32,
+    "delay": 76,
+    "feedback": 26,
+    "width": 64,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "drive Saturate 7 dB, mix 31% -> MODEL CRUNCH, DRIVE 13% (x0.66 for the parallel mix), CAB OFF",
+    "delay Ping-pong: no crossed feedback, SPREAD 100% stands in",
+    "reverb Plate -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)",
+    "comp not mapped (master COMP is global): Bus, thresh -21 dB, ratio stored 70",
+    "second amp/drive instance ignored (drive Saturate 9 dB, mix 55%)",
+    "delay -> reverb in series in the original (echoes also get the reverb); the sends are parallel"
+   ]
+  },
+  {
+   "name": "Crystal Poly",
+   "sends": [
+    35,
+    45,
+    40
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 2,
+    "time": 95,
+    "feedback": 40,
+    "tone": 82,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 81
+   },
+   "reverb": {
+    "size": 78,
+    "decay": 79,
+    "damp": 79,
+    "predelay": 25,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 15
+   },
+   "chorus": {
+    "rate": 26,
+    "depth": 44,
+    "delay": 76,
+    "feedback": 26,
+    "width": 64,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "delay -> reverb in series in the original (echoes also get the reverb); the sends are parallel"
+   ]
+  },
+  {
+   "name": "Dust Bed",
+   "sends": [
+    22,
+    51,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 0,
+    "time": 118,
+    "feedback": 57,
+    "tone": 69,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 13
+   },
+   "reverb": {
+    "size": 78,
+    "decay": 92,
+    "damp": 58,
+    "predelay": 19,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 15
+   },
+   "chorus": null,
+   "notes": [
+    "vintage not mapped (Akai S1000, mix 79%)",
+    "delay 1/4. has no Drumboy note mode: FREE at 750 ms (= 1/4. at 120 BPM; does not follow tempo)",
+    "delay Tape: no heads/saturation/wow, TONE = the age low-pass",
+    "eq not mapped (stored rows lofreq=30, lotype=0)",
+    "delay -> reverb in series in the original (echoes also get the reverb); the sends are parallel"
+   ]
+  },
+  {
+   "name": "Anvil Stab",
+   "sends": [
+    0,
+    78,
+    0
+   ],
+   "amp": {
+    "model": 2,
+    "drive": 29,
+    "cab": 2,
+    "bass": 62,
+    "mid": 52,
+    "treble": 60,
+    "presence": 46,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": {
+    "size": 44,
+    "decay": 62,
+    "damp": 96,
+    "predelay": 13,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 0
+   },
+   "chorus": null,
+   "notes": [
+    "amp Crunch (cab 2x12, mic 2) -> MODEL CRUNCH, CAB 2X12",
+    "amp mix 28% has no knob: DRIVE scaled x0.64; the Drumboy amp is mono out",
+    "reverb Plate -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)",
+    "comp not mapped (master COMP is global): FET, thresh -24 dB, ratio stored 90"
+   ]
+  },
+  {
+   "name": "Hoover Hit",
+   "sends": [
+    0,
+    78,
+    28
+   ],
+   "amp": {
+    "model": 2,
+    "drive": 28,
+    "cab": 0,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": null,
+   "reverb": {
+    "size": 44,
+    "decay": 68,
+    "damp": 96,
+    "predelay": 13,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 0
+   },
+   "chorus": {
+    "rate": 26,
+    "depth": 44,
+    "delay": 76,
+    "feedback": 26,
+    "width": 55,
+    "tone": 62,
+    "hpf": 0
+   },
+   "notes": [
+    "drive Saturate 11 dB, mix 39% -> MODEL CRUNCH, DRIVE 22% (x0.70 for the parallel mix), CAB OFF",
+    "reverb Plate -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)"
+   ]
+  },
+  {
+   "name": "Mask Stab",
+   "sends": [
+    21,
+    72,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 5,
+    "time": 59,
+    "feedback": 40,
+    "tone": 97,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 13
+   },
+   "reverb": {
+    "size": 44,
+    "decay": 55,
+    "damp": 96,
+    "predelay": 13,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 0
+   },
+   "chorus": null,
+   "notes": [
+    "reverb Plate -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)",
+    "comp not mapped (master COMP is global): FET, thresh -19 dB, ratio stored 100",
+    "delay -> reverb in series in the original (echoes also get the reverb); the sends are parallel"
+   ]
+  },
+  {
+   "name": "Struck Wire",
+   "sends": [
+    26,
+    48,
+    0
+   ],
+   "amp": {
+    "model": 0,
+    "drive": 51,
+    "cab": 2,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 102
+   },
+   "delay": {
+    "mode": 0,
+    "time": 118,
+    "feedback": 40,
+    "tone": 45,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 81
+   },
+   "reverb": {
+    "size": 78,
+    "decay": 98,
+    "damp": 87,
+    "predelay": 25,
+    "width": 127,
+    "mod": 14,
+    "lowcut": 15
+   },
+   "chorus": null,
+   "notes": [
+    "delay 1/4. has no Drumboy note mode: FREE at 750 ms (= 1/4. at 120 BPM; does not follow tempo)",
+    "delay Analog: no BBD companding/drift/saturation, TONE set from the BBD bandwidth law N/(4*time) at 120 BPM",
+    "delay -> reverb in series in the original (echoes also get the reverb); the sends are parallel"
+   ]
+  },
+  {
+   "name": "Singing Bowl",
+   "sends": [
+    20,
+    29,
+    0
+   ],
+   "amp": {
+    "model": 2,
+    "drive": 23,
+    "cab": 0,
+    "bass": 64,
+    "mid": 64,
+    "treble": 64,
+    "presence": 51,
+    "level": 107
+   },
+   "delay": {
+    "mode": 0,
+    "time": 118,
+    "feedback": 69,
+    "tone": 69,
+    "spread": 90,
+    "mod": 10,
+    "hpf": 67
+   },
+   "reverb": {
+    "size": 127,
+    "decay": 118,
+    "damp": 66,
+    "predelay": 25,
+    "width": 89,
+    "mod": 7,
+    "lowcut": 15
+   },
+   "chorus": null,
+   "notes": [
+    "delay 1/4. has no Drumboy note mode: FREE at 750 ms (= 1/4. at 120 BPM; does not follow tempo)",
+    "delay Tape: no heads/saturation/wow, TONE = the age low-pass",
+    "phaser not mapped (rate 0.09 Hz, depth 58%, mix 24%)",
+    "reverb Cathedral -> the Drumboy's one hall-like network (size/decay/damp chosen for a similar tail)",
+    "comp not mapped (master COMP is global): Bus, thresh -21 dB, ratio stored 70",
+    "drive Saturate 9 dB, mix 55% -> MODEL CRUNCH, DRIVE 18% (x0.78 for the parallel mix), CAB OFF",
+    "delay -> reverb in series in the original (echoes also get the reverb); the sends are parallel"
+   ]
+  }
+ ]
+}

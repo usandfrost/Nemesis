@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/png" href="img/icon.png">
+<title>Nemesis: firmware for the Drumboy Pro</title>
+<meta name="description" content="Nemesis is custom firmware for the Drumboy Pro groovebox: seven parts, ten lanes, a wavetable synth, a sampler with slices, and effects.">
+<link rel="stylesheet" href="site.css">
+</head>
+<body class="site">
+<a class="skip" href="#stages">Skip to the stages</a>
+<canvas id="sky" aria-hidden="true"></canvas>
+<header id="bar" class="menubar"></header>
+<div class="copper"></div>
+<section class="title-screen" aria-label="Nemesis title screen">
+  <canvas id="demo" aria-hidden="true"></canvas>
+  <div class="title-ui">
+    <a class="btn go press" href="#stages">Press start</a>
+    <p class="scroll-text">Nemesis. A groovebox firmware for the Drumboy Pro. Seven parts. Ten lanes. Up to 32 steps. 200 presets. A tracker, recording and slices on the device. Song, stems and MIDI export. Delay, reverb, chorus, an amp on every part. Press start for the stages.</p>
+  </div>
+  <noscript><img src="img/nemesis.png" alt="The word NEMESIS in chrome letters over a sunset stripe" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></noscript>
+</section>
+<div class="copper"></div>
+
+<main class="wrap">
+  <section class="heading" aria-label="What Nemesis is">
+    <h1 class="chrome">A groovebox firmware with a real synth inside</h1>
+  </section>
+  <section class="box">
+    <p>Nemesis is unofficial firmware for the Randomwaves Drumboy Pro. It turns the box into seven parts of synth and sampler, played by ten lanes, with effects behind them. You can try it in this browser, because the page runs the firmware's own code.</p>
+    <p class="btns"><a class="btn go" href="online.html">Play Online Nemesis</a><a class="btn" href="tutorial.html">Learn it in sixteen levels</a></p>
+  </section>
+
+  <section class="heading" id="new">
+    <h2 class="chrome">New in Beta 2</h2>
+  </section>
+  <section class="box">
+    <ul class="newlist">
+      <li><b>Tracker.</b> STEP's third view: notes as text, all ten lanes at once, with a box at the cell for note, octave and chord.</li>
+      <li><b>Export.</b> A song as one WAV, as stems for each lane, or as a MIDI file.</li>
+      <li><b>Factory projects.</b> DEMO, TECHNO and MASCHINE, the last two built on p-locks, ready to play or take apart.</li>
+      <li><b>Start from nothing.</b> A Drumboy now starts with an empty project, and one long hold on the small ring empties a pattern.</li>
+      <li><b>Thirty project slots.</b> In one scrolling list, and you can delete a project, with an undo.</li>
+      <li><b>Sync.</b> MIDI clock in and out, the SYNC sockets, and a sustain pedal.</li>
+      <li><b>Sample browser.</b> A card holds thousands of samples: pick a folder, then a sample, from any sample knob.</li>
+      <li><b>Preset editor.</b> Make and change presets in your browser, and hear them as you go.</li>
+      <li><b>Sixteen tutorial lessons.</b> Now with recording, slices, loops, the tracker, projects and exporting.</li>
+      <li><b>A manual.</b> <a href="manual.html">Read it here</a>, or <a href="downloads/nemesis-manual.pdf" download>take the PDF</a>: getting started, then every feature, key and knob.</li>
+    </ul>
+    <p class="btns"><a class="btn go" href="manual.html">Read the manual</a><a class="btn" href="downloads/nemesis-manual.pdf" download>Manual as a PDF</a></p>
+  </section>
+
+  <section class="heading" id="stages">
+    <h2 class="chrome">Stage select</h2>
+    <p>Ten stages, ten real screens. Each one is drawn by the firmware's own code and saved as it came out. Only the orange labels are added.</p>
+  </section>
+  <ol class="map">
+    <li><a href="#stage-1"><span class="node"><i class="sprite" data-s="steps"></i></span><small>Stage 1</small>Sequencer</a></li>
+    <li><a href="#stage-2"><span class="node"><i class="sprite" data-s="filter"></i></span><small>Stage 2</small>Sound</a></li>
+    <li><a href="#stage-3"><span class="node"><i class="sprite" data-s="blade"></i></span><small>Stage 3</small>Slices</a></li>
+    <li><a href="#stage-4"><span class="node"><i class="sprite" data-s="fader"></i></span><small>Stage 4</small>Mixer</a></li>
+    <li><a href="#stage-5"><span class="node"><i class="sprite" data-s="chip"></i></span><small>Stage 5</small>CPU</a></li>
+    <li><a href="#stage-6"><span class="node"><i class="sprite" data-s="echo"></i></span><small>Stage 6</small>Effects</a></li>
+    <li><a href="#stage-7"><span class="node"><i class="sprite" data-s="star"></i></span><small>Stage 7</small>Presets</a></li>
+    <li><a href="#stage-8"><span class="node"><i class="sprite" data-s="note"></i></span><small>Stage 8</small>Tracker</a></li>
+    <li><a href="#stage-9"><span class="node"><i class="sprite" data-s="wave"></i></span><small>Stage 9</small>Recording</a></li>
+    <li><a href="#stage-10"><span class="node"><i class="sprite" data-s="bolt"></i></span><small>Stage 10</small>Export</a></li>
+  </ol>
+
+  <section class="tour" id="stage-1">
+    <div class="stage-head"><i class="sprite" data-s="steps"></i><span class="stage-no">Stage 1 of 10</span><span class="pips" aria-hidden="true"><i class=on></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="stage-title">The whole pattern at a glance</h2>
+    <div class="stage-body"><figure class="shot"><div class="frame"><img src="img/screens/sequencer.png" width="960" height="540" loading="lazy" alt="The home screen: ten lanes of coloured steps, each tagged with the part that plays it, with knob boxes above and below.">
+      <i class="mark" aria-hidden="true" style="--x:38;--y:90;--w:40;--h:362"><b>1</b></i>
+      <i class="mark" aria-hidden="true" style="--x:230;--y:90;--w:718;--h:362"><b>2</b></i>
+      <i class="mark" aria-hidden="true" style="--x:480;--y:456;--w:400;--h:82"><b>3</b></i>
+      <i class="mark" aria-hidden="true" style="--x:80;--y:0;--w:800;--h:85"><b>4</b></i>
+      </div><figcaption>The home screen, with the default project</figcaption></figure>
+      <div class="say"><p>This is where you live. All ten lanes are on one screen while the music plays, so you never hunt through pages to see what is going on.</p><ol class="notes">
+        <li>The part that plays each lane. Every part keeps its colour on every screen.</li>
+        <li>Each block is a step that plays. Lanes can have different lengths, up to 32 steps, so a short lane falls across the others.</li>
+        <li>LENGTH and HITS spread a rhythm evenly across the lane. Turn them and a Euclidean pattern appears.</li>
+        <li>Eight knobs, eight boxes. Each box says what the knob beside it does right now.</li>
+      </ol></div>
+    </div>
+  </section>
+
+  <section class="tour flip" id="stage-2">
+    <div class="stage-head"><i class="sprite" data-s="filter"></i><span class="stage-no">Stage 2 of 10</span><span class="pips" aria-hidden="true"><i class=on></i><i class=on></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="stage-title">Shape a sound, then shape one step</h2>
+    <div class="stage-body"><figure class="shot"><div class="frame"><img src="img/screens/lock.png" width="960" height="540" loading="lazy" alt="The filter page: a green curve fills the screen, and the cutoff box is marked LOCK in yellow.">
+      <i class="mark" aria-hidden="true" style="--x:0;--y:88;--w:960;--h:365"><b>1</b></i>
+      <i class="mark" aria-hidden="true" style="--x:281;--y:0;--w:199;--h:85"><b>2</b></i>
+      <i class="mark" aria-hidden="true" style="--x:0;--y:0;--w:80;--h:85"><b>3</b></i>
+      </div><figcaption>A filter page with a p-lock open</figcaption></figure>
+      <div class="say"><p>Nine pages of knobs cover the whole synth, and most of them draw what they do. Open a lock on a step and those same knobs change that step alone.</p><ol class="notes">
+        <li>The filter, drawn as you turn it, with eight models to choose from.</li>
+        <li>LOCK: this cutoff belongs to one step. The rest of the pattern keeps its own.</li>
+        <li>Yellow means you are locking, not changing the sound: lane 1, step 5.</li>
+      </ol></div>
+    </div>
+  </section>
+
+  <section class="tour" id="stage-3">
+    <div class="stage-head"><i class="sprite" data-s="blade"></i><span class="stage-no">Stage 3 of 10</span><span class="pips" aria-hidden="true"><i class=on></i><i class=on></i><i class=on></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="stage-title">Chop a loop in one move</h2>
+    <div class="stage-body"><figure class="shot"><div class="frame"><img src="img/screens/slices.png" width="960" height="540" loading="lazy" alt="A drum loop as a waveform, with thin vertical lines where the firmware cut it into 20 slices.">
+      <i class="mark" aria-hidden="true" style="--x:0;--y:108;--w:960;--h:318"><b>1</b></i>
+      <i class="mark" aria-hidden="true" style="--x:20;--y:426;--w:350;--h:22"><b>2</b></i>
+      <i class="mark" aria-hidden="true" style="--x:81;--y:0;--w:199;--h:85"><b>3</b></i>
+      <i class="mark" aria-hidden="true" style="--x:481;--y:456;--w:400;--h:82"><b>4</b></i>
+      </div><figcaption>SLICE on a sampler lane, cut by the firmware</figcaption></figure>
+      <div class="say"><p>Turn slicing on and the firmware finds the hits itself. Play the slices by step, by chance, or in time with the tempo. This loop is mixed from the built-in drums.</p><ol class="notes">
+        <li>Every line is a cut. The firmware found these attacks on its own, with no computer.</li>
+        <li>20 slices, and it works out that 8 beats make 120 BPM.</li>
+        <li>STEP plays a slice per step. SYNC runs the loop in time with the tempo.</li>
+        <li>SENS sets how small a hit counts. GRID cuts into equal parts instead.</li>
+      </ol></div>
+    </div>
+  </section>
+
+  <section class="tour flip" id="stage-4">
+    <div class="stage-head"><i class="sprite" data-s="fader"></i><span class="stage-no">Stage 4 of 10</span><span class="pips" aria-hidden="true"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="stage-title">Seven parts, one mixer</h2>
+    <div class="stage-body"><figure class="shot"><div class="frame"><img src="img/screens/mixer.png" width="960" height="540" loading="lazy" alt="Seven coloured columns A to G, each with a fader, its voice blocks and its cost.">
+      <i class="mark" aria-hidden="true" style="--x:0;--y:135;--w:960;--h:60"><b>1</b></i>
+      <i class="mark" aria-hidden="true" style="--x:0;--y:362;--w:960;--h:22"><b>2</b></i>
+      <i class="mark" aria-hidden="true" style="--x:0;--y:392;--w:960;--h:58"><b>3</b></i>
+      <i class="mark" aria-hidden="true" style="--x:681;--y:456;--w:200;--h:82"><b>4</b></i>
+      </div><figcaption>MIXER, the VOICES view</figcaption></figure>
+      <div class="say"><p>Every part has a column with its type, level and priority, and you decide how many voices each one gets.</p><ol class="notes">
+        <li>Parts A to G. Any of them can be a synth or a sampler.</li>
+        <li>One block per voice the part owns. A block turns white while that voice sounds.</li>
+        <li>What each part costs, and which lanes it plays.</li>
+        <li>The whole project against the budget of 33 plain voices.</li>
+      </ol></div>
+    </div>
+  </section>
+
+  <section class="tour" id="stage-5">
+    <div class="stage-head"><i class="sprite" data-s="chip"></i><span class="stage-no">Stage 5 of 10</span><span class="pips" aria-hidden="true"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="stage-title">It tells you if it will fit</h2>
+    <div class="stage-body"><figure class="shot"><div class="frame"><img src="img/screens/cpu.png" width="960" height="540" loading="lazy" alt="A page that says in words that the project fits, what it costs, and what would be given up first.">
+      <i class="mark" aria-hidden="true" style="--x:32;--y:138;--w:660;--h:26"><b>1</b></i>
+      <i class="mark" aria-hidden="true" style="--x:32;--y:170;--w:460;--h:54"><b>2</b></i>
+      <i class="mark" aria-hidden="true" style="--x:224;--y:230;--w:700;--h:66"><b>3</b></i>
+      <i class="mark" aria-hidden="true" style="--x:32;--y:335;--w:880;--h:45"><b>4</b></i>
+      </div><figcaption>MIXER, the CPU view</figcaption></figure>
+      <div class="say"><p>A small chip plays every voice, so sounds have a cost. Nemesis shows that cost before you hit a wall, and it says what it would do about it.</p><ol class="notes">
+        <li>The answer, in plain words.</li>
+        <li>What the voices and the effects cost, in the same units.</li>
+        <li>What goes first if the CPU runs short, in order, with what each step saves.</li>
+        <li>It takes them back when there is room. Your sound is never edited.</li>
+      </ol></div>
+    </div>
+  </section>
+
+  <section class="tour flip" id="stage-6">
+    <div class="stage-head"><i class="sprite" data-s="echo"></i><span class="stage-no">Stage 6 of 10</span><span class="pips" aria-hidden="true"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i></i><i></i><i></i><i></i></span></div>
+    <h2 class="stage-title">Effects you can see</h2>
+    <div class="stage-body"><figure class="shot"><div class="frame"><img src="img/screens/reverb.png" width="960" height="540" loading="lazy" alt="The reverb page: its decay drawn as a falling slope, with tabs for the six effect views above it.">
+      <i class="mark" aria-hidden="true" style="--x:400;--y:97;--w:545;--h:30"><b>1</b></i>
+      <i class="mark" aria-hidden="true" style="--x:32;--y:150;--w:896;--h:288"><b>2</b></i>
+      <i class="mark" aria-hidden="true" style="--x:481;--y:456;--w:400;--h:82"><b>3</b></i>
+      </div><figcaption>FX, the reverb view</figcaption></figure>
+      <div class="say"><p>Delay, reverb, chorus, a compressor and an amp on each part. Each page draws what the effect is doing.</p><ol class="notes">
+        <li>Six views, one press apart: five effects and the sends.</li>
+        <li>The reverb's decay and pre-delay, redrawn with every turn.</li>
+        <li>Low cut and return level keep it out of the way of the mix.</li>
+      </ol></div>
+    </div>
+  </section>
+
+  <section class="tour" id="stage-7">
+    <div class="stage-head"><i class="sprite" data-s="star"></i><span class="stage-no">Stage 7 of 10</span><span class="pips" aria-hidden="true"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i></i><i></i><i></i></span></div>
+    <h2 class="stage-title">200 sounds, one knob away</h2>
+    <div class="stage-body"><figure class="shot"><div class="frame"><img src="img/screens/browser.png" width="960" height="540" loading="lazy" alt="A list of presets with their categories, one highlighted, and a counter that reads 3 of 200.">
+      <i class="mark" aria-hidden="true" style="--x:0;--y:175;--w:960;--h:40"><b>1</b></i>
+      <i class="mark" aria-hidden="true" style="--x:281;--y:0;--w:199;--h:85"><b>2</b></i>
+      <i class="mark" aria-hidden="true" style="--x:81;--y:456;--w:399;--h:82"><b>3</b></i>
+      </div><figcaption>FILE, the preset browser</figcaption></figure>
+      <div class="say"><p>Scroll and listen. There are 200 presets in 11 categories, and you can audition them on the part you are working on.</p><ol class="notes">
+        <li>Pause on a preset and it plays. OK loads it.</li>
+        <li>Pick a category: bass, lead, pad, keys, texture and more.</li>
+        <li>One knob scrolls one by one, the other three at a time.</li>
+      </ol></div>
+    </div>
+  </section>
+
+  <section class="tour" id="stage-8">
+    <div class="stage-head"><i class="sprite" data-s="note"></i><span class="stage-no">Stage 8 of 10</span><span class="pips" aria-hidden="true"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i></i><i></i></span></div>
+    <h2 class="stage-title">Write notes as text</h2>
+    <div class="stage-body"><figure class="shot"><div class="frame"><img src="manual/tracker-popover.png" width="960" height="540" loading="lazy" alt="The tracker: rows of steps and ten lanes of notes as text, with a box open beside one cell showing its note, octave and chord">
+      <i class="mark" aria-hidden="true" style="--x:142;--y:112;--w:292;--h:184"><b>1</b></i>
+      <i class="mark" aria-hidden="true" style="--x:40;--y:92;--w:908;--h:28"><b>2</b></i>
+      <i class="mark" aria-hidden="true" style="--x:80;--y:456;--w:800;--h:82"><b>3</b></i>
+      <i class="mark" aria-hidden="true" style="--x:80;--y:0;--w:600;--h:85"><b>4</b></i>
+      </div><figcaption>The tracker, with a step's box open</figcaption></figure>
+      <div class="say"><p>STEP's third view shows the steps as text, with all ten lanes side by side. It is the same pattern as the step editor, so use whichever suits the job.</p><ol class="notes">
+        <li>Press OK on a step and this box opens beside the cell, with its note, octave and chord.</li>
+        <li>All ten lanes at once. Keys 1 to 10 jump to a lane, and the keys around OK move the cursor.</li>
+        <li>The bottom knobs set the note, the octave and the chord. Hold OK and press the keys around it to move a note instead.</li>
+        <li>The top knobs set how hard it plays, how long, and its chance of playing. In the browser, your computer's letter keys are a piano.</li>
+      </ol></div>
+    </div>
+  </section>
+
+  <section class="tour flip" id="stage-9">
+    <div class="stage-head"><i class="sprite" data-s="wave"></i><span class="stage-no">Stage 9 of 10</span><span class="pips" aria-hidden="true"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i></i></span></div>
+    <h2 class="stage-title">Sample anything, keep it on a lane</h2>
+    <div class="stage-body"><figure class="shot"><div class="frame"><img src="manual/rec.png" width="960" height="540" loading="lazy" alt="The REC screen: a level meter with a threshold line, and knobs for source, gain, capture and monitor">
+      <i class="mark" aria-hidden="true" style="--x:80;--y:0;--w:200;--h:85"><b>1</b></i>
+      <i class="mark" aria-hidden="true" style="--x:480;--y:0;--w:400;--h:85"><b>2</b></i>
+      <i class="mark" aria-hidden="true" style="--x:28;--y:140;--w:904;--h:24"><b>3</b></i>
+      <i class="mark" aria-hidden="true" style="--x:28;--y:214;--w:904;--h:180"><b>4</b></i>
+      </div><figcaption>The REC screen</figcaption></figure>
+      <div class="say"><p>Record the line input, or Nemesis itself with all its effects. A take lands on the lane you are on, as a sample like any other, so you can slice it, loop it and lock it.</p><ol class="notes">
+        <li>SOURCE is the line input, or what Nemesis is playing, effects and all.</li>
+        <li>AUTO waits for the sound to pass THRESHOLD, and keeps the moment before it.</li>
+        <li>The meter. Watch it while you set GAIN.</li>
+        <li>The take as it comes in. On the card it goes to Sample/REC. Online Nemesis has a drum loop in place of a cable, so you can try the real recorder in your browser.</li>
+      </ol></div>
+    </div>
+  </section>
+
+  <section class="tour" id="stage-10">
+    <div class="stage-head"><i class="sprite" data-s="bolt"></i><span class="stage-no">Stage 10 of 10</span><span class="pips" aria-hidden="true"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i></span></div>
+    <h2 class="stage-title">Take the song with you</h2>
+    <div class="stage-body"><figure class="shot"><div class="frame"><img src="manual/export.png" width="960" height="540" loading="lazy" alt="The EXPORT view of the project screen: the song, what to make, and where it goes">
+      <i class="mark" aria-hidden="true" style="--x:650;--y:95;--w:298;--h:34"><b>1</b></i>
+      <i class="mark" aria-hidden="true" style="--x:28;--y:195;--w:700;--h:50"><b>2</b></i>
+      <i class="mark" aria-hidden="true" style="--x:80;--y:456;--w:400;--h:82"><b>3</b></i>
+      </div><figcaption>PROJECT's EXPORT view</figcaption></figure>
+      <div class="say"><p>When a song is done, take it with you. A render runs offline and in silence, so it never drops a voice.</p><ol class="notes">
+        <li>The third view of PROJECT.</li>
+        <li>It says what you will get and where it goes: the card on a Drumboy, your downloads in Online Nemesis.</li>
+        <li>Pick the song, then one stereo WAV, stems (a WAV for each lane that plays, so the kick and the snare can be mixed apart), or a MIDI file with a track for each lane.</li>
+      </ol></div>
+    </div>
+  </section>
+
+  <section class="heading" id="scores">
+    <h2 class="chrome">Hi-scores</h2>
+    <p>No made-up numbers. Each one is built into the firmware, or was measured on a real Drumboy Pro.</p>
+  </section>
+  <section class="box">
+    <table class="scores">
+      <thead><tr><th>Score</th><th>Name</th><th class="tagcell">Source</th></tr></thead>
+      <tbody>
+        <tr><td class="score">000200</td><td>Presets<span class="how"> 3 built in, 197 as files on the card</span></td><td class="tagcell"><span class="tag-b">Built in</span></td></tr>
+        <tr><td class="score">000064</td><td>Rows in a song<span class="how"> and 8 songs in a project</span></td><td class="tagcell"><span class="tag-b">Built in</span></td></tr>
+        <tr><td class="score">000033</td><td>Plain voices of CPU budget<span class="how"> the firmware's own cost table</span></td><td class="tagcell"><span class="tag-b">Built in</span></td></tr>
+        <tr><td class="score">000032</td><td>Slices in a sample<span class="how"> cut at its attacks or on a grid</span></td><td class="tagcell"><span class="tag-b">Built in</span></td></tr>
+        <tr><td class="score">000032</td><td>Steps in a lane<span class="how"> each lane has its own length</span></td><td class="tagcell"><span class="tag-b">Built in</span></td></tr>
+        <tr><td class="score">000016</td><td>Patterns<span class="how"> in a project</span></td><td class="tagcell"><span class="tag-b">Built in</span></td></tr>
+        <tr><td class="score">000014</td><td>Voices at 85% CPU<span class="how"> held notes of a light preset with the usual reverb</span></td><td class="tagcell"><span class="tag-m">Measured</span></td></tr>
+        <tr><td class="score">000010</td><td>Lanes<span class="how"> all on one screen</span></td><td class="tagcell"><span class="tag-b">Built in</span></td></tr>
+        <tr><td class="score">000008</td><td>Filter models<span class="how"> in two filters, in series or parallel</span></td><td class="tagcell"><span class="tag-b">Built in</span></td></tr>
+        <tr><td class="score">000007</td><td>Parts<span class="how"> each a synth or a sampler</span></td><td class="tagcell"><span class="tag-b">Built in</span></td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:12px">Lowest score wins: <b style="font-weight:400;color:var(--cyan)">000000</b> audio blocks over budget, with six synth parts of two voices each and drums playing a sequence, at 54 to 71% of the CPU on average. That is with the load governor on, which gives up voices and effects when a mix asks for too much. <span class="tag-m">Measured</span></p>
+  </section>
+
+  <section class="heading" id="powerups">
+    <h2 class="chrome">Power-ups</h2>
+    <p>Everything Nemesis has picked up so far, and what is still locked.</p>
+  </section>
+  <ul class="items">
+    <li class="item"><i class="sprite" data-s="steps"></i><span><b>Euclid</b>Hits and rotation on any lane</span></li>
+    <li class="item"><i class="sprite" data-s="note"></i><span><b>Chords</b>12 types, with inversion, voicing and strum</span></li>
+    <li class="item"><i class="sprite" data-s="note"></i><span><b>Arpeggiator</b>Four directions, up to 4 octaves</span></li>
+    <li class="item"><i class="sprite" data-s="star"></i><span><b>Scale lock</b>12 scales for the synth notes</span></li>
+    <li class="item"><i class="sprite" data-s="bolt"></i><span><b>P-locks</b>Up to 8 changes on a single step</span></li>
+    <li class="item"><i class="sprite" data-s="steps"></i><span><b>Chance</b>Any step can have a chance of playing</span></li>
+    <li class="item"><i class="sprite" data-s="wave"></i><span><b>Two oscillators</b>Plus a sine sub and noise</span></li>
+    <li class="item"><i class="sprite" data-s="wave"></i><span><b>Wavetables</b>From the card, six banks in memory at once</span></li>
+    <li class="item"><i class="sprite" data-s="wave"></i><span><b>Ring and sync</b>Ring modulation and oscillator sync</span></li>
+    <li class="item"><i class="sprite" data-s="filter"></i><span><b>Two filters</b>Eight models, in series or parallel</span></li>
+    <li class="item"><i class="sprite" data-s="bolt"></i><span><b>Grit</b>Bits, sample rate, drift and clipping</span></li>
+    <li class="item"><i class="sprite" data-s="wave"></i><span><b>Unison</b>Up to 4, with detune and width</span></li>
+    <li class="item"><i class="sprite" data-s="blade"></i><span><b>Sampler</b>12 built-in samples, plus your WAV files</span></li>
+    <li class="item"><i class="sprite" data-s="blade"></i><span><b>Slices</b>Up to 32, each with its own pitch and level</span></li>
+    <li class="item"><i class="sprite" data-s="blade"></i><span><b>Choke groups</b>Four, for hats that cut each other</span></li>
+    <li class="item"><i class="sprite" data-s="echo"></i><span><b>Delay, reverb, chorus</b>With a send from each part</span></li>
+    <li class="item"><i class="sprite" data-s="echo"></i><span><b>Amp</b>Four models and three cabinets on each part</span></li>
+    <li class="item"><i class="sprite" data-s="echo"></i><span><b>Compressor</b>On the master</span></li>
+    <li class="item"><i class="sprite" data-s="fader"></i><span><b>Clock</b>Tempo 40 to 240 BPM, swing up to 50%</span></li>
+    <li class="item"><i class="sprite" data-s="chip"></i><span><b>MIDI</b>In and out, with a channel and note for each lane, and a sustain pedal</span></li>
+    <li class="item"><i class="sprite" data-s="chip"></i><span><b>Screen</b>960 x 540, with four mixer views</span></li>
+    <li class="item"><i class="sprite" data-s="blade"></i><span><b>Sample loops</b>Crossfades, four curves and Auto Loop</span></li>
+    <li class="item"><i class="sprite" data-s="blade"></i><span><b>Recording</b>From line in or its own output, with auto capture above a level</span></li>
+    <li class="item"><i class="sprite" data-s="fader"></i><span><b>Sync</b>MIDI clock and the SYNC sockets, in and out</span></li>
+    <li class="item"><i class="sprite" data-s="note"></i><span><b>Tracker</b>Notes as text, with a box at the cell</span></li>
+    <li class="item"><i class="sprite" data-s="blade"></i><span><b>Sample browser</b>A folder, then a sample, from any sample knob</span></li>
+    <li class="item"><i class="sprite" data-s="bolt"></i><span><b>Song to WAV</b>Offline, so it never drops a voice</span></li>
+    <li class="item"><i class="sprite" data-s="bolt"></i><span><b>Stems</b>A WAV for each lane that plays</span></li>
+    <li class="item"><i class="sprite" data-s="note"></i><span><b>MIDI files</b>A song as notes, a track for each lane</span></li>
+    <li class="item"><i class="sprite" data-s="star"></i><span><b>Factory projects</b>DEMO, TECHNO and MASCHINE</span></li>
+    <li class="item"><i class="sprite" data-s="star"></i><span><b>30 project slots</b>With delete and undo</span></li>
+    <li class="item"><i class="sprite" data-s="star"></i><span><b>Preset editor</b>In your browser</span></li>
+    <li class="item locked"><i class="sprite" data-s="lock"></i><span><b>MIDI librarian</b><span class="soon">Coming</span>Built, and waiting for its test on a real MIDI cable</span></li>
+  </ul>
+
+  <section class="heading" id="status">
+    <h2 class="chrome">Before you play</h2>
+  </section>
+  <section class="box warn">
+    <p><b style="font-weight:400;color:var(--cyan)">Beta 2 is here.</b> It is a test version, so expect bugs. <a href="install.html">Install it on your Drumboy Pro</a>.</p>
+    <p>The voice, the sequencer, the effects, the seven parts, saving to the card and recording have all run on a real Drumboy Pro. Slices, the tracker and the MIDI sockets have mostly been tested on a computer so far, and exporting and deleting projects have not yet been tried on many cards.</p>
+    <p>Saving went through 3,000 rounds of writes and read-backs on one real card without an error. Power cuts have only been tested in simulation, so keep a copy of your card.</p>
+  </section>
+
+  <section class="heading"><h2 class="chrome">Continue?</h2></section>
+  <p class="btns">
+    <a class="btn go" href="online.html">Online Nemesis</a>
+    <a class="btn" href="tutorial.html">Tutorial</a>
+    <a class="btn" href="install.html">Install Beta 2</a>
+    <a class="btn" href="manual.html">Manual</a>
+    <a class="btn" href="downloads/nemesis-manual.pdf" download>Manual PDF</a>
+    <a class="btn" href="librarian.html">Preset librarian</a>
+  </p>
+  <img class="ending" src="img/nemesis.png" width="1336" height="752" loading="lazy" alt="The word NEMESIS in chrome letters over a sunset stripe, a galaxy and a perspective grid">
+  <p class="foot"><span>Nemesis is free software, given as it is, with no warranty of any kind. You use it at your own risk. Keep a copy of your SD card: a power cut during a save, or a failing card, can lose data, and installing other firmware on your device is your own choice. The makers accept no liability for lost data or for damage to cards or devices.</span></p>
+  <p class="foot"><span>Nemesis is an independent project, not made by Randomwaves. The Drumboy Pro is their open-source hardware.</span></p>
+</main>
+<script src="site.js"></script>
+<script src="demo.js"></script>
+</body>
+</html>

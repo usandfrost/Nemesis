@@ -1,0 +1,1 @@
+check: 170 presets, 0 failures (sanitiser / range / heavy-filter rule / voice budget); worst per-voice cost 1.71; budget 5 voices

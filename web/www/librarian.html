@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/png" href="img/icon.png">
+<title>Nemesis preset librarian</title>
+<link rel="stylesheet" href="site.css">
+</head>
+<body class="site">
+<a class="skip" href="#top">Skip to the page</a>
+<canvas id="sky" aria-hidden="true"></canvas>
+<header id="bar" class="menubar"></header>
+<div class="copper"></div>
+<main id="top" class="wrap">
+  <section class="heading"><h1 class="chrome">Preset librarian</h1></section>
+
+  <section class="box warn" id="honest"><h2 class="box-head">Real devices are not supported yet</h2>
+    <p>The firmware answers this page, but it has not yet been tried over a real MIDI cable. Until it has, treat this as untested, and keep a copy of your card before you connect one.</p>
+    <p>You can try everything with the simulated device. It is a program in this page, not a Drumboy Pro, and nothing you do with it reaches a card.</p>
+  </section>
+
+  <section class="box"><h2 class="box-head">Connection</h2>
+    <p class="btns">
+      <button id="useSim" class="btn go">Use the simulated device</button>
+      <button id="useMidi" class="btn">Connect over MIDI</button>
+    </p>
+    <div id="ports" class="btns" hidden>
+      <label>In <select id="portIn" class="btn"></select></label>
+      <label>Out <select id="portOut" class="btn"></select></label>
+      <button id="tryPorts" class="btn">Ask the device</button>
+    </div>
+    <p id="status" class="status" role="status">Not connected.</p>
+    <div id="simBox" hidden>
+      <p class="btns"><span class="soon">SIMULATED</span><label>Next transfer:
+        <select id="fault" class="btn">
+          <option value="none">works</option>
+          <option value="corrupt-chunk">bytes change on the way</option>
+          <option value="drop-chunk">a piece gets lost</option>
+          <option value="bad-sum">a message arrives damaged</option>
+          <option value="no-reply">the device goes silent</option>
+          <option value="library-full">the library is full</option>
+          <option value="write-fail">the card write fails</option>
+          <option value="no-card">there is no card</option>
+        </select></label></p>
+    </div>
+    <details><summary>What a real connection will need</summary>
+      <p>The Drumboy Pro has MIDI sockets, and its USB-C socket is for power. A computer reaches it through a USB-MIDI interface wired to both sockets, in and out.</p>
+      <p>The browser needs Web MIDI with permission for system exclusive messages. Chrome and Edge have it, Firefox needs a permission add-on, and Safari does not have it. The protocol is in docs/PRESET_SYSEX.md.</p>
+    </details>
+  </section>
+
+  <div class="two">
+    <section class="box" id="devWin"><h2 class="box-head" id="devTitle">On the device</h2>
+      <div class="scroll"><table class="presets"><thead><tr><th></th><th>No.</th><th>Name</th><th>Type</th><th></th></tr></thead><tbody id="devList"></tbody></table></div>
+      <p class="btns">
+        <button id="refresh" class="btn" disabled>Refresh</button>
+        <button id="backupSel" class="btn" disabled>Back up selected</button>
+        <button id="backupAll" class="btn" disabled>Back up all</button>
+        <button id="deleteSel" class="btn bad" disabled>Delete selected</button>
+      </p>
+      <p class="btns">
+        <label>Song <select id="songNo" class="btn"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></label>
+        <button id="saveMidi" class="btn" disabled>Save the song as MIDI</button>
+      </p>
+    </section>
+
+    <section class="box" id="pcWin"><h2 class="box-head">On this computer</h2>
+      <div class="drop" id="drop">
+        <p class="btns"><label class="btn">Load files<input id="files" class="unseen" type="file" multiple accept=".prs,.PRS,.zip"></label></p>
+        <p>Or drop .PRS files here, or a backup zip from this page.</p>
+      </div>
+      <div class="scroll"><table class="presets"><thead><tr><th></th><th>No.</th><th>Name</th><th>Type</th><th></th></tr></thead><tbody id="pcList"></tbody></table></div>
+      <p class="btns">
+        <button id="uploadSel" class="btn go" disabled>Send selected</button>
+        <button id="clearFiles" class="btn" disabled>Clear the list</button>
+      </p>
+    </section>
+  </div>
+
+  <section class="box" id="edWin"><h2 class="box-head">Preset editor</h2>
+    <p>Change a preset's name, type and sound, then save it on this computer or send it to the device. Press Edit beside a preset in one of the lists above, or start a new one. Files on this computer and new presets work with no device connected.</p>
+    <p class="btns"><button id="edNew" class="btn">New preset</button></p>
+    <div id="edBody" hidden>
+      <p id="edHead" class="ed-head" tabindex="-1"><b id="edShown"></b> <span id="edFrom"></span> <span id="edDirty" class="soon" hidden>Not saved</span></p>
+      <p id="edStray" class="status bad" hidden>Some values in this file are outside what their knobs can reach. The Drumboy Pro brings them into range when it reads the file.</p>
+      <div class="ed-fields">
+        <div class="ed-field ed-wide"><label for="edName">Name</label><input id="edName" class="ed-name" type="text" autocomplete="off" spellcheck="false"><p id="edNameNote" class="status bad" role="status" hidden></p></div>
+        <div class="ed-field"><label for="edCat">Type</label><select id="edCat" class="btn"></select></div>
+        <div class="ed-field"><label for="edVoices">Voices</label><select id="edVoices" class="btn"></select></div>
+      </div>
+      <div id="edTabs" class="ed-tabs" role="tablist" aria-label="Pages of settings"></div>
+      <div id="edPanels"></div>
+      <div class="ed-hear">
+        <p class="btns"><button id="edHear" class="btn" aria-pressed="false">Hear it</button></p>
+        <div class="meter"><i id="edLevel"></i></div>
+        <p>Plays a repeating note in this browser, with the same voice the Drumboy Pro uses. A change is heard from the next note.</p>
+      </div>
+      <p class="btns">
+        <button id="edSave" class="btn go">Save to computer</button>
+        <button id="edSend" class="btn go">Send to device</button>
+        <button id="edSendNew" class="btn">Send as new</button>
+        <button id="edUndo" class="btn">Undo changes</button>
+      </p>
+      <p id="edPlan"></p>
+      <p id="edStatus" class="status"></p>
+    </div>
+  </section>
+
+  <section class="box"><h2 class="box-head">What happened</h2>
+    <div class="meter"><i id="bar2"></i></div>
+    <pre id="log" class="log" aria-live="polite"></pre>
+  </section>
+</main>
+
+<dialog id="ask" class="requester" aria-labelledby="askTitle">
+  <h3 id="askTitle"></h3>
+  <div class="in">
+    <p id="askText"></p>
+    <ul id="askList"></ul>
+    <p class="btns"><button id="askGo" class="btn bad"></button><button id="askNo" class="btn" autofocus>Cancel</button></p>
+  </div>
+</dialog>
+<script src="site.js"></script>
+<script src="sysex.js"></script>
+<script src="sim-device.js"></script>
+<script src="preset-schema.js"></script>
+<script src="preset-model.js"></script>
+<script src="preset-hear.js"></script>
+<script src="preset-editor.js"></script>
+<script src="librarian.js"></script>
+</body>
+</html>

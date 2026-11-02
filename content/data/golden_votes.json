@@ -1,0 +1,959 @@
+{
+ "about": "The user's keep/skip choices on the Golden Presets listening page (2026-10-28): 200 kept, 195 skipped of the 395 presets. The 188 skipped library presets (ids 10 and up) are left out by the builders (gen_presets.py, cut_more.py, genre_presets.py: prs.library_cuts()); their ratings files are untouched and the ids stay unused. Remove an entry to bring a preset back. The 7 skipped factory presets (factory_skipped) were taken out of the firmware.",
+ "factory_skipped": [
+  0,
+  3,
+  4,
+  5,
+  6,
+  7,
+  9
+ ],
+ "factory_kept": [
+  1,
+  2,
+  8
+ ],
+ "skip": [
+  {
+   "id": 12,
+   "name": "Clean Pump Bass",
+   "set": "presets"
+  },
+  {
+   "id": 15,
+   "name": "Loop Run",
+   "set": "presets"
+  },
+  {
+   "id": 18,
+   "name": "Ringing Floor",
+   "set": "presets"
+  },
+  {
+   "id": 30,
+   "name": "Iron Squelch 2",
+   "set": "presets"
+  },
+  {
+   "id": 31,
+   "name": "Midnight Bloom",
+   "set": "presets"
+  },
+  {
+   "id": 38,
+   "name": "Tidewater Bass",
+   "set": "presets"
+  },
+  {
+   "id": 39,
+   "name": "Tine Slap Bass",
+   "set": "presets"
+  },
+  {
+   "id": 41,
+   "name": "Rain Corridor",
+   "set": "presets"
+  },
+  {
+   "id": 42,
+   "name": "Ripping Silk",
+   "set": "presets"
+  },
+  {
+   "id": 46,
+   "name": "Pouncing Panther",
+   "set": "presets"
+  },
+  {
+   "id": 47,
+   "name": "Cloister Bass",
+   "set": "presets"
+  },
+  {
+   "id": 48,
+   "name": "Polished Needle",
+   "set": "presets"
+  },
+  {
+   "id": 49,
+   "name": "Scorched Asphalt",
+   "set": "presets"
+  },
+  {
+   "id": 50,
+   "name": "Wooden Breeze",
+   "set": "presets"
+  },
+  {
+   "id": 53,
+   "name": "Open Throttle",
+   "set": "presets"
+  },
+  {
+   "id": 54,
+   "name": "Shivering Birch",
+   "set": "presets"
+  },
+  {
+   "id": 58,
+   "name": "Split Filter Expanse",
+   "set": "presets"
+  },
+  {
+   "id": 63,
+   "name": "Inhaling Wave",
+   "set": "presets"
+  },
+  {
+   "id": 64,
+   "name": "Mirage Bloom",
+   "set": "presets"
+  },
+  {
+   "id": 65,
+   "name": "Reso Drone",
+   "set": "presets"
+  },
+  {
+   "id": 67,
+   "name": "Gossamer Veil",
+   "set": "presets"
+  },
+  {
+   "id": 68,
+   "name": "Parlour Pluck",
+   "set": "presets"
+  },
+  {
+   "id": 70,
+   "name": "Bamboo Chimes",
+   "set": "presets"
+  },
+  {
+   "id": 73,
+   "name": "Ladder Ping",
+   "set": "presets"
+  },
+  {
+   "id": 74,
+   "name": "Mirrored Flame",
+   "set": "presets"
+  },
+  {
+   "id": 75,
+   "name": "Acid Chord",
+   "set": "presets"
+  },
+  {
+   "id": 80,
+   "name": "Decimate Stab",
+   "set": "presets"
+  },
+  {
+   "id": 81,
+   "name": "Minor Hit",
+   "set": "presets"
+  },
+  {
+   "id": 82,
+   "name": "Sync Slam",
+   "set": "presets"
+  },
+  {
+   "id": 83,
+   "name": "Offbeat Stab",
+   "set": "presets"
+  },
+  {
+   "id": 86,
+   "name": "Index Keys",
+   "set": "presets"
+  },
+  {
+   "id": 89,
+   "name": "Pulse Riff Chords",
+   "set": "presets"
+  },
+  {
+   "id": 90,
+   "name": "Step Timbre",
+   "set": "presets"
+  },
+  {
+   "id": 92,
+   "name": "Backwards Pluck",
+   "set": "presets"
+  },
+  {
+   "id": 93,
+   "name": "Brisk Stabs",
+   "set": "presets"
+  },
+  {
+   "id": 95,
+   "name": "Flutter Lattice",
+   "set": "presets"
+  },
+  {
+   "id": 96,
+   "name": "Furnace Call",
+   "set": "presets"
+  },
+  {
+   "id": 97,
+   "name": "Hardline Jolt",
+   "set": "presets"
+  },
+  {
+   "id": 101,
+   "name": "Split Filter Duo",
+   "set": "presets"
+  },
+  {
+   "id": 102,
+   "name": "Sync Razor",
+   "set": "presets"
+  },
+  {
+   "id": 106,
+   "name": "Willow Drift",
+   "set": "presets"
+  },
+  {
+   "id": 108,
+   "name": "Chapel Hum",
+   "set": "presets"
+  },
+  {
+   "id": 109,
+   "name": "Low Bones",
+   "set": "presets"
+  },
+  {
+   "id": 111,
+   "name": "Nocturne Felt",
+   "set": "presets"
+  },
+  {
+   "id": 115,
+   "name": "Soft FM Ballad",
+   "set": "presets"
+  },
+  {
+   "id": 117,
+   "name": "Apparition Rise",
+   "set": "presets"
+  },
+  {
+   "id": 118,
+   "name": "Hull Boom",
+   "set": "presets"
+  },
+  {
+   "id": 120,
+   "name": "Dripping Vault",
+   "set": "presets"
+  },
+  {
+   "id": 123,
+   "name": "Vortex Fall",
+   "set": "presets"
+  },
+  {
+   "id": 124,
+   "name": "Bouncing Echo",
+   "set": "presets"
+  },
+  {
+   "id": 125,
+   "name": "Carousel Loop",
+   "set": "presets"
+  },
+  {
+   "id": 128,
+   "name": "Mask Shimmer",
+   "set": "presets"
+  },
+  {
+   "id": 131,
+   "name": "Gray Scan Pluck",
+   "set": "presets"
+  },
+  {
+   "id": 132,
+   "name": "Wave Bell Pair",
+   "set": "presets"
+  },
+  {
+   "id": 134,
+   "name": "Dewdrop Pluck",
+   "set": "presets"
+  },
+  {
+   "id": 136,
+   "name": "Glaze Pluck",
+   "set": "presets"
+  },
+  {
+   "id": 138,
+   "name": "Island Chime",
+   "set": "presets"
+  },
+  {
+   "id": 253,
+   "name": "Chrome Bounce",
+   "set": "synthwave"
+  },
+  {
+   "id": 260,
+   "name": "Glass Harbor",
+   "set": "synthwave"
+  },
+  {
+   "id": 278,
+   "name": "Sub Rider",
+   "set": "synthwave"
+  },
+  {
+   "id": 280,
+   "name": "Offbeat Chord",
+   "set": "synthwave"
+  },
+  {
+   "id": 282,
+   "name": "Section Stack",
+   "set": "synthwave"
+  },
+  {
+   "id": 287,
+   "name": "Supersaw Spire",
+   "set": "synthwave"
+  },
+  {
+   "id": 288,
+   "name": "Wide Pulse Stack",
+   "set": "synthwave"
+  },
+  {
+   "id": 300,
+   "name": "Rumble Low",
+   "set": "techno"
+  },
+  {
+   "id": 306,
+   "name": "Pumping Square",
+   "set": "techno"
+  },
+  {
+   "id": 308,
+   "name": "Dub Techno Bass",
+   "set": "techno"
+  },
+  {
+   "id": 312,
+   "name": "Minimal Click",
+   "set": "techno"
+  },
+  {
+   "id": 314,
+   "name": "Chip Trance Arp",
+   "set": "techno"
+  },
+  {
+   "id": 316,
+   "name": "Ring Pluck",
+   "set": "techno"
+  },
+  {
+   "id": 318,
+   "name": "Acid Zap",
+   "set": "techno"
+  },
+  {
+   "id": 319,
+   "name": "Noise Hat",
+   "set": "techno"
+  },
+  {
+   "id": 325,
+   "name": "Square Anthem",
+   "set": "techno"
+  },
+  {
+   "id": 327,
+   "name": "Hollow Lead",
+   "set": "techno"
+  },
+  {
+   "id": 337,
+   "name": "Evolving Pad",
+   "set": "techno"
+  },
+  {
+   "id": 339,
+   "name": "Air Pad Trance",
+   "set": "techno"
+  },
+  {
+   "id": 341,
+   "name": "Supersaw Stab",
+   "set": "techno"
+  },
+  {
+   "id": 355,
+   "name": "Bouncy Square Bass",
+   "set": "synthpop"
+  },
+  {
+   "id": 356,
+   "name": "Analogue Pump",
+   "set": "synthpop"
+  },
+  {
+   "id": 360,
+   "name": "FM Bell Lead",
+   "set": "synthpop"
+  },
+  {
+   "id": 362,
+   "name": "Bright Saw Lead",
+   "set": "synthpop"
+  },
+  {
+   "id": 368,
+   "name": "Air Pad Pop",
+   "set": "synthpop"
+  },
+  {
+   "id": 369,
+   "name": "Glass Pad Pop",
+   "set": "synthpop"
+  },
+  {
+   "id": 372,
+   "name": "Bright Pad",
+   "set": "synthpop"
+  },
+  {
+   "id": 376,
+   "name": "Dream Poly",
+   "set": "synthpop"
+  },
+  {
+   "id": 378,
+   "name": "FM Tine Keys",
+   "set": "synthpop"
+  },
+  {
+   "id": 381,
+   "name": "Pop Sustain Keys",
+   "set": "synthpop"
+  },
+  {
+   "id": 382,
+   "name": "Pop Spike Keys",
+   "set": "synthpop"
+  },
+  {
+   "id": 388,
+   "name": "Arp Anthem",
+   "set": "synthpop"
+  },
+  {
+   "id": 391,
+   "name": "Bar Pluck",
+   "set": "synthpop"
+  },
+  {
+   "id": 394,
+   "name": "Glassy Pluck",
+   "set": "synthpop"
+  },
+  {
+   "id": 396,
+   "name": "Buzzy Keys",
+   "set": "synthpop"
+  },
+  {
+   "id": 401,
+   "name": "Gate Chord Chop",
+   "set": "trance"
+  },
+  {
+   "id": 403,
+   "name": "Sync Chop Stab",
+   "set": "trance"
+  },
+  {
+   "id": 407,
+   "name": "Supersaw Pluck",
+   "set": "trance"
+  },
+  {
+   "id": 411,
+   "name": "Psy Rolling Bass",
+   "set": "trance"
+  },
+  {
+   "id": 412,
+   "name": "Rolling Sub Octaves",
+   "set": "trance"
+  },
+  {
+   "id": 415,
+   "name": "Tech Roll Bass",
+   "set": "trance"
+  },
+  {
+   "id": 417,
+   "name": "Industrial Stab",
+   "set": "trance"
+  },
+  {
+   "id": 418,
+   "name": "Sine Ping",
+   "set": "trance"
+  },
+  {
+   "id": 462,
+   "name": "Hollow Bass",
+   "set": "ebm"
+  },
+  {
+   "id": 470,
+   "name": "Wobble Lead",
+   "set": "ebm"
+  },
+  {
+   "id": 476,
+   "name": "Clang Stab",
+   "set": "ebm"
+  },
+  {
+   "id": 477,
+   "name": "Noise Stab",
+   "set": "ebm"
+  },
+  {
+   "id": 478,
+   "name": "Odd Stab",
+   "set": "ebm"
+  },
+  {
+   "id": 479,
+   "name": "Fall Stab",
+   "set": "ebm"
+  },
+  {
+   "id": 480,
+   "name": "Blip Seq",
+   "set": "ebm"
+  },
+  {
+   "id": 481,
+   "name": "Resonant Blip",
+   "set": "ebm"
+  },
+  {
+   "id": 482,
+   "name": "Arp Machine",
+   "set": "ebm"
+  },
+  {
+   "id": 484,
+   "name": "FM Bleep",
+   "set": "ebm"
+  },
+  {
+   "id": 487,
+   "name": "Rim Shot",
+   "set": "ebm"
+  },
+  {
+   "id": 490,
+   "name": "Metal Hit",
+   "set": "ebm"
+  },
+  {
+   "id": 493,
+   "name": "High Filter Ping",
+   "set": "ebm"
+  },
+  {
+   "id": 495,
+   "name": "Dark Machine Layers",
+   "set": "ebm"
+  },
+  {
+   "id": 497,
+   "name": "Noise Wash",
+   "set": "ebm"
+  },
+  {
+   "id": 498,
+   "name": "Alarm Tone",
+   "set": "ebm"
+  },
+  {
+   "id": 499,
+   "name": "Air Stab",
+   "set": "ebm"
+  },
+  {
+   "id": 501,
+   "name": "Spinning Top",
+   "set": "presets2"
+  },
+  {
+   "id": 502,
+   "name": "Warbling Gravel",
+   "set": "presets2"
+  },
+  {
+   "id": 505,
+   "name": "Tape Warp",
+   "set": "presets2"
+  },
+  {
+   "id": 506,
+   "name": "Hollow Square Bass",
+   "set": "presets2"
+  },
+  {
+   "id": 509,
+   "name": "Pocket Roller",
+   "set": "presets2"
+  },
+  {
+   "id": 519,
+   "name": "Four Second Riser",
+   "set": "presets2"
+  },
+  {
+   "id": 523,
+   "name": "Gnaw",
+   "set": "presets2"
+  },
+  {
+   "id": 526,
+   "name": "Sawtooth Halo",
+   "set": "presets2"
+  },
+  {
+   "id": 527,
+   "name": "Comb Pipe",
+   "set": "presets2"
+  },
+  {
+   "id": 529,
+   "name": "Hooked Edge",
+   "set": "presets2"
+  },
+  {
+   "id": 531,
+   "name": "Razor Spire",
+   "set": "presets2"
+  },
+  {
+   "id": 532,
+   "name": "Blazing Edge",
+   "set": "presets2"
+  },
+  {
+   "id": 533,
+   "name": "Locked Orbit",
+   "set": "presets2"
+  },
+  {
+   "id": 537,
+   "name": "Stereo Horizon",
+   "set": "presets2"
+  },
+  {
+   "id": 542,
+   "name": "Chiseled Pluck",
+   "set": "presets2"
+  },
+  {
+   "id": 543,
+   "name": "Raindrop Pluck",
+   "set": "presets2"
+  },
+  {
+   "id": 544,
+   "name": "Woody Pluck",
+   "set": "presets2"
+  },
+  {
+   "id": 545,
+   "name": "Reso Pluck",
+   "set": "presets2"
+  },
+  {
+   "id": 546,
+   "name": "Zap Pluck",
+   "set": "presets2"
+  },
+  {
+   "id": 548,
+   "name": "Smoky Veil",
+   "set": "presets2"
+  },
+  {
+   "id": 549,
+   "name": "Reel Stack",
+   "set": "presets2"
+  },
+  {
+   "id": 556,
+   "name": "Mask Stab",
+   "set": "presets2"
+  },
+  {
+   "id": 560,
+   "name": "Split Poly",
+   "set": "presets2"
+  },
+  {
+   "id": 561,
+   "name": "Hollow Bounce",
+   "set": "presets2"
+  },
+  {
+   "id": 563,
+   "name": "Cold Stack Chords",
+   "set": "presets2"
+  },
+  {
+   "id": 564,
+   "name": "Square March",
+   "set": "presets2"
+  },
+  {
+   "id": 567,
+   "name": "Gentle FM Keys",
+   "set": "presets2"
+  },
+  {
+   "id": 568,
+   "name": "Toy Chirps",
+   "set": "presets2"
+  },
+  {
+   "id": 573,
+   "name": "Aerial Shimmer",
+   "set": "presets2"
+  },
+  {
+   "id": 574,
+   "name": "Orbiting Whine",
+   "set": "presets2"
+  },
+  {
+   "id": 576,
+   "name": "Skimming Wisp",
+   "set": "presets2"
+  },
+  {
+   "id": 577,
+   "name": "Distress Flare",
+   "set": "presets2"
+  },
+  {
+   "id": 578,
+   "name": "Hornet Loop",
+   "set": "presets2"
+  },
+  {
+   "id": 581,
+   "name": "Pump Arp",
+   "set": "presets2"
+  },
+  {
+   "id": 585,
+   "name": "Radio Haze",
+   "set": "presets2"
+  },
+  {
+   "id": 588,
+   "name": "Night Wind",
+   "set": "presets2"
+  },
+  {
+   "id": 589,
+   "name": "Plate Rain",
+   "set": "presets2"
+  },
+  {
+   "id": 590,
+   "name": "Dust Bed",
+   "set": "presets2"
+  },
+  {
+   "id": 605,
+   "name": "Forever Pulse Bass",
+   "set": "royksopp"
+  },
+  {
+   "id": 606,
+   "name": "Sync Pulse Bass",
+   "set": "royksopp"
+  },
+  {
+   "id": 608,
+   "name": "Glass Robot Lead",
+   "set": "royksopp"
+  },
+  {
+   "id": 609,
+   "name": "Icy Saw Lead",
+   "set": "royksopp"
+  },
+  {
+   "id": 616,
+   "name": "Tape Pad",
+   "set": "royksopp"
+  },
+  {
+   "id": 621,
+   "name": "Breathing Pad",
+   "set": "royksopp"
+  },
+  {
+   "id": 622,
+   "name": "Dark Plate Pad",
+   "set": "royksopp"
+  },
+  {
+   "id": 626,
+   "name": "Bubbling Arp",
+   "set": "royksopp"
+  },
+  {
+   "id": 634,
+   "name": "Tremolo Bars",
+   "set": "royksopp"
+  },
+  {
+   "id": 640,
+   "name": "Air Hit Chord",
+   "set": "royksopp"
+  },
+  {
+   "id": 643,
+   "name": "Bubble Machine",
+   "set": "royksopp"
+  },
+  {
+   "id": 644,
+   "name": "Robot Ring Lead",
+   "set": "royksopp"
+  },
+  {
+   "id": 649,
+   "name": "Formant Chords",
+   "set": "royksopp"
+  },
+  {
+   "id": 653,
+   "name": "Fifths Pad",
+   "set": "delerium"
+  },
+  {
+   "id": 658,
+   "name": "Air Chop Arp",
+   "set": "delerium"
+  },
+  {
+   "id": 663,
+   "name": "Chapel Pad",
+   "set": "delerium"
+  },
+  {
+   "id": 666,
+   "name": "Silk Wash Pad",
+   "set": "delerium"
+  },
+  {
+   "id": 668,
+   "name": "Mountain Call",
+   "set": "delerium"
+  },
+  {
+   "id": 672,
+   "name": "Slow Shimmer",
+   "set": "delerium"
+  },
+  {
+   "id": 674,
+   "name": "Hollow Knock",
+   "set": "delerium"
+  },
+  {
+   "id": 676,
+   "name": "Bamboo Breath",
+   "set": "delerium"
+  },
+  {
+   "id": 677,
+   "name": "Silence Pluck Arp",
+   "set": "delerium"
+  },
+  {
+   "id": 678,
+   "name": "Bell Seq",
+   "set": "delerium"
+  },
+  {
+   "id": 679,
+   "name": "Euphoria Arp",
+   "set": "delerium"
+  },
+  {
+   "id": 680,
+   "name": "FM Anthem Lead",
+   "set": "delerium"
+  },
+  {
+   "id": 683,
+   "name": "Glass Chords",
+   "set": "delerium"
+  },
+  {
+   "id": 684,
+   "name": "Haunting Sine Lead",
+   "set": "delerium"
+  },
+  {
+   "id": 689,
+   "name": "Desert Wind",
+   "set": "delerium"
+  },
+  {
+   "id": 692,
+   "name": "Cathedral Bells",
+   "set": "delerium"
+  },
+  {
+   "id": 693,
+   "name": "Spirit Air",
+   "set": "delerium"
+  },
+  {
+   "id": 694,
+   "name": "Crystal Keys",
+   "set": "delerium"
+  },
+  {
+   "id": 701,
+   "name": "Oo Pad",
+   "set": "voice"
+  },
+  {
+   "id": 705,
+   "name": "Vowel Drift Pad",
+   "set": "voice"
+  }
+ ]
+}

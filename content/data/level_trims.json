@@ -1,0 +1,8 @@
+{
+ "about": "AMP LEVEL trims in dB for converted presets whose loudness changed when FILTER 2's CUTOFF and RESO started to work (firmware/src/audio/PatchMap.cpp, 2026-10-27): filter 2 now passes at the level the upstream original meant, so these came out louder than the library's median for their category. Keyed by the preset's name as the converter made it (before content/data/renames.json). Applied by gen_presets.py and cut_more.py. The other five converted presets with FILTER 2 active (Tine Slap Bass, Split Filter Expanse, Cassette Floor, Comb Pipe, Cold Draft) were rendered after the fix and are within 3.1 dB of their category median, so they are not trimmed.",
+ "trims_db": {
+  "Split Filter Duo": -5.8,
+  "Split Poly": -9.1,
+  "Broken Carillon": -11.6
+ }
+}

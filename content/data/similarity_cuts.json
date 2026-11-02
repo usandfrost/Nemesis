@@ -1,0 +1,370 @@
+{
+ "about": "Presets the user voted out on the similarity page (2026-10-27, content/tools/similarity.py): 73 cut, 77 kept, 242 had no close neighbour. The builders (gen_presets.py, cut_more.py, genre_presets.py) leave these out; ratings files are untouched. Remove an entry to bring a preset back.",
+ "cut": [
+  {
+   "id": 14,
+   "name": "Frost Blink",
+   "set": "round 1"
+  },
+  {
+   "id": 20,
+   "name": "Warm Thump",
+   "set": "round 1"
+  },
+  {
+   "id": 21,
+   "name": "Basalt Sine",
+   "set": "round 1"
+  },
+  {
+   "id": 27,
+   "name": "Damped Strum",
+   "set": "round 1"
+  },
+  {
+   "id": 28,
+   "name": "Edge Bass",
+   "set": "round 1"
+  },
+  {
+   "id": 29,
+   "name": "Gumdrop Bounce",
+   "set": "round 1"
+  },
+  {
+   "id": 32,
+   "name": "Sinking Plank",
+   "set": "round 1"
+  },
+  {
+   "id": 36,
+   "name": "Squealing Hinge",
+   "set": "round 1"
+  },
+  {
+   "id": 37,
+   "name": "Stacked Girders",
+   "set": "round 1"
+  },
+  {
+   "id": 40,
+   "name": "Radio Sub",
+   "set": "round 1"
+  },
+  {
+   "id": 59,
+   "name": "Sunken",
+   "set": "round 1"
+  },
+  {
+   "id": 88,
+   "name": "Neon Avenue",
+   "set": "round 1"
+  },
+  {
+   "id": 94,
+   "name": "Cedar Spike",
+   "set": "round 1"
+  },
+  {
+   "id": 100,
+   "name": "Satin Snap",
+   "set": "round 1"
+  },
+  {
+   "id": 135,
+   "name": "Folded Chime",
+   "set": "round 1"
+  },
+  {
+   "id": 201,
+   "name": "Pluck Gate",
+   "set": "synthwave"
+  },
+  {
+   "id": 202,
+   "name": "Chrome Pad",
+   "set": "synthwave"
+  },
+  {
+   "id": 204,
+   "name": "Dark Pulse Bass",
+   "set": "synthwave"
+  },
+  {
+   "id": 205,
+   "name": "Lasergrid Lead",
+   "set": "synthwave"
+  },
+  {
+   "id": 207,
+   "name": "Supersaw Skyline",
+   "set": "synthwave"
+  },
+  {
+   "id": 208,
+   "name": "Midnight EP",
+   "set": "synthwave"
+  },
+  {
+   "id": 209,
+   "name": "Glass Chime",
+   "set": "synthwave"
+  },
+  {
+   "id": 252,
+   "name": "Palm Grid",
+   "set": "synthwave"
+  },
+  {
+   "id": 257,
+   "name": "Aurora Strings",
+   "set": "synthwave"
+  },
+  {
+   "id": 259,
+   "name": "Moonlit Choir",
+   "set": "synthwave"
+  },
+  {
+   "id": 262,
+   "name": "Velvet Night",
+   "set": "synthwave"
+  },
+  {
+   "id": 263,
+   "name": "Solar Wind",
+   "set": "synthwave"
+  },
+  {
+   "id": 265,
+   "name": "Chrome Saw Lead",
+   "set": "synthwave"
+  },
+  {
+   "id": 273,
+   "name": "Reese Bass",
+   "set": "synthwave"
+  },
+  {
+   "id": 276,
+   "name": "Octave Bounce",
+   "set": "synthwave"
+  },
+  {
+   "id": 279,
+   "name": "Gold Rush Brass",
+   "set": "synthwave"
+  },
+  {
+   "id": 283,
+   "name": "Hard Sync Stab",
+   "set": "synthwave"
+  },
+  {
+   "id": 284,
+   "name": "Neon Piano",
+   "set": "synthwave"
+  },
+  {
+   "id": 285,
+   "name": "Analog Organ",
+   "set": "synthwave"
+  },
+  {
+   "id": 290,
+   "name": "Pulse Dreams",
+   "set": "synthwave"
+  },
+  {
+   "id": 291,
+   "name": "Pulse Pump",
+   "set": "synthwave"
+  },
+  {
+   "id": 292,
+   "name": "Tine Keys",
+   "set": "synthwave"
+  },
+  {
+   "id": 302,
+   "name": "Acid Squelch",
+   "set": "techno"
+  },
+  {
+   "id": 304,
+   "name": "Warehouse Sub",
+   "set": "techno"
+  },
+  {
+   "id": 307,
+   "name": "Rave Bass Stab",
+   "set": "techno"
+  },
+  {
+   "id": 309,
+   "name": "Trance Pluck Arp",
+   "set": "techno"
+  },
+  {
+   "id": 317,
+   "name": "Shatter Seq",
+   "set": "techno"
+  },
+  {
+   "id": 321,
+   "name": "Anthem Supersaw",
+   "set": "techno"
+  },
+  {
+   "id": 324,
+   "name": "Sync Trance Lead",
+   "set": "techno"
+  },
+  {
+   "id": 333,
+   "name": "Organ Stab",
+   "set": "techno"
+  },
+  {
+   "id": 338,
+   "name": "Detroit Pad",
+   "set": "techno"
+  },
+  {
+   "id": 342,
+   "name": "Uplift Chords",
+   "set": "techno"
+  },
+  {
+   "id": 351,
+   "name": "FM Pop Bass",
+   "set": "synthpop"
+  },
+  {
+   "id": 353,
+   "name": "Digital Piano",
+   "set": "synthpop"
+  },
+  {
+   "id": 358,
+   "name": "Saw Hook Lead",
+   "set": "synthpop"
+  },
+  {
+   "id": 359,
+   "name": "Square Hook Lead",
+   "set": "synthpop"
+  },
+  {
+   "id": 365,
+   "name": "Vox Lead",
+   "set": "synthpop"
+  },
+  {
+   "id": 366,
+   "name": "Jupiter Strings",
+   "set": "synthpop"
+  },
+  {
+   "id": 367,
+   "name": "Warm Poly Pad",
+   "set": "synthpop"
+  },
+  {
+   "id": 370,
+   "name": "Ensemble Pad",
+   "set": "synthpop"
+  },
+  {
+   "id": 374,
+   "name": "Pop Chord Stack",
+   "set": "synthpop"
+  },
+  {
+   "id": 393,
+   "name": "Kalimba Pluck",
+   "set": "synthpop"
+  },
+  {
+   "id": 395,
+   "name": "Echo Pluck",
+   "set": "synthpop"
+  },
+  {
+   "id": 397,
+   "name": "FM Bell Pop",
+   "set": "synthpop"
+  },
+  {
+   "id": 410,
+   "name": "Rolling Trance Bass",
+   "set": "trance"
+  },
+  {
+   "id": 450,
+   "name": "Body Bass",
+   "set": "ebm"
+  },
+  {
+   "id": 451,
+   "name": "MS Bite Bass",
+   "set": "ebm"
+  },
+  {
+   "id": 453,
+   "name": "Octave Pump Bass",
+   "set": "ebm"
+  },
+  {
+   "id": 455,
+   "name": "Pulse Machine Bass",
+   "set": "ebm"
+  },
+  {
+   "id": 464,
+   "name": "Cold Saw Lead",
+   "set": "ebm"
+  },
+  {
+   "id": 466,
+   "name": "Sync Machine Lead",
+   "set": "ebm"
+  },
+  {
+   "id": 471,
+   "name": "Formant Lead",
+   "set": "ebm"
+  },
+  {
+   "id": 472,
+   "name": "Hard Brass Stab",
+   "set": "ebm"
+  },
+  {
+   "id": 473,
+   "name": "Octave Stab",
+   "set": "ebm"
+  },
+  {
+   "id": 492,
+   "name": "Low Filter Ping",
+   "set": "ebm"
+  },
+  {
+   "id": 500,
+   "name": "Lumbering Giant",
+   "set": "round 2"
+  },
+  {
+   "id": 504,
+   "name": "Clicking Pebble",
+   "set": "round 2"
+  },
+  {
+   "id": 522,
+   "name": "Algo Knock 2",
+   "set": "round 2"
+  }
+ ]
+}

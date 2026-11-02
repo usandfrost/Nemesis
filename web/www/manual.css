@@ -1,0 +1,233 @@
+/* The Nemesis manual, on top of site.css: the same palette and the same pixel face for headings and labels, and a clear face for reading. On screen it is one long page. In print it is A4 on
+   dark pages, with the page number and the chapter's name in the margins: each chapter is a named @page (at the end of this file), because Chrome has no running strings.
+   Jersey 10 stays on the type scale of site.css (--t1, --t2, --t3 and their whole multiples). In print one of its pixels is 3/56 of an em, so 14pt, 28pt and 42pt keep the same grid. */
+:root{--read:"Helvetica Neue",Helvetica,Arial,"Segoe UI",Roboto,"Noto Sans",sans-serif;--mono:Menlo,ui-monospace,Consolas,"DejaVu Sans Mono",monospace}
+.doc{background:var(--k);font:400 17px/27px var(--read);-webkit-font-smoothing:antialiased;padding-bottom:48px}
+.doc p,.doc li{max-width:760px}
+.doc h1,.doc h2,.doc h3,.doc h4,.cover,.part,.ch-no,.lab{font-family:var(--face);-webkit-font-smoothing:none}
+.doc svg{display:block;width:100%;height:auto}
+.doc svg text{font-family:var(--face)}
+.doc svg text.m{font-family:var(--mono)}
+.doc figure{margin:16px 0 24px}
+.doc img{display:block;width:100%;height:auto;background:var(--k)}
+.doc a{color:var(--cyan)}
+.doc h3{font-size:var(--t2);line-height:40px;color:var(--orange);margin:32px 0 8px}
+.doc h4{font-size:var(--t1);line-height:28px;color:var(--cyan);margin:20px 0 4px;text-transform:uppercase}
+.doc ul,.doc ol{margin:0 0 12px;padding-left:24px}
+.doc li{margin:0 0 6px}
+.doc li::marker{color:var(--orange)}
+.doc code{font:600 .92em/1 var(--mono);color:var(--ice)}
+.doc strong{color:var(--white);font-weight:700}
+.lead{font-size:20px;line-height:30px;color:var(--ice);max-width:760px}
+
+/* keys and knobs in the text: what is printed on the key, then its name */
+kbd.k,kbd.kn{font:700 .8em/1.5 var(--mono);display:inline-block;white-space:nowrap;vertical-align:.04em;padding:0 .4em;margin:0 .05em;color:var(--white);background:var(--k);box-shadow:inset 0 0 0 1px var(--steel)}
+kbd.k i{font-style:normal;color:var(--orange);margin-right:.35em}
+kbd.k i.g{display:inline-block;width:1.05em;height:1.05em;vertical-align:-.17em;margin-right:.3em}
+kbd.k i.g svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+kbd.kn{color:var(--k);background:var(--cyan);box-shadow:none}
+kbd.lk{color:var(--k);background:var(--ice);box-shadow:none}
+b.scr{font:700 .84em/1.3 var(--mono);color:var(--white);letter-spacing:.02em}
+
+/* the cover and the pages between the parts */
+.cover{position:relative;background:#000 url(manual/cover.png) center/cover no-repeat;min-height:min(100vh,1200px);display:flex;flex-direction:column;justify-content:space-between;padding:24px 32px;margin:0 -16px;text-align:center}
+.cover h1{font-size:calc(var(--t3)*2);line-height:112px;margin:0}
+.cover .sub{font-size:var(--t2);line-height:40px;color:var(--white);margin:0;background:#000;display:inline-block;padding:0 12px}
+.cover .ver{display:inline-block;font-size:var(--t2);line-height:44px;color:var(--k);background:var(--orange);padding:0 16px}
+.cover .foot2{font-size:var(--t1);line-height:28px;color:var(--ice);background:#000;display:inline-block;padding:0 8px}
+.part{text-align:center;padding:48px 16px;margin:32px 0;background:var(--navy)}
+.part h1,.part h2{font-size:calc(var(--t3)*2);line-height:112px;color:var(--orange);margin:0}
+.part .bandimg{margin:0 -16px 32px}
+.part p{font:var(--t2)/40px var(--face);margin:8px auto;color:var(--white);max-width:none}
+.pdf-get{margin:24px 0}
+
+/* a chapter's head: the number, the name, and copper */
+.ch{margin:0 0 48px}
+.ch-head{display:flex;align-items:stretch;gap:12px;margin:40px 0 16px;background:var(--navy) url(manual/checker.png);image-rendering:pixelated}
+.ch-no{flex:none;min-width:84px;text-align:center;font-size:var(--t3);line-height:72px;color:var(--k);background:var(--orange)}
+.ch-head h2{flex:1;font-size:var(--t3);line-height:72px;padding:0 16px 0 16px;background:var(--deep);color:var(--white);margin:0}
+.ch-head h2.long{font-size:var(--t2)}
+.bars{height:18px;margin:0 0 16px;background:linear-gradient(180deg,#1a1058 0 11%,#6a1e9c 11% 22%,#c23a24 22% 33%,#ff8a30 33% 44%,#fffaf0 44% 56%,#ff8a30 56% 67%,#c23a24 67% 78%,#6a1e9c 78% 89%,#1a1058 89%)}
+.bar2{height:9px;margin:20px 0 12px;background:linear-gradient(180deg,#6a1e9c 0 34%,#ff8a30 34% 67%,#c23a24 67%)}
+
+/* the contents */
+.toc{columns:2;column-gap:32px;margin:0 0 16px;padding:0;list-style:none}
+.toc li{margin:0;break-inside:avoid;max-width:none}
+.toc a{display:flex;gap:6px;color:var(--white);text-decoration:none;line-height:24px}
+.toc a i{flex:1;border-bottom:2px dotted var(--steel);margin-bottom:7px}
+.toc a b{font-weight:400}
+.toc .n{color:var(--orange);font-family:var(--mono);min-width:2em}
+.toc .pn{display:none}
+.toc h4{margin:0 0 4px}
+.pref{display:none}
+
+/* a real screen with what it says beside it */
+.shot{position:relative}
+.shot figcaption,.fig figcaption{font:400 14px/20px var(--read);color:var(--ice);padding:4px 0 0}
+.shot .fr{box-shadow:0 -3px 0 var(--steel),0 3px 0 var(--steel),-3px 0 0 var(--steel),3px 0 0 var(--steel);margin:3px}
+.side{display:grid;grid-template-columns:minmax(0,62fr) minmax(0,38fr);gap:16px;align-items:start;background:var(--navy);padding:10px;margin:16px 0 24px;break-inside:avoid}
+.side figure{margin:0}
+.side .say{font-size:15px;line-height:23px}
+.side .say p{margin:0 0 8px}
+.side .say ul,.side .say ol{padding-left:18px;margin:0 0 8px}
+.side .say li{margin:0 0 4px}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;margin:16px 0 24px}
+.pair figure{margin:0}
+.fig{background:var(--k);padding:10px;margin:16px 0 24px;break-inside:avoid;box-shadow:0 -3px 0 var(--steel),0 3px 0 var(--steel),-3px 0 0 var(--steel),3px 0 0 var(--steel)}
+.tip,.warn{background:var(--navy);padding:8px 14px;margin:12px 0 16px;border-left:8px solid var(--cyan);break-inside:avoid}
+.warn{border-left-color:var(--orange)}
+.tip b.h,.warn b.h{display:block;font:var(--t1)/24px var(--face);text-transform:uppercase;color:var(--cyan);-webkit-font-smoothing:none}
+.warn b.h{color:var(--orange)}
+.tip p,.warn p{margin:0 0 6px}
+.tip p:last-child,.warn p:last-child{margin:0}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0 0 12px}
+.doc ol.go{counter-reset:s;list-style:none;padding:0}
+.doc ol.go>li{counter-increment:s;position:relative;padding-left:34px;margin:0 0 8px;break-inside:avoid}
+.doc ol.go>li::before{content:counter(s);position:absolute;left:0;top:2px;width:24px;height:24px;background:var(--orange);color:var(--k);font:400 var(--t1)/24px var(--face);text-align:center}
+
+/* tables */
+table.ref{width:100%;border-collapse:collapse;margin:12px 0 20px;font:400 14.5px/20px var(--read)}
+table.ref caption{caption-side:top;text-align:left;font:var(--t1)/26px var(--face);color:var(--cyan);text-transform:uppercase;-webkit-font-smoothing:none}
+table.ref th{font:700 12px/18px var(--mono);text-align:left;text-transform:uppercase;color:var(--k);background:var(--ice);padding:2px 6px;white-space:nowrap}
+table.ref td{padding:4px 6px;vertical-align:top;border-bottom:1px solid var(--navy);background:var(--deep)}
+table.ref tr:nth-child(even) td{background:#150c48}
+table.ref td.nm{font:700 12.5px/20px var(--mono);color:var(--orange);white-space:nowrap}
+table.ref td.rng{font:400 12px/20px var(--mono);color:var(--ice)}
+table.ref td.def{font:400 12px/20px var(--mono);color:var(--cyan);white-space:nowrap}
+table.ref tr{break-inside:avoid}
+table.ref thead{display:table-header-group}
+.dim{color:var(--steel)}
+
+/* the small images in the lesson list */
+.lessons{columns:2;column-gap:24px;margin:0 0 12px;padding-left:24px}
+.lessons li{break-inside:avoid}
+.tree{font:400 14px/21px var(--mono);white-space:pre;background:var(--k);padding:10px 14px;margin:12px 0 20px;color:var(--ice);overflow:auto;break-inside:avoid}
+.tree b{color:var(--orange);font-weight:700}
+.tree i{color:var(--steel);font-style:normal}
+.licence{font:400 12px/17px var(--mono);white-space:pre-wrap;background:var(--k);padding:10px 14px;color:var(--ice);margin:8px 0 16px}
+
+@media screen and (max-width:860px){
+  .side,.pair{grid-template-columns:minmax(0,1fr)}
+  .toc,.lessons{columns:1}
+  .cover h1,.part h1,.part h2{font-size:var(--t3);line-height:64px}
+  .ch-head h2,.ch-no{font-size:var(--t2);line-height:48px}
+  .ch-no{min-width:56px}
+  table.ref{font-size:13px;display:block;overflow-x:auto}
+}
+
+/* ---- on paper */
+@media print{
+  html,body.site{background:#0e0838;color:var(--white);min-height:0}
+  #sky,.menubar,.copper,.skip,.pdf-get{display:none!important}
+  .wrap{max-width:none;margin:0;padding:0}
+  .doc{background:none;font:400 10pt/14.2pt var(--read);padding:0;orphans:2;widows:2}
+  .doc p,.doc li{max-width:none}
+  .doc p{margin:0 0 5pt}
+  .doc figure{margin:6pt 0 9pt}
+  .doc h3{font-size:28pt;line-height:29pt;margin:11pt 0 4pt;break-after:avoid}
+  .doc h4{font-size:14pt;line-height:16pt;margin:8pt 0 2pt;break-after:avoid}
+  .doc li{margin:0 0 2.5pt}
+  .doc ul,.doc ol{padding-left:14pt;margin:0 0 6pt}
+  .lead{font-size:11.5pt;line-height:16pt}
+  .cols{column-count:2;column-gap:7mm}
+  .cols>h3:first-child,.cols>h4:first-child{margin-top:0}
+  .doc code{font-size:8.6pt}
+  kbd.k,kbd.kn{font-size:7.6pt;line-height:10.5pt;box-decoration-break:clone}
+  b.scr{font-size:8.4pt}
+  a{text-decoration:none}
+
+  .cover{height:297mm;width:210mm;min-height:0;margin:0;padding:12mm 14mm 16mm;break-after:page;page:cover;background-size:100% 100%}
+  .cover h1{font-size:112pt;line-height:112pt}
+  .cover .sub{font-size:28pt;line-height:32pt}
+  .cover .ver{font-size:28pt;line-height:34pt}
+  .cover .foot2{font-size:14pt;line-height:18pt}
+  .part{height:297mm;width:210mm;margin:0;padding:0;break-before:page;break-after:page;page:cover;background:#0e0838;display:flex;flex-direction:column;justify-content:center}
+  .part h1,.part h2{font-size:84pt;line-height:90pt}
+  .part p{font-size:28pt;line-height:32pt;margin:8pt 0}
+  .part .bandimg{margin:0 0 24pt}
+  .part .bars{margin:0 0 24pt;height:12mm}
+
+  .ch{margin:0;break-before:page}
+  .ch-head{margin:0 0 3mm;height:15mm;gap:2.5mm;break-after:avoid}
+  .ch-no{min-width:20mm;font-size:42pt;line-height:15mm}
+  .ch-head h2{font-size:42pt;line-height:15mm;padding:0 4mm}
+  .ch-head h2.long{font-size:28pt}
+  .bars{height:4.5mm;margin:0 0 4mm;break-after:avoid}
+  .bar2{height:2.4mm;margin:6pt 0 5pt}
+
+  .toc{column-count:2;column-gap:8mm}
+  .toc a{line-height:12.8pt;font-size:9.6pt}
+  .toc a i{margin-bottom:3pt;border-bottom-width:.6pt}
+  .toc .pn{display:inline;font-family:var(--mono);color:var(--cyan);font-size:8.6pt}
+  .toc h4{margin:6pt 0 2pt}
+  .pref{display:inline}
+  .tocband{margin-top:10mm}
+
+  .shot figcaption,.fig figcaption{font-size:8.2pt;line-height:11pt;padding:2pt 0 0}
+  .shot .fr{box-shadow:none;outline:.8pt solid var(--steel);margin:0}
+  .side{gap:4mm;padding:2.5mm;margin:6pt 0 9pt}
+  .side .say{font-size:8.9pt;line-height:12.4pt}
+  .side .say p{margin:0 0 3pt}
+  .side .say ul,.side .say ol{padding-left:10pt;margin:0 0 3pt}
+  .side .say li{margin:0 0 1.5pt}
+  .pair{gap:3mm;margin:6pt 0 9pt;break-inside:avoid}
+  .fig{padding:2.5mm;margin:6pt 0 9pt;box-shadow:none;outline:.8pt solid var(--steel)}
+  .tip,.warn{padding:4pt 8pt;margin:5pt 0 7pt;border-left-width:2mm;font-size:9.4pt;line-height:13pt}
+  .tip b.h,.warn b.h{font-size:14pt;line-height:15pt}
+  .doc ol.go>li{padding-left:18pt;margin:0 0 3.5pt}
+  .doc ol.go>li::before{width:13pt;height:13pt;font-size:14pt;line-height:13pt;top:.5pt}
+  table.ref{font-size:8.7pt;line-height:11.8pt;margin:4pt 0 8pt}
+  table.ref caption{font-size:14pt;line-height:16pt}
+  table.ref th{font-size:7.2pt;line-height:10pt;padding:1.2pt 3pt}
+  table.ref td{padding:1.8pt 3pt;border-bottom-width:.4pt}
+  table.ref td.nm{font-size:7.6pt;line-height:11.8pt}
+  table.ref td.rng,table.ref td.def{font-size:7.2pt;line-height:11.8pt}
+  .lessons{padding-left:14pt;column-gap:6mm}
+  .tree{font-size:8.2pt;line-height:11.6pt;padding:6pt 8pt;margin:5pt 0 8pt}
+  .licence{font-size:6.8pt;line-height:9.4pt;padding:6pt 8pt}
+  .nb{break-before:page}
+}
+@page{size:A4;margin:15mm 15mm 14mm;background:#0e0838;
+  @top-left{content:"NEMESIS";font:400 14pt "Jersey 10",monospace;color:#ff8a30;vertical-align:bottom;padding-bottom:2.5mm}
+  @bottom-right{content:counter(page);font:400 14pt "Jersey 10",monospace;color:#fffaf0;vertical-align:top;padding-top:2.5mm}
+  @bottom-left{content:"Beta 2";font:400 14pt "Jersey 10",monospace;color:#4f78b0;vertical-align:top;padding-top:2.5mm}
+}
+@page cover{margin:0;background:#000;@top-left{content:none}@top-right{content:none}@bottom-left{content:none}@bottom-right{content:none}}
+@page c1{@top-right{content:"What Nemesis is";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c2{@top-right{content:"Read this first";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c3{@top-right{content:"Installing";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c4{@top-right{content:"A tour of the panel";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c5{@top-right{content:"First sound";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c6{@top-right{content:"A first beat";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c7{@top-right{content:"Choosing sounds";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c8{@top-right{content:"A melody";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c9{@top-right{content:"A first p-lock";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c10{@top-right{content:"Saving, loading and deleting";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c11{@top-right{content:"Where to go next";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c12{@top-right{content:"Lanes and parts";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c13{@top-right{content:"Euclid rhythms and tapped steps";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c14{@top-right{content:"The step editor";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c15{@top-right{content:"Chords and arpeggios";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c16{@top-right{content:"The tracker";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c17{@top-right{content:"P-locks in full";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c18{@top-right{content:"The synth pages";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c19{@top-right{content:"Wavetables";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c20{@top-right{content:"The sampler pages";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c21{@top-right{content:"Slices";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c22{@top-right{content:"Sample loops";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c23{@top-right{content:"Recording";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c24{@top-right{content:"The effects";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c25{@top-right{content:"Mixer, voices and the CPU";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c26{@top-right{content:"Patterns, FILL, COPY, PASTE and undo";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c27{@top-right{content:"Songs";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c28{@top-right{content:"Key and scale";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c29{@top-right{content:"Projects";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c30{@top-right{content:"Presets";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c31{@top-right{content:"Export: WAV, stems and MIDI";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c32{@top-right{content:"MIDI in and out";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c33{@top-right{content:"The web tools";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c34{@top-right{content:"The card";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c35{@top-right{content:"Troubleshooting";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c36{@top-right{content:"Key and knob reference";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c37{@top-right{content:"Specifications";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}
+@page c38{@top-right{content:"Credits and licences";font:400 14pt "Jersey 10",monospace;color:#b6cce4;vertical-align:bottom;padding-bottom:2.5mm}}

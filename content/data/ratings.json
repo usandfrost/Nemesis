@@ -1,0 +1,678 @@
+{
+ "source": "listening page export 2026-10-26T20:29Z (the second one: categories corrected in `note`)",
+ "scale": "1-5; 3 and above makes the cut; note = the category the user says it belongs to",
+ "ratings": {
+  "Dripping Vault": {
+   "rating": 4,
+   "note": ""
+  },
+  "Arctic Gale": {
+   "rating": 2,
+   "note": ""
+  },
+  "Padded Burrow": {
+   "rating": 5,
+   "note": ""
+  },
+  "Hull Boom": {
+   "rating": 5,
+   "note": ""
+  },
+  "Glazed Ceramic": {
+   "rating": 2,
+   "note": ""
+  },
+  "Vortex Fall": {
+   "rating": 3,
+   "note": ""
+  },
+  "Catacomb Hum": {
+   "rating": 2,
+   "note": ""
+  },
+  "Charcoal Roll": {
+   "rating": 4,
+   "note": ""
+  },
+  "Tinsel Square": {
+   "rating": 5,
+   "note": ""
+  },
+  "Pine Oboe": {
+   "rating": 2,
+   "note": "Poly"
+  },
+  "Dewdrop Tap": {
+   "rating": 1,
+   "note": ""
+  },
+  "Cathedral Pipes": {
+   "rating": 2,
+   "note": "Bass"
+  },
+  "Mirrored Flame": {
+   "rating": 4,
+   "note": "Pluck"
+  },
+  "Wooden Flute": {
+   "rating": 4,
+   "note": ""
+  },
+  "Polished Needle": {
+   "rating": 4,
+   "note": ""
+  },
+  "Marsh Warbler": {
+   "rating": 2,
+   "note": ""
+  },
+  "Clipped Thump": {
+   "rating": 2,
+   "note": ""
+  },
+  "Cedar Spike": {
+   "rating": 4,
+   "note": ""
+  },
+  "Bronze Rise": {
+   "rating": 3,
+   "note": "Poly"
+  },
+  "Rubber Mallet": {
+   "rating": 3,
+   "note": ""
+  },
+  "Radio Sub": {
+   "rating": 3,
+   "note": ""
+  },
+  "Warm Thump": {
+   "rating": 5,
+   "note": ""
+  },
+  "Clean Pump Bass": {
+   "rating": 5,
+   "note": ""
+  },
+  "Open Throttle": {
+   "rating": 3,
+   "note": "Lead"
+  },
+  "Twilight Mallets": {
+   "rating": 4,
+   "note": ""
+  },
+  "Crackling Hearth": {
+   "rating": 4,
+   "note": ""
+  },
+  "Willow Piper": {
+   "rating": 3,
+   "note": "Poly"
+  },
+  "Singing Floor": {
+   "rating": 5,
+   "note": ""
+  },
+  "Skipping Stone": {
+   "rating": 2,
+   "note": "Pluck"
+  },
+  "Backwards Harp": {
+   "rating": 4,
+   "note": "Poly"
+  },
+  "Pouncing Panther": {
+   "rating": 5,
+   "note": "Lead"
+  },
+  "Gel Squelch": {
+   "rating": 4,
+   "note": ""
+  },
+  "Nocturne Felt": {
+   "rating": 4,
+   "note": ""
+  },
+  "Slinky Saw": {
+   "rating": 2,
+   "note": ""
+  },
+  "Inhaling Wave": {
+   "rating": 4,
+   "note": ""
+  },
+  "Glitter Rain": {
+   "rating": 4,
+   "note": ""
+  },
+  "Apparition Rise": {
+   "rating": 5,
+   "note": ""
+  },
+  "Edge Bass": {
+   "rating": 4,
+   "note": ""
+  },
+  "Scorched Asphalt": {
+   "rating": 4,
+   "note": "Lead"
+  },
+  "Squealing Hinge": {
+   "rating": 4,
+   "note": "Bass"
+  },
+  "Wandering Kite": {
+   "rating": 1,
+   "note": ""
+  },
+  "Ladder Ping": {
+   "rating": 4,
+   "note": ""
+  },
+  "Rolling Aurora": {
+   "rating": 2,
+   "note": ""
+  },
+  "Shivering Birch": {
+   "rating": 3,
+   "note": ""
+  },
+  "Muted Tines": {
+   "rating": 2,
+   "note": ""
+  },
+  "Stacked Girders": {
+   "rating": 4,
+   "note": ""
+  },
+  "Concrete Slab": {
+   "rating": 4,
+   "note": ""
+  },
+  "Gray Scan Pluck": {
+   "rating": 5,
+   "note": "Bell"
+  },
+  "Breath Flute": {
+   "rating": 3,
+   "note": ""
+  },
+  "Sync Razor": {
+   "rating": 4,
+   "note": "Poly"
+  },
+  "Digital Solo": {
+   "rating": 5,
+   "note": ""
+  },
+  "Barroom Hammers": {
+   "rating": 2,
+   "note": ""
+  },
+  "Idling Engine": {
+   "rating": 1,
+   "note": ""
+  },
+  "Walking Shadow": {
+   "rating": 3,
+   "note": ""
+  },
+  "Mahogany Bass": {
+   "rating": 1,
+   "note": ""
+  },
+  "Parlour Harp": {
+   "rating": 5,
+   "note": ""
+  },
+  "Satin Snap": {
+   "rating": 4,
+   "note": ""
+  },
+  "Cloister Bass": {
+   "rating": 4,
+   "note": "Lead"
+  },
+  "Bamboo Chimes": {
+   "rating": 4,
+   "note": ""
+  },
+  "Coiling Serpent": {
+   "rating": 4,
+   "note": ""
+  },
+  "Parlor Organ": {
+   "rating": 4,
+   "note": ""
+  },
+  "Cracking Whip": {
+   "rating": 1,
+   "note": ""
+  },
+  "Basalt Sine": {
+   "rating": 4,
+   "note": ""
+  },
+  "Moonlit Chime": {
+   "rating": 2,
+   "note": ""
+  },
+  "Slithering Eel": {
+   "rating": 4,
+   "note": ""
+  },
+  "Lamplight Hue": {
+   "rating": 5,
+   "note": ""
+  },
+  "Springy Knock": {
+   "rating": 4,
+   "note": ""
+  },
+  "Hazelnut Saw": {
+   "rating": 4,
+   "note": "Bell"
+  },
+  "Mellow Bugle": {
+   "rating": 3,
+   "note": ""
+  },
+  "Frost Blink": {
+   "rating": 5,
+   "note": "Bass"
+  },
+  "Murmuring Depth": {
+   "rating": 1,
+   "note": ""
+  },
+  "Looming Shade": {
+   "rating": 2,
+   "note": ""
+  },
+  "Quill Run": {
+   "rating": 4,
+   "note": ""
+  },
+  "Mirage Bloom": {
+   "rating": 4,
+   "note": "Pad"
+  },
+  "Flickering Lamp": {
+   "rating": 1,
+   "note": ""
+  },
+  "Lazy Slide": {
+   "rating": 2,
+   "note": ""
+  },
+  "Keen Tick": {
+   "rating": 5,
+   "note": "Keys"
+  },
+  "Vinyl Swell": {
+   "rating": 2,
+   "note": ""
+  },
+  "Steady Arrow": {
+   "rating": 2,
+   "note": ""
+  },
+  "Nasal Pipes": {
+   "rating": 4,
+   "note": ""
+  },
+  "Split Filter Duo": {
+   "rating": 4,
+   "note": "Poly"
+  },
+  "Glaze Pluck": {
+   "rating": 4,
+   "note": "Bell"
+  },
+  "Tine Slap Bass": {
+   "rating": 4,
+   "note": ""
+  },
+  "Damped Strum": {
+   "rating": 4,
+   "note": "Bass"
+  },
+  "Concrete Throb": {
+   "rating": 1,
+   "note": ""
+  },
+  "Chapel Hum": {
+   "rating": 4,
+   "note": ""
+  },
+  "Whisper Glass": {
+   "rating": 4,
+   "note": "Fx"
+  },
+  "Soft Squelch Bass": {
+   "rating": 4,
+   "note": ""
+  },
+  "Ripping Silk": {
+   "rating": 3,
+   "note": "Bass"
+  },
+  "Quivering Breath": {
+   "rating": 2,
+   "note": ""
+  },
+  "Soft Current": {
+   "rating": 4,
+   "note": ""
+  },
+  "Wave Bell Pair": {
+   "rating": 5,
+   "note": ""
+  },
+  "Cobra Spit": {
+   "rating": 1,
+   "note": ""
+  },
+  "Pulsing Horn": {
+   "rating": 5,
+   "note": "Pluck"
+  },
+  "Suitcase EP": {
+   "rating": 4,
+   "note": ""
+  },
+  "Gradient Wash": {
+   "rating": 4,
+   "note": ""
+  },
+  "Taut Rope": {
+   "rating": 4,
+   "note": ""
+  },
+  "Lone Lantern": {
+   "rating": 4,
+   "note": ""
+  },
+  "Midnight Bloom": {
+   "rating": 4,
+   "note": "Bass"
+  },
+  "Flutter Lattice": {
+   "rating": 4,
+   "note": ""
+  },
+  "Tremor Slab": {
+   "rating": 1,
+   "note": ""
+  },
+  "Cork Pocket": {
+   "rating": 1,
+   "note": ""
+  },
+  "Sequenced Root": {
+   "rating": 5,
+   "note": ""
+  },
+  "Creeping Tar": {
+   "rating": 5,
+   "note": ""
+  },
+  "Squeezing Vise": {
+   "rating": 5,
+   "note": ""
+  },
+  "Gumdrop Bounce": {
+   "rating": 4,
+   "note": "Bass"
+  },
+  "Iron Squelch": {
+   "rating": 4,
+   "note": ""
+  },
+  "Sinking Plank": {
+   "rating": 4,
+   "note": ""
+  },
+  "Glacier Stab": {
+   "rating": 5,
+   "note": ""
+  },
+  "Felt Hammer": {
+   "rating": 4,
+   "note": ""
+  },
+  "Dewdrop Pluck": {
+   "rating": 4,
+   "note": "Bell"
+  },
+  "Tidewater Bass": {
+   "rating": 4,
+   "note": ""
+  },
+  "Silt Drone": {
+   "rating": 5,
+   "note": ""
+  },
+  "Violet Haze": {
+   "rating": 5,
+   "note": ""
+  },
+  "Cassette Floor": {
+   "rating": 3,
+   "note": ""
+  },
+  "Brick Punch": {
+   "rating": 4,
+   "note": ""
+  },
+  "Royal Procession": {
+   "rating": 3,
+   "note": "Poly"
+  },
+  "Split Filter Expanse": {
+   "rating": 5,
+   "note": ""
+  },
+  "Glinting Wire": {
+   "rating": 2,
+   "note": ""
+  },
+  "Gossamer Strings": {
+   "rating": 3,
+   "note": ""
+  },
+  "Hardline Jolt": {
+   "rating": 4,
+   "note": ""
+  },
+  "Brisk Stabs": {
+   "rating": 4,
+   "note": ""
+  },
+  "Rain Corridor": {
+   "rating": 3,
+   "note": "Bass"
+  },
+  "Offbeat Stab": {
+   "rating": 3,
+   "note": ""
+  },
+  "Bouncing Echo": {
+   "rating": 4,
+   "note": ""
+  },
+  "Copper Staircase": {
+   "rating": 1,
+   "note": ""
+  },
+  "Island Chime": {
+   "rating": 4,
+   "note": ""
+  },
+  "Chorus Horns": {
+   "rating": 5,
+   "note": "Poly"
+  },
+  "Neon Avenue": {
+   "rating": 5,
+   "note": ""
+  },
+  "Pulse Riff Chords": {
+   "rating": 5,
+   "note": ""
+  },
+  "Fountain Spray": {
+   "rating": 1,
+   "note": ""
+  },
+  "Step Timbre": {
+   "rating": 5,
+   "note": "Poly"
+  },
+  "Brass Push": {
+   "rating": 4,
+   "note": ""
+  },
+  "Carousel Loop": {
+   "rating": 4,
+   "note": ""
+  },
+  "Deep Rumble": {
+   "rating": 4,
+   "note": "Pad"
+  },
+  "Burnished Call": {
+   "rating": 4,
+   "note": "Bell"
+  },
+  "Lime Spray": {
+   "rating": 2,
+   "note": ""
+  },
+  "Tape Hymn": {
+   "rating": 2,
+   "note": ""
+  },
+  "Furnace Call": {
+   "rating": 4,
+   "note": "Poly"
+  },
+  "Bright Table Poly": {
+   "rating": 5,
+   "note": ""
+  },
+  "Acid Roll": {
+   "rating": 5,
+   "note": "Bass"
+  },
+  "Index Keys": {
+   "rating": 5,
+   "note": ""
+  },
+  "Stepped Harpsichord": {
+   "rating": 3,
+   "note": ""
+  },
+  "Reso Drone": {
+   "rating": 4,
+   "note": "Pad"
+  },
+  "Loop Erosion": {
+   "rating": 5,
+   "note": "Pad"
+  },
+  "Gated Chord": {
+   "rating": 1,
+   "note": ""
+  },
+  "Polymeter": {
+   "rating": 4,
+   "note": ""
+  },
+  "Chorus Arp": {
+   "rating": 5,
+   "note": "Bass"
+  },
+  "Soft FM Ballad": {
+   "rating": 3,
+   "note": ""
+  },
+  "Wide FM Bell": {
+   "rating": 3,
+   "note": ""
+  },
+  "Chain Arp": {
+   "rating": 4,
+   "note": "Bass"
+  },
+  "Menace Brass": {
+   "rating": 4,
+   "note": "Poly"
+  },
+  "Loop Run": {
+   "rating": 5,
+   "note": "Bass"
+  },
+  "Low Bones": {
+   "rating": 4,
+   "note": "Keys"
+  },
+  "Bowl Swell": {
+   "rating": 2,
+   "note": "Texture"
+  },
+  "Folded Chime": {
+   "rating": 4,
+   "note": ""
+  },
+  "Tubular Fjord": {
+   "rating": 4,
+   "note": ""
+  },
+  "Sync Slam": {
+   "rating": 4,
+   "note": ""
+  },
+  "Mask Shimmer": {
+   "rating": 4,
+   "note": ""
+  },
+  "Phase Wind": {
+   "rating": 4,
+   "note": ""
+  },
+  "Pipe Hum": {
+   "rating": 5,
+   "note": "Pad"
+  },
+  "Sunken": {
+   "rating": 5,
+   "note": "Pad"
+  },
+  "Cathedral Toll": {
+   "rating": 2,
+   "note": ""
+  },
+  "Shatter Stab": {
+   "rating": 5,
+   "note": ""
+  },
+  "Acid Chord": {
+   "rating": 5,
+   "note": ""
+  },
+  "Dub Chamber": {
+   "rating": 5,
+   "note": ""
+  },
+  "Decimate Stab": {
+   "rating": 4,
+   "note": ""
+  },
+  "Minor Hit": {
+   "rating": 4,
+   "note": ""
+  }
+ }
+}

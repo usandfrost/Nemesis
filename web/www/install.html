@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/png" href="img/icon.png">
+<title>Install Nemesis Beta 2</title>
+<link rel="stylesheet" href="site.css">
+</head>
+<body class="site">
+<a class="skip" href="#top">Skip to the page</a>
+<canvas id="sky" aria-hidden="true"></canvas>
+<header id="bar" class="menubar"></header>
+<div class="copper"></div>
+<main id="top" class="wrap">
+  <section class="heading"><h1 class="chrome">Install Beta 2</h1></section>
+  <section class="box"><h2 class="box-head">Download</h2>
+    <p>The firmware, every preset and wavetable, and these instructions. Your samples are already on your Drumboy's card and are not changed. Read the steps below first.</p>
+    <p class="btns"><a class="btn go" id="download" href="downloads/nemesis-beta-2-install.zip" download>Download Nemesis Beta 2</a></p>
+  </section>
+  <section class="box">
+    <p>Nemesis is free firmware for the Randomwaves Drumboy Pro. It is an independent project, not made by Randomwaves.</p>
+    <p>This is Beta 2, an early test version. It works on the devices it has been tried on, but expect bugs, and things may change in the next version.</p>
+  </section>
+  <section class="box warn"><h2 class="box-head">Please read this first</h2>
+    <p>Nemesis is free software, given as it is, with no warranty of any kind. You use it at your own risk. Keep a copy of your SD card: a power cut during a save, or a failing card, can lose data, and installing other firmware on your device is your own choice. The makers accept no liability for lost data or for damage to cards or devices.</p>
+    <p>If you do not accept this, do not install Nemesis.</p>
+  </section>
+  <section class="box"><h2 class="box-head">What you need</h2>
+    <ul class="steps"><li>A Drumboy Pro and its SD card. Your card already holds the samples. Nemesis uses them where they are, and this package does not change them.</li><li>A computer with Windows or macOS, and a way to put the card in it.</li><li>About 10 minutes.</li></ul>
+    <p>Using a different card? It must be formatted FAT32, so 32 GB or smaller is simplest, and it must hold a copy of everything on your Drumboy&#x27;s own card. Cards bigger than 32 GB usually come as exFAT, which the Drumboy cannot read.</p>
+  </section>
+  <section class="box"><h2 class="box-head">What is in this package</h2>
+    <ul class="steps"><li>Drumboy_Pro_Fw_Nemesis_B2.bin: the firmware</li><li>CATHODE: a folder with the presets and wavetables (CATHODE is the engine&#x27;s name)</li><li>INSTALL.txt: this text</li><li>LICENSES.txt: the disclaimer and the licences</li><li>COPYING.txt: the GNU General Public License</li></ul>
+  </section>
+  <section class="box"><h2 class="box-head">Installing on Windows</h2>
+    <ol class="steps"><li>Switch the Drumboy off and take out the card. Put the card in your computer. If Windows offers to scan, fix or format the card, say no.</li><li>Make a backup. Open the card in File Explorer, select everything, and copy it to a new folder on your computer. Do not skip this.</li><li>Right-click the Nemesis zip file and choose Extract All. Work from the extracted folder, not from inside the zip.</li><li>Copy the .bin file and the CATHODE folder to the top level of the card, next to the Sample and System folders. Do not put them inside another folder.</li><li>If Windows says files already exist, this is not a first install: see UPDATING below.</li><li>In File Explorer, right-click the card and choose Eject. Wait until it says it is safe, then take the card out.</li></ol>
+  </section>
+  <section class="box"><h2 class="box-head">Installing on macOS</h2>
+    <ol class="steps"><li>Switch the Drumboy off and take out the card. Put the card in your Mac. If macOS offers to repair or initialize the card, say no.</li><li>Make a backup. Open the card in Finder, select everything, and copy it to a new folder on your Mac. Do not skip this.</li><li>Double-click the Nemesis zip file to unpack it.</li><li>Copy the .bin file and the CATHODE folder to the top level of the card, next to the Sample and System folders. Do not put them inside another folder.</li><li>If Finder says CATHODE already exists, press Stop. This is not a first install: see UPDATING below. Choosing Replace would delete your saved projects.</li><li>In Finder, click the eject button next to the card. Wait until the card disappears from the sidebar, then take it out.</li></ol>
+    <p>macOS leaves small hidden files on the card, with names starting with &quot;._&quot;. They are harmless, and the Drumboy ignores them.</p>
+  </section>
+  <section class="box"><h2 class="box-head">Finishing the install, on both</h2>
+    <ol class="steps"><li>Put the card in the Drumboy and switch it on.</li><li>Wait about 20 seconds. The Drumboy&#x27;s own installer runs first: a green box says UPDATING FIRMWARE, with V1.01 under it (the file&#x27;s own number, not the Nemesis version), and then FIRMWARE UPDATED. Do not switch off during this step.</li><li>The Nemesis picture appears, and then the sequencer screen.</li><li>The installer empties System/Firmware and moves the .bin file into it, so it only installs once. That deletes the original firmware file from the card, which is one more reason to keep your backup.</li></ol>
+  </section>
+  <section class="box"><h2 class="box-head">The first save</h2>
+    <p>Starting up does not write to the card, with one exception: if a power cut stopped a preset being replaced, the next start finishes that first. The first time you save after switching on, Nemesis reads through the whole card to check that it is safe to write to. That takes some seconds, and longer on a full card. The sound keeps playing.</p>
+    <p>If a save says the card has a problem, Nemesis has found damage and will not write to the card. It still plays. Put the card in a computer and run a disk check (Windows: right-click the card, Properties, Tools, Check. macOS: Disk Utility, First Aid). Nemesis never repairs a card itself.</p>
+  </section>
+  <section class="box"><h2 class="box-head">Updating to a new version</h2>
+    <p>Copy only the new .bin file to the top level of the card, then eject and switch on as above. Your projects and presets stay as they are.</p>
+    <p>To get new presets or wavetables as well, copy the files inside the package&#x27;s CATHODE/PRESETS and CATHODE/WT into the same folders on the card. Copy the files, not the CATHODE folder itself.</p>
+  </section>
+  <section class="box"><h2 class="box-head">Going back to the original firmware</h2>
+    <p>Your original firmware file is in your backup, in its System/Firmware folder, with a name like Drumboy_Pro_Fw_01_02.bin. Copy it to the top level of the card, eject, and switch on. If you have no backup, get it from Randomwaves.</p>
+    <p>Your projects made with Nemesis stay in the CATHODE folder but the original firmware will not read them. Your samples are not touched.</p>
+  </section>
+  <section class="box"><h2 class="box-head">If something goes wrong</h2>
+    <ul class="steps"><li>Nothing changes when you switch on: check that the .bin file is at the top level of the card, and that its name still starts with Drumboy_Pro_Fw and ends with .bin. Windows can hide the .bin ending, so do not rename the file. The installer does not see a name of more than 31 characters.</li><li>A red box says FIRMWARE ERROR: the install failed, and the installer has deleted the .bin file from the card. Copy it to the card again from the package and switch on. If it happens again, go back to the original firmware, as above.</li><li>No presets or wavetables: check that CATHODE is at the top level, with PRESETS and WT inside it.</li><li>The card is not read at all: check it is FAT32, using your computer&#x27;s disk properties or Disk Utility.</li><li>Anything else: put your backup back on the card and go back to the original firmware, as above.</li></ul>
+  </section>
+</main>
+<script src="site.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+# Apache: needs mod_headers. Online Nemesis needs the two headers below.
+<IfModule mod_headers.c>
+  Header set Cross-Origin-Opener-Policy "same-origin"
+  Header set Cross-Origin-Embedder-Policy "require-corp"
+</IfModule>
+AddType application/wasm .wasm

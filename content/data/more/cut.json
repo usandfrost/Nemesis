@@ -1,0 +1,543 @@
+{
+ "about": "the second round's cut (tools/cut_more.py)",
+ "kept": [
+  {
+   "id": 510,
+   "name": "Mask Chew",
+   "rating": 3,
+   "category": "BASS",
+   "was": "BASS",
+   "note": ""
+  },
+  {
+   "id": 512,
+   "name": "Gnashing Teeth",
+   "rating": 4,
+   "category": "BASS",
+   "was": "BASS",
+   "note": ""
+  },
+  {
+   "id": 513,
+   "name": "Boiler Churn",
+   "rating": 4,
+   "category": "BASS",
+   "was": "BASS",
+   "note": ""
+  },
+  {
+   "id": 518,
+   "name": "Acid Gargle",
+   "rating": 5,
+   "category": "BASS",
+   "was": "BASS",
+   "note": ""
+  },
+  {
+   "id": 524,
+   "name": "Sampler Drift",
+   "rating": 4,
+   "category": "LEAD",
+   "was": "LEAD",
+   "note": ""
+  },
+  {
+   "id": 525,
+   "name": "Cloaked Tenor",
+   "rating": 3,
+   "category": "POLY",
+   "was": "LEAD",
+   "note": "POLY"
+  },
+  {
+   "id": 528,
+   "name": "Papery Edge",
+   "rating": 4,
+   "category": "BASS",
+   "was": "LEAD",
+   "note": "BASS"
+  },
+  {
+   "id": 534,
+   "name": "Hyperwide Saw",
+   "rating": 4,
+   "category": "POLY",
+   "was": "LEAD",
+   "note": "POLY"
+  },
+  {
+   "id": 538,
+   "name": "Fern Canopy",
+   "rating": 3,
+   "category": "PAD",
+   "was": "PAD",
+   "note": ""
+  },
+  {
+   "id": 541,
+   "name": "Gray Code Halo",
+   "rating": 4,
+   "category": "PAD",
+   "was": "PAD",
+   "note": ""
+  },
+  {
+   "id": 547,
+   "name": "Folded Drop",
+   "rating": 5,
+   "category": "POLY",
+   "was": "PLUCK",
+   "note": "POLY"
+  },
+  {
+   "id": 550,
+   "name": "Cathedral Swell",
+   "rating": 4,
+   "category": "STAB",
+   "was": "STAB",
+   "note": ""
+  },
+  {
+   "id": 551,
+   "name": "Soft Horns",
+   "rating": 4,
+   "category": "STAB",
+   "was": "STAB",
+   "note": ""
+  },
+  {
+   "id": 552,
+   "name": "Muted Smoke",
+   "rating": 4,
+   "category": "STAB",
+   "was": "STAB",
+   "note": ""
+  },
+  {
+   "id": 553,
+   "name": "Velvet Horns",
+   "rating": 4,
+   "category": "POLY",
+   "was": "STAB",
+   "note": "POLY"
+  },
+  {
+   "id": 554,
+   "name": "Anvil Stab",
+   "rating": 4,
+   "category": "STAB",
+   "was": "STAB",
+   "note": ""
+  },
+  {
+   "id": 555,
+   "name": "Hoover Hit",
+   "rating": 4,
+   "category": "STAB",
+   "was": "STAB",
+   "note": ""
+  },
+  {
+   "id": 557,
+   "name": "Twin Oak Poly",
+   "rating": 5,
+   "category": "LEAD",
+   "was": "POLY",
+   "note": "LEAD"
+  },
+  {
+   "id": 558,
+   "name": "Revival Chords",
+   "rating": 5,
+   "category": "POLY",
+   "was": "POLY",
+   "note": ""
+  },
+  {
+   "id": 559,
+   "name": "Wire Lullaby",
+   "rating": 5,
+   "category": "POLY",
+   "was": "POLY",
+   "note": ""
+  },
+  {
+   "id": 565,
+   "name": "Ribbon Poly",
+   "rating": 4,
+   "category": "POLY",
+   "was": "POLY",
+   "note": ""
+  },
+  {
+   "id": 566,
+   "name": "Crystal Poly",
+   "rating": 4,
+   "category": "POLY",
+   "was": "POLY",
+   "note": ""
+  },
+  {
+   "id": 569,
+   "name": "Sympathetic Keys",
+   "rating": 4,
+   "category": "POLY",
+   "was": "KEYS",
+   "note": "POLY"
+  },
+  {
+   "id": 570,
+   "name": "Gray Keys",
+   "rating": 4,
+   "category": "LEAD",
+   "was": "KEYS",
+   "note": "LEAD"
+  },
+  {
+   "id": 571,
+   "name": "Phase Keys",
+   "rating": 4,
+   "category": "KEYS",
+   "was": "KEYS",
+   "note": ""
+  },
+  {
+   "id": 572,
+   "name": "Rusted EP",
+   "rating": 4,
+   "category": "LEAD",
+   "was": "KEYS",
+   "note": "LEAD"
+  },
+  {
+   "id": 579,
+   "name": "Machine Loop",
+   "rating": 5,
+   "category": "SEQ",
+   "was": "SEQ",
+   "note": ""
+  },
+  {
+   "id": 580,
+   "name": "Triplet Arp",
+   "rating": 5,
+   "category": "SEQ",
+   "was": "SEQ",
+   "note": ""
+  },
+  {
+   "id": 582,
+   "name": "Metal Clock",
+   "rating": 3,
+   "category": "SEQ",
+   "was": "SEQ",
+   "note": ""
+  },
+  {
+   "id": 583,
+   "name": "Hypno Pulse",
+   "rating": 5,
+   "category": "SEQ",
+   "was": "SEQ",
+   "note": ""
+  },
+  {
+   "id": 584,
+   "name": "Dotted Chords",
+   "rating": 4,
+   "category": "SEQ",
+   "was": "SEQ",
+   "note": ""
+  },
+  {
+   "id": 586,
+   "name": "Cold Draft",
+   "rating": 4,
+   "category": "TEXTURE",
+   "was": "TEXTURE",
+   "note": ""
+  },
+  {
+   "id": 587,
+   "name": "Metal Resonance",
+   "rating": 4,
+   "category": "TEXTURE",
+   "was": "TEXTURE",
+   "note": ""
+  },
+  {
+   "id": 591,
+   "name": "Dusty Music Box",
+   "rating": 4,
+   "category": "BELL",
+   "was": "BELL",
+   "note": ""
+  },
+  {
+   "id": 592,
+   "name": "Broken Carillon",
+   "rating": 4,
+   "category": "BELL",
+   "was": "BELL",
+   "note": ""
+  },
+  {
+   "id": 593,
+   "name": "Steel Pan",
+   "rating": 4,
+   "category": "BELL",
+   "was": "BELL",
+   "note": ""
+  },
+  {
+   "id": 594,
+   "name": "Gray Bell",
+   "rating": 4,
+   "category": "BELL",
+   "was": "BELL",
+   "note": ""
+  }
+ ],
+ "left": [
+  {
+   "name": "Lumbering Giant",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Spinning Top",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Warbling Gravel",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Deep Cellar",
+   "why": "rated 1"
+  },
+  {
+   "name": "Clicking Pebble",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Tape Warp",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Hollow Square Bass",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Rust Ring",
+   "why": "rated 1"
+  },
+  {
+   "name": "Gum Rubber",
+   "why": "rated 1"
+  },
+  {
+   "name": "Pocket Roller",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Bare Sub",
+   "why": "rated 2"
+  },
+  {
+   "name": "Bullfrog Croak",
+   "why": "rated 2"
+  },
+  {
+   "name": "Hollow Log",
+   "why": "rated 2"
+  },
+  {
+   "name": "Reed Morph",
+   "why": "rated 2"
+  },
+  {
+   "name": "Throat Growl",
+   "why": "unrated"
+  },
+  {
+   "name": "Four Second Riser",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Eight-Bit Brute",
+   "why": "rated 2"
+  },
+  {
+   "name": "Round Preset Bass",
+   "why": "rated 2"
+  },
+  {
+   "name": "Algo Knock 2",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Gnaw",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Sawtooth Singer",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Comb Pipe",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Hooked Edge",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Gray Scan Glass",
+   "why": "unrated"
+  },
+  {
+   "name": "Razor Spire",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Blazing Edge",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Locked Orbit",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Thin Ribbon",
+   "why": "unrated"
+  },
+  {
+   "name": "Cushioned Jab",
+   "why": "rated 2"
+  },
+  {
+   "name": "Stereo Horizon",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Whispering Gallery",
+   "why": "rated 2"
+  },
+  {
+   "name": "Broken Memory",
+   "why": "rated 2"
+  },
+  {
+   "name": "Chiseled Pluck",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Raindrop Pluck",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Woody Pluck",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Reso Pluck",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Zap Pluck",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Smoky Reed",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Reel Horns",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Mask Stab",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Split Poly",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Hollow Bounce",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Chorus Chords",
+   "why": "unrated"
+  },
+  {
+   "name": "Cold Stack Chords",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Square March",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Gentle FM Keys",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Toy Keyboard",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Aerial Shimmer",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Orbiting Whine",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Antenna Hum",
+   "why": "unrated"
+  },
+  {
+   "name": "Skimming Wisp",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Distress Flare",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Hornet Loop",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Pump Arp",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Radio Haze",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Night Wind",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Plate Rain",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Dust Bed",
+   "why": "voted out (too similar, or skipped on the golden page)"
+  },
+  {
+   "name": "Struck Wire",
+   "why": "unrated"
+  },
+  {
+   "name": "Singing Bowl",
+   "why": "unrated"
+  }
+ ]
+}

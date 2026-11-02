@@ -1,0 +1,681 @@
+{
+ "500": {
+  "name": "Lumbering Giant",
+  "file": "vintage-mono/lumbering-giant.json",
+  "category": "BASS",
+  "nemesisCategory": "BASS",
+  "score": 93.5
+ },
+ "501": {
+  "name": "Spinning Top",
+  "file": "vintage-mono/spinning-top.json",
+  "category": "BASS",
+  "nemesisCategory": "BASS",
+  "score": 92.1
+ },
+ "502": {
+  "name": "Warbling Gravel",
+  "file": "vintage-mono/warbling-gravel.json",
+  "category": "BASS",
+  "nemesisCategory": "BASS",
+  "score": 90.0
+ },
+ "503": {
+  "name": "Deep Cellar",
+  "file": "vintage-mono/deep-cellar.json",
+  "category": "BASS",
+  "nemesisCategory": "BASS",
+  "score": 88.7
+ },
+ "504": {
+  "name": "Clicking Pebble",
+  "file": "vintage-mono/clicking-pebble.json",
+  "category": "BASS",
+  "nemesisCategory": "BASS",
+  "score": 86.4
+ },
+ "505": {
+  "name": "Tape Warp",
+  "file": "signature/tape-warp.json",
+  "category": "BASS",
+  "nemesisCategory": "BASS",
+  "score": 84.8
+ },
+ "506": {
+  "name": "Hollow Square Bass",
+  "file": "synthpop/hollow-square-bass.json",
+  "category": "BASS",
+  "nemesisCategory": "BASS",
+  "score": 82.7
+ },
+ "507": {
+  "name": "Rust Ring",
+  "file": "signature/rust-ring.json",
+  "category": "BASS",
+  "nemesisCategory": "BASS",
+  "score": 82.5
+ },
+ "508": {
+  "name": "Gum Rubber",
+  "file": "signature/gum-rubber.json",
+  "category": "BASS",
+  "nemesisCategory": "BASS",
+  "score": 82.1
+ },
+ "509": {
+  "name": "Pocket Roller",
+  "file": "vintage-poly/pocket-roller.json",
+  "category": "BASS",
+  "nemesisCategory": "BASS",
+  "score": 81.7
+ },
+ "510": {
+  "name": "Mask Chew",
+  "file": "signature/mask-chew.json",
+  "category": "BASS",
+  "nemesisCategory": "BASS",
+  "score": 79.8
+ },
+ "511": {
+  "name": "Bare Sub",
+  "file": "synthpop/bare-sub.json",
+  "category": "BASS",
+  "nemesisCategory": "BASS",
+  "score": 79.0
+ },
+ "512": {
+  "name": "Gnashing Teeth",
+  "file": "vintage-poly/gnashing-teeth.json",
+  "category": "BASS",
+  "nemesisCategory": "BASS",
+  "score": 78.8
+ },
+ "513": {
+  "name": "Boiler Churn",
+  "file": "vintage-poly/boiler-churn.json",
+  "category": "BASS",
+  "nemesisCategory": "BASS",
+  "score": 78.7
+ },
+ "514": {
+  "name": "Bullfrog Croak",
+  "file": "vintage-poly/bullfrog-croak.json",
+  "category": "BASS",
+  "nemesisCategory": "BASS",
+  "score": 78.7
+ },
+ "515": {
+  "name": "Hollow Log",
+  "file": "signature/hollow-log.json",
+  "category": "BASS",
+  "nemesisCategory": "BASS",
+  "score": 78.4
+ },
+ "516": {
+  "name": "Reed Morph",
+  "file": "signature/reed-morph.json",
+  "category": "BASS",
+  "nemesisCategory": "BASS",
+  "score": 78.4
+ },
+ "517": {
+  "name": "Throat Growl",
+  "file": "signature/throat-growl.json",
+  "category": "BASS",
+  "nemesisCategory": "BASS",
+  "score": 78.1
+ },
+ "518": {
+  "name": "Acid Gargle",
+  "file": "vintage-poly/acid-gargle.json",
+  "category": "BASS",
+  "nemesisCategory": "BASS",
+  "score": 77.4
+ },
+ "519": {
+  "name": "Four Second Riser",
+  "file": "synthpop/four-second-riser.json",
+  "category": "BASS",
+  "nemesisCategory": "BASS",
+  "score": 77.0
+ },
+ "520": {
+  "name": "Eight-Bit Brute",
+  "file": "signature/eight-bit-brute.json",
+  "category": "BASS",
+  "nemesisCategory": "BASS",
+  "score": 76.8
+ },
+ "521": {
+  "name": "Round Preset Bass",
+  "file": "nordic/round-preset-bass.json",
+  "category": "BASS",
+  "nemesisCategory": "BASS",
+  "score": 76.7
+ },
+ "522": {
+  "name": "Algo Knock",
+  "file": "signature/algo-knock.json",
+  "category": "BASS",
+  "nemesisCategory": "BASS",
+  "score": 76.0
+ },
+ "523": {
+  "name": "Gnaw",
+  "file": "signature/gnaw.json",
+  "category": "BASS",
+  "nemesisCategory": "BASS",
+  "score": 75.9
+ },
+ "524": {
+  "name": "Sampler Drift",
+  "file": "signature/sampler-drift.json",
+  "category": "LEAD",
+  "nemesisCategory": "LEAD",
+  "score": 82.9
+ },
+ "525": {
+  "name": "Cloaked Tenor",
+  "file": "vintage-poly/cloaked-tenor.json",
+  "category": "LEAD",
+  "nemesisCategory": "LEAD",
+  "score": 82.3
+ },
+ "526": {
+  "name": "Sawtooth Singer",
+  "file": "vintage-poly/sawtooth-singer.json",
+  "category": "LEAD",
+  "nemesisCategory": "LEAD",
+  "score": 82.2
+ },
+ "527": {
+  "name": "Comb Pipe",
+  "file": "signature/comb-pipe.json",
+  "category": "LEAD",
+  "nemesisCategory": "LEAD",
+  "score": 82.1
+ },
+ "528": {
+  "name": "Papery Edge",
+  "file": "vintage-mono/papery-edge.json",
+  "category": "LEAD",
+  "nemesisCategory": "LEAD",
+  "score": 81.7
+ },
+ "529": {
+  "name": "Hooked Edge",
+  "file": "vintage-mono/hooked-edge.json",
+  "category": "LEAD",
+  "nemesisCategory": "LEAD",
+  "score": 81.4
+ },
+ "530": {
+  "name": "Gray Scan Glass",
+  "file": "signature/gray-scan-glass.json",
+  "category": "LEAD",
+  "nemesisCategory": "LEAD",
+  "score": 81.2
+ },
+ "531": {
+  "name": "Razor Spire",
+  "file": "vintage-poly/razor-spire.json",
+  "category": "LEAD",
+  "nemesisCategory": "LEAD",
+  "score": 81.0
+ },
+ "532": {
+  "name": "Blazing Edge",
+  "file": "vintage-poly/blazing-edge.json",
+  "category": "LEAD",
+  "nemesisCategory": "LEAD",
+  "score": 80.5
+ },
+ "533": {
+  "name": "Locked Orbit",
+  "file": "vintage-mono/locked-orbit.json",
+  "category": "LEAD",
+  "nemesisCategory": "LEAD",
+  "score": 80.5
+ },
+ "534": {
+  "name": "Hyperwide Saw",
+  "file": "signature/hyperwide-saw.json",
+  "category": "LEAD",
+  "nemesisCategory": "LEAD",
+  "score": 80.1
+ },
+ "535": {
+  "name": "Thin Ribbon",
+  "file": "vintage-mono/thin-ribbon.json",
+  "category": "LEAD",
+  "nemesisCategory": "LEAD",
+  "score": 79.9
+ },
+ "536": {
+  "name": "Cushioned Jab",
+  "file": "vintage-poly/cushioned-jab.json",
+  "category": "PAD",
+  "nemesisCategory": "PAD",
+  "score": 79.1
+ },
+ "537": {
+  "name": "Stereo Horizon",
+  "file": "signature/stereo-horizon.json",
+  "category": "PAD",
+  "nemesisCategory": "PAD",
+  "score": 78.4
+ },
+ "538": {
+  "name": "Fern Canopy",
+  "file": "vintage-poly/fern-canopy.json",
+  "category": "PAD",
+  "nemesisCategory": "PAD",
+  "score": 78.0
+ },
+ "539": {
+  "name": "Whispering Gallery",
+  "file": "vintage-poly/whispering-gallery.json",
+  "category": "PAD",
+  "nemesisCategory": "PAD",
+  "score": 78.0
+ },
+ "540": {
+  "name": "Broken Memory",
+  "file": "signature/broken-memory.json",
+  "category": "PAD",
+  "nemesisCategory": "PAD",
+  "score": 77.8
+ },
+ "541": {
+  "name": "Gray Code Halo",
+  "file": "signature/gray-code-halo.json",
+  "category": "PAD",
+  "nemesisCategory": "PAD",
+  "score": 76.2
+ },
+ "542": {
+  "name": "Chiseled Pluck",
+  "file": "vintage-mono/chiseled-pluck.json",
+  "category": "PLUCK",
+  "nemesisCategory": "PLUCK",
+  "score": 80.7
+ },
+ "543": {
+  "name": "Raindrop Pluck",
+  "file": "vintage-poly/raindrop-pluck.json",
+  "category": "PLUCK",
+  "nemesisCategory": "PLUCK",
+  "score": 79.9
+ },
+ "544": {
+  "name": "Woody Pluck",
+  "file": "synthpop/woody-pluck.json",
+  "category": "PLUCK",
+  "nemesisCategory": "PLUCK",
+  "score": 76.8
+ },
+ "545": {
+  "name": "Reso Pluck",
+  "file": "synthpop/reso-pluck.json",
+  "category": "PLUCK",
+  "nemesisCategory": "PLUCK",
+  "score": 75.8
+ },
+ "546": {
+  "name": "Zap Pluck",
+  "file": "techno/zap-pluck.json",
+  "category": "PLUCK",
+  "nemesisCategory": "PLUCK",
+  "score": 72.5
+ },
+ "547": {
+  "name": "Folded Drop",
+  "file": "nordic/folded-drop.json",
+  "category": "PLUCK",
+  "nemesisCategory": "PLUCK",
+  "score": 71.1
+ },
+ "548": {
+  "name": "Smoky Reed",
+  "file": "vintage-poly/smoky-reed.json",
+  "category": "STAB",
+  "nemesisCategory": "BRASS",
+  "score": 82.5
+ },
+ "549": {
+  "name": "Reel Horns",
+  "file": "nordic/reel-horns.json",
+  "category": "STAB",
+  "nemesisCategory": "BRASS",
+  "score": 71.2
+ },
+ "550": {
+  "name": "Cathedral Swell",
+  "file": "nordic/cathedral-swell.json",
+  "category": "STAB",
+  "nemesisCategory": "BRASS",
+  "score": 70.3
+ },
+ "551": {
+  "name": "Soft Horns",
+  "file": "signature-wave/soft-horns.json",
+  "category": "STAB",
+  "nemesisCategory": "BRASS",
+  "score": 70.2
+ },
+ "552": {
+  "name": "Muted Smoke",
+  "file": "signature-wave/muted-smoke.json",
+  "category": "STAB",
+  "nemesisCategory": "BRASS",
+  "score": 68.9
+ },
+ "553": {
+  "name": "Velvet Horns",
+  "file": "signature-pilot/velvet-horns.json",
+  "category": "STAB",
+  "nemesisCategory": "BRASS",
+  "score": 65.9
+ },
+ "554": {
+  "name": "Anvil Stab",
+  "file": "signature-wave/anvil-stab.json",
+  "category": "STAB",
+  "nemesisCategory": "STAB",
+  "score": 57.0
+ },
+ "555": {
+  "name": "Hoover Hit",
+  "file": "signature-wave/hoover-hit.json",
+  "category": "STAB",
+  "nemesisCategory": "STAB",
+  "score": 56.6
+ },
+ "556": {
+  "name": "Mask Stab",
+  "file": "signature-wave/mask-stab.json",
+  "category": "STAB",
+  "nemesisCategory": "STAB",
+  "score": 52.0
+ },
+ "557": {
+  "name": "Twin Oak Poly",
+  "file": "nordic/twin-oak-poly.json",
+  "category": "POLY",
+  "nemesisCategory": "POLY",
+  "score": 72.2
+ },
+ "558": {
+  "name": "Revival Chords",
+  "file": "synthpop/revival-chords.json",
+  "category": "POLY",
+  "nemesisCategory": "POLY",
+  "score": 71.8
+ },
+ "559": {
+  "name": "Wire Lullaby",
+  "file": "vintage-poly/wire-lullaby.json",
+  "category": "POLY",
+  "nemesisCategory": "POLY",
+  "score": 71.3
+ },
+ "560": {
+  "name": "Split Poly",
+  "file": "signature-wave/split-poly.json",
+  "category": "POLY",
+  "nemesisCategory": "POLY",
+  "score": 70.6
+ },
+ "561": {
+  "name": "Hollow Bounce",
+  "file": "nordic/hollow-bounce.json",
+  "category": "POLY",
+  "nemesisCategory": "POLY",
+  "score": 69.2
+ },
+ "562": {
+  "name": "Chorus Chords",
+  "file": "signature-wave/chorus-chords.json",
+  "category": "POLY",
+  "nemesisCategory": "POLY",
+  "score": 67.8
+ },
+ "563": {
+  "name": "Cold Stack Chords",
+  "file": "nordic/cold-stack-chords.json",
+  "category": "POLY",
+  "nemesisCategory": "POLY",
+  "score": 66.4
+ },
+ "564": {
+  "name": "Square March",
+  "file": "signature-wave/square-march.json",
+  "category": "POLY",
+  "nemesisCategory": "POLY",
+  "score": 61.7
+ },
+ "565": {
+  "name": "Ribbon Poly",
+  "file": "signature-wave/ribbon-poly.json",
+  "category": "POLY",
+  "nemesisCategory": "POLY",
+  "score": 60.9
+ },
+ "566": {
+  "name": "Crystal Poly",
+  "file": "signature-wave/crystal-poly.json",
+  "category": "POLY",
+  "nemesisCategory": "POLY",
+  "score": 57.7
+ },
+ "567": {
+  "name": "Gentle FM Keys",
+  "file": "nordic/gentle-fm-keys.json",
+  "category": "KEYS",
+  "nemesisCategory": "KEYS",
+  "score": 72.7
+ },
+ "568": {
+  "name": "Toy Keyboard",
+  "file": "synthpop/toy-keyboard.json",
+  "category": "KEYS",
+  "nemesisCategory": "KEYS",
+  "score": 68.6
+ },
+ "569": {
+  "name": "Sympathetic Keys",
+  "file": "signature-wave/sympathetic-keys.json",
+  "category": "KEYS",
+  "nemesisCategory": "KEYS",
+  "score": 67.9
+ },
+ "570": {
+  "name": "Gray Keys",
+  "file": "signature-wave/gray-keys.json",
+  "category": "KEYS",
+  "nemesisCategory": "KEYS",
+  "score": 66.9
+ },
+ "571": {
+  "name": "Phase Keys",
+  "file": "signature-wave/phase-keys.json",
+  "category": "KEYS",
+  "nemesisCategory": "KEYS",
+  "score": 65.9
+ },
+ "572": {
+  "name": "Rusted EP",
+  "file": "signature-pilot/rusted-ep.json",
+  "category": "KEYS",
+  "nemesisCategory": "KEYS",
+  "score": 65.9
+ },
+ "573": {
+  "name": "Aerial Shimmer",
+  "file": "vintage-poly/aerial-shimmer.json",
+  "category": "FX",
+  "nemesisCategory": "FX",
+  "score": 81.8
+ },
+ "574": {
+  "name": "Orbiting Whine",
+  "file": "vintage-poly/orbiting-whine.json",
+  "category": "FX",
+  "nemesisCategory": "FX",
+  "score": 80.8
+ },
+ "575": {
+  "name": "Antenna Hum",
+  "file": "vintage-poly/antenna-hum.json",
+  "category": "FX",
+  "nemesisCategory": "FX",
+  "score": 79.4
+ },
+ "576": {
+  "name": "Skimming Wisp",
+  "file": "vintage-poly/skimming-wisp.json",
+  "category": "FX",
+  "nemesisCategory": "FX",
+  "score": 76.6
+ },
+ "577": {
+  "name": "Distress Flare",
+  "file": "vintage-mono/distress-flare.json",
+  "category": "FX",
+  "nemesisCategory": "FX",
+  "score": 76.2
+ },
+ "578": {
+  "name": "Hornet Loop",
+  "file": "vintage-poly/hornet-loop.json",
+  "category": "FX",
+  "nemesisCategory": "FX",
+  "score": 76.1
+ },
+ "579": {
+  "name": "Machine Loop",
+  "file": "signature-pilot/machine-loop.json",
+  "category": "SEQ",
+  "nemesisCategory": "SEQ",
+  "score": 72.4
+ },
+ "580": {
+  "name": "Triplet Arp",
+  "file": "synthpop/triplet-arp.json",
+  "category": "SEQ",
+  "nemesisCategory": "SEQ",
+  "score": 71.0
+ },
+ "581": {
+  "name": "Pump Arp",
+  "file": "synthpop/pump-arp.json",
+  "category": "SEQ",
+  "nemesisCategory": "SEQ",
+  "score": 70.8
+ },
+ "582": {
+  "name": "Metal Clock",
+  "file": "techno/metal-clock.json",
+  "category": "SEQ",
+  "nemesisCategory": "SEQ",
+  "score": 68.4
+ },
+ "583": {
+  "name": "Hypno Pulse",
+  "file": "techno/hypno-pulse.json",
+  "category": "SEQ",
+  "nemesisCategory": "SEQ",
+  "score": 68.1
+ },
+ "584": {
+  "name": "Dotted Chords",
+  "file": "techno/dotted-chords.json",
+  "category": "SEQ",
+  "nemesisCategory": "SEQ",
+  "score": 66.6
+ },
+ "585": {
+  "name": "Radio Haze",
+  "file": "techno/radio-haze.json",
+  "category": "TEXTURE",
+  "nemesisCategory": "TEXTURE",
+  "score": 65.4
+ },
+ "586": {
+  "name": "Cold Draft",
+  "file": "techno/cold-draft.json",
+  "category": "TEXTURE",
+  "nemesisCategory": "TEXTURE",
+  "score": 64.1
+ },
+ "587": {
+  "name": "Metal Resonance",
+  "file": "techno/metal-resonance.json",
+  "category": "TEXTURE",
+  "nemesisCategory": "TEXTURE",
+  "score": 61.7
+ },
+ "588": {
+  "name": "Night Wind",
+  "file": "signature-wave/night-wind.json",
+  "category": "TEXTURE",
+  "nemesisCategory": "TEXTURE",
+  "score": 59.9
+ },
+ "589": {
+  "name": "Plate Rain",
+  "file": "nordic/plate-rain.json",
+  "category": "TEXTURE",
+  "nemesisCategory": "TEXTURE",
+  "score": 59.4
+ },
+ "590": {
+  "name": "Dust Bed",
+  "file": "signature-wave/dust-bed.json",
+  "category": "TEXTURE",
+  "nemesisCategory": "TEXTURE",
+  "score": 57.2
+ },
+ "591": {
+  "name": "Dusty Music Box",
+  "file": "nordic/dusty-music-box.json",
+  "category": "BELL",
+  "nemesisCategory": "BELL",
+  "score": 63.0
+ },
+ "592": {
+  "name": "Broken Carillon",
+  "file": "signature-pilot/broken-carillon.json",
+  "category": "BELL",
+  "nemesisCategory": "BELL",
+  "score": 59.6
+ },
+ "593": {
+  "name": "Steel Pan",
+  "file": "signature-wave/steel-pan.json",
+  "category": "BELL",
+  "nemesisCategory": "BELL",
+  "score": 58.0
+ },
+ "594": {
+  "name": "Gray Bell",
+  "file": "signature-wave/gray-bell.json",
+  "category": "BELL",
+  "nemesisCategory": "BELL",
+  "score": 57.8
+ },
+ "595": {
+  "name": "Struck Wire",
+  "file": "signature-wave/struck-wire.json",
+  "category": "BELL",
+  "nemesisCategory": "BELL",
+  "score": 51.4
+ },
+ "596": {
+  "name": "Singing Bowl",
+  "file": "signature-wave/singing-bowl.json",
+  "category": "BELL",
+  "nemesisCategory": "BELL",
+  "score": 50.3
+ }
+}

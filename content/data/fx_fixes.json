@@ -1,0 +1,21 @@
+{
+ "about": "Effects fixes for converted presets (applied by tools/cut_more.py after the conversion), raw knob numbers: delay_send and reverb_send (0-127), delay (the DELAY page's eight values MODE TIME FEEDBACK TONE SPREAD MOD HPF RETURN). 2026-10-28: Dotted Chords had its delay send at 111 (nearly full), now the delay of Detroit Seq (content/techno): send 28, dotted eighth, feedback about 45%. Triplet Arp's reverb send 62 -> 30.",
+ "fixes": {
+  "Dotted Chords": {
+   "delay_send": 28,
+   "delay": [
+    2,
+    88,
+    60,
+    92,
+    102,
+    13,
+    75,
+    127
+   ]
+  },
+  "Triplet Arp": {
+   "reverb_send": 30
+  }
+ }
+}

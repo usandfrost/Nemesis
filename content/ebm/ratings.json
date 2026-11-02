@@ -1,0 +1,309 @@
+{
+ "page": "dboy-ebm",
+ "exported": "2026-10-27T16:54:49.038Z",
+ "rated": 50,
+ "of": 50,
+ "about": "The user's export of the EBM listening page. Rating 3 and above is built.",
+ "ratings": [
+  {
+   "name": "Body Bass",
+   "category": "BASS",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "MS Bite Bass",
+   "category": "BASS",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "Dry Square Seq",
+   "category": "BASS",
+   "rating": 1,
+   "note": ""
+  },
+  {
+   "name": "Octave Pump Bass",
+   "category": "BASS",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "Stomp Bass",
+   "category": "BASS",
+   "rating": 2,
+   "note": ""
+  },
+  {
+   "name": "Pulse Machine Bass",
+   "category": "BASS",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "FM Iron Bass",
+   "category": "BASS",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Fold Bass EBM",
+   "category": "BASS",
+   "rating": 1,
+   "note": ""
+  },
+  {
+   "name": "Sub Stomp",
+   "category": "BASS",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Raw Saw Bass",
+   "category": "BASS",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "Acid Hammer",
+   "category": "BASS",
+   "rating": 1,
+   "note": ""
+  },
+  {
+   "name": "Long Square Bass",
+   "category": "BASS",
+   "rating": 1,
+   "note": ""
+  },
+  {
+   "name": "Hollow Bass",
+   "category": "BASS",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Distorted Bass",
+   "category": "BASS",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "Cold Saw Lead",
+   "category": "LEAD",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Brute Square Lead",
+   "category": "LEAD",
+   "rating": 1,
+   "note": ""
+  },
+  {
+   "name": "Sync Machine Lead",
+   "category": "LEAD",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Hard Pulse Lead",
+   "category": "LEAD",
+   "rating": 1,
+   "note": ""
+  },
+  {
+   "name": "Chip Lead EBM",
+   "category": "LEAD",
+   "rating": 1,
+   "note": ""
+  },
+  {
+   "name": "Fold Lead",
+   "category": "LEAD",
+   "rating": 1,
+   "note": ""
+  },
+  {
+   "name": "Wobble Lead",
+   "category": "LEAD",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Formant Lead",
+   "category": "LEAD",
+   "rating": 3,
+   "note": ""
+  },
+  {
+   "name": "Hard Brass Stab",
+   "category": "STAB",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Octave Stab",
+   "category": "STAB",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Pulse Chord Stab",
+   "category": "STAB",
+   "rating": 1,
+   "note": ""
+  },
+  {
+   "name": "Power Fifth Stab",
+   "category": "STAB",
+   "rating": 1,
+   "note": ""
+  },
+  {
+   "name": "Clang Stab",
+   "category": "STAB",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Noise Stab",
+   "category": "STAB",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Reed Stab",
+   "category": "STAB",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Fall Stab",
+   "category": "STAB",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Blip Seq",
+   "category": "SEQ",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Resonant Blip",
+   "category": "SEQ",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Arp Machine",
+   "category": "SEQ",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Metal Seq",
+   "category": "SEQ",
+   "rating": 2,
+   "note": ""
+  },
+  {
+   "name": "FM Bleep",
+   "category": "SEQ",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Noise Pluck",
+   "category": "PLUCK",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Noise Snare",
+   "category": "PLUCK",
+   "rating": 4,
+   "note": "FX"
+  },
+  {
+   "name": "Rim Shot",
+   "category": "PLUCK",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Ring Hat",
+   "category": "PLUCK",
+   "rating": 4,
+   "note": "FX"
+  },
+  {
+   "name": "Noise Crash",
+   "category": "FX",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "Metal Hit",
+   "category": "PLUCK",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Anvil Clang",
+   "category": "FX",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "Low Filter Ping",
+   "category": "PLUCK",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "High Filter Ping",
+   "category": "PLUCK",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Cold Pad",
+   "category": "PAD",
+   "rating": 1,
+   "note": ""
+  },
+  {
+   "name": "Dark Machine Strings",
+   "category": "PAD",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "Machine Drone",
+   "category": "TEXTURE",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Noise Wash",
+   "category": "TEXTURE",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Alarm Tone",
+   "category": "FX",
+   "rating": 3,
+   "note": ""
+  },
+  {
+   "name": "Choir Stab",
+   "category": "STAB",
+   "rating": 4,
+   "note": ""
+  }
+ ]
+}

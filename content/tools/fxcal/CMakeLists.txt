@@ -1,0 +1,28 @@
+# Wet-level / RT60 calibration of the Drumboy effects against upstream (see map_fx.py). Build OUTSIDE the repo:
+#   cmake -S content/tools/fxcal -B <scratch>/fxcal_build && cmake --build <scratch>/fxcal_build -j8
+# then analyse_cal.py <build dir>. Reads the firmware and ref sources, never writes to them.
+cmake_minimum_required(VERSION 3.20)
+project(fxmap_cal CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_BUILD_TYPE Release)
+get_filename_component(REPO "${CMAKE_CURRENT_SOURCE_DIR}/../../.." ABSOLUTE)
+set(HYB ${REPO}/ref/upstream/sdk/dsp)
+set(FW ${REPO}/firmware)
+file(GLOB SRCS "${HYB}/src/*.cpp")
+file(GLOB_RECURSE PL "${HYB}/thirdparty/plaits/*.cc")
+add_library(hyb_full STATIC ${SRCS} ${PL})
+target_include_directories(hyb_full PUBLIC ${HYB}/include ${HYB}/thirdparty/plaits)
+target_compile_options(hyb_full PRIVATE -w)
+add_executable(fx_cal_hyb ${REPO}/content/tools/fxcal/fx_cal.cpp)
+target_compile_definitions(fx_cal_hyb PRIVATE BUILD_HYB=1)
+target_link_libraries(fx_cal_hyb hyb_full)
+
+file(GLOB FW_DSP_SRCS "${FW}/dsp/src/*.cpp")
+file(GLOB_RECURSE FW_DSP_PLAITS "${FW}/dsp/thirdparty/plaits/*.cc")
+add_library(fw_dsp STATIC ${FW_DSP_SRCS} ${FW_DSP_PLAITS})
+target_include_directories(fw_dsp PUBLIC "${FW}/dsp/include" "${FW}/dsp/thirdparty/plaits")
+target_compile_definitions(fw_dsp PUBLIC NEMESIS_FORK_EXACT=1 NEMESIS_FORK_APPROX=1 NEMESIS_FORK_MAX_VOICES=8 DSP_IS_FORK=1)
+target_compile_options(fw_dsp PRIVATE -w)
+add_executable(fx_cal_dboy ${REPO}/content/tools/fxcal/fx_cal.cpp ${FW}/src/fx/FxReverb.cpp ${FW}/src/fx/FxDelay.cpp ${FW}/src/fx/FxChorus.cpp)
+target_include_directories(fx_cal_dboy PRIVATE ${FW}/src)
+target_link_libraries(fx_cal_dboy fw_dsp)

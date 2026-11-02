@@ -1,0 +1,279 @@
+/* The Nemesis website: an Amiga demo and an arcade game, around the firmware's real screens. The palette is the boot picture's, with one cyan for the grid. Hard pixel edges everywhere: boxes have
+   the notched corners of a game's dialog, nothing is rounded or blurred. Loaded after style.css on the pages that hold the panel, where it re-colours what is around the plate and leaves the plate alone.
+   The type is Jersey 10 (fonts/, SIL OFL, unmodified). One of its pixels is 3/56 of an em, so at --t1 each is one screen pixel, and --t2 and --t3 are its whole multiples: other sizes blur.
+   Effects live on the start page's title screen and nowhere else (demo.js). */
+@font-face{font-family:"Jersey 10";src:url(fonts/Jersey10-Regular.woff) format("woff");font-display:swap}
+html:root{
+  --k:#000; --navy:#1a1058; --deep:#0e0838; --violet:#6a1e9c; --steel:#4f78b0; --ice:#b6cce4; --white:#fffaf0; --orange:#ff8a30; --red:#c23a24; --cyan:#30c0e0;
+  /* the names style.css and the lessons use */
+  --bg:var(--k); --panel:var(--navy); --panel2:var(--deep); --line:var(--steel); --fg:var(--white); --muted:var(--ice); --accent:var(--orange); --a:var(--cyan); --b:var(--orange); --c:var(--red); --blue:var(--cyan);
+  --face:"Jersey 10",ui-monospace,Menlo,Consolas,monospace; --t1:18.667px; --t2:37.333px; --t3:56px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{height:auto;scroll-padding-top:72px;-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+html:has(body.tool){height:100%}
+body.site{margin:0;min-height:100vh;height:auto;display:block;background:var(--k);color:var(--white);font:var(--t1)/28px var(--face);-webkit-font-smoothing:none;font-smooth:never}
+body.site.tool{display:flex;flex-direction:column;height:100%}
+a{color:var(--cyan)} a:hover{color:var(--white)}
+a:focus-visible,button:focus-visible,summary:focus-visible,select:focus-visible,input:focus-visible,label.btn:focus-within{outline:4px solid var(--orange);outline-offset:4px}
+h1,h2,h3{font-family:var(--face);font-weight:400;margin:0}
+h1{font-size:var(--t3);line-height:56px} h2{font-size:var(--t2);line-height:40px} h3{font-size:var(--t1);line-height:28px}
+p{margin:0 0 12px} p:last-child{margin-bottom:0}
+code,kbd{font:inherit;color:var(--orange)}
+kbd{background:var(--k);border:0;padding:0 4px;border-radius:0}
+.skip{position:absolute;left:-999px;top:0;z-index:40;background:var(--orange);color:var(--k);padding:4px 8px} .skip:focus{left:0}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+
+/* the night sky behind the pages: a few stars, drawn once (site.js) */
+#sky{position:fixed;inset:0;width:100%;height:100%;image-rendering:pixelated;z-index:-1;background:var(--k)}
+
+/* the top of every page: a game's status line */
+.menubar{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:8px 16px;flex-wrap:wrap;background:var(--k);padding:0 16px}
+.menubar .logo{font:var(--t2)/44px var(--face);letter-spacing:1px;text-decoration:none}
+.menubar nav{display:flex;gap:0 8px;flex-wrap:wrap}
+.menubar nav a{color:var(--ice);text-decoration:none;text-transform:uppercase;line-height:44px;padding:0 8px}
+.menubar nav a:hover{color:var(--white)}
+.menubar nav a[aria-current=page]{color:var(--k);background:var(--orange)}
+.menubar .aside{margin-left:auto;color:var(--steel)}
+/* copper bars: one colour a line, in steps, as the Amiga's copper changed them */
+.copper{height:18px;background:linear-gradient(180deg,#1a1058 0 2px,#6a1e9c 2px 4px,#c23a24 4px 6px,#ff8a30 6px 8px,#fffaf0 8px 10px,#ff8a30 10px 12px,#c23a24 12px 14px,#6a1e9c 14px 16px,#1a1058 16px)}
+
+.wrap{max-width:1136px;margin:0 auto;padding:0 16px}
+
+/* a box with the notched corners of a game's dialog: the border is four hard shadows, so the corners stay empty */
+.box{background:var(--navy);margin:4px 4px 32px;padding:16px;box-shadow:0 -4px 0 var(--ice),0 4px 0 var(--ice),-4px 0 0 var(--ice),4px 0 0 var(--ice);min-width:0}
+.box.warn{box-shadow:0 -4px 0 var(--orange),0 4px 0 var(--orange),-4px 0 0 var(--orange),4px 0 0 var(--orange)}
+.box-head{color:var(--orange);text-transform:uppercase;font:var(--t1)/28px var(--face);margin:0 0 8px}
+.box.warn .box-head{color:var(--orange)}
+
+/* buttons: a press pushes them down */
+button.btn,a.btn,label.btn,.btn{display:inline-block;font:var(--t1)/28px var(--face);text-transform:uppercase;color:var(--k);background:var(--ice);border:0;border-radius:0;padding:4px 16px;margin:4px;text-decoration:none;cursor:pointer;white-space:nowrap;box-shadow:0 -4px 0 var(--white),0 4px 0 var(--steel),-4px 0 0 var(--white),4px 0 0 var(--steel)}
+.btn:hover{background:var(--white);color:var(--k)}
+.btn:active{transform:translateY(4px);box-shadow:0 -4px 0 var(--steel),0 0 0 var(--steel),-4px 0 0 var(--steel),4px 0 0 var(--steel)}
+.btn.go{background:var(--orange);box-shadow:0 -4px 0 var(--white),0 4px 0 var(--red),-4px 0 0 var(--white),4px 0 0 var(--red)}
+.btn.go:hover{background:var(--white)}
+.btn.bad{background:var(--red);color:var(--white);box-shadow:0 -4px 0 var(--orange),0 4px 0 var(--k),-4px 0 0 var(--orange),4px 0 0 var(--k)}
+.btn.bad:hover{background:var(--orange);color:var(--k)}
+.btn:disabled{background:var(--deep);color:var(--steel);box-shadow:0 -4px 0 var(--navy),0 4px 0 var(--navy),-4px 0 0 var(--navy),4px 0 0 var(--navy);cursor:default;transform:none}
+.btns{display:flex;gap:8px 12px;flex-wrap:wrap;align-items:center;margin:0 0 12px}
+.btns:last-child{margin-bottom:0}
+select.btn{appearance:auto;max-width:100%;white-space:normal;text-transform:none}
+
+/* chrome type: the logo's gradient in hard bands */
+.chrome{background:linear-gradient(180deg,#b6cce4 0 18%,#fffaf0 18% 26%,#4f78b0 26% 44%,#fffaf0 44% 48%,#ff8a30 48% 62%,#c23a24 62% 72%,#6a1e9c 72% 84%,#b6cce4 84%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sprite{display:inline-block;flex:none;width:36px;height:36px;background-size:100% 100%;image-rendering:pixelated}
+
+/* the title screen: everything that moves is on one low-resolution canvas (demo.js) */
+.title-screen{position:relative;height:min(calc(100vh - 62px),calc(56.25vw + 40px));min-height:440px;overflow:hidden;background:var(--k)}
+#demo{position:absolute;left:0;top:0;width:100%;height:100%;image-rendering:pixelated}
+.title-ui{position:absolute;left:0;right:0;top:54%;display:flex;flex-direction:column;align-items:center;gap:12px;padding:0 16px}
+a.btn.press{font-size:var(--t2);line-height:44px;padding:4px 24px;animation:blink 1.2s steps(1) infinite}
+a.btn.press:hover,a.btn.press:focus-visible{animation:none}
+@keyframes blink{50%{background:var(--k);color:var(--orange)}}
+.title-sub{background:var(--k);padding:0 8px;margin:0}
+.scroll-text{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+
+/* stage select */
+.heading{margin:48px 0 12px}
+.heading h2{font-size:var(--t3);line-height:60px;display:inline-block}
+.heading p{max-width:760px;background:var(--k);padding:0 4px;margin:0}
+.map{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));margin:0 0 40px}
+.newlist{margin:0 0 12px;padding-left:22px}
+.newlist li{margin:0 0 8px}
+.newlist b{font-weight:400;color:var(--cyan)}
+.map a{position:relative;display:block;text-align:center;text-decoration:none;color:var(--white);padding:4px 2px}
+.map a::before{content:"";position:absolute;left:0;right:0;top:34px;height:4px;background:repeating-linear-gradient(90deg,var(--orange) 0 8px,transparent 8px 16px)}
+.map li:first-child a::before{left:50%}
+.map li:last-child a::before{right:50%}
+.map{list-style:none;padding:0}
+.map .node{position:relative;display:grid;place-items:center;width:64px;height:64px;margin:0 auto 4px;background:var(--navy);box-shadow:0 -4px 0 var(--ice),0 4px 0 var(--ice),-4px 0 0 var(--ice),4px 0 0 var(--ice)}
+.map a:hover .node,.map a:focus-visible .node{background:var(--violet);box-shadow:0 -4px 0 var(--orange),0 4px 0 var(--orange),-4px 0 0 var(--orange),4px 0 0 var(--orange)}
+.map small{display:block;font:inherit;color:var(--orange)}
+
+/* a stage: a real screen with its labels. A label sits on the frame's own pixels (960 x 540), so it stays on what it points at at any size */
+.tour{margin:0 0 48px;scroll-margin-top:72px}
+.stage-head{display:flex;align-items:center;gap:8px 16px;flex-wrap:wrap;margin:0 0 8px}
+.stage-title{background:var(--k);display:inline-block;padding:0 4px;margin:0 0 8px}
+.stage-no{color:var(--cyan);text-transform:uppercase;background:var(--k);padding:0 4px}
+.pips{display:inline-flex;gap:4px}
+.pips i{width:12px;height:12px;background:var(--navy)} .pips i.on{background:var(--orange)}
+.stage-body{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,3fr);gap:16px;align-items:start;background:var(--navy);padding:12px;margin:4px;box-shadow:0 -4px 0 var(--ice),0 4px 0 var(--ice),-4px 0 0 var(--ice),4px 0 0 var(--ice)}
+.tour.flip .stage-body{grid-template-columns:minmax(0,3fr) minmax(0,7fr)}
+.tour.flip .shot{order:2}
+.shot{margin:0;background:var(--k)}
+.frame{position:relative}
+.shot img{display:block;width:100%;height:auto}
+.shot figcaption{color:var(--ice);padding:4px 8px 0;background:var(--navy)}
+.mark{position:absolute;left:calc(var(--x)/960*100%);top:calc(var(--y)/540*100%);width:calc(var(--w)/960*100%);height:calc(var(--h)/540*100%);border:2px solid var(--orange);pointer-events:none}
+.mark b{position:absolute;left:-2px;top:-2px;min-width:20px;height:20px;background:var(--orange);color:var(--k);font:400 var(--t1)/20px var(--face);text-align:center}
+.mark.on{border-color:var(--cyan)} .mark.on b{background:var(--cyan)}
+.notes{list-style:none;counter-reset:n;margin:0;padding:0}
+.notes li{counter-increment:n;padding-left:28px;margin-bottom:8px;position:relative}
+.notes li::before{content:counter(n);position:absolute;left:0;top:4px;width:20px;height:20px;background:var(--orange);color:var(--k);font:400 var(--t1)/20px var(--face);text-align:center}
+.notes li.on::before{background:var(--cyan)}
+
+/* hi-scores: real numbers only */
+.scores{width:100%;border-collapse:collapse;font:inherit}
+.scores th{text-align:left;font-weight:400;color:var(--orange);text-transform:uppercase;padding:0 12px 4px 0}
+.scores td{padding:2px 12px 2px 0;vertical-align:top}
+.scores .score{font-variant-numeric:tabular-nums;letter-spacing:1px}
+.scores .how{color:var(--ice)}
+.scores tbody tr:nth-child(4n+1){color:var(--white)} .scores tbody tr:nth-child(4n+2){color:var(--cyan)} .scores tbody tr:nth-child(4n+3){color:var(--orange)} .scores tbody tr:nth-child(4n){color:var(--ice)}
+.tag-m{display:inline-block;background:var(--cyan);color:var(--k);padding:0 6px}
+.tag-b{display:inline-block;background:var(--violet);color:var(--white);padding:0 6px}
+
+/* power-ups */
+.items{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;list-style:none;margin:0;padding:0}
+.item{display:grid;grid-template-columns:40px minmax(0,1fr);gap:8px;align-items:start;background:var(--deep);padding:8px;line-height:24px}
+.item b{display:block;font-weight:400;text-transform:uppercase;color:var(--orange)}
+.item.locked{background:repeating-conic-gradient(var(--deep) 0 25%,var(--k) 0 50%) 0 0/4px 4px;color:var(--ice)}
+.item.locked b{color:var(--ice)}
+.soon{display:inline-block;background:var(--violet);color:var(--white);padding:0 6px;margin-right:4px;text-transform:uppercase}
+
+.ending{display:block;width:100%;height:auto;margin:32px 0 0}
+.foot{padding:16px 4px 32px;color:var(--ice)}
+.foot span{background:var(--k)}
+
+/* the pages with the panel stay calm: no canvas, nothing moving behind it */
+body.tool .strip{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:4px 16px;background:var(--navy)}
+body.tool .strip .vol{display:flex;gap:8px;align-items:center}
+body.tool .strip input[type=range]{accent-color:var(--orange);width:130px}
+body.tool .strip .dot{width:12px;height:12px;border-radius:0;background:var(--steel);box-shadow:none} body.tool .strip .dot.live{background:var(--cyan);box-shadow:none}
+body.tool main{flex:1;min-height:0;display:flex;background:var(--k)}
+body.tool #plate{-webkit-font-smoothing:auto;font-smooth:auto}
+body.tool #panelKeysHelp,body.tool #panelHint{font:var(--t1)/28px var(--face);color:var(--ice)}
+body.tool #panelKeysHelp{line-height:32px}
+body.tool #toast{background:var(--navy);border:0;border-radius:0;box-shadow:0 -4px 0 var(--ice),0 4px 0 var(--ice),-4px 0 0 var(--ice),4px 0 0 var(--ice);font:var(--t1)/28px var(--face)}
+body.tool button:not(.btn):not(.key):not(.tri){font:var(--t1)/28px var(--face);text-transform:uppercase;color:var(--k);background:var(--ice);border:0;border-radius:0;padding:2px 12px;box-shadow:0 -4px 0 var(--white),0 4px 0 var(--steel),-4px 0 0 var(--white),4px 0 0 var(--steel);margin:4px}
+body.tool button:not(.btn):not(.key):not(.tri):hover{background:var(--white)}
+body.tool button.primary{background:var(--orange);color:var(--k)}
+/* the lessons: a level select beside the panel */
+body.tool #lesson{background:var(--navy);border:0;border-radius:0;box-shadow:inset 0 0 0 4px var(--ice);padding:16px 20px}
+body.tool #lesson h2{font:var(--t2)/40px var(--face);text-transform:uppercase}
+body.tool #lesson .kicker{font:var(--t1)/28px var(--face);color:var(--orange);text-transform:uppercase;letter-spacing:0}
+body.tool #lesson .say{font:var(--t2)/40px var(--face);margin:12px 0 8px}
+body.tool #lesson .why,body.tool #lesson .note{color:var(--ice);font:var(--t1)/28px var(--face)}
+body.tool #lesson .hint{border-left:4px solid var(--orange);border-radius:0;background:var(--deep)}
+body.tool #lesson .dots i{border-radius:0;height:8px} body.tool #lesson li .tick{color:var(--cyan)}
+body.tool #lesson ol{counter-reset:level;gap:12px}
+body.tool #lesson li button{justify-content:flex-start;gap:8px;text-transform:none;background:var(--deep);color:var(--white);box-shadow:0 -4px 0 var(--steel),0 4px 0 var(--steel),-4px 0 0 var(--steel),4px 0 0 var(--steel);padding:4px 8px}
+body.tool #lesson li button:hover{background:var(--violet)}
+body.tool #lesson li button span:last-child{margin-left:auto;color:var(--orange)}
+body.tool #lesson li button span.tick{color:var(--cyan)}
+.wide-note{display:none;background:var(--violet);padding:8px 16px}
+
+/* the librarian */
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 24px;align-items:start}
+table.presets{width:100%;border-collapse:collapse;font:inherit}
+table.presets th{text-align:left;font-weight:400;color:var(--ice);text-transform:uppercase;border-bottom:4px solid var(--steel);padding:0 8px 0 0}
+table.presets td{padding:2px 8px 2px 0;vertical-align:top;overflow-wrap:anywhere}
+table.presets tr.sel td{background:var(--violet)}
+table.presets input{accent-color:var(--orange);width:16px;height:16px;margin:6px 0 0}
+table.presets td:nth-child(2),table.presets td:nth-child(4){white-space:nowrap;overflow-wrap:normal}
+.scroll{max-height:392px;overflow:auto;background:var(--deep);padding:4px 8px;margin:0 0 16px}
+.drop{background:var(--deep);padding:12px;margin:0 0 16px}
+.drop.over{background:var(--violet)}
+.status{min-height:28px;margin:0 0 12px}
+.status.bad{color:var(--orange)} .status.good{color:var(--cyan)}
+.bad-file{color:var(--orange)}
+.meter{height:16px;background:var(--deep);margin:0 0 12px}
+.meter i{display:block;height:100%;width:0;background:repeating-linear-gradient(90deg,var(--cyan) 0 12px,var(--deep) 12px 16px)}
+.log{font:inherit;height:196px;overflow:auto;background:var(--k);padding:4px 8px;margin:0;white-space:pre-wrap;overflow-wrap:anywhere}
+dialog.requester{background:var(--navy);color:var(--white);border:0;box-shadow:0 -4px 0 var(--orange),0 4px 0 var(--orange),-4px 0 0 var(--orange),4px 0 0 var(--orange);padding:0;max-width:min(560px,calc(100vw - 48px));font:inherit}
+dialog.requester::backdrop{background:repeating-conic-gradient(var(--deep) 0 25%,var(--k) 0 50%) 0 0/4px 4px}
+dialog.requester h3{color:var(--orange);text-transform:uppercase;font:var(--t2)/40px var(--face);margin:0;padding:12px 16px 0}
+dialog.requester .in{padding:8px 16px 16px}
+dialog.requester ul{max-height:192px;overflow:auto;margin:0 0 12px;padding-left:20px}
+details summary{cursor:pointer;color:var(--cyan)}
+
+/* the preset editor: tabs for the panel's pages, eight sliders or lists to a page */
+.btn.mini{padding:0 8px;margin:2px 0;box-shadow:none;line-height:24px}
+.btn.mini:active{box-shadow:none}
+.ed-head{background:var(--deep);padding:4px 8px}
+.ed-head b{font-weight:400;color:var(--orange);white-space:pre-wrap}
+.ed-fields{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr);gap:8px 16px;align-items:start;margin:0 0 16px}
+.ed-field label{display:block;color:var(--ice);text-transform:uppercase}
+.ed-field select.btn{width:calc(100% - 8px)}
+input.ed-name{display:block;width:calc(100% - 8px);margin:4px;font:inherit;color:var(--white);background:var(--k);border:0;border-radius:0;padding:4px 12px;box-shadow:0 -4px 0 var(--steel),0 4px 0 var(--steel),-4px 0 0 var(--steel),4px 0 0 var(--steel)}
+.ed-field .status{min-height:0;margin:8px 0 0}
+.ed-tabs{display:flex;flex-wrap:wrap;gap:4px;align-items:center;margin:0 0 12px}
+.ed-tab{font:inherit;text-transform:uppercase;color:var(--ice);background:var(--deep);border:0;border-radius:0;padding:0 8px;cursor:pointer}
+.ed-tab:hover{color:var(--white);background:var(--violet)}
+.ed-tab[aria-selected=true]{color:var(--k);background:var(--orange)}
+.ed-tab.changed::after{content:" *"}
+.ed-gap{color:var(--ice);text-transform:uppercase;padding:0 8px 0 16px}
+.ed-about{color:var(--ice);margin:0 0 8px}
+.ed-carry{display:flex;gap:8px;align-items:center;cursor:pointer}
+.ed-carry input{accent-color:var(--orange);width:16px;height:16px;margin:0}
+.knobs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:0 0 16px}
+.knob{background:var(--deep);padding:4px 8px 8px;min-width:0}
+.knob-top{display:flex;justify-content:space-between;gap:8px;cursor:pointer}
+.knob-name{color:var(--orange)}
+.knob-val{color:var(--white);white-space:nowrap}
+.knob.changed .knob-val::after{content:" *";color:var(--orange)}
+.knob-hint{color:var(--ice);margin:0;line-height:24px}
+.knob.idle .knob-name,.knob.idle .knob-val,.knob.idle .knob-hint{color:var(--steel)}
+.knob select.btn{width:calc(100% - 8px)}
+input.ed-range{-webkit-appearance:none;appearance:none;display:block;width:100%;height:32px;margin:0;padding:0;background:transparent;cursor:pointer}
+input.ed-range::-webkit-slider-runnable-track{height:8px;background:linear-gradient(90deg,var(--cyan) var(--p,0%),var(--k) var(--p,0%))}
+input.ed-range::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:24px;margin-top:-8px;border:0;border-radius:0;background:var(--orange);box-shadow:inset 0 4px 0 var(--white),inset 0 -4px 0 var(--red)}
+input.ed-range::-moz-range-track{height:8px;background:var(--k)}
+input.ed-range::-moz-range-progress{height:8px;background:var(--cyan)}
+input.ed-range::-moz-range-thumb{width:16px;height:24px;border:0;border-radius:0;background:var(--orange);box-shadow:inset 0 4px 0 var(--white),inset 0 -4px 0 var(--red)}
+input.ed-range:disabled{cursor:default}
+input.ed-range:disabled::-webkit-slider-thumb{background:var(--steel);box-shadow:none}
+input.ed-range:disabled::-moz-range-thumb{background:var(--steel);box-shadow:none}
+.ed-hear{background:var(--deep);padding:8px;margin:0 0 16px}
+.ed-hear .meter{background:var(--k);margin:0 0 8px}
+
+/* the panel fits the height it has, or the ten keys under it are off the screen on a short laptop or a phone on its side */
+@media (min-width:1001px),(max-height:500px){
+  body.tool #panelWrap{container-type:size}
+  body.tool #plate{flex:none;width:min(100%,1180px,calc((100cqh - 56px) * 1.76))}
+}
+@media (max-width:860px){
+  h1,.heading h2{font-size:var(--t2);line-height:44px}
+  .two,.stage-body,.tour.flip .stage-body{grid-template-columns:minmax(0,1fr)}
+  .knobs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tour.flip .shot{order:0}
+  .menubar{position:static;gap:0;padding:0}
+  .menubar .logo{flex:1 0 100%;text-align:center}
+  .menubar nav{flex:1 0 100%;gap:0}
+  .menubar nav a{flex:1 0 50%;text-align:center;padding:0 4px}
+  .menubar .aside{display:none}
+  .map{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px 0}
+  .map a::before{display:none}
+  .wide-note{display:block}
+  .wrap{padding:0 8px}
+  .scores .how{display:block;padding-top:0}
+  .scores .tagcell{padding-left:4px}
+  .title-screen{height:calc(100svh - 150px);min-height:480px}
+  .title-ui{top:50%}
+}
+@media (max-width:560px){
+  .knobs,.ed-fields{grid-template-columns:minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  a.btn.press{animation:none}
+  .scroll-text{position:static;width:auto;height:auto;clip-path:none;background:var(--k);padding:0 8px;max-width:760px;text-align:center;margin:0 auto}
+  #plate .coach{animation:none}
+}
+/* a phone on its side: every line of height goes to the panel */
+@media (max-height:500px){
+  .menubar{position:static;flex-wrap:nowrap}
+  .menubar .logo,.menubar .aside{display:none}
+  .menubar nav{flex:1 1 auto}
+  .menubar nav a{flex:1 1 25%;text-align:center;line-height:26px;padding:0 4px}
+  .wide-note{display:none}
+  body.tool #tab-panel{flex-direction:row}
+  body.tool #lesson{flex:0 0 38%;max-height:none}
+  body.tool #panelWrap,body.learning.tool #panelWrap{flex:1 1 0;overflow:auto}
+}
+/* something only a keyboard or a screen reader needs to see */
+.unseen{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden}
+.menubar .beta{font:var(--t1)/1 var(--face);color:var(--k);background:var(--orange);padding:2px 6px;margin:0 12px 0 -8px;align-self:center;white-space:nowrap}
+.steps{margin:0;padding-left:28px}
+.steps li{margin:0 0 8px}

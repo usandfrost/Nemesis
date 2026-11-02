@@ -1,0 +1,384 @@
+name,source,category,genre,score_now,score_wt,cost_per_voice,voices,mono,selected,dropped,approximated,wavetables
+Padded Burrow,vintage-mono/padded-burrow.json,BASS,Vintage,87.4,96.4,1.333,1,1,1,,fx:drive,0
+Glazed Ceramic,vintage-mono/glazed-ceramic.json,BASS,Vintage,90.7,96.2,1.333,1,1,1,,osc:osc1,4
+Catacomb Hum,vintage-mono/catacomb-hum.json,BASS,Vintage,93.6,93.6,1.42,1,1,1,,mod:Lfo2>filt.cutoff osc:osc2,
+Charcoal Roll,vintage-mono/charcoal-roll.json,BASS,Vintage,84.6,93.6,1.313,1,1,1,osc:sub,filter-env osc:osc1 osc:osc2,4
+Lumbering Giant,vintage-mono/lumbering-giant.json,BASS,Vintage,93.5,93.5,1.333,1,1,0,glide,osc:osc1 osc:osc2,
+Spinning Top,vintage-mono/spinning-top.json,BASS,Vintage,92.1,92.1,1.606,1,1,0,glide,filter-env osc:osc1 osc:osc2,
+Clipped Thump,vintage-poly/clipped-thump.json,BASS,Vintage,91.4,91.4,1.0,2,0,1,filter-env,osc:osc1,
+Rubber Mallet,vintage-poly/rubber-mallet.json,BASS,Vintage,91.1,91.1,1.0,2,0,1,fx:delay,osc:osc1 osc:sub,
+Radio Sub,synthpop/radio-sub.json,BASS,Synthpop,87.4,90.9,1.18,1,1,1,fx:comp osc-env:sub,osc:osc2,177
+Warm Thump,vintage-mono/warm-thump.json,BASS,Vintage,84.7,90.9,1.18,1,1,1,fx:delay osc:sub,osc:osc1,4
+Clean Pump Bass,synthpop/clean-pump-bass.json,BASS,Synthpop,78.3,90.8,1.18,1,1,1,fx:schain punch transient,filter-env fx:drive mod:Vel>filt.cutoff,7
+Open Throttle,vintage-mono/open-throttle.json,BASS,Vintage,90.7,90.7,1.586,1,1,1,,filter osc:osc1 osc:osc2 osc:sub,
+Singing Floor,signature/singing-floor.json,BASS,Signature,90.3,90.3,1.153,1,1,1,fx:chorus+eq,osc:osc1,
+Warbling Gravel,vintage-mono/warbling-gravel.json,BASS,Vintage,90.0,90.0,1.18,1,1,0,,filter-env mod:Lfo1>filt.cutoff osc:osc2,
+Pouncing Panther,vintage-mono/pouncing-panther.json,BASS,Vintage,89.5,89.5,1.333,1,1,1,mod:Env2>pitch osc:sub,osc:osc1 osc:osc2,
+Deep Cellar,vintage-mono/deep-cellar.json,BASS,Vintage,88.7,88.7,1.133,1,1,0,,filter-env osc:osc1 osc:sub,
+Edge Bass,synthpop/edge-bass.json,BASS,Synthpop,82.9,88.2,1.313,1,1,1,fx:comp punch transient,filter-env fx:drive osc:osc2,99
+Scorched Asphalt,vintage-mono/scorched-asphalt.json,BASS,Vintage,88.0,88.0,1.313,1,1,1,,filter filter-env mod:Wheel>filt.cutoff osc:osc1 osc:osc2,
+Stacked Girders,vintage-mono/stacked-girders.json,BASS,Vintage,87.0,87.0,1.18,1,1,1,fx:delay osc:sub,filter-env osc:osc1 osc:osc2,
+Concrete Slab,vintage-poly/concrete-slab.json,BASS,Vintage,87.0,87.0,1.506,1,1,1,,filter-env osc:osc1 osc:sub,
+Idling Engine,vintage-mono/idling-engine.json,BASS,Vintage,86.5,86.5,1.287,1,1,1,fx:drive glide,filter-env mod:Lfo2>filt.cutoff mod:Wheel>filt.cutoff osc:osc1 osc:osc2,
+Walking Shadow,vintage-mono/walking-shadow.json,BASS,Vintage,86.5,86.5,1.153,1,1,1,osc:sub,filter osc:osc1,
+Mahogany Bass,vintage-poly/mahogany-bass.json,BASS,Vintage,86.5,86.5,1.0,2,0,1,,osc:osc1,
+Clicking Pebble,vintage-mono/clicking-pebble.json,BASS,Vintage,86.4,86.4,1.153,1,1,0,fx:drive,mod:Wheel>filt.cutoff osc:osc1 osc:sub,
+Cloister Bass,vintage-poly/cloister-bass.json,BASS,Vintage,86.4,86.4,1.506,1,1,1,fx:delay,osc:osc1 osc:sub,
+Coiling Serpent,vintage-mono/coiling-serpent.json,BASS,Vintage,86.3,86.3,1.333,1,1,1,,amp-decay mod:Vel>filt.cutoff osc:osc1 osc:osc2,
+Cracking Whip,vintage-mono/cracking-whip.json,BASS,Vintage,85.7,85.7,1.18,1,1,1,glide osc:sub,filter-env osc:osc1 osc:osc2,
+Basalt Sine,signature/basalt-sine.json,BASS,Signature,81.5,85.5,1.333,1,1,1,fx:eq mod:Env3>osc.pdAmount osc2-unison,osc:osc1,93
+Slithering Eel,vintage-mono/slithering-eel.json,BASS,Vintage,85.4,85.4,1.333,1,1,1,,amp-decay mod:Vel>filt.cutoff osc:osc1 osc:osc2,
+Springy Knock,vintage-mono/springy-knock.json,BASS,Vintage,85.1,85.1,1.313,1,1,1,fx:delay mod:Env2>pitch osc:sub,osc:osc1 osc:osc2,
+Tape Warp,signature/tape-warp.json,BASS,Signature,77.2,84.8,1.66,1,1,0,fx:chorus+eq osc2-unison,osc:osc2 osc:sub,1
+Murmuring Depth,vintage-mono/murmuring-depth.json,BASS,Vintage,84.8,84.8,1.18,1,1,1,fx:delay osc:sub,filter-env osc:osc1 osc:osc2,
+Flickering Lamp,vintage-mono/flickering-lamp.json,BASS,Vintage,84.6,84.6,1.313,1,1,1,osc:sub,amp-decay amp-release filter-env mod:Lfo1>filt.cutoff osc:osc1 osc:osc2,
+Tine Slap Bass,synthpop/tine-slap-bass.json,BASS,Synthpop,72.7,84.0,1.267,1,1,1,mod:Env3>osc.pos punch transient,filter-env mod:Vel>osc.pos osc:osc2,136
+Concrete Throb,vintage-mono/concrete-throb.json,BASS,Vintage,83.6,83.6,1.153,1,1,1,,mod:Vel>filt.cutoff osc:osc1 osc:sub,
+Soft Squelch Bass,synthpop/soft-squelch-bass.json,BASS,Synthpop,78.1,83.1,1.18,1,1,1,fx:comp glide mod:Lfo1>filt.cutoff mod:Vel>env2.amt mod:Wheel>filt.reso osc-env:osc2 osc-env:sub,mod:Vel>filt.cutoff osc:osc1 osc:osc2 osc:sub,5
+Elastic Knock,vintage-poly/elastic-knock.json,BASS,Vintage,83.1,83.1,1.0,1,1,0,fx:delay,osc:osc1,
+Hollow Square Bass,synthpop/hollow-square-bass.json,BASS,Synthpop,71.5,82.7,1.333,1,1,0,fx:reverb mod:Vel>punch.amount osc-env:osc2 osc-env:sub punch transient,filter-env mod:Vel>osc.pos osc:osc1 osc:sub,2 5
+Rust Ring,signature/rust-ring.json,BASS,Signature,73.7,82.5,1.586,1,1,0,fx:chorus+eq mod:Lfo1>xmod.ring,filter osc:osc1 osc:osc2,72
+Cobra Spit,vintage-poly/cobra-spit.json,BASS,Vintage,82.5,82.5,1.0,2,0,1,filter-env,osc:osc1 osc:sub,
+Gum Rubber,signature/gum-rubber.json,BASS,Signature,72.7,82.1,1.18,1,1,0,fx:chorus+eq glide osc2-unison,filter-env osc:osc2 osc:sub,5
+Tremor Slab,vintage-poly/tremor-slab.json,BASS,Vintage,81.8,81.8,1.506,1,1,1,fx:chorus+delay,osc:sub,
+Cork Pocket,vintage-poly/cork-pocket.json,BASS,Vintage,81.7,81.7,1.0,2,0,1,fx:delay glide,osc:osc1,
+Pocket Roller,vintage-poly/pocket-roller.json,BASS,Vintage,81.7,81.7,1.0,2,0,0,fx:chorus,filter-env osc:osc1 osc:sub,
+Sequenced Root,synthpop/sequenced-root.json,BASS,Synthpop,74.3,81.3,1.18,1,1,1,fx:comp mod:Vel>env2.amt mod:Vel>punch.amount osc-env:osc2 osc-env:sub punch transient,fx:drive mod:Vel>filt.cutoff osc:osc1 osc:osc2 osc:sub,26
+Creeping Tar,vintage-mono/creeping-tar.json,BASS,Vintage,81.2,81.2,1.18,1,1,1,fx:delay glide osc:sub,filter-env osc:osc1 osc:osc2,
+Squeezing Vise,vintage-mono/squeezing-vise.json,BASS,Vintage,81.2,81.2,1.333,1,1,1,glide mod:Env2>pitch,amp-release filter-env mod:Vel>filt.cutoff osc:osc1 osc:osc2,
+Iron Squelch,signature/iron-squelch.json,BASS,Signature,75.3,81.0,1.313,1,1,1,fx:eq+reverb glide osc2-unison,filter-env osc:osc1,14
+Sinking Plank,vintage-poly/sinking-plank.json,BASS,Vintage,81.0,81.0,1.506,1,1,1,filter-env glide,osc:osc1 osc:sub,
+Spring Dive,vintage-poly/spring-dive.json,BASS,Vintage,80.9,80.9,1.0,2,0,0,filter-env fx:delay,osc:osc1,
+Tidewater Bass,nordic/tidewater-bass.json,BASS,Nordic,75.5,80.1,1.333,1,1,1,fx:phaser+comp mod:AT>osc2.level,fx:drive mod:Vel>filt.cutoff osc:osc1 osc:sub,21
+Mask Chew,signature/mask-chew.json,BASS,Signature,76.5,79.8,1.333,1,1,0,fx:chorus+eq mod:Lfo1>osc1.mask osc2-unison osc:osc1,,130
+Brick Punch,vintage-poly/brick-punch.json,BASS,Vintage,79.8,79.8,1.506,1,1,1,fx:delay glide,filter-env osc:osc1 osc:sub,
+Bare Sub,synthpop/bare-sub.json,BASS,Synthpop,79.0,79.0,1.333,1,1,0,fx:comp mod:AT>osc2.level mod:Lfo1>osc1.pw mod:Lfo1>osc2.level osc-env:osc2,mod:Vel>filt.cutoff mod:Vel>osc.pdAmount mod:Vel>osc2.level osc:osc1 osc:osc2,
+Gnashing Teeth,vintage-poly/gnashing-teeth.json,BASS,Vintage,78.8,78.8,1.506,1,1,0,fx:chorus+delay,osc:osc1 osc:sub,
+Boiler Churn,vintage-poly/boiler-churn.json,BASS,Vintage,78.7,78.7,1.506,1,1,0,filter-env glide,amp-decay osc:osc1,
+Bullfrog Croak,vintage-poly/bullfrog-croak.json,BASS,Vintage,78.7,78.7,1.0,2,0,0,filter-env fx:chorus,osc:osc1 osc:sub,
+Hollow Log,signature/hollow-log.json,BASS,Signature,74.0,78.4,1.333,1,1,0,fx:eq+reverb mod:Env3>osc.pdAmount osc2-unison resonator,osc:osc1,63
+Reed Morph,signature/reed-morph.json,BASS,Signature,73.2,78.4,1.18,1,1,0,fx:chorus+eq glide mod:Env3>filt.morph mod:Lfo2>filt.morph osc2-unison osc:osc2,filter,98
+Throat Growl,signature/throat-growl.json,BASS,Signature,70.6,78.1,1.267,1,1,0,filter fx:chorus+eq glide mod:Lfo1>filt.vowel osc2-unison,osc:osc1 osc:osc2,31
+Acid Gargle,vintage-poly/acid-gargle.json,BASS,Vintage,77.4,77.4,1.0,1,1,0,fx:delay,amp-decay filter-env osc:osc1 osc:sub,
+Four Second Riser,synthpop/four-second-riser.json,BASS,Synthpop,69.7,77.0,1.992,2,0,0,fx:comp+phaser+reverb mod:Env2>noise.level mod:Vel>amp.a mod:Vel>env2.a,filter-env mod:Vel>filt.cutoff mod:Vel>osc2.level osc:sub,3
+Eight-Bit Brute,signature/eight-bit-brute.json,BASS,Signature,76.8,76.8,1.527,1,1,0,fx:eq+chorus mod:Env3>osc2.timbre osc:osc2,osc:osc1,
+Round Preset Bass,nordic/round-preset-bass.json,BASS,Nordic,76.7,76.7,1.333,1,1,0,fx:gamp+comp mod:Lfo1>filt.cutoff mod:Vel>punch.amount osc-env:osc2 punch transient,mod:Vel>filt.cutoff mod:Vel>osc.pdAmount osc:osc1 osc:sub,
+Algo Knock,signature/algo-knock.json,BASS,Signature,76.0,76.0,1.18,1,1,0,fx:chorus+eq mod:Env3>osc1.timbre osc:sub,osc:osc1,
+Gnaw,signature/gnaw.json,BASS,Signature,75.9,75.9,1.333,1,1,0,fx:chorus+eq mod:Lfo2>osc1.pdShape mod:S&H>filt.cutoff osc2-unison,osc:osc1 osc:osc2,
+Tidal Creep,vintage-poly/tidal-creep.json,BASS,Vintage,75.9,75.9,1.0,2,0,0,filter-env fx:chorus,amp-decay osc:osc1,
+Swaying Tuba,vintage-poly/swaying-tuba.json,BASS,Vintage,71.5,71.5,1.506,1,1,0,filter-env fx:chorus+delay glide osc:sub,osc:osc1,
+Anvil Tine,signature/anvil-tine.json,BASS,Signature,71.2,71.2,1.333,1,1,0,FM fx:eq+chorus+reverb mod:Env3>xmod.fm resonator,osc:osc1 osc:osc2,
+Squelch Resin,techno/squelch-resin.json,BASS,Techno,68.0,71.2,1.287,1,1,0,fx:comp+delay glide mod:Vel>env2.amt mod:Wheel>filt.reso osc-env:osc2 osc-env:sub punch transient,fx:drive mod:Vel>filt.cutoff mod:Vel>osc.pos osc:osc1 osc:sub,12
+Rubber Bass,synthpop/rubber-bass.json,BASS,Synthpop,66.0,71.0,1.18,1,1,0,fx:gamp+comp mod:Vel>osc1.timbre osc-env:osc2 osc-env:sub punch transient,filter filter-env mod:Vel>osc2.level osc:osc1 osc:sub,121
+Detune Tide,techno/detune-tide.json,BASS,Techno,63.8,70.7,1.819,1,1,0,fx:gamp+comp+chorus mod:Lfo1>osc2.level mod:Lfo2>osc.pos mod:Wheel>osc2.level,filter-env mod:Lfo1>filt.cutoff mod:Vel>filt.cutoff mod:Vel>osc.pos mod:Vel>osc2.level osc:osc2 osc:sub,21
+Reso Throat,signature-pilot/reso-throat.json,BASS,Signature,53.8,53.8,1.267,1,1,0,filter fx:comp+phaser+reverb glide mod:AT>osc.pdAmount mod:Env2>filt2.cutoff mod:Env3>osc.pdAmount mod:Lfo1>filt.vowel mod:Vel>env3.amt mod:Wheel>filt.vowel osc-env:osc2 osc-env:sub punch transient,fx:drive mod:Vel>osc.pdAmount osc:osc1 osc:osc2,
+Moonlit Chime,vintage-poly/moonlit-chime.json,BELL,Vintage,85.5,85.5,1.0,3,0,1,fx:delay,osc:osc1,
+Wave Bell Pair,synthpop/wave-bell-pair.json,BELL,Synthpop,62.4,82.6,1.18,3,0,1,fx:chorus+reverb osc-env:osc2 osc-env:sub punch transient,mod:Vel>osc.pos osc:sub,138 141
+Glinting Wire,vintage-poly/glinting-wire.json,BELL,Vintage,79.6,79.6,1.0,3,0,1,fx:chorus+delay,osc:osc1,
+Island Chime,vintage-poly/island-chime.json,BELL,Vintage,78.1,78.1,1.0,3,0,1,fx:chorus+delay osc:sub,osc:osc1,
+Wide FM Bell,synthpop/wide-fm-bell.json,BELL,Synthpop,66.8,73.0,1.18,3,0,1,fx:delay+reverb osc-env:osc2 osc-env:sub osc:sub punch transient,mod:Vel>osc.pos osc:osc2,139
+Ring Bell,signature-wave/ring-bell.json,BELL,Signature,71.7,71.7,1.453,3,0,1,fx:delay+phaser+reverb+comp mod:AT>xmod.ring mod:Env3>noise.level mod:Vel>xmod.ring mod:Wheel>osc2.fine osc-env:osc2 osc-env:sub punch transient,fx:drive mod:Vel>filt.cutoff osc:sub,
+Bowl Swell,nordic/bowl-swell.json,BELL,Nordic,53.7,71.5,1.18,3,0,1,fx:chorus+reverb+comp lfo-phase-spread mod:AT>osc2.level mod:Lfo2>sub.timbre mod:Wheel>sub.level osc-env:osc2 osc-env:sub osc:sub voice.spread,amp-release mod:Vel>filt.cutoff,60 64
+Folded Chime,nordic/folded-chime.json,BELL,Nordic,62.6,67.9,1.18,3,0,1,fold fx:vintage+reverb mod:AT>osc2.level mod:Env2>fold.amount mod:Vel>fold.amount mod:Wheel>fold.amount osc-env:osc2 osc-env:sub osc:sub punch transient,fx:drive mod:Vel>osc2.level,92
+Tubular Fjord,nordic/tubular-fjord.json,BELL,Nordic,56.1,67.4,1.453,3,0,1,fx:delay+reverb+comp mod:AT>xmod.ring mod:Env2>xmod.ring mod:Wheel>xmod.ring osc-env:osc2 osc-env:sub punch transient voice.spread,amp-decay mod:Vel>filt.cutoff mod:Vel>osc.pos osc:osc1 osc:osc2 osc:sub,66
+Cathedral Toll,nordic/cathedral-toll.json,BELL,Nordic,51.5,63.8,1.453,3,0,1,fx:reverb+comp mod:AT>xmod.ring mod:Env2>xmod.ring mod:Vel>xmod.ring mod:Wheel>osc2.level osc-env:osc2 osc-env:sub punch transient voice.spread,amp-decay amp-release mod:Vel>filt.cutoff mod:Vel>osc.pos osc:osc2 osc:sub,59
+Dusty Music Box,nordic/dusty-music-box.json,BELL,Nordic,57.9,63.0,1.62,3,0,0,fx:vintage+reverb mod:Env3>osc2.level mod:Wheel>sub.maskDecay osc-env:osc1 osc-env:osc2 osc-env:sub osc:sub punch transient,mod:Vel>osc.pdAmount mod:Vel>osc2.level osc:osc1,58
+Broken Carillon,signature-pilot/broken-carillon.json,BELL,Signature,59.6,59.6,1.3,3,0,0,fx:delay+reverb+eq mod:AT>conv.bits mod:AT>conv.rate mod:S&H>conv.rate mod:Vel>conv.rate mod:Vel>osc1.timbre mod:Wheel>grit.amount osc-env:osc1 osc:osc1 osc:osc2,,
+Steel Pan,signature-wave/steel-pan.json,BELL,Signature,58.0,58.0,1.62,3,0,0,fx:chorus+delay+reverb mod:AT>osc.pdAmount mod:Env3>osc1.timbre mod:Env3>pitch mod:Lfo2>pan mod:Vel>osc1.timbre mod:Wheel>lfo2.rate osc-env:osc2 osc-env:sub osc:osc1 punch transient,mod:Vel>osc.pdAmount osc:osc2,
+Gray Bell,signature-wave/gray-bell.json,BELL,Signature,46.5,57.8,1.18,3,0,0,fx:chorus+delay+reverb+comp mod:AT>osc.pos mod:Env3>osc.pos mod:Vel>env3.amt mod:Vel>osc2.timbre mod:Wheel>lfo1.rate osc-env:osc2 osc-env:sub osc:osc2 punch transient,fx:drive mod:Vel>filt.cutoff mod:Vel>osc.pos mod:Vel>osc2.level osc:osc1,59
+Struck Wire,signature-wave/struck-wire.json,BELL,Signature,51.4,51.4,1.62,3,0,0,fx:delay+reverb mod:AT>reson.amount mod:Env3>osc1.timbre mod:Key>reson.tune mod:Lfo2>pan mod:Vel>osc1.timbre mod:Vel>osc2.timbre mod:Vel>reson.amount mod:Wheel>osc1.harmonics osc-env:sub osc:osc2 osc:sub punch transient resonator,amp-decay mod:Vel>filt.cutoff osc:osc1,
+Singing Bowl,signature-wave/singing-bowl.json,BELL,Signature,45.9,50.3,1.62,3,0,0,fx:delay+phaser+reverb+comp mod:AT>osc2.level mod:Env3>osc.pos mod:Key>reson.tune mod:Vel>osc1.timbre mod:Vel>reson.amount mod:Wheel>reson.decay osc-env:osc2 osc-env:sub osc:osc1 osc:sub resonator,amp-decay fx:drive mod:Vel>filt.cutoff,74
+Bronze Gamelan,signature-wave/bronze-gamelan.json,BELL,Signature,49.0,49.0,1.62,3,0,0,fx:chorus+delay+reverb+eq+comp mod:AT>osc1.morph mod:Env3>filt.cutoff mod:Lfo1>osc2.timbre mod:Vel>osc1.timbre mod:Vel>osc2.timbre mod:Wheel>unisonDetune osc-env:osc2 osc-env:sub osc:osc1 osc:osc2 punch transient,fx:drive mod:Vel>filt.cutoff osc:sub,
+Wind Chimes,signature-wave/wind-chimes.json,BELL,Signature,43.7,43.7,1.62,3,0,0,fx:delay+reverb mod:AT>reson.amount mod:Env3>noise.level mod:Key>reson.tune mod:S&H>pan mod:Vel>osc1.timbre mod:Vel>osc2.timbre mod:Vel>reson.amount mod:Wheel>osc1.timbre osc-env:osc2 osc-env:sub osc:osc1 osc:osc2 osc:sub resonator,amp-decay mod:Vel>filt.cutoff mod:Vel>osc2.level,
+Pine Oboe,vintage-poly/pine-oboe.json,BRASS,Vintage,93.0,93.0,1.0,3,0,1,fx:delay,osc:osc1,
+Bronze Rise,vintage-poly/bronze-rise.json,BRASS,Vintage,91.1,91.1,1.0,3,0,1,fx:chorus,filter-env osc:osc1,
+Willow Piper,vintage-poly/willow-piper.json,BRASS,Vintage,90.4,90.4,1.0,3,0,1,fx:delay glide,filter-env osc:osc1,
+Smoky Reed,vintage-poly/smoky-reed.json,BRASS,Vintage,82.5,82.5,1.0,3,0,0,fx:delay,filter-env osc:osc1,
+Pulsing Horn,vintage-poly/pulsing-horn.json,BRASS,Vintage,82.4,82.4,1.0,3,0,1,fx:delay,osc:osc1,
+Royal Procession,vintage-poly/royal-procession.json,BRASS,Vintage,79.8,79.8,1.0,3,0,1,fx:chorus,filter-env osc:osc1 osc:sub,
+Chorus Horns,synthpop/chorus-horns.json,BRASS,Synthpop,66.0,78.0,1.62,3,0,1,fx:chorus+comp+reverb osc-env:osc2 osc-env:sub punch transient,filter-env mod:Vel>osc.pos osc:sub,43
+Burnished Call,vintage-poly/burnished-call.json,BRASS,Vintage,76.2,76.2,1.0,3,0,1,fx:chorus+delay osc:sub,filter-env osc:osc1,
+Furnace Call,vintage-poly/furnace-call.json,BRASS,Vintage,74.6,74.6,1.0,1,1,1,fx:chorus+delay,amp-decay amp-release osc:osc1 osc:sub,
+Menace Brass,synthpop/menace-brass.json,BRASS,Synthpop,65.2,72.6,1.313,1,1,1,fx:gamp+reverb mod:Vel>conv.bits osc-env:sub osc:osc2 punch transient,filter filter-env fx:drive mod:Vel>filt.cutoff mod:Vel>osc.pos osc:osc1,188
+Low Bones,signature-wave/low-bones.json,BRASS,Signature,61.2,72.1,1.18,3,0,1,fx:comp+chorus+reverb mod:AT>filt.drive mod:Lfo2>filt.cutoff mod:Wheel>lfo1.depth mod:Wheel>lfo1.rate osc-env:osc2 punch transient,filter-env mod:Vel>filt.cutoff osc:osc1 osc:sub,49 122
+Reel Horns,nordic/reel-horns.json,BRASS,Nordic,64.8,71.2,1.62,3,0,0,fx:vintage+chorus+reverb+comp lfo-phase-spread mod:Wheel>osc2.level osc-env:osc2 osc2-unison,filter-env mod:Vel>filt.cutoff mod:Vel>osc2.level osc:osc1 osc:osc2 osc:sub,5
+Cathedral Swell,nordic/cathedral-swell.json,BRASS,Nordic,61.9,70.3,1.413,3,0,0,cost:unison width fx:chorus+comp+reverb lfo-phase-spread mod:Wheel>osc1.uni.detune osc-env:osc2 osc2-unison,filter-env mod:Vel>filt.cutoff osc:osc2 osc:sub,12
+Soft Horns,signature-wave/soft-horns.json,BRASS,Signature,62.5,70.2,1.62,3,0,0,fx:chorus+comp+reverb mod:AT>osc2.level mod:Env3>noise.level mod:Wheel>lfo1.depth osc-env:osc2,filter-env mod:Vel>filt.cutoff osc:osc2 osc:sub,101
+Muted Smoke,signature-wave/muted-smoke.json,BRASS,Signature,59.5,68.9,1.18,1,1,0,fx:comp+delay+reverb glide mod:Env3>noise.level mod:Lfo1>filt.cutoff mod:Wheel>lfo1.depth mod:Wheel>lfo1.rate,filter filter-env mod:Vel>filt.cutoff mod:Vel>osc.pos osc:osc1,37
+Velvet Horns,signature-pilot/velvet-horns.json,BRASS,Signature,59.6,65.9,1.62,3,0,0,fx:chorus+comp+delay+reverb+eq mod:AT>osc.pos mod:Env3>noise.level mod:Vel>osc1.timbre mod:Wheel>lfo1.depth mod:Wheel>lfo1.rate osc-env:osc2,filter-env osc:osc1,43
+Swell Section,signature-wave/swell-section.json,BRASS,Signature,56.1,62.7,1.454,3,0,0,cost:unison width fx:chorus+reverb+comp mod:Env2>level mod:Env2>noise.level mod:Env2>unisonDetune mod:Vel>osc1.timbre mod:Wheel>lfo1.depth mod:Wheel>lfo1.rate osc-env:osc2 osc2-unison,filter-env mod:Vel>filt.cutoff osc:osc1 osc:sub,6
+Mellow Flugel,nordic/mellow-flugel.json,BRASS,Nordic,62.3,62.3,1.18,1,1,0,fx:chorus+delay+reverb glide mod:AT>lfo1.depth mod:Env2>noise.level osc-env:osc2,filter filter-env fx:drive mod:Vel>filt.cutoff mod:Vel>osc.pdAmount mod:Vel>osc2.level osc:osc1 osc:osc2 osc:sub,
+Five Player Section,nordic/five-player-section.json,BRASS,Nordic,62.2,62.2,1.566,3,0,0,cost:unison width fx:gamp+reverb+comp lfo-phase-spread mod:Vel>osc2.timbre mod:Wheel>osc1.uni.detune osc-env:osc2 punch transient,filter-env mod:Vel>filt.cutoff osc:osc1 osc:osc2 osc:sub,
+Bright Section,signature-wave/bright-section.json,BRASS,Signature,54.6,61.6,1.62,3,0,0,fx:comp+eq+chorus+reverb mod:Lfo3>osc1.timbre mod:Vel>osc1.harmonics mod:Wheel>filt.reso osc-env:osc2 osc-env:sub punch transient,filter-env mod:Vel>filt.cutoff osc:osc1 osc:sub,144
+Iron Brass,nordic/iron-brass.json,BRASS,Nordic,56.0,61.5,1.313,3,0,0,fx:gamp+reverb+comp mod:AT>lfo1.depth mod:Lfo2>osc2.harmonics osc-env:osc2 osc-env:sub,filter filter-env fx:drive mod:Vel>filt.cutoff mod:Vel>osc.pos mod:Vel>osc2.level osc:osc2 osc:sub,188
+Furnace Horns,signature-pilot/furnace-horns.json,BRASS,Signature,55.3,61.0,1.546,3,0,0,cost:unison width fold fx:gamp+comp+chorus+reverb+eq mod:AT>filt.drive mod:AT>fold.amount mod:Env3>fold.amount mod:Lfo2>filt.reso mod:Vel>fold.amount punch transient,filter filter-env osc:osc2,13
+Dub Horns,signature-wave/dub-horns.json,BRASS,Signature,59.5,59.5,1.333,3,0,0,fx:chorus+delay+reverb+comp mod:AT>filt.reso mod:Env3>noise.level mod:Lfo2>filt.reso mod:S&H>filt.cutoff mod:Vel>filt.reso osc-env:osc2 osc-env:sub voice.spread,mod:Vel>filt.cutoff mod:Vel>osc2.level osc:osc1 osc:osc2 osc:sub,
+Fanfare Saws,signature-wave/fanfare-saws.json,BRASS,Signature,57.6,57.6,1.18,3,0,0,fx:chorus+comp+reverb mod:AT>osc2.level mod:Env2>osc1.timbre mod:Env3>filt.cutoff mod:Env3>noise.level mod:Lfo3>osc1.harmonics mod:Vel>osc1.harmonics mod:Vel>osc1.timbre mod:Wheel>lfo1.depth mod:Wheel>lfo1.rate osc-env:osc2 voice.spread,filter-env osc:osc1 osc:osc2 osc:sub,
+Talking Horns,signature-wave/talking-horns.json,BRASS,Signature,55.1,55.1,1.267,3,0,0,filter fx:reverb+comp mod:AT>filt.vowel mod:Env2>filt.vowel mod:Lfo1>filt.vowel mod:Lfo2>osc1.morph mod:Vel>filt.vowel mod:Vel>osc1.timbre mod:Wheel>lfo1.depth mod:Wheel>lfo1.rate osc:osc1 voice.spread,fx:drive osc:osc2 osc:sub,
+Dripping Vault,vintage-poly/dripping-vault.json,FX,Vintage,100.0,100.0,1.0,2,0,1,,,
+Arctic Gale,vintage-poly/arctic-gale.json,FX,Vintage,97.2,97.2,1.0,2,0,1,,filter-env,
+Hull Boom,vintage-poly/hull-boom.json,FX,Vintage,96.3,96.3,1.0,1,1,1,fx:delay glide,,
+Vortex Fall,vintage-poly/vortex-fall.json,FX,Vintage,95.4,95.4,1.0,1,1,1,filter-env,,
+Marsh Warbler,vintage-poly/marsh-warbler.json,FX,Vintage,91.5,91.5,1.506,1,1,1,filter-env fx:delay glide,,
+Crackling Hearth,vintage-poly/crackling-hearth.json,FX,Vintage,90.6,90.6,1.0,1,1,1,fx:chorus glide,filter-env,
+Glitter Rain,vintage-poly/glitter-rain.json,FX,Vintage,88.7,88.7,1.506,1,1,1,fx:delay glide,amp-release filter-env,
+Apparition Rise,vintage-poly/apparition-rise.json,FX,Vintage,88.6,88.6,1.506,1,1,1,fx:chorus+delay,amp-decay,
+Rolling Aurora,vintage-mono/rolling-aurora.json,FX,Vintage,87.2,87.2,1.313,1,1,1,FM fx:delay glide,filter-env osc:osc1 osc:osc2,
+Looming Shade,vintage-poly/looming-shade.json,FX,Vintage,84.8,84.8,1.0,2,0,1,filter-env fx:chorus+delay,osc:osc1,
+Aerial Shimmer,vintage-poly/aerial-shimmer.json,FX,Vintage,81.8,81.8,1.0,2,0,0,filter-env fx:chorus+delay glide,osc:osc1,
+Orbiting Whine,vintage-poly/orbiting-whine.json,FX,Vintage,80.8,80.8,1.0,2,0,0,filter-env fx:delay,osc:osc1,
+Antenna Hum,vintage-poly/antenna-hum.json,FX,Vintage,79.4,79.4,1.0,2,0,0,fx:chorus+delay,osc:osc1,
+Skimming Wisp,vintage-poly/skimming-wisp.json,FX,Vintage,76.6,76.6,1.0,2,0,0,filter-env fx:chorus glide,osc:osc1 osc:sub,
+Distress Flare,vintage-mono/distress-flare.json,FX,Vintage,76.2,76.2,1.313,1,1,0,fx:delay mod:Env2>pitch,filter-env mod:Lfo1>filt.cutoff mod:Vel>filt.cutoff osc:osc1 osc:osc2 osc:sub,
+Hornet Loop,vintage-poly/hornet-loop.json,FX,Vintage,76.1,76.1,1.0,2,0,0,filter-env fx:chorus+delay,osc:osc1 osc:sub,
+Filter Wipe,techno/filter-wipe.json,FX,Techno,75.8,75.8,1.267,2,0,0,fx:phaser+reverb+comp mod:Lfo1>filt2.cutoff mod:Lfo1>level mod:Vel>osc1.timbre mod:Wheel>lfo1.rate voice.spread,mod:Lfo1>filt.cutoff mod:Vel>filt.cutoff osc:osc1 osc:sub,
+Handshake,signature-pilot/handshake.json,FX,Signature,74.0,74.0,1.527,2,0,0,fx:eq+delay+reverb mod:AT>conv.rate mod:S&H>noise.level mod:Step>pitch mod:Vel>conv.bits mod:Wheel>noise.level osc-env:osc2,mod:Vel>filt.cutoff mod:Vel>osc2.level osc:osc2,
+Laser,signature-wave/laser.json,FX,Signature,67.9,73.9,1.62,2,0,0,fx:delay+reverb mod:AT>lfo1.depth mod:Env2>pitch mod:Lfo1>osc.pdAmount mod:Vel>env2.amt mod:Wheel>lfo1.rate,osc:osc1 osc:sub,138
+Air Raid,signature-wave/air-raid.json,FX,Signature,73.8,73.8,1.753,2,0,0,fx:delay+reverb mod:AT>filt.drive mod:Lfo2>filt.cutoff mod:Wheel>lfo1.rate,mod:Lfo1>pitch mod:Vel>filt.cutoff mod:Vel>osc.pdAmount mod:Vel>osc2.level osc:osc1 osc:osc2 osc:sub,
+Uplifter,signature-pilot/uplifter.json,FX,Signature,72.1,72.1,1.18,2,0,0,fx:delay+reverb+eq mod:Lfo1>filt.reso mod:Lfo1>noise.level mod:Lfo1>pitch mod:Lfo2>pan mod:Vel>filt.reso osc:osc2,mod:Lfo1>filt.cutoff mod:Vel>filt.cutoff,
+Reverse Swell,signature-wave/reverse-swell.json,FX,Signature,56.4,71.4,1.18,2,0,0,fx:comp+delay+reverb mod:Lfo1>filt.morph mod:Lfo1>level mod:Lfo1>noise.level mod:Wheel>osc.pos,filter mod:Lfo1>filt.cutoff mod:Vel>filt.cutoff osc:sub,80 114
+Reverse Cymbal,techno/reverse-cymbal.json,FX,Techno,63.2,70.2,1.18,2,0,0,fx:chorus+reverb+comp mod:AT>filt.reso mod:Lfo1>filt.cutoff mod:Lfo1>osc.pos mod:Lfo2>osc.pos mod:Wheel>lfo1.rate osc:osc2 voice.spread,mod:Vel>filt.cutoff mod:Vel>osc.pos mod:Vel>osc2.level osc:osc1,81
+Gravity Fall,techno/gravity-fall.json,FX,Techno,68.6,68.6,1.313,2,0,0,fx:phaser+reverb+eq mod:AT>filt.reso mod:Lfo1>filt.cutoff mod:Lfo1>level mod:Lfo1>osc1.semi mod:Lfo2>filt.reso mod:Vel>osc2.timbre mod:Wheel>lfo1.rate voice.spread,mod:Lfo1>pitch mod:Vel>filt.cutoff mod:Vel>osc.pdAmount osc:osc2 osc:sub,
+Roll Build,techno/roll-build.json,FX,Techno,61.0,67.8,1.18,2,0,0,fx:delay+reverb mod:AT>filt.reso mod:Lfo1>filt.cutoff mod:Lfo1>level mod:Lfo1>lfo2.rate mod:Lfo1>pitch mod:Vel>filt.reso mod:Wheel>lfo1.rate osc:osc1 voice.spread,mod:Vel>filt.cutoff mod:Vel>osc.pos osc:sub,148
+Bit Ascent,signature-wave/bit-ascent.json,FX,Signature,60.6,65.8,1.18,2,0,0,fold fx:comp+delay+reverb mod:AT>conv.bits mod:Lfo1>conv.bits mod:Lfo1>conv.rate mod:Lfo1>fold.amount mod:Lfo1>noise.level mod:Lfo2>noise.level mod:Vel>fold.amount mod:Wheel>fold.amount osc:osc2,mod:Vel>filt.cutoff mod:Vel>osc2.level osc:sub,119
+Resonator Sweep,signature-wave/resonator-sweep.json,FX,Signature,54.0,63.1,1.18,2,0,0,filter fx:delay+reverb mod:AT>filt.reso mod:Key>reson.tune mod:Lfo1>reson.tune mod:Wheel>lfo1.rate osc:osc1 resonator,mod:Lfo1>filt.cutoff,45
+Backwards Hall,nordic/backwards-hall.json,FX,Nordic,55.5,62.8,1.686,2,0,0,fx:delay+reverb+comp mod:AT>osc2.level mod:Lfo2>filt.cutoff mod:Wheel>osc1.uni.detune osc-env:osc2 osc-env:sub,filter-env mod:Vel>filt.cutoff mod:Vel>osc.pos mod:Vel>osc2.level osc:osc2 osc:sub,18
+Runaway Tape,nordic/runaway-tape.json,FX,Nordic,59.6,59.6,1.333,2,0,0,fx:delay+reverb+comp mod:AT>osc2.level mod:Lfo2>osc2.pw osc-env:osc1 osc-env:osc2 osc-env:sub voice.spread,mod:Vel>filt.cutoff mod:Vel>osc.pdAmount mod:Vel>osc2.level osc:osc1 osc:osc2 osc:sub,
+Transmission,signature-wave/transmission.json,FX,Signature,57.7,57.7,1.18,2,0,0,fx:delay+reverb mod:AT>sh.depth mod:Lfo2>osc2.level mod:S&H>osc1.mask mod:S&H>pan mod:Step>level mod:Wheel>conv.bits osc-env:osc1 osc-env:osc2 osc:osc1,mod:Vel>filt.cutoff osc:osc2 osc:sub,
+Cathedral Pipes,vintage-mono/cathedral-pipes.json,KEYS,Vintage,90.9,92.3,1.42,1,1,1,,amp-decay mod:Vel>filt.cutoff mod:Wheel>filt.cutoff osc:osc2,0
+Twilight Mallets,vintage-poly/twilight-mallets.json,KEYS,Vintage,90.7,90.7,1.0,4,0,1,fx:chorus,filter-env osc:osc1,
+Nocturne Felt,vintage-poly/nocturne-felt.json,KEYS,Vintage,89.1,89.1,1.0,4,0,1,fx:chorus,osc:osc1 osc:sub,
+Parlor Organ,synthpop/parlor-organ.json,KEYS,Synthpop,66.2,86.2,1.18,4,0,1,fx:chorus+reverb,amp-decay osc:osc1 osc:sub,91 95
+Nasal Pipes,vintage-poly/nasal-pipes.json,KEYS,Vintage,84.1,84.1,1.0,4,0,1,,filter-env osc:osc1,
+Chapel Hum,vintage-poly/chapel-hum.json,KEYS,Vintage,83.4,83.4,1.0,4,0,1,fx:delay,filter-env osc:osc1 osc:sub,
+Suitcase EP,synthpop/suitcase-ep.json,KEYS,Synthpop,71.2,82.3,1.333,3,0,1,fx:chorus+reverb mod:Lfo2>pan osc-env:osc2 osc-env:sub punch transient,filter-env mod:Vel>osc.pos,77 103
+Tape Hymn,vintage-poly/tape-hymn.json,KEYS,Vintage,75.1,75.1,1.0,4,0,1,fx:chorus+delay,amp-decay filter-env osc:osc1,
+Stepped Harpsichord,synthpop/stepped-harpsichord.json,KEYS,Synthpop,74.0,74.0,1.18,4,0,1,fx:reverb mod:AT>osc2.level osc-env:osc1 osc-env:osc2 osc-env:sub punch transient,mod:Vel>filt.cutoff mod:Vel>osc.pdAmount mod:Vel>osc2.level osc:osc2 osc:sub,
+Soft FM Ballad,nordic/soft-fm-ballad.json,KEYS,Nordic,68.0,73.0,1.62,3,0,1,FM fx:chorus+reverb mod:AT>sub.timbre mod:Env3>xmod.fm mod:Vel>xmod.fm mod:Wheel>osc2.level osc-env:osc2 osc-env:sub osc:sub punch transient,mod:Vel>osc2.level,75
+Gentle FM Keys,nordic/gentle-fm-keys.json,KEYS,Nordic,63.6,72.7,1.18,4,0,0,fx:chorus+delay+reverb mod:Wheel>osc.pdAmount osc-env:osc2 osc-env:sub osc:sub voice.spread,filter-env fx:drive mod:Vel>filt.cutoff mod:Vel>osc.pos osc:osc1,77
+Toy Keyboard,synthpop/toy-keyboard.json,KEYS,Synthpop,68.6,68.6,1.18,4,0,0,fx:era+reverb mod:Vel>osc2.timbre osc:osc1 punch transient,mod:Vel>osc2.level osc:osc2 osc:sub,
+Sympathetic Keys,signature-wave/sympathetic-keys.json,KEYS,Signature,60.0,67.9,1.333,3,0,0,fx:chorus+reverb mod:AT>reson.amount mod:Env3>noise.level mod:Key>reson.tune mod:Vel>osc1.timbre mod:Vel>reson.amount mod:Wheel>reson.decay osc-env:osc1 osc-env:osc2 osc-env:sub osc:osc1 resonator voice.spread,amp-decay mod:Vel>filt.cutoff mod:Vel>osc1.level osc:osc2,88
+Gray Keys,signature-wave/gray-keys.json,KEYS,Signature,46.7,66.9,1.287,3,0,0,fx:delay+reverb mod:AT>osc.pos mod:Env3>noise.level mod:Env3>osc.pos mod:Step>filt.cutoff mod:Step>osc.pos mod:Wheel>filt.reso osc-env:osc1 osc-env:osc2 punch transient voice.spread,filter-env fx:drive mod:Vel>osc.pos osc:osc1 osc:osc2,16 100
+Rusted EP,signature-pilot/rusted-ep.json,KEYS,Signature,65.9,65.9,1.606,3,0,0,FM fold fx:chorus+delay+reverb+eq mod:AT>fold.amount mod:Env3>xmod.fm mod:Vel>fold.amount mod:Vel>xmod.fm mod:Wheel>xmod.ring osc-env:sub punch transient,filter-env fx:drive osc:sub,
+Phase Keys,signature-wave/phase-keys.json,KEYS,Signature,65.9,65.9,1.62,3,0,0,fx:chorus+delay+reverb mod:AT>osc.pdAmount mod:Env3>osc.pdAmount mod:Vel>sub.pdAmount mod:Wheel>osc1.pdShape osc-env:osc2 osc-env:sub punch transient,mod:Vel>osc.pdAmount mod:Vel>osc2.level osc:osc2 osc:sub,
+Digital Hammer Piano,synthpop/digital-hammer-piano.json,KEYS,Synthpop,65.3,65.3,1.18,4,0,0,fx:reverb mod:Vel>osc2.timbre mod:Vel>punch.amount osc-env:osc2 osc-env:sub osc:osc2 punch transient voice.spread,filter-env osc:osc1 osc:sub,
+Funk Clav,signature-pilot/funk-clav.json,KEYS,Signature,57.8,61.8,1.553,3,0,0,fx:gamp+phaser+reverb mod:Env3>noise.level mod:Lfo3>filt.cutoff mod:Vel>env2.amt mod:Vel>filt2.cutoff mod:Wheel>filt.reso mod:Wheel>lfo3.depth osc-env:osc2 punch transient voice.spread,filter-balance filter-env mod:Vel>filt.cutoff mod:Vel>osc2.level osc:osc1 osc:sub,162
+Chip Keys,signature-wave/chip-keys.json,KEYS,Signature,59.5,59.5,1.62,3,0,0,fx:chorus+delay+reverb mod:AT>osc1.pw mod:Env3>noise.level mod:Env3>pitch mod:Vel>conv.bits mod:Vel>osc1.pw mod:Vel>osc2.mask mod:Wheel>step.rate osc-env:osc2 osc-env:sub osc:osc2,mod:Vel>filt.cutoff osc:osc1 osc:sub,
+Chorus Bell Keys,nordic/chorus-bell-keys.json,KEYS,Nordic,58.3,58.3,1.18,4,0,0,fx:chorus+delay+reverb lfo-phase-spread mod:Env2>osc1.timbre mod:Vel>osc1.timbre mod:Wheel>osc2.pwm osc-env:osc2 osc-env:sub osc:sub voice.spread,filter-env mod:Vel>filt.cutoff osc:osc1 osc:osc2,
+Iron Harpsichord,signature-wave/iron-harpsichord.json,KEYS,Signature,57.6,57.6,1.62,3,0,0,fx:delay+reverb+eq mod:Env3>filt.cutoff mod:Env3>sub.pdAmount mod:Vel>osc2.timbre mod:Wheel>hpf osc-env:sub osc:sub punch transient,filter-env mod:Vel>filt.cutoff mod:Vel>osc2.level osc:osc1 osc:osc2,
+Dusty Harpsichord,nordic/dusty-harpsichord.json,KEYS,Nordic,55.7,55.7,1.18,4,0,0,fx:vintage+reverb+comp mod:AT>osc1.harmonics mod:Vel>sub.pos mod:Wheel>osc2.level osc-env:osc2 osc-env:sub osc:sub punch transient voice.spread,mod:Vel>filt.cutoff mod:Vel>osc2.level osc:osc1 osc:osc2,
+Dusty Tine Keys,nordic/dusty-tine-keys.json,KEYS,Nordic,55.4,55.4,1.62,3,0,0,fx:vintage+chorus+delay+reverb mod:AT>osc1.timbre mod:Env2>osc1.timbre mod:Env3>sub.level mod:Vel>osc1.timbre mod:Wheel>osc1.harmonics osc-env:osc2 osc-env:sub osc:osc1 osc:sub punch transient,filter-env mod:Vel>osc.pdAmount,
+Broken Upright,signature-wave/broken-upright.json,KEYS,Signature,52.2,52.2,1.333,3,0,0,cost:companding fx:vintage+era+delay+reverb mod:AT>conv.rate mod:Env3>osc1.timbre mod:Vel>conv.bits mod:Vel>osc1.timbre mod:Wheel>noise.level osc-env:osc2 osc-env:sub osc:osc1 osc:sub punch transient,mod:Vel>filt.cutoff mod:Vel>osc1.level osc:osc2,
+Mirrored Flame,vintage-poly/mirrored-flame.json,LEAD,Vintage,92.0,92.0,1.506,1,1,1,fx:delay,osc:osc1,
+Wooden Flute,vintage-mono/wooden-flute.json,LEAD,Vintage,91.6,91.6,1.18,1,1,1,fx:delay glide,osc:osc1 osc:osc2,
+Polished Needle,vintage-mono/polished-needle.json,LEAD,Vintage,91.5,91.5,1.18,1,1,1,fx:delay,mod:Vel>filt.cutoff osc:osc1 osc:osc2,
+Skipping Stone,vintage-mono/skipping-stone.json,LEAD,Vintage,84.4,90.0,1.18,1,1,1,fx:delay glide,filter-env osc:osc1,4
+Slinky Saw,vintage-poly/slinky-saw.json,LEAD,Vintage,88.9,88.9,1.0,1,1,1,fx:delay glide,filter-env osc:osc1,
+Squealing Hinge,vintage-mono/squealing-hinge.json,LEAD,Vintage,80.4,87.9,1.333,1,1,1,glide,amp-decay filter-env fx:drive osc:sub,0
+Wandering Kite,vintage-mono/wandering-kite.json,LEAD,Vintage,87.9,87.9,1.333,1,1,1,glide,amp-decay filter-env osc:osc1 osc:osc2 osc:sub,
+Shivering Birch,vintage-mono/shivering-birch.json,LEAD,Vintage,82.1,87.1,1.313,1,1,1,,filter osc:osc1,4
+Breath Flute,signature/breath-flute.json,LEAD,Signature,70.7,86.7,1.333,2,0,1,fx:delay+reverb voice.spread,filter osc:osc1 osc:osc2,95
+Sync Razor,signature/sync-razor.json,LEAD,Signature,76.8,86.6,1.42,1,1,1,fx:delay+reverb glide osc:sub,osc:osc2,15
+Digital Solo,synthpop/digital-solo.json,LEAD,Synthpop,72.1,86.6,1.18,1,1,1,fx:vintage+delay+reverb mod:Wheel>lfo1.depth,mod:Vel>osc.pos osc:osc1,75 143
+Barroom Hammers,vintage-mono/barroom-hammers.json,LEAD,Vintage,86.5,86.5,1.313,1,1,1,fx:delay osc:sub,filter-env osc:osc1 osc:osc2,
+Hazelnut Saw,vintage-poly/hazelnut-saw.json,LEAD,Vintage,85.1,85.1,1.0,2,0,1,fx:delay osc:sub,filter-env osc:osc1,
+Mellow Bugle,vintage-poly/mellow-bugle.json,LEAD,Vintage,85.1,85.1,1.0,1,1,1,fx:delay glide osc:sub,filter-env osc:osc1,
+Lazy Slide,vintage-mono/lazy-slide.json,LEAD,Vintage,84.6,84.6,1.18,1,1,1,FM fx:delay glide osc:sub,osc:osc1 osc:osc2,
+Vinyl Swell,vintage-mono/vinyl-swell.json,LEAD,Vintage,84.3,84.3,1.0,1,1,1,fx:delay osc:sub,filter-env osc:osc1,
+Steady Arrow,vintage-poly/steady-arrow.json,LEAD,Vintage,84.3,84.3,1.0,2,0,1,,filter-env osc:osc1 osc:sub,
+Split Filter Duo,signature/split-filter-duo.json,LEAD,Signature,84.0,84.0,1.707,2,0,1,fx:delay+reverb mod:Lfo1>filt.cutoff,filter-env filter2 osc:osc2,
+Ripping Silk,vintage-mono/ripping-silk.json,LEAD,Vintage,83.1,83.1,1.267,1,1,1,fx:delay mod:Env2>pitch,filter-env osc:osc2 osc:sub,
+Quivering Breath,vintage-mono/quivering-breath.json,LEAD,Vintage,83.0,83.0,1.18,1,1,1,FM fx:delay glide mod:Env2>pitch osc:sub,osc:osc1 osc:osc2,
+Sampler Drift,signature/sampler-drift.json,LEAD,Signature,69.3,82.9,1.68,1,1,0,fx:chorus+delay+reverb glide,osc:osc1 osc:osc2,50
+Cloaked Tenor,vintage-poly/cloaked-tenor.json,LEAD,Vintage,82.3,82.3,1.0,1,1,0,filter-env fx:chorus+delay glide osc:sub,osc:osc1,
+Sawtooth Singer,vintage-poly/sawtooth-singer.json,LEAD,Vintage,82.2,82.2,1.0,1,1,0,fx:delay,filter-env osc:osc1 osc:sub,
+Comb Pipe,signature/comb-pipe.json,LEAD,Signature,70.9,82.1,1.3,2,0,0,filter fx:delay+reverb voice.spread,osc:osc1 osc:osc2,101
+Papery Edge,vintage-mono/papery-edge.json,LEAD,Vintage,81.7,81.7,1.4,1,1,0,fx:delay glide,filter-env osc:osc1 osc:osc2 osc:sub,
+Hooked Edge,vintage-mono/hooked-edge.json,LEAD,Vintage,81.4,81.4,1.267,1,1,0,fx:delay glide mod:Env2>pitch,filter-env osc:osc2 osc:sub,
+Gray Scan Glass,signature/gray-scan-glass.json,LEAD,Signature,65.8,81.2,1.686,2,0,0,fx:chorus+delay+reverb osc:osc2,osc:osc1,162
+Razor Spire,vintage-poly/razor-spire.json,LEAD,Vintage,81.0,81.0,1.0,2,0,0,filter-env glide,osc:osc1,
+Locked Orbit,vintage-mono/locked-orbit.json,LEAD,Vintage,80.5,80.5,1.4,1,1,0,FM fx:delay glide mod:Env2>pitch,filter-env osc:osc1 osc:osc2 osc:sub,
+Blazing Edge,vintage-poly/blazing-edge.json,LEAD,Vintage,80.5,80.5,1.0,2,0,0,fx:chorus+delay,osc:osc1,
+Hyperwide Saw,signature/hyperwide-saw.json,LEAD,Signature,73.4,80.1,1.926,2,0,0,fx:chorus+delay+reverb osc2-unison,filter-env osc:osc1,21
+Thin Ribbon,vintage-mono/thin-ribbon.json,LEAD,Vintage,79.9,79.9,1.0,1,1,0,fx:delay glide,filter-env osc:osc1,
+Off-Octave Sync,nordic/off-octave-sync.json,LEAD,Nordic,73.7,79.3,1.267,1,1,0,fx:delay+reverb glide mod:Lfo2>sync mod:Vel>sync mod:Wheel>osc.pos,filter-env mod:Vel>filt.cutoff osc:osc2 osc:sub,118
+Bleep Hook,synthpop/bleep-hook.json,LEAD,Synthpop,79.0,79.0,1.18,1,1,0,fx:delay+reverb mod:Env3>filt.cutoff mod:Vel>filt.reso osc-env:sub,mod:Vel>filt.cutoff mod:Vel>osc2.level osc:osc1 osc:osc2,
+Spring Snap Lead,synthpop/spring-snap-lead.json,LEAD,Synthpop,68.4,78.8,1.287,1,1,0,fx:chorus+reverb mod:Lfo1>filt.cutoff osc-env:sub punch transient,fx:drive mod:Vel>filt.cutoff osc:osc1 osc:sub,26 119
+Mournful Wail,vintage-poly/mournful-wail.json,LEAD,Vintage,78.8,78.8,1.0,1,1,0,fx:delay glide,amp-decay filter-env osc:osc1,
+Ring Hornet,signature/ring-hornet.json,LEAD,Signature,74.3,78.5,1.586,1,1,0,fx:delay+reverb glide osc:osc2,osc:sub,3
+Honey Portamento,signature/honey-portamento.json,LEAD,Signature,77.4,77.4,1.313,1,1,0,fx:chorus+delay+reverb glide,filter-env osc:osc1 osc:osc2,
+Torchlit Voice,vintage-poly/torchlit-voice.json,LEAD,Vintage,77.2,77.2,1.0,1,1,0,fx:delay glide osc:sub,filter-env osc:osc1,
+Straight Riff Lead,synthpop/straight-riff-lead.json,LEAD,Synthpop,69.0,76.8,1.18,1,1,0,fx:phaser+reverb glide mod:Wheel>lfo1.depth osc-env:osc2 osc-env:sub,filter-env mod:Vel>osc.pos osc:osc1 osc:osc2 osc:sub,133
+Mask Stutter,signature/mask-stutter.json,LEAD,Signature,67.7,76.7,1.18,1,1,0,fx:delay+reverb mod:S&H>osc1.mask osc:osc1,osc:osc2 osc:sub,146
+Tarnished Horn,vintage-mono/tarnished-horn.json,LEAD,Vintage,70.0,76.1,1.586,1,1,0,mod:Env2>pitch,amp-decay amp-release filter filter-env fx:drive mod:Wheel>filt.cutoff osc:osc1 osc:sub,4
+Serrated Cry,vintage-mono/serrated-cry.json,LEAD,Vintage,75.6,75.6,1.267,1,1,0,fx:delay mod:Env2>pitch,filter-env mod:Vel>filt.cutoff osc:osc2 osc:sub,
+Byte Hero,signature/byte-hero.json,LEAD,Signature,75.2,75.2,1.18,1,1,0,fx:delay+reverb glide mod:Vel>osc2.timbre osc:osc2,osc:osc1,
+Phase Tear,signature/phase-tear.json,LEAD,Signature,74.4,74.4,1.62,2,0,0,fx:chorus+delay+reverb mod:Lfo1>osc1.pdShape,osc:osc1 osc:osc2,
+Reso Step Wah,signature/reso-step-wah.json,LEAD,Signature,72.9,72.9,1.18,1,1,0,fx:delay+reverb mod:S&H>osc.pdAmount osc2-unison,osc:osc1 osc:osc2,
+Gnarled Snarl,vintage-poly/gnarled-snarl.json,LEAD,Vintage,72.9,72.9,1.506,1,1,0,filter-env fx:chorus+delay glide osc:sub,osc:osc1,
+Algo Talker,signature/algo-talker.json,LEAD,Signature,61.6,67.8,1.18,1,1,0,fx:chorus+delay+reverb glide mod:Env2>osc1.timbre mod:Lfo2>osc1.morph mod:Lfo3>osc1.timbre osc2-unison osc:osc1 voice.spread,osc:osc2,52
+Horror Vocoder,nordic/horror-vocoder.json,LEAD,Nordic,62.2,62.2,1.313,1,1,0,filter fx:delay+reverb glide mod:AT>osc2.morph mod:Lfo1>filt.vowel mod:Lfo2>osc.pos mod:Vel>filt.vowel mod:Wheel>filt.vowel osc-env:osc2 osc:osc2,fx:drive mod:Vel>osc2.level osc:osc1,
+Phase Whistle,techno/phase-whistle.json,LEAD,Techno,61.0,61.0,1.18,1,1,0,fx:delay+reverb glide mod:AT>osc2.level mod:Env3>noise.level mod:Lfo1>osc2.level mod:Wheel>osc.pdAmount osc-env:osc2,mod:Vel>filt.cutoff mod:Vel>osc.pdAmount osc:osc1 osc:osc2 osc:sub,
+Dust Hoover,signature-wave/dust-hoover.json,LEAD,Signature,60.7,60.7,1.686,1,1,0,fold fx:chorus+delay+reverb glide mod:AT>unisonDetune mod:Env3>noise.level mod:Env3>pitch mod:Vel>fold.amount mod:Wheel>fold.amount osc2-unison,filter-env fx:drive mod:Vel>filt.cutoff osc:osc1 osc:osc2 unison,
+Reed Whistle,nordic/reed-whistle.json,LEAD,Nordic,56.9,56.9,1.18,1,1,0,fx:chorus+delay+reverb glide mod:AT>lfo1.depth mod:Env2>noise.level mod:Vel>sub.timbre mod:Wheel>lfo1.depth osc-env:sub osc:sub,fx:drive mod:Vel>filt.cutoff mod:Vel>osc.pdAmount mod:Vel>osc1.level osc:osc1 osc:osc2,
+Pitched Voice Lead,nordic/pitched-voice-lead.json,LEAD,Nordic,56.1,56.1,1.686,1,1,0,filter fx:chorus+delay+reverb glide mod:AT>lfo2.depth mod:Env2>filt.vowel mod:Lfo1>filt.vowel mod:Step>filt.vowel mod:Vel>osc2.timbre mod:Wheel>lfo2.depth osc:osc2 osc:sub,mod:Vel>osc2.level osc:osc1,
+Formant Eighths,synthpop/formant-eighths.json,LEAD,Synthpop,50.6,50.6,1.18,1,1,0,filter fx:comp+chorus+reverb mod:AT>filt.reso mod:Lfo1>osc1.pw mod:Step>filt.vowel mod:Step>osc2.harmonics mod:Vel>filt.vowel mod:Wheel>step.depth osc-env:osc2 osc-env:sub osc:osc2 voice.spread,mod:Vel>filt.cutoff mod:Vel>osc1.level mod:Vel>osc2.level osc:osc1 osc:sub,
+Inhaling Wave,vintage-poly/inhaling-wave.json,PAD,Vintage,88.8,88.8,1.0,4,0,1,fx:delay,filter-env osc:osc1,
+Damped Strum,vintage-poly/damped-strum.json,PAD,Vintage,83.7,83.7,1.0,4,0,1,fx:chorus+delay,filter-env osc:osc1 osc:sub,
+Soft Current,vintage-poly/soft-current.json,PAD,Vintage,82.7,82.7,1.0,4,0,1,fx:chorus,osc:osc1,
+Gradient Wash,vintage-poly/gradient-wash.json,PAD,Vintage,82.2,82.2,1.0,4,0,1,fx:delay,filter-env osc:osc1 osc:sub,
+Midnight Bloom,vintage-poly/midnight-bloom.json,PAD,Vintage,81.9,81.9,1.0,4,0,1,fx:chorus+delay,filter-env osc:osc1 osc:sub,
+Silt Drone,signature/silt-drone.json,PAD,Signature,76.6,80.0,1.48,3,0,1,cost:unison width fx:chorus+reverb osc2-unison osc:osc2,,190
+Violet Haze,vintage-poly/violet-haze.json,PAD,Vintage,80.0,80.0,1.0,4,0,1,fx:chorus+delay,osc:osc1,
+Split Filter Expanse,signature/split-filter-expanse.json,PAD,Signature,74.7,79.7,1.434,3,0,1,cost:unison width fx:chorus+reverb+eq lfo-phase-spread,filter2 osc:osc1 osc:osc2,131
+Gossamer Strings,vintage-poly/gossamer-strings.json,PAD,Vintage,79.6,79.6,1.0,4,0,1,fx:chorus,filter-env osc:osc1,
+Rain Corridor,vintage-poly/rain-corridor.json,PAD,Vintage,79.4,79.4,1.0,4,0,1,fx:delay,filter-env osc:osc1,
+Cushioned Jab,vintage-poly/cushioned-jab.json,PAD,Vintage,79.1,79.1,1.0,4,0,0,fx:chorus+delay,osc:osc1,
+Stereo Horizon,signature/stereo-horizon.json,PAD,Signature,69.8,78.4,1.566,3,0,0,cost:unison width fx:chorus+reverb+eq osc2-unison,filter-env osc:osc2 unison,18
+Fern Canopy,vintage-poly/fern-canopy.json,PAD,Vintage,78.0,78.0,1.0,4,0,0,fx:chorus+delay,filter-env osc:osc1,
+Whispering Gallery,vintage-poly/whispering-gallery.json,PAD,Vintage,78.0,78.0,1.0,4,0,0,fx:chorus+delay osc:sub,osc:osc1,
+Broken Memory,signature/broken-memory.json,PAD,Signature,77.8,77.8,1.62,3,0,0,fx:chorus+reverb mod:Lfo1>conv.bits osc2-unison osc:osc2,osc:osc1,
+Dampened Pulse,vintage-poly/dampened-pulse.json,PAD,Vintage,76.3,76.3,1.0,4,0,0,fx:chorus+delay,filter-env osc:osc1 osc:sub,
+Gray Code Halo,signature/gray-code-halo.json,PAD,Signature,67.6,76.2,1.18,4,0,0,fx:chorus+reverb mod:Step>osc1.mask osc2-unison osc:osc1 voice.spread,osc:osc2,142
+Aurora Fade,vintage-poly/aurora-fade.json,PAD,Vintage,75.9,75.9,1.0,4,0,0,fx:chorus+delay glide,filter-env osc:osc1,
+Helium Choir,vintage-poly/helium-choir.json,PAD,Vintage,75.5,75.5,1.0,4,0,0,fx:chorus+delay,amp-decay filter-env osc:osc1 osc:sub,
+Aurora Scan,nordic/aurora-scan.json,PAD,Nordic,62.4,74.7,1.453,3,0,0,fx:phaser+reverb+comp mod:AT>osc2.level mod:Lfo2>xmod.ring osc-env:sub,filter-env mod:Vel>osc2.level osc:sub,69 190
+Oxide Strings,signature/oxide-strings.json,PAD,Signature,68.7,74.7,1.5,3,0,0,cost:unison width fx:chorus+delay+reverb mod:Lfo2>filt.cutoff,filter-env osc:osc1 osc:osc2,17
+Hollow Cathedral,vintage-poly/hollow-cathedral.json,PAD,Vintage,74.4,74.4,1.0,4,0,0,filter-env fx:chorus+delay,amp-release osc:osc1 osc:sub,
+Phase Bloom,signature/phase-bloom.json,PAD,Signature,72.9,72.9,1.62,3,0,0,fx:chorus+reverb+eq mod:Env3>osc.pdAmount mod:Lfo2>osc1.pdShape,osc:osc1 osc:osc2,
+Phase Twilight,signature/phase-twilight.json,PAD,Signature,71.3,71.3,1.566,3,0,0,cost:unison width fx:chorus+delay+reverb mod:Lfo3>osc2.pdShape osc2-unison,osc:osc1 osc:osc2,
+Chorus Pulse Pad,synthpop/chorus-pulse-pad.json,PAD,Synthpop,71.2,71.2,1.333,3,0,0,fx:chorus+reverb lfo-phase-spread mod:Vel>osc1.pwm osc-env:osc2 osc-env:sub voice.spread,filter-env mod:Vel>filt.cutoff mod:Vel>osc2.level osc:osc1,
+Machine Strings,techno/machine-strings.json,PAD,Techno,61.3,69.7,1.566,3,0,0,cost:unison width fx:vintage+chorus+reverb lfo-phase-spread mod:Wheel>osc2.level osc-env:sub,filter-env mod:Vel>filt.cutoff mod:Vel>osc2.level osc:osc2 osc:sub,8
+Evening Bed,nordic/evening-bed.json,PAD,Nordic,59.9,69.0,1.62,3,0,0,fx:chorus+delay+reverb lfo-phase-spread mod:Wheel>osc1.pwm osc-env:osc2 osc-env:sub,filter-env mod:Vel>filt.cutoff osc:osc1 osc:sub,45
+Dark Room Pad,techno/dark-room-pad.json,PAD,Techno,67.8,67.8,1.62,3,0,0,fx:chorus+reverb+eq lfo-phase-spread mod:Lfo2>osc2.pwm osc-env:sub,filter-env mod:Vel>filt.cutoff mod:Vel>osc2.level osc:osc1 osc:osc2 osc:sub,
+Reel Strings,nordic/reel-strings.json,PAD,Nordic,60.1,66.9,1.413,3,0,0,cost:unison width fx:vintage+chorus+reverb+comp lfo-phase-spread mod:Wheel>osc2.pwm osc-env:osc2 osc-env:sub,filter-env mod:Vel>filt.cutoff osc:osc1 osc:osc2 osc:sub,47
+Observatory Chords,nordic/observatory-chords.json,PAD,Nordic,65.5,65.5,1.413,3,0,0,cost:unison width fx:chorus+delay+reverb lfo-phase-spread mod:AT>osc1.harmonics mod:Vel>env2.amt osc-env:osc2,filter-env mod:Vel>filt.cutoff osc:osc1 osc:osc2 osc:sub,
+Dub Bed,techno/dub-bed.json,PAD,Techno,64.1,64.1,1.62,3,0,0,fx:delay+reverb+reverb mod:Lfo2>osc1.morph mod:Lfo2>osc2.timbre mod:Wheel>filt.reso,filter-env mod:Lfo1>filt.cutoff mod:Vel>filt.cutoff mod:Vel>osc2.level osc:osc1 osc:osc2 osc:sub,
+Preset Voice Pad,synthpop/preset-voice-pad.json,PAD,Synthpop,55.1,60.5,1.18,4,0,0,filter fx:chorus+phaser+reverb lfo-phase-spread mod:AT>osc2.level mod:Env3>noise.level mod:Lfo2>filt.vowel mod:Vel>filt.vowel osc-env:osc2 osc-env:sub osc2-unison voice.spread,osc:osc1 osc:sub,113
+Cipher Organ,nordic/cipher-organ.json,PAD,Nordic,56.9,56.9,1.5,3,0,0,cost:unison width fx:chorus+reverb+comp mod:AT>osc2.level mod:Vel>osc2.mask mod:Wheel>osc1.mask osc:osc1 osc:osc2,filter-env mod:Vel>osc2.level osc:sub,
+Deep Moan,nordic/deep-moan.json,PAD,Nordic,52.1,54.9,1.62,3,0,0,filter fx:vintage+comp+reverb mod:AT>filt.vowel mod:Env2>filt.vowel mod:Lfo2>sub.harmonics mod:Vel>filt.vowel mod:Wheel>osc.pdAmount osc-env:osc2 osc-env:sub osc:sub,mod:Vel>osc.pdAmount osc:osc1,121
+Kettle Roll,vintage-poly/kettle-roll.json,PERC,Vintage,89.1,89.1,1.506,1,1,0,fx:delay,osc:sub,
+Room Open Hat,synthpop/room-open-hat.json,PERC,Synthpop,66.1,78.2,1.313,2,0,0,fx:reverb,filter mod:Vel>filt.cutoff mod:Vel>osc.pos osc:osc2,80
+Iron Cowbell,signature-wave/iron-cowbell.json,PERC,Signature,68.4,68.4,1.313,2,0,0,fx:comp+reverb mod:AT>filt.reso mod:Wheel>amp.d osc-env:osc1 osc-env:osc2 osc-env:sub osc:sub punch transient,filter-env mod:Vel>filt.cutoff osc:osc1 osc:osc2,
+Snap Snare,signature-wave/snap-snare.json,PERC,Signature,62.3,67.0,1.18,2,0,0,fx:comp+reverb mod:Env3>noise.level mod:Env3>pitch mod:Vel>sub.harmonics mod:Wheel>sub.morph osc-env:osc1 osc-env:osc2 osc:sub punch transient,mod:Vel>filt.cutoff osc:osc2,4
+Rumble Hit,signature-wave/rumble-hit.json,PERC,Signature,62.4,66.7,1.333,1,1,0,fx:reverb+schain+eq mod:Env3>pitch mod:Lfo1>filt.cutoff mod:Vel>conv.rate osc-env:osc2 osc-env:sub,osc:osc1 osc:sub,38
+Rim Click,signature-wave/rim-click.json,PERC,Signature,55.3,64.0,1.18,2,0,0,fx:comp+reverb mod:Env3>noise.level mod:Vel>filt.reso mod:Vel>osc1.timbre mod:Wheel>osc1.harmonics osc-env:osc2 osc-env:sub osc:osc1 punch transient,mod:Vel>osc2.level osc:sub,134
+Deep Kick,signature-wave/deep-kick.json,PERC,Signature,54.8,62.7,1.333,1,1,0,fx:comp+reverb mod:Env3>pitch mod:Vel>env3.amt mod:Vel>osc1.harmonics mod:Vel>osc1.timbre mod:Wheel>osc1.morph osc-env:osc2 osc-env:sub punch transient,amp-decay mod:Vel>filt.cutoff mod:Vel>osc2.level osc:osc1 osc:sub,132
+Worn Hat,nordic/worn-hat.json,PERC,Nordic,55.1,57.5,1.18,1,1,0,fx:era+reverb mod:AT>osc1.harmonics mod:Env3>noise.level mod:Vel>osc1.timbre mod:Wheel>osc1.morph osc-env:osc2 osc-env:sub osc:osc1 osc:sub punch transient,mod:Vel>osc2.level,65
+Punch Kick,signature-wave/punch-kick.json,PERC,Signature,55.7,55.7,1.18,1,1,0,fx:comp+reverb mod:AT>sub.level mod:Env3>pitch mod:Vel>fold.amount mod:Vel>osc1.harmonics mod:Vel>osc1.timbre mod:Wheel>osc1.morph osc-env:osc2 osc-env:sub punch transient,fx:drive mod:Vel>osc2.level osc:osc1 osc:osc2 osc:sub,
+Dewdrop Tap,vintage-mono/dewdrop-tap.json,PLUCK,Vintage,87.9,92.4,1.313,1,1,1,fx:delay,osc:osc1,4
+Backwards Harp,vintage-mono/backwards-harp.json,PLUCK,Vintage,89.7,89.7,1.333,1,1,1,mod:Env2>pitch,filter-env mod:Lfo2>filt.cutoff osc:osc1 osc:osc2,
+Gel Squelch,vintage-poly/gel-squelch.json,PLUCK,Vintage,89.2,89.2,1.0,3,0,1,fx:chorus+delay,osc:osc1,
+Ladder Ping,signature/ladder-ping.json,PLUCK,Signature,82.7,87.8,1.18,3,0,1,fx:delay+reverb punch transient voice.spread,filter-env osc:osc1,23
+Gray Scan Pluck,signature/gray-scan-pluck.json,PLUCK,Signature,77.3,86.8,1.686,2,0,1,fx:delay+reverb mod:Env3>osc.pos punch transient,osc:osc1 osc:osc2,152 196
+Parlour Harp,vintage-poly/parlour-harp.json,PLUCK,Vintage,86.5,86.5,1.0,3,0,1,,osc:osc1,
+Bamboo Chimes,vintage-mono/bamboo-chimes.json,PLUCK,Vintage,86.3,86.3,1.18,1,1,1,fx:delay osc:sub,filter-env osc:osc1 osc:osc2,
+Glaze Pluck,synthpop/glaze-pluck.json,PLUCK,Synthpop,76.0,84.0,1.18,3,0,1,fx:delay+reverb osc-env:osc2 osc-env:sub punch transient voice.spread,mod:Vel>osc.pos osc:osc1,140
+Chiseled Pluck,vintage-mono/chiseled-pluck.json,PLUCK,Vintage,80.7,80.7,1.4,1,1,0,fx:delay glide mod:Env2>pitch osc:sub,osc:osc1 osc:osc2,
+Felt Hammer,vintage-poly/felt-hammer.json,PLUCK,Vintage,80.3,80.3,1.0,3,0,1,fx:delay osc:sub,osc:osc1,
+Dewdrop Pluck,vintage-poly/dewdrop-pluck.json,PLUCK,Vintage,80.2,80.2,1.0,3,0,1,fx:chorus,amp-release osc:osc1,
+Raindrop Pluck,vintage-poly/raindrop-pluck.json,PLUCK,Vintage,79.9,79.9,1.0,3,0,0,filter-env fx:chorus+delay osc:sub,osc:osc1,
+Woody Pluck,synthpop/woody-pluck.json,PLUCK,Synthpop,67.1,76.8,1.313,3,0,0,fx:delay+reverb mod:Vel>punch.amount osc-env:osc1 osc-env:sub punch transient,filter filter-env mod:Vel>filt.cutoff mod:Vel>osc.pos,183 191
+Reso Pluck,synthpop/reso-pluck.json,PLUCK,Synthpop,71.8,75.8,1.18,3,0,0,fx:chorus+reverb osc-env:sub punch transient,filter-env mod:Vel>filt.cutoff osc:osc1,170
+Zap Pluck,techno/zap-pluck.json,PLUCK,Techno,66.7,72.5,1.18,3,0,0,fx:delay+reverb+comp mod:AT>filt.reso mod:Env2>osc2.level mod:Env3>osc.pdAmount mod:Env3>pitch mod:Lfo1>filt.cutoff mod:Wheel>osc.pdAmount osc-env:osc2 osc-env:sub,mod:Vel>filt.cutoff mod:Vel>osc.pdAmount mod:Vel>osc2.level osc:sub,13
+Folded Drop,nordic/folded-drop.json,PLUCK,Nordic,65.9,71.1,1.18,3,0,0,fold fx:delay+reverb mod:AT>osc2.level mod:Env2>pitch mod:Env3>fold.amount mod:Vel>fold.amount mod:Wheel>fold.amount osc-env:osc2 osc-env:sub osc:sub,fx:drive mod:Vel>osc2.level,73
+Split Filter Pluck,signature/split-filter-pluck.json,PLUCK,Signature,71.0,71.0,1.267,3,0,0,fx:delay+reverb mod:Env3>osc.pdAmount osc:osc2 punch transient,filter-env filter2 osc:osc1,
+Phase Ping Pluck,synthpop/phase-ping-pluck.json,PLUCK,Synthpop,62.3,70.0,1.18,1,1,0,fx:comp+delay+reverb osc-env:osc2 osc-env:sub punch transient,mod:Vel>osc.pdAmount mod:Vel>osc2.level osc:osc1 osc:sub,172
+Vowel Flick,signature/vowel-flick.json,PLUCK,Signature,55.3,67.3,1.686,2,0,0,filter fx:chorus+delay+reverb mod:Env3>filt.vowel mod:Env3>noise.level mod:Env3>osc.pos osc:osc2,osc:osc1,33
+Bit Snap,signature-pilot/bit-snap.json,PLUCK,Signature,61.3,65.5,1.18,3,0,0,fx:delay+reverb+eq mod:Env3>conv.bits mod:Env3>conv.rate mod:S&H>conv.rate mod:S&H>filt.cutoff mod:Vel>conv.bits mod:Wheel>conv.rate osc-env:osc2 punch transient,filter-env mod:Vel>filt.cutoff mod:Vel>osc.pdAmount mod:Vel>osc.pos mod:Vel>osc2.level osc:osc2,26
+Pane Kalimba,synthpop/pane-kalimba.json,PLUCK,Synthpop,58.1,64.5,1.18,3,0,0,fx:comp+reverb mod:Env2>noise.level mod:Env2>osc1.timbre mod:Vel>osc1.timbre osc-env:osc2 osc-env:sub osc:osc1 punch transient,mod:Vel>filt.cutoff mod:Vel>osc2.level osc:sub,61
+Fifth Bleep,techno/fifth-bleep.json,PLUCK,Techno,61.0,61.0,1.42,3,0,0,fx:delay+reverb+comp mod:AT>osc2.level mod:Env2>sync mod:Env3>pitch mod:Lfo1>sync mod:Vel>sync mod:Wheel>sync osc-env:osc2 osc-env:sub osc:sub,mod:Vel>filt.cutoff mod:Vel>osc.pdAmount mod:Vel>osc2.level osc:osc1 osc:osc2,
+Glass Harp,nordic/glass-harp.json,PLUCK,Nordic,55.9,55.9,1.18,3,0,0,fx:chorus+reverb+comp lfo-phase-spread mod:AT>osc2.level mod:Env2>osc2.timbre mod:Lfo1>sub.pos mod:Wheel>osc2.timbre osc-env:osc2 osc-env:sub osc:sub punch transient voice.spread,mod:Vel>filt.cutoff osc:osc1 osc:osc2,
+Grain Drip,techno/grain-drip.json,PLUCK,Techno,48.7,53.3,1.18,3,0,0,fx:delay+reverb+comp mod:AT>sub.level mod:Env2>osc2.level mod:Env3>osc.pdAmount mod:Env3>pitch mod:Lfo1>osc1.timbre mod:S&H>osc1.morph mod:S&H>pan mod:S&H>pitch mod:Vel>osc1.timbre mod:Wheel>osc1.harmonics osc-env:osc1 osc-env:osc2 osc-env:sub osc:osc1,filter-env mod:Vel>filt.cutoff mod:Vel>osc2.level osc:sub,172
+Tinsel Square,vintage-poly/tinsel-square.json,POLY,Vintage,93.4,93.4,1.0,4,0,1,fx:delay,osc:osc1,
+Cedar Spike,vintage-poly/cedar-spike.json,POLY,Vintage,91.3,91.3,1.0,4,0,1,fx:chorus,osc:osc1,
+Hive Buzz,vintage-poly/hive-buzz.json,POLY,Vintage,87.7,87.7,1.0,4,0,0,,osc:osc1,
+Muted Tines,vintage-mono/muted-tines.json,POLY,Vintage,87.0,87.0,1.18,1,1,1,osc:sub,amp-decay amp-release filter-env osc:osc1 osc:osc2,
+Satin Snap,vintage-poly/satin-snap.json,POLY,Vintage,86.5,86.5,1.0,4,0,1,,osc:osc1,
+Lamplight Hue,vintage-poly/lamplight-hue.json,POLY,Vintage,85.3,85.3,1.0,4,0,1,fx:chorus+delay,osc:osc1 osc:sub,
+Frost Blink,vintage-poly/frost-blink.json,POLY,Vintage,85.0,85.0,1.0,4,0,1,,filter-env osc:osc1,
+Keen Tick,vintage-poly/keen-tick.json,POLY,Vintage,84.5,84.5,1.0,4,0,1,,filter-env osc:osc1,
+Whisper Glass,vintage-poly/whisper-glass.json,POLY,Vintage,83.2,83.2,1.0,4,0,1,fx:chorus+delay,osc:sub,
+Taut Rope,vintage-poly/taut-rope.json,POLY,Vintage,82.2,82.2,1.0,4,0,1,fx:delay,filter-env osc:osc1,
+Lone Lantern,vintage-poly/lone-lantern.json,POLY,Vintage,81.9,81.9,1.0,4,0,1,fx:delay osc:sub,osc:osc1,
+Flutter Lattice,vintage-poly/flutter-lattice.json,POLY,Vintage,81.8,81.8,1.0,4,0,1,fx:chorus osc:sub,osc:osc1,
+Gumdrop Bounce,vintage-poly/gumdrop-bounce.json,POLY,Vintage,81.2,81.2,1.0,4,0,1,fx:chorus,filter-env osc:osc1 osc:sub,
+Hardline Jolt,vintage-poly/hardline-jolt.json,POLY,Vintage,79.6,79.6,1.0,4,0,1,glide osc:sub,filter-env osc:osc1,
+Brisk Stabs,vintage-mono/brisk-stabs.json,POLY,Vintage,79.5,79.5,1.313,1,1,1,fx:delay osc:sub,filter-env osc:osc1 osc:osc2,
+Neon Avenue,vintage-poly/neon-avenue.json,POLY,Vintage,78.0,78.0,1.0,4,0,1,fx:chorus+delay osc:sub,osc:osc1,
+Pulse Riff Chords,synthpop/pulse-riff-chords.json,POLY,Synthpop,69.9,77.9,1.333,3,0,1,fx:chorus+reverb lfo-phase-spread osc-env:osc2 osc-env:sub voice.spread,filter-env mod:Vel>filt.cutoff osc:osc1 osc:osc2 osc:sub,8
+Fountain Spray,vintage-poly/fountain-spray.json,POLY,Vintage,77.8,77.8,1.0,4,0,1,fx:chorus+delay,filter-env osc:osc1,
+Lime Spray,vintage-poly/lime-spray.json,POLY,Vintage,75.9,75.9,1.0,4,0,1,fx:chorus+delay osc:sub,filter-env osc:osc1,
+Fractured Hush,vintage-poly/fractured-hush.json,POLY,Vintage,75.7,75.7,1.0,4,0,0,filter-env fx:chorus+delay,osc:osc1 osc:sub,
+Bright Table Poly,synthpop/bright-table-poly.json,POLY,Synthpop,66.6,74.2,1.18,4,0,1,fx:chorus+delay+reverb lfo-phase-spread osc-env:osc2 osc-env:sub voice.spread,filter-env mod:Vel>filt.cutoff osc:osc1 osc:osc2 osc:sub,86
+Index Keys,synthpop/index-keys.json,POLY,Synthpop,60.2,74.1,1.18,4,0,1,fx:chorus+reverb lfo-phase-spread osc-env:osc2 osc-env:sub punch transient voice.spread,filter-env mod:Vel>osc.pos osc:osc1 osc:osc2 osc:sub,135
+Twin Oak Poly,nordic/twin-oak-poly.json,POLY,Nordic,72.2,72.2,1.62,3,0,0,fx:reverb+comp mod:Vel>osc1.timbre mod:Wheel>filt.reso,filter-env fx:drive mod:Vel>filt.cutoff mod:Vel>osc2.level osc:osc1 osc:osc2 osc:sub,
+Revival Chords,synthpop/revival-chords.json,POLY,Synthpop,65.7,71.8,1.546,3,0,0,cost:unison width fx:reverb+schain osc-env:osc2 osc-env:sub punch transient,filter filter-env mod:Vel>filt.cutoff osc:osc1 osc:osc2 osc:sub unison,116
+Wire Lullaby,vintage-poly/wire-lullaby.json,POLY,Vintage,71.3,71.3,1.0,4,0,0,filter-env fx:chorus+delay,amp-decay amp-release osc:osc1 osc:sub,
+Split Poly,signature-wave/split-poly.json,POLY,Signature,62.5,70.6,1.42,3,0,0,fx:delay+reverb lfo-phase-spread mod:AT>filt.reso mod:Lfo2>filt2.cutoff mod:Lfo3>filt.balance mod:Vel>filt.reso mod:Vel>filt2.drive mod:Wheel>filt.balance osc-env:osc2 voice.spread,filter-env fx:drive mod:Vel>filt.cutoff mod:Vel>osc.pos mod:Vel>osc1.level osc:osc1 osc:osc2,26
+Hollow Bounce,nordic/hollow-bounce.json,POLY,Nordic,69.2,69.2,1.62,3,0,0,fx:delay+reverb+schain mod:Env2>sub.pdAmount mod:Wheel>osc2.pwm osc-env:osc2,mod:Vel>filt.cutoff mod:Vel>osc2.level osc:osc1 osc:osc2 osc:sub,
+Chorus Chords,signature-wave/chorus-chords.json,POLY,Signature,67.8,67.8,1.333,3,0,0,fx:chorus+reverb lfo-phase-spread mod:Env3>noise.level mod:Vel>osc1.pwm mod:Wheel>lfo1.rate osc-env:osc2 osc-env:sub voice.spread,filter-env mod:Vel>filt.cutoff osc:osc1 osc:osc2 osc:sub,
+Cold Stack Chords,nordic/cold-stack-chords.json,POLY,Nordic,60.7,66.4,1.52,3,0,0,cost:unison width fx:chorus+phaser+reverb lfo-phase-spread mod:Wheel>osc1.uni.detune osc-env:osc2 osc-env:sub,filter-env fx:drive mod:Vel>filt.cutoff osc:osc1 osc:osc2 osc:sub unison,189
+Square March,signature-wave/square-march.json,POLY,Signature,52.1,61.7,1.546,3,0,0,cost:unison width fx:comp+chorus+delay+reverb lfo-phase-spread mod:Vel>conv.bits mod:Vel>env2.amt mod:Wheel>conv.rate osc-env:osc2 osc-env:sub punch transient,filter fx:drive osc:osc1 osc:sub,134
+Ribbon Poly,signature-wave/ribbon-poly.json,POLY,Signature,60.9,60.9,1.48,3,0,0,cost:unison width fx:comp+chorus+delay+reverb+eq lfo-phase-spread mod:Env3>noise.level mod:Vel>env2.amt mod:Vel>osc1.harmonics mod:Wheel>lfo1.rate osc-env:sub,filter-env mod:Vel>filt.cutoff osc:osc1 osc:osc2 osc:sub,
+Crystal Poly,signature-wave/crystal-poly.json,POLY,Signature,49.8,57.7,1.18,4,0,0,fx:chorus+delay+reverb lfo-phase-spread mod:AT>osc1.timbre mod:Env3>osc1.timbre mod:Vel>osc1.timbre mod:Wheel>lfo1.rate osc-env:osc1 osc-env:osc2 osc-env:sub osc2-unison osc:osc1 punch transient voice.spread,filter-env osc:sub,142
+Quill Run,vintage-poly/quill-run.json,SEQ,Vintage,84.8,84.8,1.0,2,0,1,fx:delay,osc:osc1,
+Bouncing Echo,vintage-poly/bouncing-echo.json,SEQ,Vintage,78.3,78.3,1.0,2,0,1,fx:delay osc:sub,filter-env osc:osc1,
+Copper Staircase,vintage-poly/copper-staircase.json,SEQ,Vintage,78.2,78.2,1.0,2,0,1,osc:sub,,
+Step Timbre,nordic/step-timbre.json,SEQ,Nordic,62.5,77.4,1.62,2,0,1,fx:delay+reverb+comp mod:Step>filt.cutoff mod:Step>osc.pos mod:Step>sub.mask mod:Wheel>step.depth,mod:Vel>filt.cutoff mod:Vel>osc2.level osc:osc1 osc:sub,70 95
+Carousel Loop,vintage-poly/carousel-loop.json,SEQ,Vintage,77.0,77.0,1.0,2,0,1,fx:chorus+delay,amp-decay osc:osc1,
+Acid Roll,techno/acid-roll.json,SEQ,Techno,70.0,74.2,1.287,1,1,1,fx:comp+delay+reverb mod:Lfo1>filt.reso mod:Lfo2>filt.cutoff mod:Step>filt.cutoff mod:Step>filt.drive mod:Step>level mod:Wheel>filt.reso,fx:drive mod:Lfo3>pitch mod:Vel>filt.cutoff osc:sub,22
+Polymeter,signature-wave/polymeter.json,SEQ,Signature,67.3,73.1,1.333,2,0,1,fx:comp+delay+reverb mod:AT>filt.reso mod:Lfo1>osc1.pw mod:Lfo2>env2.amt mod:Vel>env2.amt mod:Wheel>lfo1.depth osc-env:osc2 punch transient,mod:Vel>filt.cutoff mod:Vel>osc2.level osc:osc1 osc:sub,21
+Chorus Arp,synthpop/chorus-arp.json,SEQ,Synthpop,68.0,73.1,1.18,1,1,1,fx:chorus+delay+reverb mod:Step>pitch mod:Vel>osc1.sawMix osc-env:osc2 osc-env:sub punch transient,filter-env mod:Vel>filt.cutoff mod:Vel>osc.pos mod:Vel>osc2.level osc:osc1 osc:sub,78
+Chain Arp,synthpop/chain-arp.json,SEQ,Synthpop,67.6,72.7,1.333,1,1,1,fx:delay+reverb mod:Step>pitch osc-env:osc2 osc-env:sub punch transient,mod:Vel>filt.cutoff mod:Vel>osc.pos mod:Vel>osc2.level osc:osc1 osc:sub,126
+Loop Run,synthpop/loop-run.json,SEQ,Synthpop,68.5,72.5,1.18,1,1,1,fx:delay+reverb mod:AT>osc2.level mod:Lfo1>osc.pos mod:Vel>env2.amt osc-env:osc2 osc-env:sub punch transient,mod:Vel>filt.cutoff osc:osc2 osc:sub,98
+Machine Loop,signature-pilot/machine-loop.json,SEQ,Signature,72.4,72.4,1.586,2,0,0,fold fx:gamp+comp+delay+reverb mod:AT>filt.drive mod:Step>fold.amount mod:Step>xmod.ring mod:Vel>fold.amount mod:Wheel>step.depth punch transient,filter,
+Triplet Arp,synthpop/triplet-arp.json,SEQ,Synthpop,67.5,71.0,1.18,1,1,0,fx:delay+reverb mod:Step>pitch mod:Vel>osc1.timbre osc-env:sub punch transient,osc:osc1 osc:sub,142
+Pump Arp,synthpop/pump-arp.json,SEQ,Synthpop,65.6,70.8,1.313,1,1,0,fx:delay+reverb+schain mod:Step>pitch osc-env:osc2 osc-env:sub punch transient,mod:Vel>filt.cutoff mod:Vel>osc.pos osc:osc1 osc:sub,132
+Metal Clock,techno/metal-clock.json,SEQ,Techno,59.4,68.4,1.453,2,0,0,fx:comp+delay+reverb mod:AT>osc2.harmonics mod:Lfo2>osc.pos mod:Step>pitch mod:Vel>osc2.timbre mod:Wheel>xmod.ring osc:osc2 osc:sub voice.spread,mod:Vel>filt.cutoff mod:Vel>osc.pos,68
+Hypno Pulse,techno/hypno-pulse.json,SEQ,Techno,68.1,68.1,1.18,2,0,0,fx:delay+reverb mod:Lfo2>filt.cutoff mod:Step>filt.cutoff mod:Step>osc1.pw mod:Vel>osc1.pw mod:Wheel>filt.reso,mod:Vel>filt.cutoff osc:osc1 osc:osc2 osc:sub,
+Dotted Chords,techno/dotted-chords.json,SEQ,Techno,66.6,66.6,1.18,2,0,0,fx:delay+reverb mod:AT>filt.reso mod:Vel>osc1.timbre mod:Wheel>osc1.harmonics osc-env:sub voice.spread,mod:Vel>filt.cutoff mod:Vel>osc2.level osc:osc1 osc:osc2 osc:sub,
+Trigger Line,synthpop/trigger-line.json,SEQ,Synthpop,66.2,66.2,1.18,1,1,0,fx:delay+reverb mod:Step>pitch osc-env:osc2 osc-env:sub punch transient,filter-env mod:Vel>filt.cutoff mod:Vel>osc.pdAmount mod:Vel>osc2.level osc:osc1 osc:osc2 osc:sub,
+Tunnel Tick,techno/tunnel-tick.json,SEQ,Techno,65.8,65.8,1.18,2,0,0,fx:comp+reverb mod:Lfo2>filt.cutoff mod:Lfo3>filt.cutoff mod:Lfo3>osc.pdAmount mod:Step>level mod:Wheel>filt.reso,fx:drive mod:Vel>filt.cutoff mod:Vel>osc.pdAmount osc:osc1 osc:osc2 osc:sub,
+Up Down Arp,synthpop/up-down-arp.json,SEQ,Synthpop,65.0,65.0,1.18,1,1,0,fx:chorus+delay+reverb mod:Vel>env2.amt mod:Wheel>osc.pdAmount osc-env:osc2 osc-env:sub punch transient,mod:Vel>filt.cutoff mod:Vel>osc.pdAmount mod:Vel>osc2.level osc:osc1 osc:osc2,
+Bleep Run,nordic/bleep-run.json,SEQ,Nordic,58.5,61.8,1.18,1,1,0,fx:delay+reverb mod:AT>osc.pos mod:Step>osc.pdAmount mod:Step>sub.timbre mod:Wheel>sub.level osc-env:osc1 osc-env:osc2 osc-env:sub osc:sub punch transient,mod:Vel>osc.pdAmount mod:Vel>osc2.level osc:osc1,197
+Drawn Groove,signature-wave/drawn-groove.json,SEQ,Signature,55.6,61.6,1.686,2,0,0,amp.draw fx:vintage+delay+reverb mod:AT>osc2.harmonics mod:Lfo1>filt.cutoff mod:Lfo1>osc2.morph mod:Wheel>osc.pos osc-env:osc2 osc-env:sub osc:osc2 punch transient,mod:Vel>filt.cutoff osc:sub,178
+Swung Mallets,nordic/swung-mallets.json,SEQ,Nordic,57.1,60.3,1.18,2,0,0,fx:delay+reverb mod:AT>osc2.level mod:Env2>osc1.timbre mod:Vel>osc1.timbre mod:Wheel>osc1.morph osc-env:osc2 osc-env:sub osc:osc1 punch transient,fx:drive mod:Vel>filt.cutoff mod:Vel>osc2.level osc:sub,99
+Minor Climb,techno/minor-climb.json,SEQ,Techno,56.8,60.3,1.18,2,0,0,fx:delay+reverb+comp mod:AT>osc2.level mod:Lfo1>filt.cutoff mod:Lfo1>osc1.timbre mod:Lfo2>osc2.level mod:Lfo3>filt.cutoff mod:Lfo3>osc1.harmonics mod:Step>pitch mod:Vel>osc1.timbre mod:Wheel>osc1.timbre osc:osc1,mod:Vel>filt.cutoff osc:sub,116
+Rhythm Gate,techno/rhythm-gate.json,SEQ,Techno,60.2,60.2,1.18,2,0,0,fx:chorus+delay+reverb+comp mod:Lfo3>filt.cutoff mod:Lfo3>osc1.harmonics mod:Step>filt.cutoff mod:Step>level mod:Wheel>step.depth,mod:Vel>filt.cutoff osc:osc1 osc:osc2 osc:sub,
+Syllable Loop,techno/syllable-loop.json,SEQ,Techno,52.7,59.9,1.18,2,0,0,filter fx:delay+reverb mod:AT>osc1.morph mod:Step>filt.vowel mod:Step>osc.pos mod:Vel>filt.vowel mod:Vel>osc1.timbre mod:Wheel>filt.vowel osc:osc1 voice.spread,mod:Vel>filt.cutoff osc:sub,33
+Mask Stepper,signature-wave/mask-stepper.json,SEQ,Signature,53.8,53.8,1.18,2,0,0,fx:delay+reverb mod:Lfo1>filt.cutoff mod:Step>osc1.mask mod:Vel>conv.bits mod:Vel>osc1.maskEnv mod:Wheel>conv.rate osc-env:osc1 osc-env:osc2 osc:osc1 osc:osc2 punch transient,mod:Vel>filt.cutoff mod:Vel>osc.pos osc:sub,
+Glacier Stab,signature-pilot/glacier-stab.json,STAB,Signature,64.3,80.8,1.18,4,0,1,fx:delay+reverb+schain+eq mod:AT>osc.pos mod:Env3>noise.level voice.spread,mod:Vel>filt.cutoff mod:Vel>osc.pos,60 77
+Offbeat Stab,synthpop/offbeat-stab.json,STAB,Synthpop,75.7,79.1,1.18,4,0,1,fx:delay+reverb osc-env:osc2 osc-env:sub,mod:Vel>filt.cutoff osc:osc1 osc:sub,100
+Brass Push,nordic/brass-push.json,STAB,Nordic,73.2,77.3,1.62,3,0,1,fx:reverb+schain mod:Vel>osc1.timbre mod:Wheel>osc.pos,mod:Vel>filt.cutoff mod:Vel>osc2.level osc:osc1 osc:sub,124
+Gated Chord,signature-wave/gated-chord.json,STAB,Signature,56.9,73.1,1.413,3,0,1,amp.h cost:unison width fx:reverb+comp mod:Env3>noise.level mod:Wheel>amp.h osc-env:osc2 osc2-unison punch transient,filter-env fx:drive mod:Vel>filt.cutoff osc:osc1 osc:sub unison,29 48
+Sync Slam,techno/sync-slam.json,STAB,Techno,66.9,66.9,1.4,3,0,1,fx:comp+delay+reverb mod:Env2>osc1.semi mod:Lfo1>osc1.pw mod:Vel>sync mod:Wheel>osc1.semi voice.spread,filter fx:drive mod:Vel>filt.cutoff mod:Vel>osc1.level mod:Vel>osc2.level osc:osc1 osc:sub,
+Shatter Stab,signature-wave/shatter-stab.json,STAB,Signature,51.9,63.2,1.62,3,0,1,fx:delay+reverb+comp mod:AT>osc2.timbre mod:Env3>noise.level mod:Lfo2>osc2.morph mod:S&H>pan mod:Vel>osc2.timbre mod:Wheel>osc2.harmonics osc-env:osc1 osc-env:osc2 osc-env:sub osc:osc2,filter-env mod:Vel>filt.cutoff osc:sub,166
+Acid Chord,signature-wave/acid-chord.json,STAB,Signature,61.8,61.8,1.287,3,0,1,fx:comp+chorus+delay+reverb mod:AT>filt.reso mod:Vel>env2.amt mod:Vel>filt.reso mod:Vel>osc1.timbre osc-env:sub osc:osc1 osc:sub punch transient,fx:drive mod:Vel>filt.cutoff mod:Wheel>filt.cutoff,
+Dub Chamber,signature-wave/dub-chamber.json,STAB,Signature,61.4,61.4,1.333,3,0,1,fx:delay+reverb mod:Env3>noise.level mod:Vel>env2.amt mod:Vel>osc1.timbre mod:Wheel>filt.reso osc-env:osc2 osc-env:sub osc:osc1,fx:drive mod:Vel>filt.cutoff osc:osc2 osc:sub,
+Decimate Stab,signature-pilot/decimate-stab.json,STAB,Signature,57.2,60.0,1.527,3,0,1,fx:reverb mod:AT>conv.rate mod:Lfo3>conv.loopErr mod:S&H>conv.bits mod:S&H>conv.rate mod:Vel>conv.bits mod:Vel>osc1.timbre mod:Wheel>grit.amount osc-env:sub osc2-unison osc:osc1 punch transient,fx:drive mod:Vel>filt.cutoff mod:Vel>osc.pos mod:Vel>osc1.level,143
+Minor Hit,signature-wave/minor-hit.json,STAB,Signature,59.7,59.7,1.413,3,0,1,cost:unison width fx:comp+chorus+reverb+eq lfo-phase-spread mod:AT>osc1.timbre mod:Vel>env2.amt mod:Vel>osc1.timbre osc-env:osc2 osc-env:sub osc:osc1 punch transient,fx:drive mod:Vel>filt.cutoff mod:Vel>osc2.level osc:osc2,
+Anvil Stab,signature-wave/anvil-stab.json,STAB,Signature,48.1,57.0,1.48,3,0,0,cost:unison width fx:gamp+reverb+comp mod:AT>filt.reso mod:Env3>pitch mod:Vel>osc2.timbre mod:Wheel>osc.pos osc-env:osc1 osc-env:osc2 osc-env:sub osc:osc2 punch transient,filter mod:Vel>filt.cutoff mod:Vel>osc.pos osc:sub,76
+Hoover Hit,signature-wave/hoover-hit.json,STAB,Signature,56.6,56.6,1.413,3,0,0,cost:unison width fold fx:chorus+reverb mod:AT>fold.amount mod:Env3>pitch mod:Lfo2>osc2.timbre mod:Vel>fold.amount mod:Wheel>osc1.uni.detune osc-env:osc2 osc-env:sub punch transient,fx:drive mod:Vel>filt.cutoff osc:osc1 osc:osc2 osc:sub unison,
+Mask Stab,signature-wave/mask-stab.json,STAB,Signature,52.0,52.0,1.18,4,0,0,fx:delay+reverb+comp mod:Lfo2>sub.pos mod:S&H>osc2.mask mod:Vel>conv.bits mod:Vel>osc1.mask mod:Vel>osc1.maskDecay mod:Vel>osc1.maskEnv mod:Vel>osc2.mask osc-env:osc2 osc-env:sub osc:osc1 osc:osc2 punch transient,mod:Vel>filt.cutoff mod:Vel>osc1.level mod:Vel>osc2.level osc:sub,
+Mirage Bloom,vintage-poly/mirage-bloom.json,TEXTURE,Vintage,84.7,84.7,1.0,3,0,1,fx:delay,amp-decay amp-release filter-env osc:osc1,
+Cassette Floor,synthpop/cassette-floor.json,TEXTURE,Synthpop,67.8,79.9,1.3,3,0,1,fx:vintage+reverb mod:Lfo2>filt2.cutoff mod:Vel>filt2.cutoff osc-env:osc1 osc-env:osc2,mod:Vel>filt.cutoff mod:Vel>osc1.level mod:Vel>osc2.level osc:noise,157
+Deep Rumble,signature-wave/deep-rumble.json,TEXTURE,Signature,72.1,76.5,1.566,3,0,1,cost:unison width fx:comp+phaser+reverb mod:Lfo2>noise.level mod:Wheel>sub.level,amp-release mod:Vel>filt.cutoff mod:Vel>osc.pos osc:osc2,186
+Reso Drone,signature-wave/reso-drone.json,TEXTURE,Signature,73.5,73.5,1.18,3,0,1,fx:phaser+reverb mod:AT>osc.pdAmount mod:Lfo2>osc1.pdShape mod:Wheel>osc1.pdShape,amp-release osc:osc1 osc:sub,
+Obsidian Fog,vintage-poly/obsidian-fog.json,TEXTURE,Vintage,73.5,73.5,1.0,3,0,1,fx:chorus+delay glide,amp-decay amp-release filter-env osc:osc1,
+Loop Erosion,signature-pilot/loop-erosion.json,TEXTURE,Signature,62.3,73.2,1.413,3,0,1,cost:unison width fx:phaser+delay+reverb+eq mod:AT>grit.amount mod:Env3>conv.bits mod:Env3>conv.drift mod:Env3>conv.loopErr mod:Env3>conv.rate mod:Vel>env3.amt mod:Wheel>conv.loopErr mod:Wheel>conv.rate,amp-release mod:Vel>filt.cutoff mod:Vel>osc1.level,32 186
+Mask Shimmer,signature-wave/mask-shimmer.json,TEXTURE,Signature,57.6,66.4,1.18,3,0,1,fx:chorus+reverb mod:AT>osc1.level mod:Step>osc1.mask mod:Wheel>step.rate osc-env:sub osc2-unison osc:osc1 voice.spread,amp-release mod:Vel>osc1.level osc:sub,50
+Phase Wind,synthpop/phase-wind.json,TEXTURE,Synthpop,60.4,66.4,1.18,3,0,1,fx:phaser+reverb mod:Lfo1>filt.cutoff osc-env:osc1 osc-env:osc2 osc:osc2,filter mod:Vel>filt.cutoff mod:Vel>osc1.level mod:Vel>osc2.level osc:noise,44
+Pipe Hum,techno/pipe-hum.json,TEXTURE,Techno,66.3,66.3,1.313,3,0,1,fx:reverb+eq mod:Lfo2>osc2.level mod:Vel>osc1.timbre mod:Wheel>filt.drive osc2-unison voice.spread,filter-env fx:drive mod:Vel>filt.cutoff osc:osc1 osc:osc2 osc:sub,
+Sunken,signature-wave/sunken.json,TEXTURE,Signature,53.7,65.8,1.413,3,0,1,cost:unison width fx:phaser+reverb mod:Lfo1>filt.cutoff mod:Lfo1>filt.morph mod:Lfo2>filt.cutoff mod:S&H>noise.level mod:Wheel>filt.morph osc-env:osc1 osc-env:osc2,filter mod:Vel>filt.cutoff mod:Vel>osc.pos osc:sub,108 110
+Radio Haze,techno/radio-haze.json,TEXTURE,Techno,61.5,65.4,1.18,3,0,0,fx:era+reverb+eq mod:Lfo1>level mod:S&H>conv.rate mod:S&H>osc1.mask mod:Vel>conv.bits mod:Wheel>osc.pos osc:osc1 osc:sub voice.spread,mod:Vel>filt.cutoff mod:Vel>osc.pos,158
+Cold Draft,techno/cold-draft.json,TEXTURE,Techno,50.6,64.1,1.42,3,0,0,fx:phaser+reverb+eq mod:Lfo1>filt.cutoff mod:Lfo2>filt.reso mod:Lfo3>pan mod:Wheel>osc2.level osc-env:osc2 voice.spread,filter-env mod:Lfo2>osc.pos mod:Vel>osc.pos osc:osc1 osc:osc2 osc:sub,159
+Metal Resonance,techno/metal-resonance.json,TEXTURE,Techno,54.4,61.7,1.333,3,0,0,fx:phaser+reverb+eq mod:AT>reson.amount mod:Key>reson.tune mod:Lfo2>osc.pdAmount mod:Vel>reson.amount mod:Wheel>filt.reso osc-env:osc1 osc-env:osc2 resonator voice.spread,mod:Vel>filt.cutoff mod:Vel>osc.pos osc:osc2 osc:sub,83
+Night Wind,signature-wave/night-wind.json,TEXTURE,Signature,53.7,59.9,1.18,3,0,0,fx:comp+phaser+reverb mod:AT>noise.level mod:Lfo1>filt.morph mod:Lfo2>osc1.timbre mod:Lfo3>pan mod:Vel>osc1.timbre mod:Wheel>osc1.level osc:osc1,filter mod:Lfo2>filt.cutoff mod:Vel>filt.cutoff osc:noise osc:sub,45
+Plate Rain,nordic/plate-rain.json,TEXTURE,Nordic,56.5,59.4,1.18,3,0,0,fx:reverb+comp lfo-phase-spread mod:AT>osc1.harmonics mod:Lfo2>osc1.timbre mod:S&H>osc2.level mod:S&H>sub.pdAmount mod:Vel>osc1.morph mod:Wheel>sh.rate osc:osc1 osc:sub voice.spread,,157
+Dust Bed,signature-wave/dust-bed.json,TEXTURE,Signature,51.8,57.2,1.5,3,0,0,cost:unison width fx:vintage+delay+reverb+eq mod:AT>osc2.level mod:Key>reson.tune mod:Lfo1>filt.cutoff osc-env:osc1 osc-env:osc2 resonator,mod:Vel>filt.cutoff mod:Vel>osc.pos mod:Vel>osc2.level mod:Wheel>filt.cutoff osc:noise osc:osc2 osc:sub,21
+Chorus Behind Walls,nordic/chorus-behind-walls.json,TEXTURE,Nordic,44.6,55.6,1.62,3,0,0,filter fx:vintage+phaser+comp+reverb mod:AT>osc.pos mod:Env2>filt.vowel mod:Lfo1>filt.vowel mod:Lfo2>osc2.harmonics mod:Vel>filt.vowel mod:Wheel>filt.vowel osc-env:osc2 osc-env:sub osc:osc2,amp-release mod:Vel>osc2.level osc:sub,35
+Read-Out Voices,synthpop/read-out-voices.json,TEXTURE,Synthpop,48.9,54.4,1.18,3,0,0,filter fx:delay+reverb mod:AT>filt.vowel mod:Step>filt.vowel mod:Step>level mod:Step>osc1.timbre mod:Step>sub.level mod:Vel>filt.vowel mod:Vel>osc1.morph mod:Wheel>step.depth osc-env:osc1 osc-env:osc2 osc-env:sub osc:osc1,mod:Vel>osc2.level osc:sub,52
+Ash Fall,techno/ash-fall.json,TEXTURE,Techno,52.9,52.9,1.18,3,0,0,fx:delay+reverb mod:AT>osc2.timbre mod:Lfo2>osc.pos mod:Lfo2>osc1.timbre mod:Lfo3>pan mod:S&H>osc2.morph mod:Vel>osc1.timbre mod:Vel>osc2.harmonics mod:Wheel>osc1.morph osc-env:osc2 osc:osc1 osc:osc2 osc:sub voice.spread,,
+Crowd Murmur,techno/crowd-murmur.json,TEXTURE,Techno,48.5,52.7,1.42,3,0,0,filter fx:chorus+reverb+eq mod:AT>filt.vowel mod:Lfo1>osc1.morph mod:Lfo2>filt.vowel mod:Lfo2>noise.level mod:Lfo3>pan mod:S&H>osc.pos mod:Vel>osc1.timbre mod:Wheel>noise.level osc-env:osc1 osc2-unison osc:osc1 voice.spread,mod:Vel>osc.pos osc:sub,32
+Phantom Choir,signature-wave/phantom-choir.json,TEXTURE,Signature,45.0,52.6,1.413,3,0,0,cost:unison width filter fx:chorus+reverb+eq mod:AT>filt.vowel mod:Lfo1>osc1.morph mod:Lfo2>filt.vowel mod:Vel>filt.vowel mod:Vel>osc1.timbre mod:Wheel>noise.level osc-env:osc1 osc-env:osc2 osc:osc1 osc:sub,amp-release mod:Lfo2>osc.pos,33

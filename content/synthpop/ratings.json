@@ -1,0 +1,309 @@
+{
+ "page": "dboy-synthpop",
+ "exported": "2026-10-27T16:27:40.187Z",
+ "rated": 50,
+ "of": 50,
+ "about": "The user's export of the synth pop listening page (v2). Rating 3 and above is built. 2026-10-27: the note 'The delay is a bit too high' on Arp Anthem and Echo Pluck was applied by lowering their delay send to about 70% (batch1.py); Chip Arp 80s and Bouncy Seq carry the note too but were rated 0 and stay out.",
+ "ratings": [
+  {
+   "name": "Moog Pop Bass",
+   "category": "BASS",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "FM Pop Bass",
+   "category": "BASS",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "Sequencer Root",
+   "category": "BASS",
+   "rating": 2,
+   "note": ""
+  },
+  {
+   "name": "Digital Piano",
+   "category": "KEYS",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Soft Sub Pop",
+   "category": "BASS",
+   "rating": 1,
+   "note": ""
+  },
+  {
+   "name": "Bouncy Square Bass",
+   "category": "BASS",
+   "rating": 3,
+   "note": ""
+  },
+  {
+   "name": "Analogue Pump",
+   "category": "BASS",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Sync Pop Lead",
+   "category": "LEAD",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "Saw Hook Lead",
+   "category": "LEAD",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "Square Hook Lead",
+   "category": "LEAD",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "FM Bell Lead",
+   "category": "LEAD",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "Mellotron Flute",
+   "category": "LEAD",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Brass Lead",
+   "category": "LEAD",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "Reed Lead",
+   "category": "LEAD",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Pulse Wide Lead",
+   "category": "LEAD",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Vox Lead",
+   "category": "LEAD",
+   "rating": 3,
+   "note": ""
+  },
+  {
+   "name": "Jupiter Strings",
+   "category": "PAD",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "Warm Poly Pad",
+   "category": "PAD",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "Choir Pad Pop",
+   "category": "PAD",
+   "rating": 3,
+   "note": ""
+  },
+  {
+   "name": "Glass Pad Pop",
+   "category": "PAD",
+   "rating": 3,
+   "note": ""
+  },
+  {
+   "name": "Ensemble Pad",
+   "category": "PAD",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Vowel Pad",
+   "category": "PAD",
+   "rating": 2,
+   "note": ""
+  },
+  {
+   "name": "Bright Pad",
+   "category": "PAD",
+   "rating": 3,
+   "note": ""
+  },
+  {
+   "name": "Juno Chords",
+   "category": "POLY",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "Pop Chord Stack",
+   "category": "POLY",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "Bright Poly",
+   "category": "POLY",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "Dream Poly",
+   "category": "POLY",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "DX E-Piano",
+   "category": "KEYS",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "DX Tine Piano",
+   "category": "KEYS",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Rhodes Pop",
+   "category": "KEYS",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Clav Pop",
+   "category": "KEYS",
+   "rating": 1,
+   "note": ""
+  },
+  {
+   "name": "Pop Organ",
+   "category": "KEYS",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Harpsichord Pop",
+   "category": "KEYS",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Juno Brass",
+   "category": "STAB",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "Orchestra Hit",
+   "category": "STAB",
+   "rating": 2,
+   "note": ""
+  },
+  {
+   "name": "Horn Stab Pop",
+   "category": "STAB",
+   "rating": 1,
+   "note": ""
+  },
+  {
+   "name": "Pop Stab",
+   "category": "STAB",
+   "rating": 1,
+   "note": ""
+  },
+  {
+   "name": "Brass Swell",
+   "category": "POLY",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "Arp Anthem",
+   "category": "SEQ",
+   "rating": 4,
+   "note": "The delay is a bit to high"
+  },
+  {
+   "name": "Chip Arp 80s",
+   "category": "SEQ",
+   "rating": 0,
+   "note": "The delay is a bit to high"
+  },
+  {
+   "name": "Pluck Poly Pop",
+   "category": "PLUCK",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "Marimba Pluck",
+   "category": "PLUCK",
+   "rating": 3,
+   "note": ""
+  },
+  {
+   "name": "Bouncy Seq",
+   "category": "SEQ",
+   "rating": 0,
+   "note": "The delay is a bit to high"
+  },
+  {
+   "name": "Kalimba Pluck",
+   "category": "PLUCK",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Glassy Pluck",
+   "category": "PLUCK",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Echo Pluck",
+   "category": "PLUCK",
+   "rating": 3,
+   "note": "The delay is a bit to high"
+  },
+  {
+   "name": "Wurly EP",
+   "category": "KEYS",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "FM Bell Pop",
+   "category": "BELL",
+   "rating": 3,
+   "note": ""
+  },
+  {
+   "name": "Vibes Pop",
+   "category": "BELL",
+   "rating": 2,
+   "note": ""
+  },
+  {
+   "name": "Bar Stack Bell",
+   "category": "BELL",
+   "rating": 1,
+   "note": ""
+  }
+ ]
+}

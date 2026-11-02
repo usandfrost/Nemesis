@@ -1,0 +1,13 @@
+base       text+data 406291  bss 17212
+delay      text+data 430211  bss 17220
+reverb     text+data 426747  bss 17220
+plate      text+data 411363  bss 17212
+delaycore  text+data 408867  bss 17212
+fdn        text+data 411339  bss 17212
+amp        text+data 431603  bss 17220
+chorus     text+data 412099  bss 17220
+comp       text+data 412971  bss 17220
+drive      text+data 419667  bss 17220
+phaser     text+data 438371  bss 17212
+proto      text+data 409555  bss 17404
+stock      text+data 411595  bss 21740

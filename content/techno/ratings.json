@@ -1,0 +1,303 @@
+{
+ "page": "dboy-techno",
+ "exported": "2026-10-27T16:22:29.466Z",
+ "rated": 49,
+ "of": 50,
+ "about": "The user's export of the techno/trance listening page (v2). Rating 3 and above is built. 2026-10-27: notes 'The delay is correct but the delay is too high volume' were applied by lowering each patch's delay send to about 55% (batch1.py); Offbeat Square Stab etc. below 3 stay out. One patch (not rated) is pending.",
+ "ratings": [
+  {
+   "name": "Rumble Low",
+   "category": "BASS",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Offbeat Roll",
+   "category": "BASS",
+   "rating": 1,
+   "note": ""
+  },
+  {
+   "name": "Acid Squelch",
+   "category": "BASS",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Acid Grind",
+   "category": "BASS",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Warehouse Sub",
+   "category": "BASS",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Industrial Fold",
+   "category": "BASS",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Pumping Square",
+   "category": "BASS",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Rave Bass Stab",
+   "category": "BASS",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Dub Techno Bass",
+   "category": "BASS",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Trance Pluck Arp",
+   "category": "SEQ",
+   "rating": 4,
+   "note": "The delay is correct but the delay is to high volume"
+  },
+  {
+   "name": "Gated Arp",
+   "category": "SEQ",
+   "rating": 4,
+   "note": "The delay is correct but the delay is to high volume"
+  },
+  {
+   "name": "Hypno Pulse Seq",
+   "category": "SEQ",
+   "rating": 4,
+   "note": "The delay is correct but the delay is to high volume"
+  },
+  {
+   "name": "Minimal Click",
+   "category": "SEQ",
+   "rating": 4,
+   "note": "The delay is correct but the delay is to high volume"
+  },
+  {
+   "name": "Detroit Seq",
+   "category": "SEQ",
+   "rating": 4,
+   "note": "The delay is correct but the delay is to high volume"
+  },
+  {
+   "name": "Chip Trance Arp",
+   "category": "SEQ",
+   "rating": 3,
+   "note": "The delay is correct but the delay is to high volume"
+  },
+  {
+   "name": "Metal Tick",
+   "category": "PLUCK",
+   "rating": 1,
+   "note": ""
+  },
+  {
+   "name": "Ring Pluck",
+   "category": "PLUCK",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Shatter Seq",
+   "category": "PLUCK",
+   "rating": 4,
+   "note": "The delay is correct but the delay is to high volume"
+  },
+  {
+   "name": "Acid Zap",
+   "category": "PLUCK",
+   "rating": 3,
+   "note": "The delay is correct but the delay is to high volume"
+  },
+  {
+   "name": "Noise Hat",
+   "category": "PLUCK",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Vocal Chop",
+   "category": "STAB",
+   "rating": 1,
+   "note": ""
+  },
+  {
+   "name": "Anthem Supersaw",
+   "category": "LEAD",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "Trance Pluck Lead",
+   "category": "LEAD",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "Acid Lead",
+   "category": "LEAD",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Sync Trance Lead",
+   "category": "LEAD",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "Square Anthem",
+   "category": "LEAD",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "Hoover Lead",
+   "category": "LEAD",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "Voice Lead",
+   "category": "LEAD",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "Rave Stab",
+   "category": "STAB",
+   "rating": 4,
+   "note": "The delay is correct but the delay is to high volume"
+  },
+  {
+   "name": "Hoover Stab",
+   "category": "STAB",
+   "rating": 2,
+   "note": "The delay is correct but the delay is to high volume"
+  },
+  {
+   "name": "Dub Chord",
+   "category": "STAB",
+   "rating": 2,
+   "note": "The delay is correct but the delay is to high volume"
+  },
+  {
+   "name": "Detroit Stab",
+   "category": "STAB",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Minor Stab",
+   "category": "STAB",
+   "rating": 4,
+   "note": "The delay is correct but the delay is to high volume"
+  },
+  {
+   "name": "Organ Stab",
+   "category": "STAB",
+   "rating": 4,
+   "note": "The delay is correct but the delay is to high volume"
+  },
+  {
+   "name": "Offbeat Square Stab",
+   "category": "STAB",
+   "rating": 1,
+   "note": ""
+  },
+  {
+   "name": "Trance Strings",
+   "category": "PAD",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "Dark Warehouse Pad",
+   "category": "PAD",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "Evolving Pad",
+   "category": "PAD",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "Detroit Pad",
+   "category": "PAD",
+   "rating": 4,
+   "note": ""
+  },
+  {
+   "name": "Choir Pad Trance",
+   "category": "PAD",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "Glass Pad Techno",
+   "category": "PAD",
+   "rating": 2,
+   "note": ""
+  },
+  {
+   "name": "Supersaw Stab",
+   "category": "STAB",
+   "rating": 4,
+   "note": "The delay is correct but the delay is to high volume"
+  },
+  {
+   "name": "Uplift Chords",
+   "category": "POLY",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "Open Hat",
+   "category": "PLUCK",
+   "rating": 4,
+   "note": "FX"
+  },
+  {
+   "name": "Noise Downlifter",
+   "category": "FX",
+   "rating": 5,
+   "note": ""
+  },
+  {
+   "name": "Swell Up",
+   "category": "FX",
+   "rating": 1,
+   "note": ""
+  },
+  {
+   "name": "Impact Boom",
+   "category": "FX",
+   "rating": 1,
+   "note": ""
+  },
+  {
+   "name": "Clap Burst",
+   "category": "FX",
+   "rating": 1,
+   "note": ""
+  },
+  {
+   "name": "Trance Bell",
+   "category": "BELL",
+   "rating": 3,
+   "note": ""
+  }
+ ]
+}

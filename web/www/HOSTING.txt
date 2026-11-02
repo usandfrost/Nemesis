@@ -1,0 +1,17 @@
+Nemesis website: a static site. Upload every file in this folder, keeping the folders as they are.
+No server program, database or backend is needed.
+
+The host must do two things:
+1. Serve over https.
+2. Send these two headers with every file:
+     Cross-Origin-Opener-Policy: same-origin
+     Cross-Origin-Embedder-Policy: require-corp
+
+Without those headers the start page and the preset librarian work, but Online Nemesis, the Tutorial and the preset editor's Hear it button do not: they show a message saying so.
+
+Netlify and Cloudflare Pages read the _headers file here. Apache reads .htaccess (mod_headers must be on).
+nginx, in the server block:
+    add_header Cross-Origin-Opener-Policy same-origin always;
+    add_header Cross-Origin-Embedder-Policy require-corp always;
+(.wasm must be served as application/wasm: nginx's own mime.types has done that since version 1.15.)
+Plain GitHub Pages cannot set headers, so Online Nemesis will not run there as it is.

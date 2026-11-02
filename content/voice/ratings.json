@@ -1,0 +1,15 @@
+{
+ "page": "dboy-voice",
+ "exported": "2026-10-28T05:23:19.341Z",
+ "rated": 7,
+ "of": 8,
+ "ratings": [
+  {"name": "Ah Pad", "category": "PAD", "rating": 4, "note": ""},
+  {"name": "Oo Pad", "category": "PAD", "rating": 4, "note": ""},
+  {"name": "Ee Pad", "category": "PAD", "rating": 2, "note": ""},
+  {"name": "Oh Pad", "category": "PAD", "rating": 4, "note": ""},
+  {"name": "Ay Pad", "category": "PAD", "rating": 2, "note": ""},
+  {"name": "Vowel Drift Pad", "category": "PAD", "rating": 4, "note": ""},
+  {"name": "Breathy Ah Pad", "category": "PAD", "rating": 2, "note": ""}
+ ]
+}

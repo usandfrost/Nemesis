@@ -1,0 +1,93 @@
+build: Real = float (firmware-like: NEMESIS_DSP_FLOAT, fast math, EXACT+APPROX, 8 voices)
+voice: plain 148.5 ns/sample, Classic24 177.0 ns, 4 plain voices 474.9 ns
+
+
+state memory by building block (prepare() allocations, this build's Real):
+  ReverbCore Room (4 lines, householder)                  167936 B  (164 KB)
+  ReverbCore Hall (8 lines, hadamard)                     376832 B  (368 KB)
+  ReverbCore Cathedral (16 lines)                        1179648 B  (1152 KB)
+  PlateReverbCore                                         196608 B  (192 KB)
+  SpringReverbCore                                         58752 B  (57 KB)
+  DelayCore, 4 s (upstream DelayEffect: x2 for Digital)    1048576 B  (1024 KB)
+  DelayCore, 2 s                                          524288 B  (512 KB)
+  DelayCore, 1.5 s                                        524288 B  (512 KB)
+  BbdDelayLine, 30 ms (one chorus voice-line; 32 are allocated)     10680 B  (10 KB)
+  Oversampler x2 (one)                                       540 B  (1 KB)
+  Oversampler x4 (one)                                       940 B  (1 KB)
+  Oversampler x8 (one)                                      1740 B  (2 KB)
+group       candidate                                                     ns/smp  voice-eq  tail ns   sizeof prepare B alloc/blk   peak
+
+DELAY       upstream Digital stereo (fb 40)                                   22.6     0.152     22.6     4184   9523632         0   0.95
+DELAY       upstream Digital + L/R width 50                                   22.6     0.152     22.6     4184   9523632         0   0.95
+DELAY       upstream Digital + mod 30 (varispeed)                             23.2     0.156     23.1     4184   9523632         0   0.96
+DELAY       upstream Ping-pong                                                21.4     0.144     22.5     4184   9523632         0   0.42
+DELAY       upstream Analog (BBD)                                             28.0     0.189     27.8     4184   9523632         0   0.85
+DELAY       upstream Tape (3 heads)                                           50.6     0.341     50.3     4184   9523632         0   0.43
+DELAY       upstream Multi-tap                                                20.7     0.139     20.7     4184   9523632         0   0.69
+DELAY       upstream Reverse                                                  24.0     0.161     24.0     4184   9523632         0   0.90
+DELAY       upstream DelayCore x2, 2 s (proposal)                             20.9     0.141     20.9      320   1048576         0   0.96
+DELAY       stock Delay (x2 = stereo)                                        4.5     0.030      4.5      128    768000         0   0.99
+DELAY       proto: small stereo delay (sketch)                               6.1     0.041      6.1      112   1048576         0   0.92
+DELAY       proto: small ping-pong (sketch)                                  6.1     0.041      6.1      112   1048576         0   0.83
+
+REVERB      upstream Room (4-line FDN + 8 ER taps)                            25.1     0.169     25.0     4800   2033728         0   0.34
+REVERB      upstream Hall (8-line FDN)                                        73.8     0.497     74.4     4800   2033728         0   0.52
+REVERB      upstream Plate (Dattorro)                                         43.7     0.295     43.6     4800   2033728         0   0.93
+REVERB      upstream Spring                                                  702.9     4.733    701.8     4800   2033728         0   0.34
+REVERB      upstream Shimmer (hall + pitch shift)                             86.4     0.582     86.4     4800   2033728         0   0.52
+REVERB      upstream Cathedral (16-line FDN + modal)                         176.3     1.187    178.0     4800   2033728         0   0.21
+REVERB      upstream Hall, mod 0                                              66.6     0.449     66.6     4800   2033728         0   0.51
+REVERB      stock Freeverb (mono in, haas stereo)                           12.9     0.087     13.0      424     71948         0   0.85
+REVERB      upstream PlateReverbCore alone, modulation OFF                    40.9     0.275     40.8      832         0         0   0.93
+REVERB      upstream PlateReverbCore alone (no mix/dry line)                  42.9     0.289     42.9      832    196608         0   0.92
+
+AMP         upstream Clean (2x os, 1 stage) + 1x12 cab                       226.3     1.524    187.5     3704     14040         0   0.69
+AMP         upstream Crunch (4x os, 2 stages) + 1x12 cab                     511.9     3.447    428.8     3704     14040         0   0.70
+AMP         upstream Lead (4x os, 3 stages) + 1x12 cab                       630.6     4.246    502.4     3704     14040         0   0.82
+AMP         upstream Hi-gain (8x os, 4 stages) + 1x12 cab                   1319.1     8.883   1073.7     3704     14040         0   1.19
+AMP         upstream Bass (4x os, 2 stages, xover) + 1x12 cab                608.8     4.099    492.1     3704     14040         0   0.77
+AMP         upstream Acoustic (linear) + 1x12 cab                             43.9     0.296     43.2     3704     14040         0   0.83
+AMP         upstream Crunch, cab Direct (no cabinet)                         500.5     3.370    417.6     3704     14040         0   0.27
+AMP         upstream Crunch + cab, oversample forced x1                      137.1     0.923    120.6     3704     14040         0   0.51
+AMP         upstream Crunch + cab, oversample forced x2                      279.4     1.881    223.5     3704     14040         0   0.51
+AMP         upstream Hi-gain + cab, oversample forced x2                     409.9     2.760    307.5     3704     14040         0   0.90
+AMP         upstream Hi-gain + cab, oversample forced x4                     750.6     5.055    576.9     3704     14040         0   0.91
+AMP         upstream Crunch + cab, bass/mid/treble knob moved every block (glides running)     631.2     4.250    546.8     3704     14040         0   0.50
+AMP         upstream Crunch + cab, cab mic switched every 8 blocks (corner glide)     605.4     4.077    521.4     3704     14040         0   0.50
+AMP         stock Overdrive (mono x2, cubic + biquad)                       15.3     0.103     14.7      120         0         0   0.56
+AMP         stock Distortion (mono x2, atan table + biquad)                 15.5     0.104     14.7      112         0         0   0.62
+AMP         proto: small amp, 2x os, mono-sum, cab (sketch)                 15.0     0.101     15.0      184         0         0   2.81
+
+CHORUS      upstream Chorus 3 voices                                          60.6     0.408     59.9     3960    344696         0   0.48
+CHORUS      upstream Flanger                                                  24.6     0.166     24.5     3960    344696         0   0.53
+CHORUS      upstream Ensemble 3 voices                                        60.0     0.404     59.9     3960    344696         0   0.48
+CHORUS      upstream Vibrato                                                  24.6     0.165     24.5     3960    344696         0   0.86
+CHORUS      upstream Chorus 2 voices                                          39.9     0.268     39.6     3960    344696         0   0.51
+CHORUS      upstream Chorus 1 voice                                           24.5     0.165     24.5     3960    344696         0   0.58
+CHORUS      upstream Chorus 3 voices, COLOUR 0 (no companding)                36.3     0.244     36.2     3960    344696         0   0.48
+CHORUS      upstream Chorus 2 voices, COLOUR 0 (no companding)                26.6     0.179     26.6     3960    344696         0   0.51
+CHORUS      upstream Ensemble 8 voices, mode Both (worst case)               218.3     1.470    217.5     3960    344696         0   0.46
+CHORUS      stock Chorus (2 voices, x2 = stereo)                            10.1     0.068     10.1      176     40000         0   0.87
+CHORUS      stock Flanger (x2 = stereo)                                      4.6     0.031      4.6     2064         0         0   0.84
+CHORUS      proto: small stereo chorus, 2 voices/ch, cubic (sketch)          9.0     0.061      9.0      112     16384         0   0.62
+CHORUS      upstream Phaser (default)                                         49.3     0.332     49.3     4608   9524056         0   0.90
+
+COMPRESSOR  upstream VCA                                                      50.1     0.337     15.2      352       352         0   1.00
+COMPRESSOR  upstream FET                                                      54.3     0.366     17.0      352       352         0   0.93
+COMPRESSOR  upstream Opto                                                     77.3     0.521     18.8      352       352         0   1.00
+COMPRESSOR  upstream Bus                                                      53.3     0.359     14.8      352       352         0   1.00
+COMPRESSOR  upstream Bus, sidechain HP 100 Hz, knee 6                         54.0     0.364     14.7      352       352         0   0.04
+COMPRESSOR  upstream Bus, saturation OFF                                      18.5     0.125     10.7      352       352         0   1.52
+COMPRESSOR  upstream VCA, saturation OFF                                      18.4     0.124     10.7      352       352         0   1.60
+COMPRESSOR  stock Compressor (mono x2, unlinked)                             9.9     0.067      4.2       56         0         0   0.68
+COMPRESSOR  proto: small linked compressor (sketch)                         14.0     0.094      8.5       40         0         0   1.14
+
+DRIVE       upstream Overdrive                                               118.8     0.800     96.5     5336      7216         0   0.17
+DRIVE       upstream Distortion                                              128.4     0.864    111.5     5336      7216         0   0.16
+DRIVE       upstream Fuzz                                                    205.6     1.384    211.2     5336      7216         0   0.15
+DRIVE       upstream BitCrush                                                  9.5     0.064      9.3     5336      7216         0   1.11
+DRIVE       upstream SampleRate                                                9.3     0.063      9.3     5336      7216         0   1.11
+DRIVE       upstream Saturate                                                118.6     0.799     96.5     5336      7216         0   0.21
+DRIVE       stock Overdrive (x2)                                             8.8     0.060      7.6      120         0         0   0.53
+DRIVE       stock Phaser (x2 = stereo)                                      20.9     0.141     21.7      152         0         0   1.39
+DRIVE       stock Bitcrusher (fold, 12 bit, 1/4 rate; x2)                    4.3     0.029      4.3       88         0         0   0.50

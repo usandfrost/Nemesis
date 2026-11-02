@@ -1,0 +1,15 @@
+# A first look at a freshly flashed board: it should be alive, answer keys, and draw. Run:  tools/board_script.py tools/board/smoke.txt
+status
+expect loops > 100
+expect tilesSent >= 0
+snap smoke_start.png
+key PLAY
+wait 3
+status
+expect playing == 1
+expect loadAvg < 100         # the audio fits its time budget while playing
+snap smoke_playing.png
+key STOP
+wait 1
+expect playing == 0
+log board_script smoke test: ok
