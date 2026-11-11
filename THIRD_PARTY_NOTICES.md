@@ -14,7 +14,8 @@ Everything in this repository is under that licence, except the parts listed bel
 | Where | What | Copyright | Licence | Text |
 |---|---|---|---|---|
 | `firmware/dsp/thirdparty/plaits` | Plaits and stmlib | Emilie Gillet | MIT | in each file's header |
-| `firmware/src/board.cpp`, `firmware/src/board/Nt35510Init.h`, and the set-up code in `firmware/src/board` and `firmware/platform` that follows it | Drumboy Pro stock firmware | Randomwaves | MIT | `firmware/LICENSE.stock-mit` |
+| `firmware/src/board.cpp`, `firmware/src/board/Nt35510Init.h`, the codec driver in `firmware/src/codec` (`SGTL5000.h`, `Dac.cpp`, `Dac.h`), and the set-up code in `firmware/src/board` and `firmware/platform` that follows it | Drumboy Pro stock firmware | Randomwaves | MIT | `firmware/LICENSE.stock-mit` |
+| `fx_bench/stock_fx.h` (a bench tool, not in the firmware) | the stock firmware's effects, copied for measuring | Randomwaves | MIT | `firmware/LICENSE.stock-mit` |
 | `firmware/platform/Drivers/STM32H7xx_HAL_Driver` | STM32H7 HAL | STMicroelectronics | BSD-3-Clause | `LICENSE.txt` in that folder |
 | `firmware/platform/Drivers/CMSIS/Device/ST` | STM32H7 device headers | STMicroelectronics | Apache-2.0 | `LICENSE.txt` in that folder |
 | `firmware/platform/Drivers/CMSIS` | CMSIS | Arm Limited | Apache-2.0 | `LICENSE.txt` in that folder |
