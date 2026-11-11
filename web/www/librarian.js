@@ -1,5 +1,5 @@
 "use strict";
-// The preset librarian's page: connect, list, back up, load, send, delete. The bytes are in sysex.js, the simulated device in sim-device.js and the editor in preset-editor.js. No firmware speaks this yet, and the page says so.
+// The preset librarian's page: connect, list, back up, load, send, delete. The bytes are in sysex.js, the simulated device in sim-device.js and the editor in preset-editor.js. Reading has been run on a real cable; sending and deleting have not, and the page says so.
 (() => {
   const P = globalThis.PresetSysex;
   const $ = (id) => document.getElementById(id);
@@ -159,7 +159,7 @@
     access.onstatechange = portChange;
     if (!fillPorts()) { status(NO_DEVICE, "bad"); return; }
     $("ports").hidden = false;
-    status("Choose the ports the Drumboy Pro is on, then press Ask the device. Remember that this has not yet been tried on a real cable.");
+    status("Choose the ports the Drumboy Pro is on, then press Ask the device.");
   }, (e) => e.message);
   $("tryPorts").onclick = () => job(async () => {
     disconnect();

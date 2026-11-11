@@ -1,6 +1,6 @@
 # Preset SysEx: add and remove presets over MIDI
 
-**Status:** the librarian page, the simulated device and the firmware (`firmware/src/midi/PresetLink.cpp`) all speak this protocol, and the website's client has been run against the firmware code on a computer (`web/test/link.mjs`). It has not yet been run over a real MIDI cable.
+**Status:** the librarian page, the simulated device and the firmware (`firmware/src/midi/PresetLink.cpp`) all speak this protocol, and the website's client has been run against the firmware code on a computer (`web/test/link.mjs`). Over a real MIDI cable (a class-compliant USB-MIDI interface on both sockets, macOS, 2026-11-11), IDENTIFY and LIST answered with correct sums and CRC, and the page in Chrome listed 200 entries, backed up two presets and fetched song 1 as a MIDI file. UPLOAD and DELETE write to the card and have not yet been run on hardware.
 
 ## The connection
 

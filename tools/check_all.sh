@@ -64,6 +64,7 @@ if [ $quick = 0 ]; then
     runt 3 node web/test/preset-edit.mjs
     [ -d build-web ] && run cmake --build build-web -j"$(sysctl -n hw.ncpu 2>/dev/null || nproc)"   # (else these test the last engine built, not this code)
     if [ -f web/www/drumboy.wasm ]; then
+        [ -f web/www/data/prs.bin ] || runf "." python3 web/tools/make_data.py   # (a fresh clone has no data/: the simulated device starts from it)
         python3 web/serve.py 8799 >/dev/null 2>&1 &
         srv=$!
         sleep 1

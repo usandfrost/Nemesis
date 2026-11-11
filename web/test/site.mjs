@@ -1,7 +1,7 @@
 // The pages in headless Chrome with real pointer events (Node 22+, no packages), and every step of every lesson played by hand, by wheel and by drag. Needs
 // `python3 web/serve.py PORT` running, with the web build in web/www.
 //   node web/test/site.mjs [URL] [--shots DIR] [--only NAME]      exit status 1 when a check fails
-// The librarian is tested against its simulated device and against fake Web MIDI ports. No firmware speaks that protocol yet, so none of this says anything about hardware.
+// The librarian is tested against its simulated device and against fake Web MIDI ports. None of this says anything about hardware: that is docs/PRESET_SYSEX.md's status line.
 import { spawn, spawnSync } from "node:child_process";
 import fs from "node:fs";
 import zlib from "node:zlib";
@@ -647,7 +647,7 @@ async function setFiles(paths) {
 }
 async function librarianPage() {
   await viewport(1400, 950);
-  const honest = async () => ok(/not supported yet/.test(await text("#honest")), "librarian: says real devices are not supported");
+  const honest = async () => ok(/not yet proven/.test(await text("#honest")), "librarian: says sending and deleting are not yet proven");
   // no Web MIDI, refused, no ports, a port nothing answers on, and fake ports with the simulated device behind them
   const midi = async (script, name, expect) => {
     const { identifier } = await call("Page.addScriptToEvaluateOnNewDocument", { source: script });
@@ -924,7 +924,7 @@ async function editorPage() {
   const devCount = () => count("#devList tr");
   const accepted = (f) => spawnSync(path.join(root, "tests/build/preset_accept"), [f], { encoding: "utf8" }).status === 0 && spawnSync("python3", [path.join(root, "tools/prs.py"), "show", f], { encoding: "utf8" }).status === 0;
   ok(!await shown("#edBody"), "editor: nothing to edit until something is opened");
-  ok(/Real devices are not supported yet/i.test(await text("#honest")), "editor: the banner is left as it was");
+  ok(/Sending and deleting are not yet proven/i.test(await text("#honest")), "editor: the banner is left as it was");
 
   // a new one, with no device
   await click("#edNew");
