@@ -17,7 +17,12 @@ short=${version/Beta/B}   # (the file name has a limit: see make_sd_firmware.py)
 python3 tools/make_sd_firmware.py "$build/dboy_cathode.bin" "$tmp/Drumboy_Pro_Fw_Nemesis_$short.bin"
 # Notepad and every other text reader take CRLF
 sed "s/@VERSION@/$version/g; s/@SHORT@/$short/g" docs/INSTALL.txt | sed 's/$/\r/' > "$tmp/INSTALL.txt"
-sed 's/$/\r/' web/www/LICENSES.txt > "$tmp/LICENSES.txt"
+# the website's LICENSES.txt, then the long texts that only the firmware needs: Apache 2.0 (CMSIS, the device headers) and the screen fonts' OFL
+{ cat web/www/LICENSES.txt
+  printf '\n\nThe Apache License 2.0 (CMSIS, by Arm Limited; the STM32H7 device headers, by STMicroelectronics)\n\n'; cat firmware/platform/Drivers/CMSIS/LICENSE.txt
+  printf '\n\nThe screen font Chakra Petch\n\n'; cat tools/fonts/OFL-ChakraPetch.txt
+  printf '\n\nThe screen font IBM Plex Mono\n\n'; cat tools/fonts/OFL-IBMPlexMono.txt
+} | sed 's/$/\r/' > "$tmp/LICENSES.txt"
 sed 's/$/\r/' LICENSE > "$tmp/COPYING.txt"
 rm -f "$out"
 (cd "$tmp" && zip -qr9 "$out" .)
