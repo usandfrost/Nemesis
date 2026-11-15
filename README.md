@@ -6,6 +6,9 @@ Nemesis is an independent project, not made or supported by Randomwaves.
 
 It plays up to seven parts of CATHODE synth voices, sampler lanes and drums, with a step sequencer, a tracker, song mode, line-in recording, slicing, and export of a song to WAV, stems and MIDI.
 
+## Manual and online version
+An online version with tutorials, patch management, downloads, can be found at http://www.sandfrost.app
+
 ## Install
 
 Follow `docs/INSTALL.txt`. You need the release package and your Drumboy's SD card. Keep a backup of the card: the installer deletes the original firmware file from it.
